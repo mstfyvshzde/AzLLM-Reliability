@@ -1,0 +1,97 @@
+# Benchmark construction configuration.
+
+project:
+  name: "AzLLM-Reliability"
+  # Projenin adı.
+
+  task: "bilingual_llm_capability_reliability"
+  # İngilizce ve Azerbaycanca arasında kontrollü LLM
+  # capability ve reliability karşılaştırmasını tanımlar.
+
+  experiment_name: "benchmark_default"
+  # Benchmark oluşturma ve değerlendirme süreci için genel deney adı.
+
+
+reproducibility:
+  seed: 17
+  # Veri sıralama, örnekleme ve gelecekteki split işlemlerinde
+  # kullanılan canonical reproducibility seed'i.
+
+  deterministic: true
+  # Mümkün olan bileşenlerde deterministik çalışmayı hedefler.
+  # Bazı model veya donanım operasyonlarında tam bit-level
+  # determinism garanti edilmeyebilir.
+
+
+languages:
+  source: "en"
+  # Kontrollü karşılaştırmadaki kaynak dil.
+
+  target: "az"
+  # Kaynak örneklerle semantik olarak eşleştirilen hedef dil.
+
+
+paths:
+  raw_data_dir: "data/raw"
+  # Benchmark oluşturulmadan önce kullanılan ham veri klasörü.
+
+  processed_data_dir: "data/processed"
+  # Temizlenmiş veya ara veri artifact'lerinin tutulduğu klasör.
+
+  benchmark_dir: "data/benchmark"
+  # Final standardize edilmiş benchmark kayıtlarının ana klasörü.
+
+  english_benchmark_dir: "data/benchmark/en"
+  # İngilizce benchmark kayıtlarının kaydedildiği klasör.
+
+  azerbaijani_benchmark_dir: "data/benchmark/az"
+  # Azerbaycanca benchmark kayıtlarının kaydedildiği klasör.
+
+
+pairing:
+  enabled: true
+  # İngilizce ve Azerbaycanca örneklerin kontrollü pair yapısını etkinleştirir.
+
+  require_pair_id: true
+  # Her benchmark item'ının aynı semantik görevi temsil eden
+  # karşı dildeki örnekle ilişkilendirilebilmesini zorunlu kılar.
+
+  require_both_languages: true
+  # Bir pair'in geçerli sayılması için hem İngilizce hem Azerbaycanca
+  # karşılığının bulunmasını zorunlu kılar.
+
+
+benchmark:
+  require_reference_answer: true
+  # Değerlendirmede kullanılacak canonical reference answer'ın
+  # her benchmark item'ında bulunmasını zorunlu kılar.
+
+  preserve_metadata: true
+  # Kaynak, kategori veya gelecekteki analizlerde gerekli olabilecek
+  # metadata alanlarının benchmark oluşturulurken korunmasını sağlar.
+
+
+validation:
+  reject_empty_questions: true
+  # Boş veya yalnızca whitespace içeren soruları reddeder.
+
+  reject_empty_answers: true
+  # Boş reference answer içeren kayıtları reddeder.
+
+  reject_duplicate_item_ids: true
+  # Aynı item_id değerinin birden fazla kayıt tarafından
+  # kullanılmasını engeller.
+
+  reject_duplicate_pair_language: true
+  # Aynı pair_id ve language kombinasyonunun birden fazla kez
+  # bulunmasını engeller.
+
+
+experiment:
+  overwrite_outputs: false
+  # Varsayılan olarak mevcut benchmark artifact'lerinin
+  # üzerine yazılmasına izin vermez.
+
+  fail_on_validation_error: true
+  # Geçersiz benchmark kayıtları bulunduğunda sessizce devam etmek
+  # yerine benchmark oluşturma işlemini durdurur.

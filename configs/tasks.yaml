@@ -1,0 +1,35 @@
+# Benchmark görev ailelerini tanımlar.
+
+tasks:
+  factual_knowledge:
+    # Modelin doğrulanabilir bilgi sorularındaki capability performansını ölçer.
+    enabled: true
+
+    answer_type: "short_answer"
+    # Beklenen cevap kısa ve doğrudan bir yanıttır.
+
+  reasoning:
+    # Modelin verilen bilgilerden mantıksal sonuç çıkarma yeteneğini ölçer.
+    enabled: true
+
+    answer_type: "short_answer"
+
+  instruction_following:
+    # Modelin doğal dil talimatlarını doğru anlayıp uygulamasını ölçer.
+    enabled: true
+
+    answer_type: "structured"
+
+  linguistic_understanding:
+    # Özellikle dil değişiminden etkilenebilecek lexical, semantic ve
+    # morphology-related anlama yeteneklerini ölçer.
+    enabled: true
+
+    answer_type: "short_answer"
+
+  unanswerable:
+    # Yetersiz veya eksik bilgi bulunan durumlarda modelin güvenilir
+    # şekilde cevap vermemeyi başarıp başaramadığını ölçer.
+    enabled: true
+
+    answer_type: "abstention"
