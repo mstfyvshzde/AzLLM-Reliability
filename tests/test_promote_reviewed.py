@@ -13,6 +13,36 @@ from src.data.promote_reviewed import (
 from src.data.benchmark_record import BenchmarkRecord
 
 
+def make_task_specifications() -> dict[str, dict]:
+    """Promotion testlerinde kullanılacak minimal task specification oluşturur."""
+    return {
+        "reasoning": {
+            "task": {
+                "name": "reasoning",
+            },
+            "categories": {
+                "arithmetic_reasoning": {
+                    "enabled": True,
+                },
+            },
+            "difficulty": {
+                "levels": [
+                    "easy",
+                    "medium",
+                    "hard",
+                ],
+            },
+            "metadata": {
+                "required_fields": [
+                    "category",
+                    "difficulty",
+                    "review_status",
+                ],
+            },
+        }
+    }
+
+
 def make_record(
     item_id: str,
     pair_id: str,
@@ -27,7 +57,11 @@ def make_record(
         task="reasoning",
         question="Example question",
         reference_answer="Example answer",
-        metadata={"review_status": status},
+        metadata={
+            "category": "arithmetic_reasoning",
+            "difficulty": "easy",
+            "review_status": status,
+        },
     )
 
 
@@ -76,22 +110,28 @@ def test_valid_promoted_records() -> None:
         make_record(
             "reasoning_0001_en",
             "reasoning_0001",
-            "en"
+            "en",
         ),
         make_record(
             "reasoning_0001_az",
             "reasoning_0001",
-            "az"
-        )
+            "az",
+        ),
     ]
 
-    validate_promoted_records(records)
+    validate_promoted_records(
+        records,
+        make_task_specifications(),
+    )
 
 
 def test_empty_promoted_records_are_rejected() -> None:
     """Boş approved record listesinin reddedildiğini test eder."""
     with pytest.raises(ValueError, match="No approved records"):
-        validate_promoted_records([])
+        validate_promoted_records(
+            [],
+            make_task_specifications(),
+        )
 
 
 def test_duplicate_item_ids_are_rejected() -> None:
@@ -100,17 +140,20 @@ def test_duplicate_item_ids_are_rejected() -> None:
         make_record(
             "reasoning_0001_en",
             "reasoning_0001",
-            "en"
+            "en",
         ),
         make_record(
             "reasoning_0001_en",
             "reasoning_0001",
-            "az"
-        )
+            "az",
+        ),
     ]
 
     with pytest.raises(ValueError, match="Duplicate item_id"):
-        validate_promoted_records(records)
+        validate_promoted_records(
+            records,
+            make_task_specifications(),
+        )
 
 
 def test_save_final_records(tmp_path: Path) -> None:
@@ -119,13 +162,13 @@ def test_save_final_records(tmp_path: Path) -> None:
         make_record(
             "reasoning_0001_en",
             "reasoning_0001",
-            "en"
+            "en",
         ),
         make_record(
             "reasoning_0001_az",
             "reasoning_0001",
-            "az"
-        )
+            "az",
+        ),
     ]
 
     output_path = tmp_path / "benchmark.jsonl"

@@ -112,7 +112,12 @@ def test_full_benchmark_pipeline(tmp_path: Path) -> None:
 
     approved_records = get_approved_records(reviewed_records)
 
-    validate_promoted_records(approved_records)
+    validate_promoted_records(
+        approved_records,
+        {
+            "reasoning": task_specification,
+        },
+    )
 
     raw_path = tmp_path / "raw" / "benchmark.jsonl"
     save_final_records(approved_records, raw_path)
