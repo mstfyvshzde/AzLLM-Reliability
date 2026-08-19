@@ -52,10 +52,6 @@ pairing:
   enabled: true
   # İngilizce ve Azerbaycanca örneklerin kontrollü pair yapısını etkinleştirir.
 
-  require_pair_id: true
-  # Her benchmark item'ının aynı semantik görevi temsil eden
-  # karşı dildeki örnekle ilişkilendirilebilmesini zorunlu kılar.
-
   require_both_languages: true
   # Bir pair'in geçerli sayılması için hem İngilizce hem Azerbaycanca
   # karşılığının bulunmasını zorunlu kılar.
@@ -91,7 +87,3 @@ experiment:
   overwrite_outputs: false
   # Varsayılan olarak mevcut benchmark artifact'lerinin
   # üzerine yazılmasına izin vermez.
-
-  fail_on_validation_error: true
-  # Geçersiz benchmark kayıtları bulunduğunda sessizce devam etmek
-  # yerine benchmark oluşturma işlemini durdurur.

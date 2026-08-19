@@ -11,6 +11,15 @@ version = "0.1.0"
 description = "Controlled evaluation of Azerbaijani LLM capability and reliability."
 requires-python = ">=3.10"
 
+dependencies = [
+    "PyYAML>=6.0,<7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<10.0",
+]
+
 
 # setuptools'e hangi Python paketlerini projeye dahil edeceğini söyler.
 [tool.setuptools.packages.find]

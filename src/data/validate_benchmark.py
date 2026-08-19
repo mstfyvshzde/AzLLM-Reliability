@@ -19,7 +19,9 @@ from src.data.benchmark_record import BenchmarkRecord
 
 def validate_record(
     record: BenchmarkRecord,
-    allowed_languages: set[str]
+    allowed_languages: set[str],
+    reject_empty_questions: bool = True,
+    reject_empty_answers: bool = True
 ) ->None:
     """Tek bir benchmark kaydını doğrular.
 
@@ -43,11 +45,15 @@ def validate_record(
             f"Expected one of: {sorted(allowed_languages)}"
         )
 
-    if not record.question.strip():
-        raise ValueError(f"Question cannot be empty: {record.item_id}")
+    if reject_empty_questions and not record.question.strip():
+        raise ValueError(
+            f"Question cannot be empty for item '{record.item_id}'."
+        )
 
-    if not record.reference_answer.strip():
-        raise ValueError(f"Reference answer cannot be empty: {record.item_id}")
+    if reject_empty_answers and not record.reference_answer.strip():
+        raise ValueError(
+            f"Reference answer cannot be empty for item '{record.item_id}'."
+        )
 
 
 def validate_unique_item_ids(

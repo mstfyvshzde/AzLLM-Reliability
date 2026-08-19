@@ -35,6 +35,10 @@ from src.data.task_registry import (
     validate_task
 )
 
+from src.data.validate_task_metadata import (
+    load_task_specifications,
+    validate_task_metadata,
+)
 
 def load_config(config_path: Path) -> dict[str, Any]:
     """Benchmark ayarlarını içeren YAML dosyasını yükler.
@@ -127,7 +131,8 @@ def load_records(input_path: Path) -> list[BenchmarkRecord]:
 def validate_records(
     records: list[BenchmarkRecord],
     config: dict[str, Any],
-    enabled_tasks: set[str]
+    enabled_tasks: set[str],
+    task_specifications: dict[str, dict[str, Any]]
 ) -> None:
     """Tüm benchmark kayıtlarını YAML config kurallarına göre doğrular.
 
@@ -148,9 +153,26 @@ def validate_records(
     }
 
     for record in records:
-        validate_record(record, required_languages)
+        validate_record(
+            record,
+            required_languages,
+            reject_empty_questions=config["validation"]["reject_empty_questions"],
+            reject_empty_answers=config["validation"]["reject_empty_answers"]
+        )
         # enabled_tasks → aktif olan task'ların listesi/set'i.
         validate_task(record.task, enabled_tasks)
+
+        task_spec = task_specifications.get(record.task)
+
+        if task_spec is None:
+            raise ValueError(
+                f"Task specification not loaded for '{record.task}'."
+            )
+
+        validate_task_metadata(
+            record,
+            task_spec,
+        )
 
     if config["validation"]["reject_duplicate_item_ids"]:
         validate_unique_item_ids(records)
@@ -158,9 +180,14 @@ def validate_records(
     if config["validation"]["reject_duplicate_pair_language"]:
         validate_unique_pair_languages(records)
 
-    if config["pairing"]["require_both_languages"]:
-        validate_complete_pairs(records, required_languages)
+    if config["pairing"]["enabled"]:
         validate_pair_task_consistency(records)
+
+        if config["pairing"]["require_both_languages"]:
+            validate_complete_pairs(
+                records,
+                required_languages
+            )
 
 
 def save_records(
@@ -228,7 +255,14 @@ def main() -> None:
     enabled_tasks = get_enabled_tasks(task_config)
     records = load_records(args.input)
 
-    validate_records(records, config, enabled_tasks)
+    task_specifications = {
+        task_name: load_task_specifications(
+            Path("configs/tasks") / f"{task_name}.yaml"
+        )
+        for task_name in enabled_tasks
+    }
+
+    validate_records(records, config, enabled_tasks, task_specifications)
 
     output_dir = Path(config["paths"]["benchmark_dir"])
 

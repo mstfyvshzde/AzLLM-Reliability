@@ -15,10 +15,12 @@ from typing import Any
 import yaml
 
 from src.data.benchmark_record import BenchmarkRecord
-from src.data.task_registry import(
+from src.data.task_registry import (
     get_enabled_tasks,
     load_task_config
 )
+
+from src.data.validate_task_metadata import validate_task_metadata
 
 
 def load_generation_config(config_path: Path) -> dict[str, Any]:
@@ -68,7 +70,10 @@ def create_candidate_pair(
     question_az: str,
     reference_answer_en: str,
     reference_answer_az: str,
-    config: dict[str, Any]
+    category: str,
+    difficulty: str,
+    config: dict[str, Any],
+    task_specification: dict[str, Any]
 ) -> list[BenchmarkRecord]:
     """Tek bir semantic İngilizce-Azerbaycanca candidate pair oluşturur.
 
@@ -106,6 +111,11 @@ def create_candidate_pair(
     }
 
     for language in config['generation']['languages']:
+        if language not in values:
+            raise ValueError(
+                f"Unsupported generation language: '{language}'"
+            )
+
         question, reference_answer = values[language]
 
         item_id = config['identifiers']['item_id_format'].format(
@@ -122,13 +132,22 @@ def create_candidate_pair(
                 question=question,
                 reference_answer=reference_answer,
                 metadata={
+                    "category": category,
+                    "difficulty": difficulty,
                     "review_status": "pending",
-                },
+                }
             )
         )
 
-    return records
+    # EN ve AZ kayıtları oluşturulduktan sonra her kayıt
+    # task-specific metadata kurallarına göre doğrulanır.
+    for record in records:
+        validate_task_metadata(
+            record,
+            task_specification,
+        )
 
+    return records
 
 
 def save_candidates(
@@ -148,7 +167,6 @@ def save_candidates(
                 )
                 + '\n'
             )
-
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -173,7 +191,6 @@ def parse_arguments() -> argparse.Namespace:
     )
 
     return parser.parse_args()
-
 
 
 def main() -> None:
