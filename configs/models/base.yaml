@@ -1,0 +1,35 @@
+# Ana model yapılandırması.
+# Model seçimi bu dosyadan yapılır; Python koduna model adı gömülmez.
+model:
+  # Hugging Face model identifier.
+  model_name: meta-llama/Llama-3.2-3B-Instruct
+
+  # Ayrı bir tokenizer kullanılacaksa burada belirtilir.
+  # null olduğunda tokenizer model_name üzerinden yüklenir.
+  tokenizer_name: null
+
+  # Belirli bir branch, tag veya commit kullanılacaksa yazılır.
+  # null olduğunda repository'nin varsayılan revision değeri kullanılır.
+  revision: null
+
+  # Modelin hangi cihazda çalışacağını belirler.
+  # auto -> Hugging Face / Accelerate uygun cihaz yerleşimini otomatik yapar.
+  device: auto
+
+  # Model precision değeri.
+  # bfloat16 bellek kullanımını azaltır ve modern donanımlarda inference için uygundur.
+  dtype: bfloat16
+
+  # Hugging Face repository içindeki custom Python kodunun çalıştırılmasına izin verir.
+  # Güvenlik ve reproducibility nedeniyle varsayılan olarak kapalı tutulur.
+  trust_remote_code: false
+
+  # Modelin her benchmark sorusu için maksimum kaç yeni token üretebileceğini belirler.
+  max_new_tokens: 128
+
+  # Sampling sırasında token dağılımının ne kadar rastgele olacağını belirler.
+  # 0.0 deterministic evaluation için kullanılır.
+  temperature: 0.0
+
+  # false olduğunda sampling yapılmaz ve deterministic generation kullanılır.
+  do_sample: false

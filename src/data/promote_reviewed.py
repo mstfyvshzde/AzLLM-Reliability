@@ -7,7 +7,7 @@ raw JSONL dosyasını oluşturur.
 
 from __future__ import annotations
 
-import argparse 
+import argparse
 import json
 from pathlib import Path
 
@@ -22,7 +22,10 @@ from src.data.validate_benchmark import (
     validate_unique_item_ids,
     validate_unique_pair_languages
 )
-
+from src.data.validate_task_metadata import (
+    load_task_specifications,
+    validate_task_metadata,
+)
 
 def collect_reviewed_records(
     input_dir: Path
@@ -59,15 +62,14 @@ def collect_reviewed_records(
     records: list[BenchmarkRecord] = []
 
     for input_path in input_paths:
-        records.extend(load_records(input_path))    
+        records.extend(load_records(input_path))
 
     return records
 
 
-
-
 def validate_promoted_records(
-    records: list[BenchmarkRecord]
+    records: list[BenchmarkRecord],
+    task_specifications: dict[str, dict]
 ) -> None:
     """Final benchmark'a aktarılacak promoted kayıtların bütünlüğünü doğrular.
 
@@ -85,6 +87,7 @@ def validate_promoted_records(
         - Aynı pair_id-language kombinasyonu tekrar ediyor mu?
         - Her pair hem "en" hem "az" kaydına sahip mi?
         - Aynı pair içindeki kayıtlar aynı task'a mı ait?
+        - Her kayıt kendi task-specific metadata kurallarına uyuyor mu?
 
     Kurallardan biri ihlal edilirse ValueError oluşturur.
     """
@@ -96,6 +99,19 @@ def validate_promoted_records(
     validate_unique_pair_languages(records)
     validate_complete_pairs(records, {'en', 'az'})
     validate_pair_task_consistency(records)
+
+    for record in records:
+        task_specification = task_specifications.get(record.task)
+
+        if task_specification is None:
+            raise ValueError(
+                f"Task specification not loaded for '{record.task}'."
+            )
+
+        validate_task_metadata(
+            record,
+            task_specification,
+        )
 
 
 def save_final_records(
@@ -141,7 +157,6 @@ def parse_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 
-
 def main() -> None:
     """Reviewed-to-raw promotion sürecini çalıştırır."""
     args = parse_arguments()
@@ -149,7 +164,23 @@ def main() -> None:
     records = collect_reviewed_records(args.input_dir)
     approved_records = get_approved_records(records)
 
-    validate_promoted_records(approved_records)
+    task_names = {
+        record.task
+        for record in approved_records
+    }
+
+    task_specifications = {
+        task_name: load_task_specifications(
+            Path("configs/tasks") / f"{task_name}.yaml"
+        )
+        for task_name in task_names
+    }
+
+    validate_promoted_records(
+        approved_records,
+        task_specifications,
+    )
+
     save_final_records(approved_records, args.output)
 
     print(

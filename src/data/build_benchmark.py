@@ -255,11 +255,16 @@ def main() -> None:
     enabled_tasks = get_enabled_tasks(task_config)
     records = load_records(args.input)
 
+    record_tasks = {
+        record.task
+        for record in records
+    }
+
     task_specifications = {
         task_name: load_task_specifications(
             Path("configs/tasks") / f"{task_name}.yaml"
         )
-        for task_name in enabled_tasks
+        for task_name in record_tasks
     }
 
     validate_records(records, config, enabled_tasks, task_specifications)
