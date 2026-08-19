@@ -1,0 +1,67 @@
+# Paired EN-AZ benchmark item üretim kurallarını tanımlar.
+
+generation:
+  items_per_task: 20
+  # Her etkin task family için üretilecek semantic pair sayısı.
+  # Her pair bir İngilizce ve bir Azerbaycanca kayıt içerir.
+
+  languages:
+    - "en"
+    - "az"
+
+  preserve_pair_semantics: true
+  # EN ve AZ sürümlerinin aynı soru, bilgi ve reasoning gereksinimini
+  # korumasını zorunlu kılar.
+
+  independent_answers: false
+  # Dil sürümleri farklı sorular olarak değerlendirilmez.
+  # Aynı semantic benchmark item'in iki dil sürümüdür.
+
+
+identifiers:
+  pair_id_format: "{task}_{index:04d}"
+  # Örnek: reasoning_0001
+
+  item_id_format: "{pair_id}_{language}"
+  # Örnek:
+  # reasoning_0001_en
+  # reasoning_0001_az
+
+
+quality:
+  require_reference_answer: true
+  # Her benchmark item için beklenen cevap bulunmalıdır.
+
+  require_task_label: true
+  # Her kayıt geçerli bir task family ile etiketlenmelidir.
+
+  reject_empty_questions: true
+  # Boş veya yalnızca whitespace içeren sorular kabul edilmez.
+
+  require_manual_review: true
+  # Üretilen pair'ler final benchmark'a alınmadan önce
+  # insan tarafından kontrol edilmelidir.
+
+
+pairing:
+  require_same_task: true
+  # Aynı pair içindeki EN ve AZ kayıtları aynı task'a ait olmalıdır.
+
+  require_same_reference_semantics: true
+  # Cevapların metinsel olarak aynı olması gerekmez.
+  # Ancak anlam bakımından eşdeğer olması gerekir.
+
+  require_translation_review: true
+  # Azerbaycanca sürümün doğal ve semantik olarak eşdeğer olduğu
+  # manuel olarak doğrulanmalıdır.
+
+
+output:
+  candidate_dir: "data/candidates"
+  # Henüz manuel kontrolden geçmemiş candidate pair'ler.
+
+  reviewed_dir: "data/reviewed"
+  # Manuel kontrolden geçmiş benchmark pair'leri.
+
+  final_dir: "data/raw"
+  # Builder'a verilecek onaylanmış ham benchmark verisi.
