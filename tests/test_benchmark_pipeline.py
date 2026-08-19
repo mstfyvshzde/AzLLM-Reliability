@@ -43,10 +43,13 @@ def make_benchmark_config(tmp_path: Path) -> dict:
             "benchmark_dir": str(tmp_path / "benchmark"),
         },
         "validation": {
+            "reject_empty_questions": True,
+            "reject_empty_answers": True,
             "reject_duplicate_item_ids": True,
             "reject_duplicate_pair_language": True,
         },
         "pairing": {
+            "enabled": True,
             "require_both_languages": True,
         },
         "experiment": {
@@ -55,9 +58,38 @@ def make_benchmark_config(tmp_path: Path) -> dict:
     }
 
 
+def make_task_specification() -> dict:
+    """Pipeline testinde kullanılacak minimal reasoning task specification oluşturur."""
+    return {
+        "task": {
+            "name": "reasoning",
+        },
+        "categories": {
+            "arithmetic_reasoning": {
+                "enabled": True,
+            },
+        },
+        "difficulty": {
+            "levels": [
+                "easy",
+                "medium",
+                "hard",
+            ],
+        },
+        "metadata": {
+            "required_fields": [
+                "category",
+                "difficulty",
+                "review_status",
+            ],
+        },
+    }
+
+
 def test_full_benchmark_pipeline(tmp_path: Path) -> None:
     """Tek bir EN-AZ pair'in tüm benchmark pipeline'ından geçtiğini test eder."""
     generation_config = make_generation_config()
+    task_specification = make_task_specification()
 
     candidate_records = create_candidate_pair(
         task="reasoning",
@@ -66,7 +98,10 @@ def test_full_benchmark_pipeline(tmp_path: Path) -> None:
         question_az="2 + 2 neçə edir?",
         reference_answer_en="4",
         reference_answer_az="4",
+        category="arithmetic_reasoning",
+        difficulty="easy",
         config=generation_config,
+        task_specification=task_specification,
     )
 
     reviewed_records = set_pair_review_status(
@@ -86,10 +121,15 @@ def test_full_benchmark_pipeline(tmp_path: Path) -> None:
 
     benchmark_config = make_benchmark_config(tmp_path)
 
+    task_specifications = {
+        "reasoning": task_specification,
+    }
+
     validate_records(
         loaded_records,
         benchmark_config,
         {"reasoning"},
+        task_specifications,
     )
 
     output_dir = Path(
@@ -120,3 +160,12 @@ def test_full_benchmark_pipeline(tmp_path: Path) -> None:
 
     assert english_record["task"] == "reasoning"
     assert azerbaijani_record["task"] == "reasoning"
+
+    assert english_record["metadata"]["category"] == "arithmetic_reasoning"
+    assert azerbaijani_record["metadata"]["category"] == "arithmetic_reasoning"
+
+    assert english_record["metadata"]["difficulty"] == "easy"
+    assert azerbaijani_record["metadata"]["difficulty"] == "easy"
+
+    assert english_record["metadata"]["review_status"] == "approved"
+    assert azerbaijani_record["metadata"]["review_status"] == "approved"

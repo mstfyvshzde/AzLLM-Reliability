@@ -23,6 +23,34 @@ def make_generation_config() -> dict:
     }
 
 
+def make_task_specification() -> dict:
+    """Testlerde kullanılacak minimal reasoning task specification oluşturur."""
+    return {
+        "task": {
+            "name": "reasoning",
+        },
+        "categories": {
+            "arithmetic_reasoning": {
+                "enabled": True,
+            },
+        },
+        "difficulty": {
+            "levels": [
+                "easy",
+                "medium",
+                "hard",
+            ],
+        },
+        "metadata": {
+            "required_fields": [
+                "category",
+                "difficulty",
+                "review_status",
+            ],
+        },
+    }
+
+
 def test_load_generation_config(tmp_path: Path) -> None:
     """Geçerli generation config dosyasının yüklendiğini test eder."""
     config_path = tmp_path / "generation.yaml"
@@ -73,7 +101,10 @@ def test_create_candidate_pair() -> None:
         question_az="2 + 2 neçə edir?",
         reference_answer_en="4",
         reference_answer_az="4",
-        config=config
+        category="arithmetic_reasoning",
+        difficulty="easy",
+        config=config,
+        task_specification=make_task_specification(),
     )
 
     assert len(records) == 2
@@ -105,8 +136,49 @@ def test_candidate_pair_review_status_is_pending() -> None:
         question_az="Nümunə sual",
         reference_answer_en="Example answer",
         reference_answer_az="Nümunə cavab",
-        config=config
+        category="arithmetic_reasoning",
+        difficulty="easy",
+        config=config,
+        task_specification=make_task_specification(),
     )
 
     for record in records:
         assert record.metadata["review_status"] == "pending"
+
+
+def test_invalid_category_is_rejected() -> None:
+    """Tanımlanmamış category değerinin candidate aşamasında reddedildiğini test eder."""
+    config = make_generation_config()
+
+    with pytest.raises(ValueError, match="Unsupported category"):
+        create_candidate_pair(
+            task="reasoning",
+            index=1,
+            question_en="What is 2 + 2?",
+            question_az="2 + 2 neçə edir?",
+            reference_answer_en="4",
+            reference_answer_az="4",
+            category="unknown_reasoning",
+            difficulty="easy",
+            config=config,
+            task_specification=make_task_specification(),
+        )
+
+
+def test_invalid_difficulty_is_rejected() -> None:
+    """Geçersiz difficulty değerinin candidate aşamasında reddedildiğini test eder."""
+    config = make_generation_config()
+
+    with pytest.raises(ValueError, match="Unsupported difficulty"):
+        create_candidate_pair(
+            task="reasoning",
+            index=1,
+            question_en="What is 2 + 2?",
+            question_az="2 + 2 neçə edir?",
+            reference_answer_en="4",
+            reference_answer_az="4",
+            category="arithmetic_reasoning",
+            difficulty="extreme",
+            config=config,
+            task_specification=make_task_specification(),
+        )
