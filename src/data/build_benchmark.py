@@ -18,13 +18,22 @@ import yaml
 
 
 from src.data.benchmark_record import BenchmarkRecord
-from src.data.pairing import validate_complete_pairs
+from src.data.pairing import (
+    validate_complete_pairs,
+    validate_pair_task_consistency
+)
+
 from src.data.validate_benchmark import (
     validate_record,
     validate_unique_item_ids,
     validate_unique_pair_languages
 )
 
+from src.data.task_registry import (
+    get_enabled_tasks,
+    load_task_config,
+    validate_task
+)
 
 
 def load_config(config_path: Path) -> dict[str, Any]:
@@ -117,7 +126,8 @@ def load_records(input_path: Path) -> list[BenchmarkRecord]:
 
 def validate_records(
     records: list[BenchmarkRecord],
-    config: dict[str, Any]
+    config: dict[str, Any],
+    enabled_tasks: set[str]
 ) -> None:
     """Tüm benchmark kayıtlarını YAML config kurallarına göre doğrular.
 
@@ -139,6 +149,8 @@ def validate_records(
 
     for record in records:
         validate_record(record, required_languages)
+        # enabled_tasks → aktif olan task'ların listesi/set'i.
+        validate_task(record.task, enabled_tasks)
 
     if config["validation"]["reject_duplicate_item_ids"]:
         validate_unique_item_ids(records)
@@ -148,6 +160,7 @@ def validate_records(
 
     if config["pairing"]["require_both_languages"]:
         validate_complete_pairs(records, required_languages)
+        validate_pair_task_consistency(records)
 
 
 def save_records(
@@ -211,9 +224,11 @@ def main() -> None:
     args = parse_arguments()
 
     config = load_config(args.config)
+    task_config = load_task_config(Path("configs/tasks.yaml"))
+    enabled_tasks = get_enabled_tasks(task_config)
     records = load_records(args.input)
 
-    validate_records(records, config)
+    validate_records(records, config, enabled_tasks)
 
     output_dir = Path(config["paths"]["benchmark_dir"])
 

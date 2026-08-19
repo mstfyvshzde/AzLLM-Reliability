@@ -67,3 +67,39 @@ def validate_complete_pairs(
                 f"Missing languages: {sorted(missing)}. "
                 f"Unexpected languages: {sorted(unexpected)}."
             )
+
+
+def validate_pair_task_consistency(
+    records: Iterable[BenchmarkRecord]
+) -> None:
+    """Aynı pair_id içindeki kayıtların aynı task değerine sahip olduğunu doğrular.
+
+    Önce kayıtları pair_id değerine göre gruplar.
+
+    Örnek:
+    reasoning_001 → [
+        task="reasoning",
+        task="reasoning"
+    ]
+
+    Bu geçerlidir.
+
+    Ama:
+    reasoning_002 → [
+        task="reasoning",
+        task="factual_qa"
+    ]
+
+    Bu durumda aynı pair farklı task'lara ait olduğu için ValueError oluşturur.
+    """
+    
+    pairs = group_by_pair(records)
+
+    for pair_id, pair_records in pairs.items():
+        tasks = {record.task for record in pair_records}
+
+        if len(tasks) != 1:
+            raise ValueError(
+                f"Inconsistent task values for pair '{pair_id}': "
+                f"{sorted(tasks)}"
+            )

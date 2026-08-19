@@ -1,0 +1,2 @@
+{"item_id": "arithmetic_001_en", "pair_id": "arithmetic_001", "language": "en", "task": "reasoning", "question": "Ali has 3 books and buys 2 more. How many books does he have?", "reference_answer": "5", "metadata": {"category": "arithmetic"}}
+{"item_id": "reasoning_001_en", "pair_id": "reasoning_001", "language": "en", "task": "reasoning", "question": "All roses are flowers. Some flowers fade quickly. Can we conclude that all roses fade quickly?", "reference_answer": "No", "metadata": {"category": "logical_reasoning"}}

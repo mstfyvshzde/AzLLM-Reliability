@@ -1,0 +1,2 @@
+{"item_id": "arithmetic_001_az", "pair_id": "arithmetic_001", "language": "az", "task": "reasoning", "question": "Əlinin 3 kitabı var və o, daha 2 kitab alır. İndi onun neçə kitabı var?", "reference_answer": "5", "metadata": {"category": "arithmetic"}}
+{"item_id": "reasoning_001_az", "pair_id": "reasoning_001", "language": "az", "task": "reasoning", "question": "Bütün qızılgüllər çiçəkdir. Bəzi çiçəklər tez solur. Bütün qızılgüllərin tez solduğu nəticəsinə gələ bilərikmi?", "reference_answer": "Xeyr", "metadata": {"category": "logical_reasoning"}}

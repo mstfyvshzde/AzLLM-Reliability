@@ -1,0 +1,109 @@
+# Reasoning benchmark task specification.
+
+# Bu dosya reasoning task'ında hangi tür soruların kabul edildiğini,
+# EN-AZ pair'lerinin nasıl oluşturulacağını ve hangi kalite kurallarının
+# uygulanacağını tanımlar.
+
+
+task:
+  name: "reasoning"
+  # configs/tasks.yaml içindeki canonical task adı.
+
+  description: "Evaluate reasoning ability under semantically equivalent English and Azerbaijani prompts."
+  # Aynı reasoning problemini iki dilde sunarak model performansındaki
+  # dil kaynaklı değişimi ölçer.
+
+  answer_type: "short_answer"
+  # Cevap mümkün olduğunca kısa ve açık biçimde değerlendirilebilir olmalıdır.
+
+
+categories:
+  logical_reasoning:
+    enabled: true
+    # Verilen öncüllerden geçerli bir sonucun çıkarılıp çıkarılamadığını ölçer.
+
+  arithmetic_reasoning:
+    enabled: true
+    # Basit hesaplamanın yanında problem içindeki niceliksel ilişkileri
+    # doğru yorumlamayı gerektirir.
+
+  comparative_reasoning:
+    enabled: true
+    # Birden fazla nesne veya kişi arasındaki ilişkilerden sonuç çıkarır.
+
+  constraint_reasoning:
+    enabled: true
+    # Birden fazla koşulun aynı anda takip edilmesini gerektirir.
+
+
+difficulty:
+  levels:
+    - "easy"
+    - "medium"
+    - "hard"
+
+  default: "medium"
+
+  require_balance: true
+  # Final benchmark'ta tek difficulty seviyesinin baskın olmasını engeller.
+
+
+pairing:
+  preserve_entities: true
+  # Özel isimler, sayılar ve problemdeki temel nesneler iki dilde korunur.
+
+  preserve_constraints: true
+  # EN ve AZ sürümleri tamamen aynı mantıksal koşulları içermelidir.
+
+  preserve_answer: true
+  # Dil değişimi doğru cevabı değiştirmemelidir.
+
+  allow_literal_translation: false
+  # Azerbaycanca soru kelime kelime çeviri olmak zorunda değildir.
+  # Doğal dil tercih edilir ancak semantic equivalence korunmalıdır.
+
+
+construction:
+  require_self_contained_question: true
+  # Soru dış bilgi veya internet erişimi gerektirmemelidir.
+
+  require_determinable_answer: true
+  # Verilen bilgiler doğru cevabı belirlemek için yeterli olmalıdır.
+
+  avoid_ambiguous_wording: true
+  # Birden fazla makul yoruma yol açan ifadeler kullanılmamalıdır.
+
+  avoid_cultural_dependency: true
+  # Reasoning sonucu kültürel bilgiye bağlı olmamalıdır.
+
+  avoid_language_specific_clues: true
+  # Bir dil sürümünün diğerinden istemeden daha kolay hale gelmesini
+  # sağlayan lexical veya grammatical ipuçları bulunmamalıdır.
+
+
+metadata:
+  required_fields:
+    - "category"
+    - "difficulty"
+    - "review_status"
+
+  # Örnek metadata:
+  #
+  # metadata:
+  #   category: "logical_reasoning"
+  #   difficulty: "easy"
+  #   review_status: "pending"
+
+
+review:
+  check_semantic_equivalence: true
+  # EN ve AZ sorularının aynı reasoning problemini temsil ettiğini doğrula.
+
+  check_answer_equivalence: true
+  # Reference answer'ların anlam bakımından eşdeğer olduğunu doğrula.
+
+  check_language_naturalness: true
+  # Özellikle Azerbaycanca sürümün doğal ve anlaşılır olduğunu doğrula.
+
+  check_difficulty_equivalence: true
+  # Çevirinin problem zorluğunu değiştirmediğini doğrula.
