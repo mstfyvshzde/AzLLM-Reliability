@@ -142,3 +142,54 @@ def evaluate_paired_task_aware_capability(
         )
 
     return paired_results
+
+
+
+def summarize_paired_task_aware_capability(
+    results: list[PairedTaskAwareCapabilityResult]
+) -> dict[str, Any]:
+    """Paired task-aware capability sonuçlarını özetler."""
+
+    if not results:
+        raise ValueError(
+            "Cannot summarize empty paired task-aware results."
+        )
+
+    counts = {
+        BOTH_CORRECT: 0,
+        SOURCE_ONLY_CORRECT: 0,
+        TARGET_ONLY_CORRECT: 0,
+        BOTH_INCORRECT: 0
+    }
+
+    for result in results:
+        if result.transition not in VALID_TRANSITIONS:
+            raise ValueError(
+                f"Unknown transition: '{result.transition}'"
+            )
+
+        counts[result.transition] += 1
+
+    total = len(results)
+
+
+    return {
+        "total_pairs": total,
+        "both_correct": counts[BOTH_CORRECT],
+        "source_only_correct": counts[SOURCE_ONLY_CORRECT],
+        "target_only_correct": counts[TARGET_ONLY_CORRECT],
+        "both_incorrect": counts[BOTH_INCORRECT],
+        "degradation_rate": (
+            counts[SOURCE_ONLY_CORRECT]
+            / total
+        ),
+        "recovery_rate": (
+            counts[TARGET_ONLY_CORRECT]
+            / total
+        ),
+        "consistency_rate": (
+            counts[BOTH_CORRECT]
+            + counts[BOTH_INCORRECT]
+        )
+        / total
+    }

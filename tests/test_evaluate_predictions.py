@@ -523,7 +523,11 @@ def test_save_evaluation_artifacts(
         "semantic_answer_results.jsonl",
         "semantic_answer_summary.json",
         "task_aware_results.jsonl", 
-        "task_aware_summary.json"
+        "task_aware_summary.json",
+        "paired_task_aware_results.jsonl",
+        "paired_task_aware_summary.json",
+        "primary_capability_summary.json",
+        "primary_paired_capability_summary.json",
     }
 
     actual_files = {

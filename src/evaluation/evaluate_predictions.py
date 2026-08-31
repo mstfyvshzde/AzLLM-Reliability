@@ -85,6 +85,11 @@ from src.evaluation.task_aware_capability import (
     evaluate_task_aware_capability,
     summarize_task_aware_capability,
 )
+from src.evaluation.paired_task_aware_capability import (
+    PairedTaskAwareCapabilityResult,
+    evaluate_paired_task_aware_capability,
+    summarize_paired_task_aware_capability,
+)
 
 
 def load_predictions(
@@ -234,6 +239,7 @@ def save_json(
 def save_jsonl(
     records: list[
         ExactMatchResult
+        | PairedTaskAwareCapabilityResult
         | TaskAwareCapabilityResult
         | SemanticAnswerMatchResult
         | ShortAnswerMatchResult
@@ -659,6 +665,16 @@ def evaluate_predictions(
         predictions
     )
 
+    paired_task_aware_results = evaluate_paired_task_aware_capability(
+        task_aware_results,
+        source_language=source_language,
+        target_language=target_language,
+    )
+
+    paired_task_aware_summary = summarize_paired_task_aware_capability(
+        paired_task_aware_results
+    )
+
     task_aware_summary = summarize_task_aware_capability(
         task_aware_results
     )
@@ -690,7 +706,11 @@ def evaluate_predictions(
         "semantic_answer_results": semantic_answer_results,
         "semantic_answer_summary": semantic_answer_summary,
         "task_aware_results": task_aware_results,
-        "task_aware_summary": task_aware_summary
+        "task_aware_summary": task_aware_summary,
+        "paired_task_aware_results": paired_task_aware_results,
+        "paired_task_aware_summary": paired_task_aware_summary,
+        "primary_capability_summary": task_aware_summary,
+        "primary_paired_capability_summary": paired_task_aware_summary
     }
 
 
@@ -833,8 +853,44 @@ def save_evaluation_artifacts(
         overwrite=overwrite
     )
 
+    save_jsonl(
+        evaluation[
+            "paired_task_aware_results"
+        ],
+        output_dir
+        / "paired_task_aware_results.jsonl",
+        overwrite=overwrite
+    )
 
-def parse_args() -> argparse.Namespace:
+    save_json(
+        evaluation[
+            "paired_task_aware_summary"
+        ],
+        output_dir
+        / "paired_task_aware_summary.json",
+        overwrite=overwrite,
+    )
+
+    save_json(
+        evaluation[
+            "primary_capability_summary"
+        ],
+        output_dir
+        / "primary_capability_summary.json",
+        overwrite=overwrite,
+    )
+
+    save_json(
+        evaluation[
+            "primary_paired_capability_summary"
+        ],
+        output_dir
+        / "primary_paired_capability_summary.json",
+        overwrite=overwrite,
+    )
+
+
+def parse_arguments() -> argparse.Namespace:
     """Command-line argumentlerini parse eder."""
 
     parser = argparse.ArgumentParser(
@@ -884,7 +940,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     """Evaluation pipeline CLI entry point."""
 
-    args = parse_args()
+    args = parse_arguments()
 
     predictions = load_predictions(
         args.input

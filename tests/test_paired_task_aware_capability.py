@@ -86,3 +86,40 @@ def test_evaluate_paired_task_aware_capability() -> None:
     assert result.source_correct == 1
     assert result.target_correct == 0
     assert result.transition == SOURCE_ONLY_CORRECT
+
+
+from src.evaluation.paired_task_aware_capability import (
+    summarize_paired_task_aware_capability,
+)
+
+
+def test_summarize_paired_task_aware_capability() -> None:
+    results = [
+        make_result(
+            language="en",
+            correct=1,
+        ),
+        make_result(
+            language="az",
+            correct=0,
+        ),
+    ]
+
+    paired = evaluate_paired_task_aware_capability(
+        results
+    )
+
+    summary = summarize_paired_task_aware_capability(
+        paired
+    )
+
+    assert summary == {
+        "total_pairs": 1,
+        "both_correct": 0,
+        "source_only_correct": 1,
+        "target_only_correct": 0,
+        "both_incorrect": 0,
+        "degradation_rate": 1.0,
+        "recovery_rate": 0.0,
+        "consistency_rate": 0.0,
+    }
