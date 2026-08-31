@@ -86,6 +86,10 @@ metadata:
     - "category"
     - "difficulty"
     - "review_status"
+    - "is_answerable"
+
+  constraints:
+    is_answerable: true
 
   # Örnek metadata:
   #
@@ -93,6 +97,7 @@ metadata:
   #   category: "logical_reasoning"
   #   difficulty: "easy"
   #   review_status: "pending"
+  #   is_answerable: true
 
 
 review:

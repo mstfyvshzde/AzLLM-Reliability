@@ -82,7 +82,7 @@ def validate_required_metadata(
     Bu alanlardan biri eksik veya boşsa ValueError oluşturur.
     """
 
-    reqiored_fields = specifications.get(
+    required_fields = specifications.get(
         'metadata',
         {}
     ).get(
@@ -90,7 +90,7 @@ def validate_required_metadata(
         []
     )
 
-    for field in reqiored_fields:
+    for field in required_fields:
         value = record.metadata.get(field)
 
         if value is None or (
@@ -189,6 +189,56 @@ def validate_difficulty(
 
 
 
+def validate_metadata_constraints(
+    record: BenchmarkRecord,
+    specifications: dict[str, Any],
+) -> None:
+    """Task specification içindeki sabit metadata constraint'lerini doğrular.
+
+    Örnek:
+        metadata:
+            constraints:
+                is_answerable: true
+
+    Bu durumda record.metadata içindeki is_answerable değeri mutlaka True
+    olmalıdır.
+    """
+
+    constraints = specifications.get(
+        "metadata",
+        {},
+    ).get(
+        "constraints",
+        {}
+    )
+
+    if not isinstance(
+        constraints,
+        dict
+    ):
+        raise ValueError(
+            "metadata.constraints must be a mapping."
+        )
+
+    for field, expected_value in constraints.items():
+        if field not in record.metadata:
+            raise ValueError(
+                f"Missing constrained metadata '{field}' "
+                f"for item '{record.item_id}'."
+            )
+
+        actual_value = record.metadata[
+            field
+        ]
+
+        if actual_value != expected_value:
+            raise ValueError(
+                f"Invalid metadata constraint '{field}' "
+                f"for item '{record.item_id}': "
+                f"expected {expected_value!r}, got {actual_value!r}."
+            )
+
+
 def validate_task_metadata(
     record: BenchmarkRecord,
     specifications: dict[str, Any]
@@ -230,7 +280,11 @@ def validate_task_metadata(
     Kurallardan biri ihlal edilirse ValueError oluşturur.
     """
 
-    expected_task = specifications['task']['name']
+    expected_task = specifications[
+        "task"
+    ][
+        "name"
+    ]
 
     if record.task != expected_task:
         raise ValueError(
@@ -238,6 +292,22 @@ def validate_task_metadata(
             f"task specification '{expected_task}'."
         )
 
-    validate_category(record, specifications)
-    validate_required_metadata(record, specifications)
-    validate_difficulty(record, specifications)
+    validate_category(
+        record,
+        specifications
+    )
+
+    validate_required_metadata(
+        record,
+        specifications
+    )
+
+    validate_difficulty(
+        record,
+        specifications
+    )
+
+    validate_metadata_constraints(
+        record,
+        specifications
+    )

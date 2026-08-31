@@ -1,0 +1,126 @@
+# Factual knowledge benchmark task specification.
+
+# Bu dosya factual_knowledge task'ında hangi tür soruların kabul edildiğini,
+# EN-AZ pair'lerinin nasıl oluşturulacağını ve hangi kalite kurallarının
+# uygulanacağını tanımlar.
+
+
+task:
+  name: "factual_knowledge"
+  # configs/tasks.yaml içindeki canonical task adı.
+
+  description: "Evaluate factual knowledge under semantically equivalent English and Azerbaijani prompts."
+  # Aynı doğrulanabilir bilgi sorusunu iki dilde sunarak model performansındaki
+  # dil kaynaklı capability farkını ölçer.
+
+  answer_type: "short_answer"
+  # Beklenen cevap kısa, doğrudan ve mümkün olduğunca tek anlamlı olmalıdır.
+
+
+categories:
+  geography:
+    enabled: true
+    # Ülkeler, başkentler, bölgeler, fiziksel coğrafya ve temel konum bilgileri.
+
+  science:
+    enabled: true
+    # Temel fizik, kimya, biyoloji ve genel bilim bilgileri.
+
+  history:
+    enabled: true
+    # Tarihsel olaylar, kişiler ve yaygın olarak doğrulanabilir geçmiş bilgiler.
+
+  technology:
+    enabled: true
+    # Bilgisayar bilimi, internet, yazılım ve temel teknoloji bilgileri.
+
+  general_knowledge:
+    enabled: true
+    # Yukarıdaki kategorilere doğrudan girmeyen genel doğrulanabilir bilgiler.
+
+
+difficulty:
+  levels:
+    - "easy"
+    - "medium"
+    - "hard"
+
+  default: "medium"
+
+  require_balance: true
+  # Final benchmark'ta tek difficulty seviyesinin aşırı baskın olmasını engeller.
+
+
+pairing:
+  preserve_entities: true
+  # Özel isimler, tarihler, sayılar ve temel entity'ler iki dilde korunur.
+
+  preserve_fact: true
+  # EN ve AZ sürümleri aynı factual bilgiyi test etmelidir.
+
+  preserve_answer: true
+  # Dil değişimi reference answer'ın anlamını değiştirmemelidir.
+
+  allow_literal_translation: false
+  # Azerbaycanca soru kelime kelime çeviri olmak zorunda değildir.
+  # Doğal dil tercih edilir ancak semantic equivalence korunur.
+
+
+construction:
+  require_verifiable_fact: true
+  # Sorunun cevabı nesnel ve doğrulanabilir bir bilgi olmalıdır.
+
+  require_single_best_answer: true
+  # Birden fazla eşit derecede makul cevaba izin verilmemelidir.
+
+  require_stable_fact: true
+  # Çok hızlı değişebilecek güncel bilgilerden mümkün olduğunca kaçınılmalıdır.
+
+  avoid_subjective_questions: true
+  # Görüş, tercih veya yorum gerektiren sorular kullanılmamalıdır.
+
+  avoid_ambiguous_wording: true
+  # Birden fazla makul yoruma yol açan ifadeler kullanılmamalıdır.
+
+  avoid_language_specific_clues: true
+  # Bir dil sürümünün diğerine göre istemeden daha kolay hale gelmesini
+  # sağlayan lexical veya grammatical ipuçlarından kaçınılmalıdır.
+
+  avoid_trivia_dependency: true
+  # Aşırı niş veya yalnızca ezber trivia niteliğindeki sorular tercih edilmez.
+
+
+metadata:
+  required_fields:
+    - "category"
+    - "difficulty"
+    - "review_status"
+    - "is_answerable"
+
+  constraints:
+    is_answerable: true
+
+  # Örnek metadata:
+  #
+  # metadata:
+  #   category: "geography"
+  #   difficulty: "easy"
+  #   review_status: "pending"
+  #   is_answerable: true
+
+
+review:
+  check_semantic_equivalence: true
+  # EN ve AZ sorularının aynı factual bilgiyi test ettiğini doğrula.
+
+  check_answer_equivalence: true
+  # Reference answer'ların anlam bakımından eşdeğer olduğunu doğrula.
+
+  check_fact_correctness: true
+  # Reference answer'ın gerçekten doğru olduğunu doğrula.
+
+  check_language_naturalness: true
+  # Özellikle Azerbaycanca sürümün doğal ve anlaşılır olduğunu doğrula.
+
+  check_difficulty_equivalence: true
+  # Çevirinin sorunun zorluk seviyesini değiştirmediğini doğrula.

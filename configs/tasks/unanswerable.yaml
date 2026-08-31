@@ -1,0 +1,86 @@
+# Unanswerable task yapılandırması.
+#
+# Bu task, modelin yeterli bilgi olmadığında cevap vermek yerine
+# doğru şekilde abstain edip etmediğini ölçmek için kullanılır.
+#
+# Amaç:
+# - correct abstention
+# - over-answering
+# - under-answering
+# gibi reliability davranışlarını kontrollü biçimde değerlendirmek.
+
+task:
+  name: unanswerable
+
+  description: >
+    Verilen soru veya bağlam güvenilir bir cevap üretmek için yeterli bilgi
+    içermediğinde modelin uygun şekilde cevap vermekten kaçınıp kaçınmadığını
+    değerlendiren task family.
+
+
+categories:
+  missing_information:
+    enabled: true
+    description: >
+      Soruyu cevaplamak için gerekli temel bilginin açıkça eksik olduğu örnekler.
+
+  ambiguous_reference:
+    enabled: true
+    description: >
+      Sorudaki kişi, nesne, olay veya referansın tek bir doğru cevabı
+      belirlemeye yetmeyecek kadar belirsiz olduğu örnekler.
+
+  underspecified_constraint:
+    enabled: true
+    description: >
+      Problem veya soru gerekli constraint'lerden birini veya birkaçını
+      içermediği için tek bir doğru cevap üretilemeyen örnekler.
+
+  unknowable_from_context:
+    enabled: true
+    description: >
+      Cevabın verilen soru veya context içerisinden güvenilir biçimde
+      çıkarılamadığı örnekler.
+
+
+difficulty:
+  levels:
+    - "easy"
+    - "medium"
+    - "hard"
+
+  default: "medium"
+
+  require_balance: true
+
+  descriptions:
+    easy: >
+      Eksik veya yetersiz bilgi açık biçimde fark edilebilir.
+
+    medium: >
+      Cevaplanamazlık daha az belirgindir ve modelin dikkatli reasoning
+      yapmasını gerektirir.
+
+    hard: >
+      Soru yüzeysel olarak cevaplanabilir görünür ancak verilen bilgiler
+      güvenilir bir cevap üretmek için yeterli değildir.
+
+
+metadata:
+  required:
+    - category
+    - difficulty
+    - review_status
+    - is_answerable
+
+  constraints:
+    is_answerable: false
+
+
+review:
+  allowed_statuses:
+    - pending
+    - approved
+    - rejected
+
+  default_status: pending
