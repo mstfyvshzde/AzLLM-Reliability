@@ -53,6 +53,7 @@ VALID_RESPONSE_STATUSES = {
 
 
 ABSTENTION_PATTERNS = (
+    # English
     r"\bi don't know\b",
     r"\bi do not know\b",
     r"\bi'm not sure\b",
@@ -61,17 +62,34 @@ ABSTENTION_PATTERNS = (
     r"\bi can't determine\b",
     r"\bi cannot answer\b",
     r"\bi can't answer\b",
+    r"\bi cannot calculate\b",
+    r"\bi can't calculate\b",
+    r"\bwe cannot determine\b",
+    r"\bwe can't determine\b",
+    r"\bwe cannot calculate\b",
+    r"\bwe can't calculate\b",
+    r"\bcannot be determined\b",
+    r"\bcannot be calculated\b",
     r"\binsufficient information\b",
     r"\bnot enough information\b",
     r"\bthere is not enough information\b",
     r"\bthe information provided is insufficient\b",
+    r"\bwithout knowing\b",
+    r"\bwithout additional information\b",
+    r"\bwithout more information\b",
+
+    # Azerbaijani
     r"\bbilmirəm\b",
     r"\bəmin deyiləm\b",
     r"\bmüəyyən edə bilmirəm\b",
+    r"\bmüəyyən etmək mümkün deyil\b",
+    r"\bhesablamaq mümkün deyil\b",
     r"\bcavab verə bilmirəm\b",
     r"\bkifayət qədər məlumat yoxdur\b",
     r"\byetərli məlumat yoxdur\b",
     r"\bverilən məlumat kifayət deyil\b",
+    r"\bməlumat çatışmır\b",
+    r"\bməlum olmadığı üçün\b",
 )
 
 

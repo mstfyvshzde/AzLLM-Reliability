@@ -1,0 +1,135 @@
+# Instruction-following benchmark task specification.
+
+# Bu dosya instruction_following task'ında hangi tür talimatların kabul edildiğini,
+# EN-AZ pair'lerinin nasıl oluşturulacağını ve hangi kalite kurallarının
+# uygulanacağını tanımlar.
+
+
+task:
+  name: "instruction_following"
+  # configs/tasks.yaml içindeki canonical task adı.
+
+  description: "Evaluate instruction-following ability under semantically equivalent English and Azerbaijani prompts."
+  # Aynı talimatı iki dilde sunarak modelin instruction-following
+  # performansındaki dil kaynaklı farkı ölçer.
+
+  answer_type: "structured"
+  # Cevap yalnızca içerik bakımından değil, istenen format ve constraint'lere
+  # uyum bakımından da değerlendirilebilir olmalıdır.
+
+
+categories:
+  format_following:
+    enabled: true
+    # Belirli çıktı formatına uyma becerisini ölçer.
+    # Örnek: yalnızca 3 maddelik liste döndürmek.
+
+  constraint_following:
+    enabled: true
+    # Bir veya daha fazla açık constraint'i birlikte takip etmeyi ölçer.
+    # Örnek: belirli kelimeleri kullanmamak veya belirli uzunluğu aşmamak.
+
+  transformation:
+    enabled: true
+    # Verilen içeriği belirli bir kurala göre dönüştürmeyi ölçer.
+    # Örnek: cümleyi daha kısa hale getirmek veya belirli yapıya çevirmek.
+
+  extraction:
+    enabled: true
+    # Verilen içerikten yalnızca istenen bilgiyi çıkarma becerisini ölçer.
+
+  multi_step_instruction:
+    enabled: true
+    # Birden fazla talimatın doğru sırada ve birlikte uygulanmasını ölçer.
+
+
+difficulty:
+  levels:
+    - "easy"
+    - "medium"
+    - "hard"
+
+  default: "medium"
+
+  require_balance: true
+  # Final benchmark'ta tek difficulty seviyesinin baskın olmasını engeller.
+
+
+pairing:
+  preserve_instruction_intent: true
+  # EN ve AZ sürümleri aynı görevi istemelidir.
+
+  preserve_constraints: true
+  # Format, uzunluk, sıra ve diğer açık constraint'ler iki dilde aynı kalmalıdır.
+
+  preserve_input_content: true
+  # Talimatın üzerinde çalıştığı temel input içerik iki dil sürümünde
+  # semantik olarak eşdeğer olmalıdır.
+
+  preserve_expected_behavior: true
+  # Dil değişimi modelden beklenen davranışı değiştirmemelidir.
+
+  allow_literal_translation: false
+  # Azerbaycanca prompt kelime kelime çeviri olmak zorunda değildir.
+  # Doğal dil tercih edilir ancak instruction intent korunur.
+
+
+construction:
+  require_explicit_instruction: true
+  # Modelden ne istendiği açık biçimde belirtilmelidir.
+
+  require_checkable_constraints: true
+  # Talimatın uygulanıp uygulanmadığı objektif biçimde kontrol edilebilir olmalıdır.
+
+  avoid_subjective_quality_only: true
+  # "Daha güzel yaz" gibi tek başına subjektif değerlendirmeye dayanan görevlerden
+  # kaçınılmalıdır.
+
+  avoid_ambiguous_instruction: true
+  # Birden fazla makul yorum oluşturabilecek talimatlar kullanılmamalıdır.
+
+  avoid_conflicting_constraints: true
+  # Aynı anda yerine getirilemeyecek talimatlar verilmemelidir.
+
+  avoid_language_specific_clues: true
+  # Bir dil sürümünün diğerine göre istemeden daha kolay olmasını sağlayan
+  # lexical veya grammatical ipuçlarından kaçınılmalıdır.
+
+  require_self_contained_input: true
+  # Görev dış bilgi veya internet erişimi gerektirmemelidir.
+
+
+metadata:
+  required_fields:
+    - "category"
+    - "difficulty"
+    - "review_status"
+    - "is_answerable"
+
+  constraints:
+    is_answerable: true
+
+  # Örnek metadata:
+  #
+  # metadata:
+  #   category: "format_following"
+  #   difficulty: "easy"
+  #   review_status: "pending"
+  #   is_answerable: true
+
+
+review:
+  check_semantic_equivalence: true
+  # EN ve AZ prompt'larının aynı instruction intent'i taşıdığını doğrula.
+
+  check_constraint_equivalence: true
+  # Her iki dil sürümünde de aynı constraint'lerin bulunduğunu doğrula.
+
+  check_expected_behavior_equivalence: true
+  # Başarılı cevap kriterinin iki dilde aynı olduğunu doğrula.
+
+  check_language_naturalness: true
+  # Özellikle Azerbaycanca prompt'un doğal ve anlaşılır olduğunu doğrula.
+
+  check_difficulty_equivalence: true
+  # Çevirinin görevin zorluğunu değiştirmediğini doğrula.

@@ -518,6 +518,12 @@ def test_save_evaluation_artifacts(
         "paired_capability_summary.json",
         "reliability_summary.json",
         "paired_reliability_summary.json",
+        "short_answer_results.jsonl",
+        "short_answer_summary.json",
+        "semantic_answer_results.jsonl",
+        "semantic_answer_summary.json",
+        "task_aware_results.jsonl", 
+        "task_aware_summary.json"
     }
 
     actual_files = {
@@ -580,3 +586,20 @@ def test_save_evaluation_artifacts_overwrites_existing_files(
         output_dir
         / "capability_summary.json"
     ).exists()
+
+
+
+def test_evaluate_predictions_includes_short_answer_summary() -> None:
+    evaluation = evaluate_predictions(
+        make_paired_predictions()
+    )
+
+    assert "short_answer_results" in evaluation
+    assert "short_answer_summary" in evaluation
+
+    summary = evaluation[
+        "short_answer_summary"
+    ]
+
+    assert summary["total"] > 0
+    assert 0.0 <= summary["accuracy"] <= 1.0

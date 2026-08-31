@@ -68,6 +68,24 @@ from src.reliability.paired_metrics import (
     summarize_paired_reliability
 )
 
+from src.evaluation.short_answer_match import (
+    ShortAnswerMatchResult,
+    evaluate_short_answer_matches,
+    filter_short_answer_records,
+    summarize_short_answer_matches,
+)
+from src.evaluation.semantic_answer_match import (
+    SemanticAnswerMatchResult,
+    evaluate_semantic_answer_matches,
+    filter_semantic_answer_records,
+    summarize_semantic_answer_matches,
+)
+from src.evaluation.task_aware_capability import (
+    TaskAwareCapabilityResult,
+    evaluate_task_aware_capability,
+    summarize_task_aware_capability,
+)
+
 
 def load_predictions(
     input_path: Path
@@ -216,8 +234,11 @@ def save_json(
 def save_jsonl(
     records: list[
         ExactMatchResult
+        | TaskAwareCapabilityResult
+        | SemanticAnswerMatchResult
+        | ShortAnswerMatchResult
         | PairedExactMatchResult
-        |AbstentionResult
+        | AbstentionResult
         | PairedReliabilityResult
     ],
     output_path: Path,
@@ -578,6 +599,18 @@ def evaluate_predictions(
         predictions
     )
 
+    short_answer_records = filter_short_answer_records(
+        predictions
+    )   
+
+    short_answer_results = evaluate_short_answer_matches(
+        short_answer_records
+    )
+
+    short_answer_summary = summarize_short_answer_matches(
+        short_answer_results
+    )
+
     paired_capability_results = evaluate_paired_exact_match(
         exact_match_results,
         source_language=source_language,
@@ -614,6 +647,35 @@ def evaluate_predictions(
         paired_reliability_results
     )
 
+    semantic_answer_records = filter_semantic_answer_records(
+        predictions
+    )
+
+    semantic_answer_results = evaluate_semantic_answer_matches(
+        semantic_answer_records
+    )
+
+    task_aware_results = evaluate_task_aware_capability(
+        predictions
+    )
+
+    task_aware_summary = summarize_task_aware_capability(
+        task_aware_results
+    )
+
+    semantic_answer_summary = (
+        summarize_semantic_answer_matches(
+            semantic_answer_results
+        )
+        if semantic_answer_results
+        else {
+        "total": 0,
+        "correct": 0,
+        "incorrect": 0,
+        "accuracy": None,
+        }
+    )
+
     return {
         "exact_match_results": exact_match_results,
         "paired_capability_results": paired_capability_results,
@@ -622,7 +684,13 @@ def evaluate_predictions(
         "capability_summary": capability_summary,
         "paired_capability_summary": paired_capability_summary,
         "reliability_summary": reliability_summary,
-        "paired_reliability_summary": paired_reliability_summary
+        "paired_reliability_summary": paired_reliability_summary,
+        "short_answer_results": short_answer_results,
+        "short_answer_summary": short_answer_summary,
+        "semantic_answer_results": semantic_answer_results,
+        "semantic_answer_summary": semantic_answer_summary,
+        "task_aware_results": task_aware_results,
+        "task_aware_summary": task_aware_summary
     }
 
 
@@ -708,6 +776,60 @@ def save_evaluation_artifacts(
         ],
         output_dir
         / "paired_reliability_summary.json",
+        overwrite=overwrite
+    )
+
+    save_jsonl(
+        evaluation[
+            "short_answer_results"
+        ],
+        output_dir
+        / "short_answer_results.jsonl",
+        overwrite=overwrite
+    )
+
+    save_json(
+        evaluation[
+            "short_answer_summary"
+        ],
+        output_dir
+        / "short_answer_summary.json",
+        overwrite=overwrite   
+    )
+
+    save_jsonl(
+        evaluation[
+            "semantic_answer_results"
+        ],
+        output_dir
+        / "semantic_answer_results.jsonl",
+        overwrite=overwrite
+    )
+
+    save_json(
+        evaluation[
+            "semantic_answer_summary"
+        ],
+        output_dir
+        / "semantic_answer_summary.json",
+        overwrite=overwrite
+    )
+
+    save_jsonl(
+        evaluation[
+            "task_aware_results"
+        ],
+        output_dir
+        / "task_aware_results.jsonl",
+        overwrite=overwrite
+    )
+
+    save_json(
+        evaluation[
+            "task_aware_summary"
+        ],
+        output_dir
+        / "task_aware_summary.json",
         overwrite=overwrite
     )
 

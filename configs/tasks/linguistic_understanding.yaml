@@ -1,0 +1,140 @@
+# Linguistic-understanding benchmark task specification.
+
+# Bu dosya linguistic_understanding task'ında hangi dilsel yeteneklerin
+# ölçüldüğünü, EN-AZ pair'lerinin nasıl oluşturulacağını ve hangi kalite
+# kurallarının uygulanacağını tanımlar.
+
+
+task:
+  name: "linguistic_understanding"
+  # configs/tasks.yaml içindeki canonical task adı.
+
+  description: "Evaluate lexical, semantic and morphology-related language understanding under semantically equivalent English and Azerbaijani prompts."
+  # Amaç modelin yalnızca genel reasoning gücünü değil,
+  # dilin kendisine bağlı anlama performansını da ölçmektir.
+
+  answer_type: "short_answer"
+  # Beklenen cevap kısa, açık ve mümkün olduğunca objektif biçimde
+  # değerlendirilebilir olmalıdır.
+
+
+categories:
+  lexical_semantics:
+    enabled: true
+    # Kelime anlamı, anlam ilişkileri ve doğru lexical yorumlamayı ölçer.
+
+  contextual_meaning:
+    enabled: true
+    # Bir kelime veya ifadenin bağlama göre doğru anlamının çıkarılmasını ölçer.
+
+  morphology:
+    enabled: true
+    # Özellikle ekler, sözcük biçimleri ve morfolojik yapıların doğru
+    # yorumlanmasını ölçer.
+
+  reference_resolution:
+    enabled: true
+    # Zamir veya diğer referans ifadelerinin doğru entity ile
+    # ilişkilendirilmesini ölçer.
+
+  sentence_semantics:
+    enabled: true
+    # Cümlenin genel anlamı, ilişkileri ve semantic composition'ı
+    # doğru anlama becerisini ölçer.
+
+
+difficulty:
+  levels:
+    - "easy"
+    - "medium"
+    - "hard"
+
+  default: "medium"
+
+  require_balance: true
+  # Final benchmark'ta tek difficulty seviyesinin baskın olmasını engeller.
+
+
+pairing:
+  preserve_semantic_target: true
+  # EN ve AZ sürümleri aynı temel linguistic phenomenon'u test etmelidir.
+
+  preserve_answer: true
+  # Dil değişimi reference answer'ın temel anlamını değiştirmemelidir.
+
+  preserve_context_information: true
+  # Soruyu çözmek için gerekli context iki dil sürümünde eşdeğer olmalıdır.
+
+  allow_language_specific_surface_form: true
+  # Aynı linguistic phenomenon iki dilde farklı yüzey biçimleriyle
+  # ortaya çıkabilir.
+
+  require_functional_equivalence: true
+  # Kelime kelime eşleşme yerine aynı linguistic competence'in
+  # test edilmesi hedeflenir.
+
+  allow_literal_translation: false
+  # Özellikle morphology gibi alanlarda kelime kelime çeviri uygun olmayabilir.
+  # Doğal ve işlevsel olarak eşdeğer örnek tercih edilir.
+
+
+construction:
+  require_self_contained_question: true
+  # Soru dış kaynak veya internet bilgisi gerektirmemelidir.
+
+  require_determinable_answer: true
+  # Verilen linguistic context doğru cevabı belirlemek için yeterli olmalıdır.
+
+  avoid_world_knowledge_dependency: true
+  # Sorunun çözümü mümkün olduğunca genel bilgi yerine dilsel anlama
+  # yeteneğine dayanmalıdır.
+
+  avoid_ambiguous_wording: true
+  # Tasarım gereği ambiguity test edilmiyorsa birden fazla makul yorum
+  # oluşturabilecek ifadeler kullanılmamalıdır.
+
+  avoid_translation_artifacts: true
+  # Azerbaycanca prompt yapay veya doğrudan çeviri kokan bir yapı
+  # içermemelidir.
+
+  avoid_language_specific_difficulty_bias: true
+  # Bir dil sürümünün gereksiz yere daha zor hale gelmesini engeller.
+
+  require_natural_language_usage: true
+  # Her iki dilde de doğal, gerçekçi ve grammatical kullanım tercih edilir.
+
+
+metadata:
+  required_fields:
+    - "category"
+    - "difficulty"
+    - "review_status"
+    - "is_answerable"
+
+  constraints:
+    is_answerable: true
+
+  # Örnek metadata:
+  #
+  # metadata:
+  #   category: "contextual_meaning"
+  #   difficulty: "medium"
+  #   review_status: "pending"
+  #   is_answerable: true
+
+
+review:
+  check_functional_equivalence: true
+  # EN ve AZ örneklerinin aynı linguistic competence'i ölçtüğünü doğrula.
+
+  check_answer_equivalence: true
+  # Reference answer'ların değerlendirme bakımından eşdeğer olduğunu doğrula.
+
+  check_language_naturalness: true
+  # Her iki sürümün, özellikle Azerbaycanca olanın doğal kullanım içerdiğini doğrula.
+
+  check_no_translation_artifacts: true
+  # Yapay veya kelime kelime çeviri kaynaklı ipuçlarını kontrol et.
+
+  check_difficulty_equivalence: true
+  # Dil değişiminin difficulty seviyesini istemeden değiştirmediğini doğrula.
