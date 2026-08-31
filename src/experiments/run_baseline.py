@@ -199,7 +199,14 @@ def build_run_metadata(
             "input_path"
         ],
         "prediction_count": prediction_count,
-        "model_config": model_config
+        "model_config": model_config,
+        "primary_capability_metric": "task_aware",
+        "primary_paired_capability_metric": "paired_task_aware",
+        "diagnostic_capability_metrics": [
+            "exact_match",
+            "short_answer",
+            "semantic_answer",
+        ]   
     }
 
 

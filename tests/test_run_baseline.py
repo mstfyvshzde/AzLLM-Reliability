@@ -418,6 +418,22 @@ def test_build_run_metadata(
 
     assert "timestamp_utc" in metadata
 
+    assert metadata[
+        "primary_capability_metric"
+    ] == "task_aware"
+
+    assert metadata[
+        "primary_paired_capability_metric"
+    ] == "paired_task_aware"
+
+    assert metadata[
+        "diagnostic_capability_metrics"
+    ] == [
+        "exact_match",
+        "short_answer",
+        "semantic_answer",
+    ]
+
 
 def test_save_run_metadata(
     tmp_path: Path,
