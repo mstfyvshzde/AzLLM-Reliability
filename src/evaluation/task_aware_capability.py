@@ -25,13 +25,15 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any
 
-from src.evaluation.exact_match import exact_match_score
 from src.evaluation.run_inference import PredictionRecord
 from src.evaluation.semantic_answer_match import (
     semantic_answer_match_score
 )
 from src.evaluation.short_answer_match import (
     short_answer_match_score
+)
+from src.evaluation.instruction_following_match import (
+    instruction_following_score
 )
 
 
@@ -153,9 +155,9 @@ def evaluate_task_aware_prediction(
         )
 
     elif record.task == "instruction_following":
-        evaluator = "exact_match"
+        evaluator = "instruction_following"
 
-        score = exact_match_score(
+        score = instruction_following_score(
             record.prediction,
             record.reference_answer
         )

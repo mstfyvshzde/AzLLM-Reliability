@@ -82,7 +82,7 @@ def test_instruction_following_uses_exact_match() -> None:
     result = evaluate_task_aware_prediction(record)
 
     assert result is not None
-    assert result.evaluator == "exact_match"
+    assert result.evaluator == "instruction_following"
     assert result.correct == 1
 
 

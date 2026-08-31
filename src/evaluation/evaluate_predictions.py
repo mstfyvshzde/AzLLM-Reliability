@@ -90,7 +90,15 @@ from src.evaluation.paired_task_aware_capability import (
     evaluate_paired_task_aware_capability,
     summarize_paired_task_aware_capability,
 )
-
+from src.evaluation.instruction_following_match import (
+    InstructionFollowingResult,
+    evaluate_instruction_following,
+)
+from src.evaluation.instruction_following_match import (
+    InstructionFollowingResult,
+    evaluate_instruction_following,
+    summarize_instruction_following,
+)
 
 def load_predictions(
     input_path: Path
@@ -241,6 +249,7 @@ def save_jsonl(
         ExactMatchResult
         | PairedTaskAwareCapabilityResult
         | TaskAwareCapabilityResult
+        | InstructionFollowingResult
         | SemanticAnswerMatchResult
         | ShortAnswerMatchResult
         | PairedExactMatchResult
@@ -679,6 +688,30 @@ def evaluate_predictions(
         task_aware_results
     )
 
+    instruction_following_records = [
+        record
+        for record in predictions
+        if record.task == "instruction_following"
+    ]
+
+    instruction_following_results = evaluate_instruction_following(
+        instruction_following_records
+    )
+
+    instruction_following_summary = (
+        summarize_instruction_following(
+            instruction_following_results
+        )
+        if instruction_following_results
+        else {
+        "total": 0,
+        "correct": 0,
+        "incorrect": 0,
+        "accuracy": None,
+        }
+    )
+    
+
     semantic_answer_summary = (
         summarize_semantic_answer_matches(
             semantic_answer_results
@@ -710,7 +743,9 @@ def evaluate_predictions(
         "paired_task_aware_results": paired_task_aware_results,
         "paired_task_aware_summary": paired_task_aware_summary,
         "primary_capability_summary": task_aware_summary,
-        "primary_paired_capability_summary": paired_task_aware_summary
+        "primary_paired_capability_summary": paired_task_aware_summary,
+        "instruction_following_results": instruction_following_results,
+        "instruction_following_summary": instruction_following_summary
     }
 
 
@@ -886,6 +921,23 @@ def save_evaluation_artifacts(
         ],
         output_dir
         / "primary_paired_capability_summary.json",
+        overwrite=overwrite,
+    )
+
+    save_jsonl(
+        evaluation[
+            "instruction_following_results"
+        ],
+        output_dir
+        / "instruction_following_results.jsonl",
+        overwrite=overwrite
+    )
+    save_json(
+        evaluation[
+            "instruction_following_summary"
+        ],
+        output_dir
+        / "instruction_following_summary.json",
         overwrite=overwrite,
     )
 
