@@ -530,6 +530,10 @@ def test_save_evaluation_artifacts(
         "primary_paired_capability_summary.json",
         "instruction_following_results.jsonl",
         "instruction_following_summary.json",
+        "failure_analysis_results.jsonl",
+        "failure_analysis_summary.json",
+        "paired_failure_analysis_results.jsonl",
+        "paired_failure_analysis_summary.json",
     }
 
     actual_files = {

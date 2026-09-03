@@ -93,11 +93,17 @@ from src.evaluation.paired_task_aware_capability import (
 from src.evaluation.instruction_following_match import (
     InstructionFollowingResult,
     evaluate_instruction_following,
-)
-from src.evaluation.instruction_following_match import (
-    InstructionFollowingResult,
-    evaluate_instruction_following,
     summarize_instruction_following,
+)
+from src.analysis.failure_analysis import (
+    FailureAnalysisResult,
+    analyze_failures,
+    summarize_failures,
+)
+from src.analysis.paired_failure_analysis import (
+    PairedFailureAnalysisResult,
+    evaluate_paired_failures,
+    summarize_paired_failures,
 )
 
 def load_predictions(
@@ -247,6 +253,8 @@ def save_json(
 def save_jsonl(
     records: list[
         ExactMatchResult
+        | FailureAnalysisResult
+        | PairedFailureAnalysisResult
         | PairedTaskAwareCapabilityResult
         | TaskAwareCapabilityResult
         | InstructionFollowingResult
@@ -725,6 +733,40 @@ def evaluate_predictions(
         }
     )
 
+    capability_scores = {
+        result.item_id: result.correct
+        for result in task_aware_results
+    }
+
+    reliability_outcomes = {
+        result.item_id: result.outcome
+        for result in abstention_results
+    }
+
+    failure_analysis_results = analyze_failures(
+        predictions,
+        capability_scores=capability_scores,
+        reliability_outcomes=reliability_outcomes,
+    )
+
+    failure_analysis_summary = summarize_failures(
+        failure_analysis_results
+    )
+
+    paired_failure_analysis_results = (
+        evaluate_paired_failures(
+            failure_analysis_results,
+            source_language=source_language,
+            target_language=target_language,
+        )
+    )
+
+    paired_failure_analysis_summary = (
+        summarize_paired_failures(
+            paired_failure_analysis_results
+        )
+    )
+
     return {
         "exact_match_results": exact_match_results,
         "paired_capability_results": paired_capability_results,
@@ -745,7 +787,15 @@ def evaluate_predictions(
         "primary_capability_summary": task_aware_summary,
         "primary_paired_capability_summary": paired_task_aware_summary,
         "instruction_following_results": instruction_following_results,
-        "instruction_following_summary": instruction_following_summary
+        "instruction_following_summary": instruction_following_summary,
+        "failure_analysis_results": failure_analysis_results,
+        "failure_analysis_summary": failure_analysis_summary,
+        "paired_failure_analysis_results": (
+            paired_failure_analysis_results
+        ),
+        "paired_failure_analysis_summary": (
+            paired_failure_analysis_summary
+        )
     }
 
 
@@ -938,6 +988,30 @@ def save_evaluation_artifacts(
         ],
         output_dir
         / "instruction_following_summary.json",
+        overwrite=overwrite
+    )
+
+    save_jsonl(
+        evaluation["failure_analysis_results"],
+        output_dir / "failure_analysis_results.jsonl",
+        overwrite=overwrite,
+    )
+
+    save_json(
+        evaluation["failure_analysis_summary"],
+        output_dir / "failure_analysis_summary.json",
+        overwrite=overwrite,
+    )
+
+    save_jsonl(
+        evaluation["paired_failure_analysis_results"],
+        output_dir / "paired_failure_analysis_results.jsonl",
+        overwrite=overwrite,
+    )
+
+    save_json(
+        evaluation["paired_failure_analysis_summary"],
+        output_dir / "paired_failure_analysis_summary.json",
         overwrite=overwrite,
     )
 
