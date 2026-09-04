@@ -1,0 +1,37 @@
+# Final linguistic-understanding evaluation policy.
+
+task: linguistic_understanding
+
+categories:
+
+  reference_resolution:
+    evaluator: short_answer_match
+    rationale: >
+      Answers are short deterministic entities or referents.
+
+  paraphrase_understanding:
+    evaluator: option_match
+    rationale: >
+      Each benchmark item explicitly provides candidate paraphrases.
+      The evaluator checks whether the selected correct option is present
+      without accepting the competing option.
+
+  contextual_meaning:
+    evaluator: semantic_answer_match
+    rationale: >
+      Multiple short phrasings can express the same contextual meaning.
+
+  lexical_disambiguation:
+    evaluator: semantic_answer_match
+    rationale: >
+      Multiple lexical descriptions can express the intended sense.
+
+  discourse_understanding:
+    evaluator: semantic_answer_match
+    rationale: >
+      Open-ended explanations may be semantically correct without
+      matching the reference wording exactly.
+
+research_policy:
+  benchmark_used_for_training: false
+  benchmark_overlap_with_adaptation_data: forbidden
