@@ -39,6 +39,16 @@ VALID_DEVICES = {
     "mps"
 }
 
+VALID_BACKENDS = {
+    "transformers",
+    "mlx",
+}
+
+VALID_BACKENDS = {
+    "transformers",
+    "mlx",
+}
+
 
 
 @dataclass(frozen=True)
@@ -79,6 +89,7 @@ class ModelConfig:
     model_name: str
     tokenizer_name: str | None = None
     revision: str | None = None
+    backend: str = "transformers"
     device: str = 'auto'
     dtype: str = 'bfloat16'
     trust_remote_code: bool = False
@@ -130,6 +141,18 @@ class ModelConfig:
                     "tokenizer_name cannot be empty when provided."
                 )
 
+        if self.backend not in VALID_BACKENDS:
+            raise ValueError(
+                f"Unsupported backend '{self.backend}'. "
+                f"Expected one of: {sorted(VALID_BACKENDS)}"
+            )
+
+        if self.backend not in VALID_BACKENDS:
+            raise ValueError(
+                f"Unsupported backend '{self.backend}'. "
+                f"Expected one of: {sorted(VALID_BACKENDS)}"
+            )
+
         if self.device not in VALID_DEVICES:
             raise ValueError(
                 f"Unsupported device '{self.device}'. "
@@ -178,6 +201,7 @@ class ModelConfig:
             "model_name": self.model_name,
             "tokenizer_name": self.tokenizer_name,
             "revision": self.revision,
+            "backend": self.backend,
             "device": self.device,
             "dtype": self.dtype,
             "trust_remote_code": self.trust_remote_code,
@@ -215,6 +239,7 @@ class ModelConfig:
             model_name=model_name,
             tokenizer_name=data.get("tokenizer_name"),
             revision=data.get("revision"),
+            backend=data.get("backend", "transformers"),
             device=data.get("device", "auto"),
             dtype=data.get("dtype", "bfloat16"),
             trust_remote_code=data.get(

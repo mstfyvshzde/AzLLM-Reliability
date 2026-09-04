@@ -269,6 +269,31 @@ def generate_response(
         system_prompt=system_prompt
     )
 
+    if config.backend == "mlx":
+        from mlx_lm import generate as mlx_generate
+        from mlx_lm.sample_utils import make_sampler
+
+        mlx_prompt = tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+
+        sampler = make_sampler(
+            temp=config.temperature,
+        )
+
+        response = mlx_generate(
+            model,
+            tokenizer,
+            prompt=mlx_prompt,
+            max_tokens=config.max_new_tokens,
+            sampler=sampler,
+            verbose=False,
+        )
+
+        return response.strip()
+
     device = get_model_input_device(model)
 
     model_inputs = tokenize_messages(

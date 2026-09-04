@@ -158,6 +158,7 @@ def test_to_dict() -> None:
         "model_name": "example/model",
         "tokenizer_name": "example/tokenizer",
         "revision": "main",
+        "backend": "transformers",
         "device": "cpu",
         "dtype": "float32",
         "trust_remote_code": False,
