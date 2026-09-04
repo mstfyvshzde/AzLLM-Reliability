@@ -249,7 +249,8 @@ def save_run_metadata(
 
 
 def run_baseline_experiment(
-    experiment_config: dict[str, Any]
+    experiment_config: dict[str, Any],
+    skip_evaluation: bool = False,
 ) -> dict[str, Any]:
     """Baseline inference ve evaluation pipeline'ını baştan sona çalıştırır.
 
@@ -359,69 +360,73 @@ def run_baseline_experiment(
         "target"
     ]
 
-    semantic_adjudication_section = (
-        evaluation_section.get(
-            "semantic_adjudication",
-            {}
-        )
-    )
+    evaluation = None
 
-    binary_adjudication_section = (
-        evaluation_section.get(
-            "binary_adjudication",
-            {}
-        )
-    )
-
-    semantic_adjudication_decisions = None
-    binary_adjudication_decisions = None
-
-    semantic_decisions_path = (
-        semantic_adjudication_section.get(
-            "decisions_path"
-        )
-    )
-
-    binary_decisions_path = (
-        binary_adjudication_section.get(
-            "decisions_path"
-        )
-    )
-
-    if semantic_decisions_path:
-        semantic_adjudication_decisions = (
-            load_semantic_adjudication_decisions(
-                semantic_decisions_path
+    if not skip_evaluation:
+        semantic_adjudication_section = (
+            evaluation_section.get(
+                "semantic_adjudication",
+                {}
             )
         )
 
-    if binary_decisions_path:
-        binary_adjudication_decisions = (
-            load_semantic_adjudication_decisions(
-                binary_decisions_path
+        binary_adjudication_section = (
+            evaluation_section.get(
+                "binary_adjudication",
+                {}
             )
         )
 
-    evaluation = evaluate_predictions(
-        predictions=predictions,
-        source_language=source_language,
-        target_language=target_language,
-        semantic_adjudication_decisions=(
-            semantic_adjudication_decisions
-        ),
-        binary_adjudication_decisions=(
-            binary_adjudication_decisions
-        ),
-    )
+        semantic_adjudication_decisions = None
+        binary_adjudication_decisions = None
 
-    save_evaluation_artifacts(
-        evaluation=evaluation,
-        output_dir=evaluation_output_dir,
-        overwrite=evaluation_section.get(
-            'overwrite',
-            False
+        semantic_decisions_path = (
+            semantic_adjudication_section.get(
+                "decisions_path"
+            )
         )
-    )
+
+        binary_decisions_path = (
+            binary_adjudication_section.get(
+                "decisions_path"
+            )
+        )
+
+        if semantic_decisions_path:
+            semantic_adjudication_decisions = (
+                load_semantic_adjudication_decisions(
+                    semantic_decisions_path
+                )
+            )
+
+        if binary_decisions_path:
+            binary_adjudication_decisions = (
+                load_semantic_adjudication_decisions(
+                    binary_decisions_path
+                )
+            )
+
+        evaluation = evaluate_predictions(
+            predictions=predictions,
+            source_language=source_language,
+            target_language=target_language,
+            semantic_adjudication_decisions=(
+                semantic_adjudication_decisions
+            ),
+            binary_adjudication_decisions=(
+                binary_adjudication_decisions
+            ),
+        )
+
+        save_evaluation_artifacts(
+            evaluation=evaluation,
+            output_dir=evaluation_output_dir,
+            overwrite=evaluation_section.get(
+                'overwrite',
+                False
+            )
+        )
+
 
     if artifacts.get(
         'save_config_snapshot',
@@ -487,6 +492,15 @@ def parse_arguments() -> argparse.Namespace:
         help="Baseline experiment config path."
     )
 
+    parser.add_argument(
+        "--skip-evaluation",
+        action="store_true",
+        help=(
+            "Run inference and save artifacts without "
+            "running evaluation."
+        ),
+    )
+
     return parser.parse_args()
 
 
@@ -500,7 +514,8 @@ def main() -> None:
     )
 
     result = run_baseline_experiment(
-        experiment_config
+        experiment_config,
+        skip_evaluation=args.skip_evaluation,
     )
 
     prediction_count = len(

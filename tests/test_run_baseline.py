@@ -676,3 +676,90 @@ def test_run_baseline_rejects_empty_benchmark(
     mock_run_preflight.assert_called_once_with(
         config
     )
+
+def test_run_baseline_skip_evaluation(
+    tmp_path: Path,
+) -> None:
+    """skip_evaluation=True iken evaluation adımları çalışmamalıdır."""
+    from unittest.mock import patch, MagicMock
+
+    from src.experiments.run_baseline import (
+        run_baseline_experiment,
+    )
+
+    config = make_experiment_config(
+        tmp_path
+    )
+
+    benchmark_records = [
+        MagicMock(),
+        MagicMock(),
+    ]
+
+    predictions = [
+        MagicMock(),
+        MagicMock(),
+    ]
+
+    model_config = MagicMock()
+    raw_model_config = {
+        "model_name": "test-model",
+    }
+
+    model = MagicMock()
+    tokenizer = MagicMock()
+
+    with (
+        patch(
+            "src.experiments.run_baseline.run_preflight"
+        ) as mock_run_preflight,
+        patch(
+            "src.experiments.run_baseline.load_records",
+            return_value=benchmark_records,
+        ),
+        patch(
+            "src.experiments.run_baseline.load_model_config",
+            return_value=model_config,
+        ),
+        patch(
+            "src.experiments.run_baseline.load_model_config_dict",
+            return_value=raw_model_config,
+        ),
+        patch(
+            "src.experiments.run_baseline.load_model_and_tokenizer",
+            return_value=(model, tokenizer),
+        ),
+        patch(
+            "src.experiments.run_baseline.run_inference",
+            return_value=predictions,
+        ),
+        patch(
+            "src.experiments.run_baseline.save_predictions"
+        ),
+        patch(
+            "src.experiments.run_baseline.evaluate_predictions"
+        ) as mock_evaluate_predictions,
+        patch(
+            "src.experiments.run_baseline.save_evaluation_artifacts"
+        ) as mock_save_evaluation_artifacts,
+        patch(
+            "src.experiments.run_baseline.save_config_snapshot"
+        ),
+        patch(
+            "src.experiments.run_baseline.save_run_metadata"
+        ),
+    ):
+        mock_run_preflight.return_value = MagicMock(
+            ready=True
+        )
+
+        result = run_baseline_experiment(
+            config,
+            skip_evaluation=True,
+        )
+
+    mock_evaluate_predictions.assert_not_called()
+    mock_save_evaluation_artifacts.assert_not_called()
+
+    assert result["predictions"] == predictions
+    assert result["evaluation"] is None
