@@ -623,6 +623,8 @@ def test_run_baseline_experiment(
         predictions=predictions,
         source_language="en",
         target_language="az",
+        semantic_adjudication_decisions=None,
+        binary_adjudication_decisions=None,
     )
 
     mock_save_evaluation_artifacts.assert_called_once()

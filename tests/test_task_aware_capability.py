@@ -13,6 +13,7 @@ def make_record(
     task: str,
     prediction: str,
     reference_answer: str,
+    category: str = "test",
 ) -> PredictionRecord:
     return PredictionRecord(
         item_id=f"{task}_001_en",
@@ -23,7 +24,7 @@ def make_record(
         reference_answer=reference_answer,
         prediction=prediction,
         metadata={
-            "category": "test",
+            "category": category,
             "difficulty": "easy",
             "is_answerable": True,
         },
@@ -58,18 +59,78 @@ def test_factual_knowledge_uses_short_answer() -> None:
     assert result.correct == 1
 
 
-def test_linguistic_understanding_uses_semantic_answer() -> None:
+def test_linguistic_understanding_uses_semantic_adjudication() -> None:
     record = make_record(
         task="linguistic_understanding",
-        prediction="Reached means to come to a conclusion.",
-        reference_answer="Came to or achieved",
+        prediction="It means explain in more detail.",
+        reference_answer="Explain in greater detail",
+        category="contextual_meaning",
     )
 
-    result = evaluate_task_aware_prediction(record)
+    result = evaluate_task_aware_prediction(
+        record,
+        semantic_adjudication_decisions={
+            record.item_id: 1,
+        },
+    )
 
     assert result is not None
-    assert result.evaluator == "semantic_answer"
+    assert result.evaluator == "semantic_adjudication"
     assert result.correct == 1
+
+
+def test_semantic_adjudication_decision_is_required() -> None:
+    import pytest
+
+    record = make_record(
+        task="linguistic_understanding",
+        prediction="Some answer.",
+        reference_answer="Some meaning",
+        category="contextual_meaning",
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="Semantic adjudication decisions are required",
+    ):
+        evaluate_task_aware_prediction(record)
+
+
+def test_missing_semantic_adjudication_item_is_rejected() -> None:
+    import pytest
+
+    record = make_record(
+        task="linguistic_understanding",
+        prediction="Some answer.",
+        reference_answer="Some meaning",
+        category="lexical_disambiguation",
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="Missing semantic adjudication decision",
+    ):
+        evaluate_task_aware_prediction(
+            record,
+            semantic_adjudication_decisions={},
+        )
+
+
+def test_unknown_linguistic_category_is_rejected() -> None:
+    import pytest
+
+    record = make_record(
+        task="linguistic_understanding",
+        prediction="Some answer.",
+        reference_answer="Some meaning",
+        category="unknown_category",
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="Unsupported linguistic_understanding category",
+    ):
+        evaluate_task_aware_prediction(record)
 
 
 def test_instruction_following_uses_exact_match() -> None:
@@ -199,3 +260,76 @@ def test_summarize_task_aware_capability() -> None:
         "incorrect": 0,
         "accuracy": 1.0,
     }
+
+
+def test_binary_reasoning_uses_binary_answer() -> None:
+    record = make_record(
+        task="reasoning",
+        prediction="Yes, Q occurred.",
+        reference_answer="Yes",
+        category="logical_reasoning",
+    )
+
+    result = evaluate_task_aware_prediction(
+        record
+    )
+
+    assert result is not None
+    assert result.evaluator == "binary_answer"
+    assert result.correct == 1
+
+
+def test_indirect_binary_reasoning_uses_adjudication() -> None:
+    record = make_record(
+        task="reasoning",
+        prediction="Q must have occurred.",
+        reference_answer="Yes",
+        category="logical_reasoning",
+    )
+
+    result = evaluate_task_aware_prediction(
+        record,
+        binary_adjudication_decisions={
+            record.item_id: 1,
+        },
+    )
+
+    assert result is not None
+    assert result.evaluator == "binary_answer"
+    assert result.correct == 1
+
+
+def test_indirect_binary_reasoning_requires_adjudication() -> None:
+    import pytest
+
+    record = make_record(
+        task="reasoning",
+        prediction="Q must have occurred.",
+        reference_answer="Yes",
+        category="logical_reasoning",
+    )
+
+    with pytest.raises(
+        ValueError,
+        match="Binary adjudication decisions are required",
+    ):
+        evaluate_task_aware_prediction(
+            record
+        )
+
+
+def test_non_binary_reasoning_still_uses_short_answer() -> None:
+    record = make_record(
+        task="reasoning",
+        prediction="Nigar is the shortest.",
+        reference_answer="Nigar",
+        category="comparative_reasoning",
+    )
+
+    result = evaluate_task_aware_prediction(
+        record
+    )
+
+    assert result is not None
+    assert result.evaluator == "short_answer"
+    assert result.correct == 1

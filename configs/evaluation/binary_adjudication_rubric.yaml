@@ -1,0 +1,31 @@
+name: binary_adjudication_rubric
+version: "1.0"
+
+scope:
+  reference_answers:
+    - Yes
+    - No
+    - Bəli
+    - Xeyr
+
+decision_policy:
+  correct:
+    value: 1
+    rule: >
+      The prediction is correct when it expresses the same affirmative
+      or negative proposition as the reference answer, even if it does
+      not explicitly use the words Yes, No, Bəli, or Xeyr.
+
+  incorrect:
+    value: 0
+    rule: >
+      The prediction is incorrect when it expresses the opposite polarity,
+      contradicts the reference proposition, or fails to determine the
+      requested binary answer.
+
+principles:
+  - judge proposition polarity rather than literal Yes/No token presence
+  - explicit opposite polarity overrides lexical overlap
+  - explanations are allowed
+  - apply the same rule to English and Azerbaijani
+  - do not create item-specific rules

@@ -1,0 +1,18 @@
+{"item_id":"linguistic_understanding_0003_az","decision":0,"reason":"Prediction repeats the target term without providing the core meaning expressed by the reference."}
+{"item_id":"linguistic_understanding_0003_en","decision":1,"reason":"Prediction correctly explains that slippery means easy to slip or lose footing on."}
+{"item_id":"linguistic_understanding_0006_az","decision":1,"reason":"Prediction preserves the core meaning that the conclusion is not final and may change with more evidence."}
+{"item_id":"linguistic_understanding_0006_en","decision":1,"reason":"Prediction correctly explains that tentative means uncertain and subject to change."}
+{"item_id":"linguistic_understanding_0013_az","decision":1,"reason":"Prediction correctly explains that elaborating means giving more information and detail."}
+{"item_id":"linguistic_understanding_0013_en","decision":1,"reason":"Prediction correctly explains that elaborate means explain in greater detail."}
+{"item_id":"linguistic_understanding_0041_az","decision":0,"reason":"Prediction does not clearly preserve the reference meaning of the land beside a river."}
+{"item_id":"linguistic_understanding_0041_en","decision":1,"reason":"Prediction correctly identifies bank as the land or edge beside a river."}
+{"item_id":"linguistic_understanding_0045_az","decision":1,"reason":"Prediction correctly conveys the journalistic meaning of reporting information about the election."}
+{"item_id":"linguistic_understanding_0045_en","decision":1,"reason":"Prediction directly states that covered means reported on the election."}
+{"item_id":"linguistic_understanding_0056_az","decision":1,"reason":"Prediction preserves the core meaning that the plane came down to the ground."}
+{"item_id":"linguistic_understanding_0056_en","decision":1,"reason":"Prediction correctly explains that landed means the plane touched down on the ground."}
+{"item_id":"linguistic_understanding_0081_az","decision":1,"reason":"Prediction correctly identifies the small sample size as the reason the result was not considered conclusive."}
+{"item_id":"linguistic_understanding_0081_en","decision":1,"reason":"Prediction correctly identifies the very small sample as the reason for avoiding a conclusive claim."}
+{"item_id":"linguistic_understanding_0084_az","decision":1,"reason":"Prediction correctly states that charging the battery allowed the phone to turn on."}
+{"item_id":"linguistic_understanding_0084_en","decision":1,"reason":"Prediction preserves the causal meaning that power from charging enabled the phone to turn on."}
+{"item_id":"linguistic_understanding_0098_az","decision":1,"reason":"Prediction correctly indicates that building density and open space explain part of the original association."}
+{"item_id":"linguistic_understanding_0098_en","decision":1,"reason":"Prediction correctly explains that the original association was partly due to other urban factors such as building density and open space."}

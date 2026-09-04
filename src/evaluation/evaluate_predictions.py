@@ -85,6 +85,9 @@ from src.evaluation.task_aware_capability import (
     evaluate_task_aware_capability,
     summarize_task_aware_capability,
 )
+from src.evaluation.semantic_adjudication import (
+    load_semantic_adjudication_decisions,
+)
 from src.evaluation.paired_task_aware_capability import (
     PairedTaskAwareCapabilityResult,
     evaluate_paired_task_aware_capability,
@@ -586,7 +589,9 @@ def build_reliability_summary(
 def evaluate_predictions(
     predictions: list[PredictionRecord],
     source_language: str = 'en',
-    target_language: str = 'az'
+    target_language: str = 'az',
+    semantic_adjudication_decisions: dict[str, int] | None = None,
+    binary_adjudication_decisions: dict[str, int] | None = None,
 ) -> dict[str, Any]:
     """Prediction kayıtları üzerinde tüm capability ve reliability evaluation'ı çalıştırır.
 
@@ -679,7 +684,13 @@ def evaluate_predictions(
     )
 
     task_aware_results = evaluate_task_aware_capability(
-        predictions
+        predictions,
+        semantic_adjudication_decisions=(
+            semantic_adjudication_decisions
+        ),
+        binary_adjudication_decisions=(
+            binary_adjudication_decisions
+        ),
     )
 
     paired_task_aware_results = evaluate_paired_task_aware_capability(
@@ -1055,6 +1066,24 @@ def parse_arguments() -> argparse.Namespace:
     )
 
     parser.add_argument(
+        "--semantic-adjudication-decisions",
+        type=Path,
+        default=None,
+        help=(
+            "Optional semantic adjudication JSONL artifact "
+            "for open semantic linguistic categories."
+        ),
+    )
+    parser.add_argument(
+        "--binary-adjudication-decisions",
+        type=Path,
+        default=None,
+        help=(
+            "Optional binary adjudication JSONL artifact "
+            "for indirect Yes/No answers."
+        ),
+    )
+    parser.add_argument(
         "--overwrite",
         action="store_true",
         help="Overwrite existing evaluation artifacts."
@@ -1077,10 +1106,33 @@ def main() -> None:
             "Prediction file contains no records."
         )
 
+    semantic_adjudication_decisions = None
+    binary_adjudication_decisions = None
+
+    if args.semantic_adjudication_decisions is not None:
+        semantic_adjudication_decisions = (
+            load_semantic_adjudication_decisions(
+                str(args.semantic_adjudication_decisions)
+            )
+        )
+
+    if args.binary_adjudication_decisions is not None:
+        binary_adjudication_decisions = (
+            load_semantic_adjudication_decisions(
+                str(args.binary_adjudication_decisions)
+            )
+        )
+
     evaluation = evaluate_predictions(
         predictions=predictions,
         source_language=args.source_language,
         target_language=args.target_language,
+        semantic_adjudication_decisions=(
+            semantic_adjudication_decisions
+        ),
+        binary_adjudication_decisions=(
+            binary_adjudication_decisions
+        ),
     )
 
     save_evaluation_artifacts(
