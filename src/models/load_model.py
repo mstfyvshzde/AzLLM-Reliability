@@ -248,24 +248,34 @@ def load_causal_model(
 
 def load_model_and_tokenizer(
     config: ModelConfig,
-) -> tuple[
-    PreTrainedModel,
-    PreTrainedTokenizerBase,
-]:
-    """Model ve tokenizer'ı aynı ModelConfig üzerinden birlikte yükler.
+) -> tuple[Any, Any]:
+    """Backend'e göre model ve tokenizer yükler.
 
-    Bu fonksiyon evaluation pipeline'ın ana model-loading giriş noktasıdır.
+    transformers:
+        Hugging Face / PyTorch loading pipeline kullanılır.
 
-    Böylece farklı evaluation modülleri tokenizer ve modeli ayrı şekillerde
-    yüklemek yerine tek ve reproducible bir loading protokolü kullanır.
+    mlx:
+        mlx_lm üzerinden quantized MLX model yüklenir.
+        Immutable revision doğrudan MLX loader'a geçirilir.
     """
 
-    tokenizer = load_tokenizer(
-        config
-    )
+    if config.backend == "mlx":
+        from mlx_lm import load as mlx_load
+
+        model, tokenizer = mlx_load(
+            config.model_name,
+            revision=config.revision,
+        )
+
+        return model, tokenizer
 
     model = load_causal_model(
         config
     )
 
+    tokenizer = load_tokenizer(
+        config
+    )
+
     return model, tokenizer
+

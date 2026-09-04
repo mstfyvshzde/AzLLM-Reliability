@@ -2,14 +2,16 @@
 # Model seçimi bu dosyadan yapılır; Python koduna model adı gömülmez.
 model:
   # Hugging Face model identifier.
-  model_name: "meta-llama/Llama-3.1-8B-Instruct"
+  model_name: "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit"
   # Ayrı bir tokenizer kullanılacaksa burada belirtilir.
   # null olduğunda tokenizer model_name üzerinden yüklenir.
   tokenizer_name: null
 
   # Belirli bir branch, tag veya commit kullanılacaksa yazılır.
   # null olduğunda repository'nin varsayılan revision değeri kullanılır.
-  revision: "0e9e39f249a16976918f6564b8830bc894c89659"
+  revision: "241a666dad6cb93c8ff213d39a7f34a36bf26db4"
+
+  backend: mlx
 
   # Modelin hangi cihazda çalışacağını belirler.
   # auto -> Hugging Face / Accelerate uygun cihaz yerleşimini otomatik yapar.
