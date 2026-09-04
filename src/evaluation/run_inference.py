@@ -154,7 +154,8 @@ def run_inference(
             prompt=record.question,
             model=model,
             tokenizer=tokenizer,
-            config=config
+            config=config,
+            system_prompt=None,
         )
 
         predictions.append(

@@ -1,0 +1,37 @@
+{
+  "benchmark_name": "azllm_reliability_final",
+  "version": "1.0",
+  "seed": 17,
+  "pairs": 500,
+  "records": 1000,
+  "split_policy": "pair-aware stratified exact 70/15/15",
+  "splits": {
+    "train": {
+      "pairs": 350,
+      "records": 700
+    },
+    "dev": {
+      "pairs": 75,
+      "records": 150
+    },
+    "test": {
+      "pairs": 75,
+      "records": 150
+    }
+  },
+  "files": {
+    "benchmark_v1.0.jsonl": {
+      "sha256": "c4e3571ce422b5f823c4d49e8418732eed6aeb7644e9ff2945d3b83ba519b38e"
+    },
+    "benchmark_v1.0_train.jsonl": {
+      "sha256": "20f7f02855fba22e0ce56cab351e640ba1693db1a4cbd7c9d6f48b6064605c69"
+    },
+    "benchmark_v1.0_dev.jsonl": {
+      "sha256": "f50d819f487b23c6ef8031e21d9fd10abeed6d4c06e17af7e0f4d2ae53d3ae0e"
+    },
+    "benchmark_v1.0_test.jsonl": {
+      "sha256": "7530027fe082a4012e1f00e94d4b30bdd8fcfe0373f267c9e88b9f33e5f871b3"
+    }
+  },
+  "frozen": true
+}

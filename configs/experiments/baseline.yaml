@@ -37,7 +37,7 @@ benchmark:
   split: test
 
   # Pair-aware split pipeline tarafından üretilen input artifact.
-  input_path: data/processed/splits/test.jsonl
+  input_path: data/processed/final/benchmark_v1.0_test.jsonl
 
   # EN-AZ paired evaluation zorunlu.
   require_complete_pairs: true
@@ -66,7 +66,7 @@ evaluation:
   # Capability evaluation.
   capability:
     enabled: true
-    metric: normalized_exact_match
+    metric: task_aware
     paired_analysis: true
 
   # Reliability evaluation.

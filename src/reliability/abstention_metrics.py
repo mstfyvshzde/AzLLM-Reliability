@@ -372,6 +372,19 @@ def summarize_abstention_results(
         "correct_abstention": counts[CORRECT_ABSTENTION],
         "over_answering": counts[OVER_ANSWERING],
         "empty_response": counts[EMPTY_RESPONSE],
+        # decision_accuracy yalnızca modelin doğru zamanda
+        # answer / abstain kararı verip vermediğini ölçer.
+        #
+        # Bu değer answerable item üzerindeki cevabın içerik olarak
+        # doğru olduğunu iddia etmez; capability correctness ayrı
+        # task-aware evaluator tarafından ölçülür.
+        "decision_accuracy": (
+            correct_decisions
+            / total
+        ),
+
+        # Backward-compatible diagnostic alias.
+        # Final research reporting için decision_accuracy kullanılmalıdır.
         "abstention_accuracy": (
             correct_decisions
             / total

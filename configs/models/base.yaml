@@ -2,14 +2,14 @@
 # Model seçimi bu dosyadan yapılır; Python koduna model adı gömülmez.
 model:
   # Hugging Face model identifier.
-  model_name: "Qwen/Qwen2.5-1.5B-Instruct"
+  model_name: "meta-llama/Llama-3.1-8B-Instruct"
   # Ayrı bir tokenizer kullanılacaksa burada belirtilir.
   # null olduğunda tokenizer model_name üzerinden yüklenir.
   tokenizer_name: null
 
   # Belirli bir branch, tag veya commit kullanılacaksa yazılır.
   # null olduğunda repository'nin varsayılan revision değeri kullanılır.
-  revision: null
+  revision: "0e9e39f249a16976918f6564b8830bc894c89659"
 
   # Modelin hangi cihazda çalışacağını belirler.
   # auto -> Hugging Face / Accelerate uygun cihaz yerleşimini otomatik yapar.

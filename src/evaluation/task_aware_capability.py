@@ -11,10 +11,13 @@ Current policy:
         -> short_answer_match
 
     linguistic_understanding
-        -> semantic_answer_match
+        -> category-aware:
+           reference_resolution -> short_answer_match
+           paraphrase_understanding -> option_match
+           remaining categories -> semantic_answer_match
 
     instruction_following
-        -> exact_match
+        -> category-aware instruction_following_match
 
     unanswerable
         -> capability scoring dışında tutulur
@@ -34,6 +37,9 @@ from src.evaluation.short_answer_match import (
 )
 from src.evaluation.instruction_following_match import (
     instruction_following_score
+)
+from src.evaluation.option_match import (
+    option_match_score
 )
 
 
@@ -147,19 +153,40 @@ def evaluate_task_aware_prediction(
 
 
     elif record.task == "linguistic_understanding":
-        evaluator = "semantic_answer"
+        category = record.metadata.get("category")
 
-        score = semantic_answer_match_score(
-            record.prediction,
-            record.reference_answer
-        )
+        if category == "reference_resolution":
+            evaluator = "short_answer"
+
+            score = short_answer_match_score(
+                record.prediction,
+                record.reference_answer
+            )
+
+        elif category == "paraphrase_understanding":
+            evaluator = "option_match"
+
+            score = option_match_score(
+                prediction=record.prediction,
+                reference_answer=record.reference_answer,
+                question=record.question,
+            )
+
+        else:
+            evaluator = "semantic_answer"
+
+            score = semantic_answer_match_score(
+                record.prediction,
+                record.reference_answer
+            )
 
     elif record.task == "instruction_following":
         evaluator = "instruction_following"
 
         score = instruction_following_score(
             record.prediction,
-            record.reference_answer
+            record.reference_answer,
+            category=record.metadata.get("category"),
         )
 
     elif record.task == "unanswerable":

@@ -1,0 +1,125 @@
+# Final EN-AZ benchmark tasarımı.
+#
+# Her pair aynı semantik içeriğin English ve Azerbaijani sürümünü içerir.
+# Bu dosya benchmark üretimi ve validation için hedef dağılımı tanımlar.
+#
+# 500 semantic pair
+# -> 500 EN record
+# -> 500 AZ record
+# -> 1000 total benchmark record
+
+benchmark:
+  name: azllm_reliability_final
+  version: "1.0"
+
+  languages:
+    source: en
+    target: az
+
+  total_pairs: 500
+  total_records: 1000
+
+  seed: 17
+
+
+pairing:
+  require_complete_pairs: true
+  require_same_task: true
+  require_semantic_equivalence: true
+
+  pair_id_format: "{task}_{index:04d}"
+  item_id_format: "{pair_id}_{language}"
+
+
+tasks:
+  factual_knowledge:
+    pairs: 100
+
+    categories:
+      general_knowledge: 25
+      science_knowledge: 25
+      technology_knowledge: 25
+      quantitative_knowledge: 25
+
+  reasoning:
+    pairs: 100
+
+    categories:
+      comparative_reasoning: 20
+      arithmetic_reasoning: 20
+      logical_reasoning: 20
+      ordering_reasoning: 20
+      constraint_reasoning: 20
+
+  linguistic_understanding:
+    pairs: 100
+
+    categories:
+      contextual_meaning: 20
+      reference_resolution: 20
+      lexical_disambiguation: 20
+      paraphrase_understanding: 20
+      discourse_understanding: 20
+
+  instruction_following:
+    pairs: 100
+
+    categories:
+      format_following: 20
+      constraint_following: 20
+      transformation: 20
+      extraction: 20
+      multi_step_instruction: 20
+
+  unanswerable:
+    pairs: 100
+
+    categories:
+      missing_information: 20
+      underspecified_constraint: 20
+      false_premise: 20
+      impossible_inference: 20
+      insufficient_context: 20
+
+
+difficulty:
+  easy: 0.30
+  medium: 0.40
+  hard: 0.30
+
+
+answerability:
+  factual_knowledge: true
+  reasoning: true
+  linguistic_understanding: true
+  instruction_following: true
+  unanswerable: false
+
+
+review:
+  required_status: approved
+
+  require_pair_review: true
+  require_semantic_equivalence_review: true
+  require_language_quality_review: true
+
+  reject_if:
+    - translation_changes_difficulty
+    - translation_changes_answer
+    - ambiguous_reference_answer
+    - culturally_unfair
+    - duplicated_semantics
+
+
+splits:
+  strategy: pair_aware
+
+  train: 0.70
+  dev: 0.15
+  test: 0.15
+
+  preserve_task_distribution: true
+  preserve_category_distribution: true
+  preserve_difficulty_distribution: true
+
+  seed: 17
