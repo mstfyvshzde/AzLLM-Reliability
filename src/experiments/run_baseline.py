@@ -39,6 +39,9 @@ from src.evaluation.run_inference import (
     run_inference,
     save_predictions
 )
+from src.evaluation.semantic_adjudication import (
+    load_semantic_adjudication_decisions,
+)
 from src.models.load_config import (
     load_model_config,
     load_model_config_dict
@@ -356,10 +359,59 @@ def run_baseline_experiment(
         "target"
     ]
 
+    semantic_adjudication_section = (
+        evaluation_section.get(
+            "semantic_adjudication",
+            {}
+        )
+    )
+
+    binary_adjudication_section = (
+        evaluation_section.get(
+            "binary_adjudication",
+            {}
+        )
+    )
+
+    semantic_adjudication_decisions = None
+    binary_adjudication_decisions = None
+
+    semantic_decisions_path = (
+        semantic_adjudication_section.get(
+            "decisions_path"
+        )
+    )
+
+    binary_decisions_path = (
+        binary_adjudication_section.get(
+            "decisions_path"
+        )
+    )
+
+    if semantic_decisions_path:
+        semantic_adjudication_decisions = (
+            load_semantic_adjudication_decisions(
+                semantic_decisions_path
+            )
+        )
+
+    if binary_decisions_path:
+        binary_adjudication_decisions = (
+            load_semantic_adjudication_decisions(
+                binary_decisions_path
+            )
+        )
+
     evaluation = evaluate_predictions(
         predictions=predictions,
         source_language=source_language,
-        target_language=target_language
+        target_language=target_language,
+        semantic_adjudication_decisions=(
+            semantic_adjudication_decisions
+        ),
+        binary_adjudication_decisions=(
+            binary_adjudication_decisions
+        ),
     )
 
     save_evaluation_artifacts(

@@ -26,7 +26,7 @@ model:
   trust_remote_code: false
 
   # Modelin her benchmark sorusu için maksimum kaç yeni token üretebileceğini belirler.
-  max_new_tokens: 128
+  max_new_tokens: 256
 
   # Sampling sırasında token dağılımının ne kadar rastgele olacağını belirler.
   # 0.0 deterministic evaluation için kullanılır.

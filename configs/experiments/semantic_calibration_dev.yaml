@@ -1,0 +1,93 @@
+# Baseline experiment yapılandırması.
+#
+# Bu dosya model inference başlamadan önce deney protokolünü sabitler.
+# Amaç hangi modelin, hangi benchmark split'i üzerinde, hangi generation
+# ayarlarıyla değerlendirildiğini açık ve reproducible biçimde kaydetmektir.
+
+experiment:
+  # Deney için kısa ve sabit kimlik.
+  name: semantic_calibration_dev
+
+  # Deney açıklaması.
+  description: >
+    Base modelin paired English-Azerbaijani benchmark üzerindeki capability
+    ve reliability performansını adaptation uygulanmadan önce ölçer.
+
+  # Reproducibility seed.
+  seed: 17
+
+
+languages:
+  # Yüksek kaynaklı source language.
+  source: en
+
+  # Düşük kaynaklı target language.
+  target: az
+
+
+model:
+  # Model ayarları ayrı config dosyasından yüklenir.
+  config_path: configs/models/base.yaml
+
+
+benchmark:
+  # Baseline evaluation için kullanılacak benchmark split'i.
+  #
+  # Final research sonuçları için test split freeze edilmelidir.
+  split: dev
+
+  # Pair-aware split pipeline tarafından üretilen input artifact.
+  input_path: data/processed/final/benchmark_v1.0_dev.jsonl
+
+  # EN-AZ paired evaluation zorunlu.
+  require_complete_pairs: true
+
+
+generation:
+  # Generation davranışı model config içinden alınır.
+  #
+  # Burada ayrıca override tanımlamıyoruz; tek source of truth
+  # configs/models/base.yaml olarak korunur.
+  use_model_config: true
+
+
+inference:
+  # Model prediction artifact'ı.
+  output_path: outputs/semantic_calibration_dev/predictions.jsonl
+
+  # Var olan prediction artifact'ı varsayılan olarak overwrite edilmez.
+  overwrite: false
+
+
+evaluation:
+  # Inference sonrası evaluation artifact dizini.
+  output_dir: outputs/semantic_calibration_dev/evaluation
+
+  semantic_adjudication:
+    decisions_path: data/interim/semantic_calibration/dev_human_labels_v1.0.jsonl
+
+  binary_adjudication:
+    decisions_path: data/interim/binary_calibration/dev_human_labels_v1.0.jsonl
+
+  # Capability evaluation.
+  capability:
+    enabled: true
+    metric: task_aware
+    paired_analysis: true
+
+  # Reliability evaluation.
+  reliability:
+    enabled: true
+    abstention_analysis: true
+    paired_analysis: true
+
+  # Existing evaluation artifact'ları varsayılan olarak korunur.
+  overwrite: false
+
+
+artifacts:
+  # Run configuration snapshot kaydedilecek mi?
+  save_config_snapshot: true
+
+  # Experiment metadata kaydedilecek mi?
+  save_run_metadata: true

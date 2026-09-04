@@ -14,7 +14,7 @@ Current policy:
         -> category-aware:
            reference_resolution -> short_answer_match
            paraphrase_understanding -> option_match
-           remaining categories -> semantic_answer_match
+           contextual_meaning / lexical_disambiguation / discourse_understanding -> semantic_adjudication
 
     instruction_following
         -> category-aware instruction_following_match
@@ -29,11 +29,15 @@ from dataclasses import asdict, dataclass
 from typing import Any
 
 from src.evaluation.run_inference import PredictionRecord
-from src.evaluation.semantic_answer_match import (
-    semantic_answer_match_score
+from src.evaluation.semantic_adjudication import (
+    SEMANTIC_ADJUDICATION_CATEGORIES,
 )
 from src.evaluation.short_answer_match import (
     short_answer_match_score
+)
+from src.evaluation.binary_answer_match import (
+    binary_answer_match_score,
+    is_binary_reference,
 )
 from src.evaluation.instruction_following_match import (
     instruction_following_score
@@ -64,7 +68,9 @@ class TaskAwareCapabilityResult:
 
 
 def evaluate_task_aware_prediction(
-    record: PredictionRecord
+    record: PredictionRecord,
+    semantic_adjudication_decisions: dict[str, int] | None = None,
+    binary_adjudication_decisions: dict[str, int] | None = None,
 ) -> TaskAwareCapabilityResult | None:
     """Prediction'ı task türüne uygun capability evaluator ile değerlendirir.
 
@@ -144,40 +150,63 @@ def evaluate_task_aware_prediction(
         "factual_knowledge",
         "reasoning",
     }:
-        evaluator = "short_answer"
-
-        score = short_answer_match_score(
-            record.prediction,
+        if is_binary_reference(
             record.reference_answer
-        )
-
+        ):
+            evaluator = "binary_answer"
+            score = binary_answer_match_score(
+                record,
+                adjudication_decisions=(
+                    binary_adjudication_decisions
+                ),
+            )
+        else:
+            evaluator = "short_answer"
+            score = short_answer_match_score(
+                record.prediction,
+                record.reference_answer,
+            )
 
     elif record.task == "linguistic_understanding":
         category = record.metadata.get("category")
 
         if category == "reference_resolution":
             evaluator = "short_answer"
-
             score = short_answer_match_score(
                 record.prediction,
-                record.reference_answer
+                record.reference_answer,
             )
 
         elif category == "paraphrase_understanding":
             evaluator = "option_match"
-
             score = option_match_score(
                 prediction=record.prediction,
                 reference_answer=record.reference_answer,
                 question=record.question,
             )
 
-        else:
-            evaluator = "semantic_answer"
+        elif category in SEMANTIC_ADJUDICATION_CATEGORIES:
+            if semantic_adjudication_decisions is None:
+                raise ValueError(
+                    "Semantic adjudication decisions are required "
+                    f"for item: {record.item_id}"
+                )
 
-            score = semantic_answer_match_score(
-                record.prediction,
-                record.reference_answer
+            if record.item_id not in semantic_adjudication_decisions:
+                raise ValueError(
+                    "Missing semantic adjudication decision: "
+                    f"{record.item_id}"
+                )
+
+            evaluator = "semantic_adjudication"
+            score = semantic_adjudication_decisions[
+                record.item_id
+            ]
+
+        else:
+            raise ValueError(
+                "Unsupported linguistic_understanding category: "
+                f"{category!r}"
             )
 
     elif record.task == "instruction_following":
@@ -212,6 +241,8 @@ def evaluate_task_aware_prediction(
 
 def evaluate_task_aware_capability(
     records: list[PredictionRecord],
+    semantic_adjudication_decisions: dict[str, int] | None = None,
+    binary_adjudication_decisions: dict[str, int] | None = None,
 ) -> list[TaskAwareCapabilityResult]:
     """Prediction listesini task-aware capability evaluator ile değerlendirir.
 
@@ -223,7 +254,13 @@ def evaluate_task_aware_capability(
 
     for record in records:
         result = evaluate_task_aware_prediction(
-            record
+            record,
+            semantic_adjudication_decisions=(
+                semantic_adjudication_decisions
+            ),
+            binary_adjudication_decisions=(
+                binary_adjudication_decisions
+            ),
         )
 
         if result is not None:

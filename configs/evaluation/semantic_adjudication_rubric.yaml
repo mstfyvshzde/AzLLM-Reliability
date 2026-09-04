@@ -1,0 +1,45 @@
+name: semantic_adjudication_rubric
+version: "1.0"
+
+scope:
+  task: linguistic_understanding
+  categories:
+    - contextual_meaning
+    - lexical_disambiguation
+    - discourse_understanding
+
+decision_policy:
+  correct:
+    value: 1
+    rule: >
+      The prediction is correct when it preserves the core semantic
+      proposition expressed by the reference answer.
+
+    acceptable_variation:
+      - synonymous wording
+      - paraphrasing
+      - longer explanations that preserve the same meaning
+      - additional relevant detail that does not contradict the reference
+      - minor grammatical or surface-form differences
+
+  incorrect:
+    value: 0
+    rule: >
+      The prediction is incorrect when it fails to preserve the core
+      semantic proposition of the reference answer.
+
+    failure_cases:
+      - repeats the target word without explaining its meaning
+      - expresses a different meaning
+      - contradicts the reference answer
+      - omits information essential to the core meaning
+      - gives an ambiguous or uninterpretable answer
+      - gives an unrelated answer
+
+principles:
+  - judge semantic content rather than lexical overlap
+  - do not require exact wording
+  - do not penalize harmless additional information
+  - do not infer correctness from embedding similarity alone
+  - apply the same rubric to English and Azerbaijani
+  - do not create item-specific rules
