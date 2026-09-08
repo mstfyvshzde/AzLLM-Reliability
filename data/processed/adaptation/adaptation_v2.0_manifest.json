@@ -1,0 +1,35 @@
+{
+  "version": "2.0",
+  "records": 1000,
+  "sha256": "218265e79dc5da746b7a95adf84135f21e2d58d0be42090e36bfdce54f00de96",
+  "language_counts": {
+    "az": 800,
+    "en": 200
+  },
+  "task_counts": {
+    "factual_knowledge": 170,
+    "instruction_following": 210,
+    "reasoning": 250,
+    "semantic_understanding": 250,
+    "unanswerable": 120
+  },
+  "language_task_counts": {
+    "az:factual_knowledge": 120,
+    "az:instruction_following": 160,
+    "az:reasoning": 200,
+    "az:semantic_understanding": 200,
+    "az:unanswerable": 120,
+    "en:factual_knowledge": 50,
+    "en:instruction_following": 50,
+    "en:reasoning": 50,
+    "en:semantic_understanding": 50
+  },
+  "quota_match": true,
+  "benchmark_version": "1.0",
+  "benchmark_used_for_training": false,
+  "notes": [
+    "Adaptation data are separate from the frozen benchmark.",
+    "Exact benchmark question overlap audit returned zero after cleanup.",
+    "High lexical similarity alone was not treated as semantic leakage when the tested fact differed."
+  ]
+}

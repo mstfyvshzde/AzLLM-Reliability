@@ -1,0 +1,16 @@
+{
+  "selected_checkpoint": "0090",
+  "model_config": "configs/models/pilot_lora_v2_0090.yaml",
+  "selection_split": "dev",
+  "selection_reason": "Checkpoint 0090 had the highest overall and Azerbaijani primary capability, the strongest English preservation, and the smallest EN-AZ capability gap. Later checkpoints showed only marginal abstention improvements while substantially reducing capability.",
+  "dev_metrics": {
+    "primary_capability_overall": 0.625,
+    "primary_capability_az": 0.48333333333333334,
+    "primary_capability_en": 0.7666666666666667,
+    "language_gap": 0.2833333333333334,
+    "correct_abstention": 1,
+    "unanswerable_total": 30,
+    "over_answering": 29
+  },
+  "test_used_for_selection": false
+}

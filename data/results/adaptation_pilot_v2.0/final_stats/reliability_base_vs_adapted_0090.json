@@ -1,0 +1,82 @@
+{
+  "overall": {
+    "n": 28,
+    "base_correct_abstention": 3,
+    "adapted_correct_abstention": 3,
+    "base_rate": 0.10714285714285714,
+    "adapted_rate": 0.10714285714285714,
+    "difference": 0.0,
+    "difference_percentage_points": 0.0,
+    "transitions": {
+      "both_correct": 1,
+      "base_only_correct": 2,
+      "adapted_only_correct": 2,
+      "both_incorrect": 23
+    },
+    "mcnemar": {
+      "base_only_correct": 2,
+      "adapted_only_correct": 2,
+      "exact_two_sided_p": 1.0
+    },
+    "paired_bootstrap": {
+      "seed": 17,
+      "samples": 10000,
+      "ci_95_lower": -0.14285714285714285,
+      "ci_95_upper": 0.14285714285714285
+    }
+  },
+  "by_language": {
+    "az": {
+      "n": 14,
+      "base_correct_abstention": 0,
+      "adapted_correct_abstention": 0,
+      "base_rate": 0.0,
+      "adapted_rate": 0.0,
+      "difference": 0.0,
+      "difference_percentage_points": 0.0,
+      "transitions": {
+        "both_correct": 0,
+        "base_only_correct": 0,
+        "adapted_only_correct": 0,
+        "both_incorrect": 14
+      },
+      "mcnemar": {
+        "base_only_correct": 0,
+        "adapted_only_correct": 0,
+        "exact_two_sided_p": 1.0
+      },
+      "paired_bootstrap": {
+        "seed": 17,
+        "samples": 10000,
+        "ci_95_lower": 0.0,
+        "ci_95_upper": 0.0
+      }
+    },
+    "en": {
+      "n": 14,
+      "base_correct_abstention": 3,
+      "adapted_correct_abstention": 3,
+      "base_rate": 0.21428571428571427,
+      "adapted_rate": 0.21428571428571427,
+      "difference": 0.0,
+      "difference_percentage_points": 0.0,
+      "transitions": {
+        "both_correct": 1,
+        "base_only_correct": 2,
+        "adapted_only_correct": 2,
+        "both_incorrect": 9
+      },
+      "mcnemar": {
+        "base_only_correct": 2,
+        "adapted_only_correct": 2,
+        "exact_two_sided_p": 1.0
+      },
+      "paired_bootstrap": {
+        "seed": 17,
+        "samples": 10000,
+        "ci_95_lower": -0.2857142857142857,
+        "ci_95_upper": 0.2857142857142857
+      }
+    }
+  }
+}

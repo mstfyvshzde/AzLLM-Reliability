@@ -1,0 +1,25 @@
+{"instruction_id":"en_inst_0001","category":"format_structure","question_en":"Write the following data exactly as 'City=<city>; Population=<number>': Bristol, 472000.","answer_en":"City=Bristol; Population=472000"}
+{"instruction_id":"en_inst_0002","category":"format_structure","question_en":"Keep these words in the same order and place ' | ' between them: river, lantern, garden.","answer_en":"river | lantern | garden"}
+{"instruction_id":"en_inst_0003","category":"format_structure","question_en":"Put the three values inside square brackets and separate them with semicolons: 18, 42, 67.","answer_en":"[18; 42; 67]"}
+{"instruction_id":"en_inst_0004","category":"extraction","question_en":"Extract only the date from this sentence: The workshop will take place on 23 November 2027.","answer_en":"23 November 2027"}
+{"instruction_id":"en_inst_0005","category":"extraction","question_en":"Write only the profession mentioned in this sentence: Laura works as an architect in Manchester.","answer_en":"architect"}
+{"instruction_id":"en_inst_0006","category":"extraction","question_en":"Extract only the percentage: Customer satisfaction increased to 87 percent this year.","answer_en":"87 percent"}
+{"instruction_id":"en_inst_0007","category":"transformation","question_en":"Convert this phrase entirely to uppercase: distributed computing system","answer_en":"DISTRIBUTED COMPUTING SYSTEM"}
+{"instruction_id":"en_inst_0008","category":"transformation","question_en":"Replace every underscore with a space: natural_language_processing","answer_en":"natural language processing"}
+{"instruction_id":"en_inst_0009","category":"transformation","question_en":"Change this positive sentence into a negative one: Daniel completed the report.","answer_en":"Daniel did not complete the report."}
+{"instruction_id":"en_inst_0010","category":"filtering_selection","question_en":"Select only the numbers greater than 30: 18, 44, 27, 63, 31, 9.","answer_en":"44, 63, 31"}
+{"instruction_id":"en_inst_0011","category":"filtering_selection","question_en":"From this list, write only the animals: bicycle, tiger, notebook, horse, dolphin.","answer_en":"tiger, horse, dolphin"}
+{"instruction_id":"en_inst_0012","category":"filtering_selection","question_en":"Select only the numbers divisible by 4: 14, 20, 33, 48, 51, 64.","answer_en":"20, 48, 64"}
+{"instruction_id":"en_inst_0013","category":"multi_step","question_en":"Add 26 and 17, then subtract 8 from the result.","answer_en":"26 + 17 = 43, then 43 - 8 = 35."}
+{"instruction_id":"en_inst_0014","category":"multi_step","question_en":"A box contains 38 markers. Eleven are removed and 6 are added. How many markers are there at the end?","answer_en":"38 - 11 = 27, then 27 + 6 = 33 markers remain."}
+{"instruction_id":"en_inst_0015","category":"multi_step","question_en":"Divide 96 by 8, then multiply the result by 3.","answer_en":"96 ÷ 8 = 12, then 12 × 3 = 36."}
+{"instruction_id":"en_inst_0016","category":"constraint_following","question_en":"Write the capital of Canada using only one word.","answer_en":"Ottawa"}
+{"instruction_id":"en_inst_0017","category":"constraint_following","question_en":"Subtract 9 from 25 and give only the number.","answer_en":"16"}
+{"instruction_id":"en_inst_0018","category":"constraint_following","question_en":"Answer using only 'True' or 'False': 81 is the square of 9.","answer_en":"True"}
+{"instruction_id":"en_inst_0019","category":"rewriting_editing","question_en":"Correct the grammar in this sentence: She go to the library every Saturday.","answer_en":"She goes to the library every Saturday."}
+{"instruction_id":"en_inst_0020","category":"rewriting_editing","question_en":"Rewrite this sentence more concisely: The meeting was postponed until a later time in the future.","answer_en":"The meeting was postponed."}
+{"instruction_id":"en_inst_0021","category":"rewriting_editing","question_en":"Correct the punctuation: Michael did you send the document","answer_en":"Michael, did you send the document?"}
+{"instruction_id":"en_inst_0022","category":"mixed_instruction","question_en":"Sort these words alphabetically and write only the last one: orange, banana, grape.","answer_en":"orange"}
+{"instruction_id":"en_inst_0023","category":"mixed_instruction","question_en":"Extract the number from the sentence and double it: The shelf contains 14 folders.","answer_en":"28"}
+{"instruction_id":"en_inst_0024","category":"mixed_instruction","question_en":"Count the words in this phrase and give only the number: reliable machine learning systems require careful evaluation","answer_en":"7"}
+{"instruction_id":"en_inst_0025","category":"mixed_instruction","question_en":"Write the second and fifth words separated by ' / ': Modern research teams often share results openly.","answer_en":"research / share"}

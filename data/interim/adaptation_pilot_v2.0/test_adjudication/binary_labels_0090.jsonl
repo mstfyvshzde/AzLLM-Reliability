@@ -1,0 +1,4 @@
+{"item_id":"reasoning_0043_az","decision":1,"reason":"Prediction answers No, matching the negative reference conclusion."}
+{"item_id":"reasoning_0054_az","decision":1,"reason":"Prediction answers Yes, matching the affirmative reference."}
+{"item_id":"reasoning_0054_en","decision":1,"reason":"Prediction answers Yes and states that Luna is a mammal, matching the affirmative reference."}
+{"item_id":"reasoning_0057_az","decision":1,"reason":"Prediction answers No, matching the negative reference conclusion."}

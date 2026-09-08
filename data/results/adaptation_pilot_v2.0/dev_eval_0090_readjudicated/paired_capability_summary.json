@@ -1,0 +1,10 @@
+{
+  "total_pairs": 75,
+  "both_correct": 4,
+  "source_only_correct": 8,
+  "target_only_correct": 2,
+  "both_incorrect": 61,
+  "degradation_rate": 0.10666666666666667,
+  "recovery_rate": 0.02666666666666667,
+  "consistency_rate": 0.8666666666666667
+}

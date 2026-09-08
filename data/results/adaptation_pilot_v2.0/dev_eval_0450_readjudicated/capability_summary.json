@@ -1,0 +1,291 @@
+{
+  "overall": {
+    "total": 150,
+    "correct": 17,
+    "incorrect": 133,
+    "accuracy": 0.11333333333333333
+  },
+  "by_language": {
+    "az": {
+      "total": 75,
+      "correct": 8,
+      "incorrect": 67,
+      "accuracy": 0.10666666666666667
+    },
+    "en": {
+      "total": 75,
+      "correct": 9,
+      "incorrect": 66,
+      "accuracy": 0.12
+    }
+  },
+  "by_task": {
+    "factual_knowledge": {
+      "total": 30,
+      "correct": 2,
+      "incorrect": 28,
+      "accuracy": 0.06666666666666667
+    },
+    "instruction_following": {
+      "total": 30,
+      "correct": 11,
+      "incorrect": 19,
+      "accuracy": 0.36666666666666664
+    },
+    "linguistic_understanding": {
+      "total": 30,
+      "correct": 2,
+      "incorrect": 28,
+      "accuracy": 0.06666666666666667
+    },
+    "reasoning": {
+      "total": 30,
+      "correct": 2,
+      "incorrect": 28,
+      "accuracy": 0.06666666666666667
+    },
+    "unanswerable": {
+      "total": 30,
+      "correct": 0,
+      "incorrect": 30,
+      "accuracy": 0.0
+    }
+  },
+  "by_category": {
+    "general_knowledge": {
+      "total": 6,
+      "correct": 2,
+      "incorrect": 4,
+      "accuracy": 0.3333333333333333
+    },
+    "science_knowledge": {
+      "total": 8,
+      "correct": 0,
+      "incorrect": 8,
+      "accuracy": 0.0
+    },
+    "technology_knowledge": {
+      "total": 8,
+      "correct": 0,
+      "incorrect": 8,
+      "accuracy": 0.0
+    },
+    "quantitative_knowledge": {
+      "total": 8,
+      "correct": 0,
+      "incorrect": 8,
+      "accuracy": 0.0
+    },
+    "format_following": {
+      "total": 6,
+      "correct": 2,
+      "incorrect": 4,
+      "accuracy": 0.3333333333333333
+    },
+    "constraint_following": {
+      "total": 6,
+      "correct": 2,
+      "incorrect": 4,
+      "accuracy": 0.3333333333333333
+    },
+    "transformation": {
+      "total": 6,
+      "correct": 5,
+      "incorrect": 1,
+      "accuracy": 0.8333333333333334
+    },
+    "extraction": {
+      "total": 6,
+      "correct": 2,
+      "incorrect": 4,
+      "accuracy": 0.3333333333333333
+    },
+    "multi_step_instruction": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "contextual_meaning": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "reference_resolution": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "lexical_disambiguation": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "paraphrase_understanding": {
+      "total": 6,
+      "correct": 2,
+      "incorrect": 4,
+      "accuracy": 0.3333333333333333
+    },
+    "discourse_understanding": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "comparative_reasoning": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "arithmetic_reasoning": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "logical_reasoning": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "ordering_reasoning": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "constraint_reasoning": {
+      "total": 6,
+      "correct": 2,
+      "incorrect": 4,
+      "accuracy": 0.3333333333333333
+    },
+    "missing_information": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "underspecified_constraint": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "false_premise": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "impossible_inference": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    },
+    "insufficient_context": {
+      "total": 6,
+      "correct": 0,
+      "incorrect": 6,
+      "accuracy": 0.0
+    }
+  },
+  "by_difficulty": {
+    "medium": {
+      "total": 56,
+      "correct": 6,
+      "incorrect": 50,
+      "accuracy": 0.10714285714285714
+    },
+    "hard": {
+      "total": 44,
+      "correct": 3,
+      "incorrect": 41,
+      "accuracy": 0.06818181818181818
+    },
+    "easy": {
+      "total": 50,
+      "correct": 8,
+      "incorrect": 42,
+      "accuracy": 0.16
+    }
+  },
+  "language_task_matrix": {
+    "az": {
+      "factual_knowledge": {
+        "total": 15,
+        "correct": 1,
+        "incorrect": 14,
+        "accuracy": 0.06666666666666667
+      },
+      "instruction_following": {
+        "total": 15,
+        "correct": 4,
+        "incorrect": 11,
+        "accuracy": 0.26666666666666666
+      },
+      "linguistic_understanding": {
+        "total": 15,
+        "correct": 2,
+        "incorrect": 13,
+        "accuracy": 0.13333333333333333
+      },
+      "reasoning": {
+        "total": 15,
+        "correct": 1,
+        "incorrect": 14,
+        "accuracy": 0.06666666666666667
+      },
+      "unanswerable": {
+        "total": 15,
+        "correct": 0,
+        "incorrect": 15,
+        "accuracy": 0.0
+      }
+    },
+    "en": {
+      "factual_knowledge": {
+        "total": 15,
+        "correct": 1,
+        "incorrect": 14,
+        "accuracy": 0.06666666666666667
+      },
+      "instruction_following": {
+        "total": 15,
+        "correct": 7,
+        "incorrect": 8,
+        "accuracy": 0.4666666666666667
+      },
+      "linguistic_understanding": {
+        "total": 15,
+        "correct": 0,
+        "incorrect": 15,
+        "accuracy": 0.0
+      },
+      "reasoning": {
+        "total": 15,
+        "correct": 1,
+        "incorrect": 14,
+        "accuracy": 0.06666666666666667
+      },
+      "unanswerable": {
+        "total": 15,
+        "correct": 0,
+        "incorrect": 15,
+        "accuracy": 0.0
+      }
+    }
+  },
+  "language_gap": {
+    "source_accuracy": 0.12,
+    "target_accuracy": 0.10666666666666667,
+    "absolute_gap": 0.013333333333333322
+  }
+}

@@ -165,6 +165,7 @@ def test_to_dict() -> None:
         "max_new_tokens": 64,
         "temperature": 0.0,
         "do_sample": False,
+        "adapter_path": None,
     }
 
 

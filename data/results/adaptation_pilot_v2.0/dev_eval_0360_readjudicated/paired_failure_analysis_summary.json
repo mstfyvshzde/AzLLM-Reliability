@@ -1,0 +1,70 @@
+{
+  "overall": {
+    "total_pairs": 75,
+    "preserved_behavior": 21,
+    "language_degradation": 24,
+    "language_recovery": 5,
+    "shared_failure": 25,
+    "behavior_preservation_rate": 0.28,
+    "degradation_rate": 0.32,
+    "recovery_rate": 0.06666666666666667,
+    "shared_failure_rate": 0.3333333333333333
+  },
+  "by_task": {
+    "factual_knowledge": {
+      "total_pairs": 15,
+      "preserved_behavior": 5,
+      "language_degradation": 7,
+      "language_recovery": 0,
+      "shared_failure": 3,
+      "behavior_preservation_rate": 0.3333333333333333,
+      "degradation_rate": 0.4666666666666667,
+      "recovery_rate": 0.0,
+      "shared_failure_rate": 0.2
+    },
+    "instruction_following": {
+      "total_pairs": 15,
+      "preserved_behavior": 2,
+      "language_degradation": 6,
+      "language_recovery": 1,
+      "shared_failure": 6,
+      "behavior_preservation_rate": 0.13333333333333333,
+      "degradation_rate": 0.4,
+      "recovery_rate": 0.06666666666666667,
+      "shared_failure_rate": 0.4
+    },
+    "linguistic_understanding": {
+      "total_pairs": 15,
+      "preserved_behavior": 6,
+      "language_degradation": 6,
+      "language_recovery": 3,
+      "shared_failure": 0,
+      "behavior_preservation_rate": 0.4,
+      "degradation_rate": 0.4,
+      "recovery_rate": 0.2,
+      "shared_failure_rate": 0.0
+    },
+    "reasoning": {
+      "total_pairs": 15,
+      "preserved_behavior": 8,
+      "language_degradation": 4,
+      "language_recovery": 0,
+      "shared_failure": 3,
+      "behavior_preservation_rate": 0.5333333333333333,
+      "degradation_rate": 0.26666666666666666,
+      "recovery_rate": 0.0,
+      "shared_failure_rate": 0.2
+    },
+    "unanswerable": {
+      "total_pairs": 15,
+      "preserved_behavior": 0,
+      "language_degradation": 1,
+      "language_recovery": 1,
+      "shared_failure": 13,
+      "behavior_preservation_rate": 0.0,
+      "degradation_rate": 0.06666666666666667,
+      "recovery_rate": 0.06666666666666667,
+      "shared_failure_rate": 0.8666666666666667
+    }
+  }
+}

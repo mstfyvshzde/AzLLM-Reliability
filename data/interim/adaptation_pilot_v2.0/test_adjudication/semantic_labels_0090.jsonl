@@ -1,0 +1,18 @@
+{"item_id":"linguistic_understanding_0008_az","decision":1,"reason":"Prediction preserves the core meaning that the criticism is conditional on particular circumstances."}
+{"item_id":"linguistic_understanding_0008_en","decision":1,"reason":"Prediction correctly explains that qualified criticism is limited by conditions or reservations rather than being absolute."}
+{"item_id":"linguistic_understanding_0011_az","decision":1,"reason":"Prediction correctly describes removing the software through planned stages rather than stopping it immediately."}
+{"item_id":"linguistic_understanding_0011_en","decision":1,"reason":"Prediction correctly explains that phased out means gradually reducing and eventually discontinuing the software."}
+{"item_id":"linguistic_understanding_0014_az","decision":0,"reason":"Prediction is internally unclear and contradictory and does not reliably convey that the room is empty or unoccupied."}
+{"item_id":"linguistic_understanding_0014_en","decision":1,"reason":"Prediction correctly states that vacant means empty or unoccupied."}
+{"item_id":"linguistic_understanding_0050_az","decision":0,"reason":"Prediction merely repeats the question and does not explain that the records were systematically examined to decide which to include."}
+{"item_id":"linguistic_understanding_0050_en","decision":1,"reason":"Prediction correctly explains that screened means examining records to identify and exclude irrelevant entries."}
+{"item_id":"linguistic_understanding_0052_az","decision":0,"reason":"Prediction reduces the meaning to citing or referring to previous studies and does not clearly preserve the meaning of using them as a source or basis."}
+{"item_id":"linguistic_understanding_0052_en","decision":1,"reason":"Prediction correctly explains that drew on means using or relying on previous studies as a source or basis."}
+{"item_id":"linguistic_understanding_0053_az","decision":0,"reason":"Prediction incorrectly interprets noise as problems, conflicts, or disputes rather than random irrelevant variation in measurements."}
+{"item_id":"linguistic_understanding_0053_en","decision":1,"reason":"Prediction correctly explains noise as random unpredictable variation or fluctuation in the data."}
+{"item_id":"linguistic_understanding_0085_az","decision":1,"reason":"Prediction identifies the students' pre-existing motivation as an alternative explanation for the observed association, preserving the core confounding concern."}
+{"item_id":"linguistic_understanding_0085_en","decision":1,"reason":"Prediction correctly identifies a confounding third variable as the concern behind the authors' caution."}
+{"item_id":"linguistic_understanding_0086_az","decision":1,"reason":"Prediction correctly identifies nine o'clock as the stated reopening time in the given next-morning context."}
+{"item_id":"linguistic_understanding_0086_en","decision":1,"reason":"Prediction exactly preserves that Leyla could return at nine the next morning."}
+{"item_id":"linguistic_understanding_0096_az","decision":0,"reason":"Prediction simply repeats the question and does not answer that the meeting ended before the vote took place."}
+{"item_id":"linguistic_understanding_0096_en","decision":1,"reason":"Prediction correctly states that the measure was not approved because the meeting ended before the vote could be held."}

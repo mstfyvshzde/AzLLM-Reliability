@@ -1,0 +1,18 @@
+{"item_id":"linguistic_understanding_0003_az","decision":0,"reason":"Prediction merely repeats the question and does not explain that slippery means easy to slip or slide on."}
+{"item_id":"linguistic_understanding_0003_en","decision":1,"reason":"Prediction correctly explains that slippery means a surface that is easy to slide on or lose traction on."}
+{"item_id":"linguistic_understanding_0006_az","decision":0,"reason":"Prediction describes the conclusion as initial or beginning-stage but does not preserve the key meaning that it is provisional and not yet certain."}
+{"item_id":"linguistic_understanding_0006_en","decision":1,"reason":"Prediction correctly explains that tentative means uncertain and subject to change."}
+{"item_id":"linguistic_understanding_0013_az","decision":1,"reason":"Prediction correctly states that explaining in detail means providing additional information and details."}
+{"item_id":"linguistic_understanding_0013_en","decision":1,"reason":"Prediction correctly explains that elaborate means to explain something in greater detail."}
+{"item_id":"linguistic_understanding_0041_az","decision":1,"reason":"Prediction preserves the core meaning of a shore or land area beside a body of water and explicitly includes a river."}
+{"item_id":"linguistic_understanding_0041_en","decision":1,"reason":"Prediction correctly identifies bank as the edge or shore of a river."}
+{"item_id":"linguistic_understanding_0045_az","decision":0,"reason":"Prediction does not explain the journalistic meaning of the term and largely repeats the original phrase."}
+{"item_id":"linguistic_understanding_0045_en","decision":1,"reason":"Prediction correctly states that covered means reported on or wrote news about the election."}
+{"item_id":"linguistic_understanding_0056_az","decision":1,"reason":"Prediction correctly conveys that the plane came down to the ground."}
+{"item_id":"linguistic_understanding_0056_en","decision":1,"reason":"Prediction directly preserves the meaning that landed means coming down to the ground."}
+{"item_id":"linguistic_understanding_0081_az","decision":0,"reason":"Prediction gives an unrelated explanation and fails to identify the very small sample size as the reason the result was not conclusive."}
+{"item_id":"linguistic_understanding_0081_en","decision":1,"reason":"Prediction correctly identifies the small sample size as the reason the result was not considered conclusive."}
+{"item_id":"linguistic_understanding_0084_az","decision":1,"reason":"Prediction correctly identifies charging the battery as what allowed the phone to turn on."}
+{"item_id":"linguistic_understanding_0084_en","decision":1,"reason":"Prediction preserves the causal meaning that the charger supplied power enabling the phone to turn on."}
+{"item_id":"linguistic_understanding_0098_az","decision":0,"reason":"Prediction incorrectly states that the relationship does not exist, rather than explaining that part of the original association was accounted for by building density and open space."}
+{"item_id":"linguistic_understanding_0098_en","decision":1,"reason":"Prediction correctly identifies building density and open space as confounding factors explaining part of the original association."}

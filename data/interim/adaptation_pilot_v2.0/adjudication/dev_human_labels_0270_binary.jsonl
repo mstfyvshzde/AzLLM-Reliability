@@ -1,0 +1,4 @@
+{"item_id":"reasoning_0044_az","decision":0,"reason":"Prediction answers No and does not conclude that Q occurred, contradicting the affirmative reference."}
+{"item_id":"reasoning_0044_en","decision":1,"reason":"Prediction explicitly answers Yes and states that Q occurred, matching the affirmative reference."}
+{"item_id":"reasoning_0052_az","decision":0,"reason":"Prediction concludes that Card X can be metallic, contradicting the negative reference."}
+{"item_id":"reasoning_0052_en","decision":1,"reason":"Prediction correctly answers No and preserves the conclusion that Card X cannot be metallic."}

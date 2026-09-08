@@ -1,0 +1,25 @@
+{"instruction_id":"en_inst_0026","category":"format_structure","question_en":"Write the data exactly as 'File=<name> | Size=<value>': report.pdf, 18 MB.","answer_en":"File=report.pdf | Size=18 MB"}
+{"instruction_id":"en_inst_0027","category":"format_structure","question_en":"Place these three words inside parentheses and separate them with commas: forest, engine, notebook.","answer_en":"(forest, engine, notebook)"}
+{"instruction_id":"en_inst_0028","category":"format_structure","question_en":"Combine the two values using exactly this pattern: 'code#status'. Data: X42, ready.","answer_en":"X42#ready"}
+{"instruction_id":"en_inst_0029","category":"extraction","question_en":"Extract only the year from this sentence: The new campus will open in 2029.","answer_en":"2029"}
+{"instruction_id":"en_inst_0030","category":"extraction","question_en":"Write only the unit mentioned here: The cable is 15 meters long.","answer_en":"meters"}
+{"instruction_id":"en_inst_0031","category":"extraction","question_en":"Extract only the device name: Sarah purchased a new tablet for university.","answer_en":"tablet"}
+{"instruction_id":"en_inst_0032","category":"transformation","question_en":"Replace every hyphen with a space: evidence-based-research-method.","answer_en":"evidence based research method"}
+{"instruction_id":"en_inst_0033","category":"transformation","question_en":"Convert this sentence into a question: Thomas will join the meeting tomorrow.","answer_en":"Will Thomas join the meeting tomorrow?"}
+{"instruction_id":"en_inst_0034","category":"transformation","question_en":"Reverse the order of these words: efficient new algorithm","answer_en":"algorithm new efficient"}
+{"instruction_id":"en_inst_0035","category":"filtering_selection","question_en":"Select only the numbers below 25: 31, 12, 24, 7, 29, 18.","answer_en":"12, 24, 7, 18"}
+{"instruction_id":"en_inst_0036","category":"filtering_selection","question_en":"From this list, write only the programming languages: Python, bicycle, Java, table, Rust.","answer_en":"Python, Java, Rust"}
+{"instruction_id":"en_inst_0037","category":"filtering_selection","question_en":"Select only the values divisible by 5: 13, 20, 37, 45, 62, 75.","answer_en":"20, 45, 75"}
+{"instruction_id":"en_inst_0038","category":"multi_step","question_en":"Divide 84 by 7, then add 9 to the result.","answer_en":"84 ÷ 7 = 12, then 12 + 9 = 21."}
+{"instruction_id":"en_inst_0039","category":"multi_step","question_en":"A store has 52 notebooks. It sells 18 and receives 7 more. How many notebooks are left?","answer_en":"52 - 18 = 34, then 34 + 7 = 41 notebooks remain."}
+{"instruction_id":"en_inst_0040","category":"multi_step","question_en":"Five tickets cost 8 dollars each. Find the total and then subtract a 6-dollar discount.","answer_en":"5 × 8 = 40 dollars, then 40 - 6 = 34 dollars."}
+{"instruction_id":"en_inst_0041","category":"constraint_following","question_en":"Write the chemical formula of carbon dioxide using only symbols and numbers.","answer_en":"CO2"}
+{"instruction_id":"en_inst_0042","category":"constraint_following","question_en":"Multiply 7 by 8 and give only the number.","answer_en":"56"}
+{"instruction_id":"en_inst_0043","category":"constraint_following","question_en":"Answer using only 'Yes' or 'No': Is 17 an odd number?","answer_en":"Yes"}
+{"instruction_id":"en_inst_0044","category":"rewriting_editing","question_en":"Correct the grammar: They was waiting outside the building.","answer_en":"They were waiting outside the building."}
+{"instruction_id":"en_inst_0045","category":"rewriting_editing","question_en":"Rewrite this sentence more naturally: I am having a strong interest in artificial intelligence.","answer_en":"I am very interested in artificial intelligence."}
+{"instruction_id":"en_inst_0046","category":"rewriting_editing","question_en":"Correct the spelling error: The experiment produced an unexpected resault.","answer_en":"The experiment produced an unexpected result."}
+{"instruction_id":"en_inst_0047","category":"mixed_instruction","question_en":"Sort these numbers from largest to smallest and give only the first two: 14, 39, 22, 51, 8.","answer_en":"51, 39"}
+{"instruction_id":"en_inst_0048","category":"mixed_instruction","question_en":"Extract the number from the sentence and add 5: The class contains 27 students.","answer_en":"32"}
+{"instruction_id":"en_inst_0049","category":"mixed_instruction","question_en":"Choose the shortest word and write it in uppercase: window, sea, notebook.","answer_en":"SEA"}
+{"instruction_id":"en_inst_0050","category":"mixed_instruction","question_en":"Write the first and fourth words separated by ' | ': Careful experiments often reveal hidden problems.","answer_en":"Careful | reveal"}

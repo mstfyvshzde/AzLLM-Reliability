@@ -1,0 +1,76 @@
+{
+  "benchmark_version": "v1.0",
+  "selected_checkpoint": "0090",
+  "test_used_for_checkpoint_selection": false,
+
+  "base_model": {
+    "model_name": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
+    "revision": "241a666dad6cb93c8ff213d39a7f34a36bf26db4"
+  },
+
+  "artifacts": {
+    "base_test_predictions": {
+      "path": "data/results/final_baseline/test_predictions_base.jsonl",
+      "sha256": "02eb411c4e0213f63e4ad02b051f2d6a5e7df0687a8d5f3675777998a8b68962"
+    },
+    "adapted_test_predictions": {
+      "path": "data/results/adaptation_pilot_v2.0/test_predictions/predictions_0090.jsonl",
+      "sha256": "69942e4963af60767b006eca2ad03de2ab884b5ba19b82453a211d1edc7baaa6"
+    },
+    "capability_stats": {
+      "path": "data/results/adaptation_pilot_v2.0/final_stats/base_vs_adapted_0090.json",
+      "sha256": "a2a495ca5964f6f84f7a7fe338b964e62562f9f68ccd975628876a6bf060fcdb"
+    },
+    "reliability_stats": {
+      "path": "data/results/adaptation_pilot_v2.0/final_stats/reliability_base_vs_adapted_0090.json",
+      "sha256": "919e230494d0141e856aa5da906b5f2173e04814ded43f58943407ddc9f71b60"
+    },
+    "semantic_test_adjudication": {
+      "path": "data/interim/adaptation_pilot_v2.0/test_adjudication/semantic_labels_0090.jsonl",
+      "sha256": "bf6859eb4ebd0a49c604879d95c201d6eb2b7391e358ba40eb9b7c73dda45716"
+    },
+    "binary_test_adjudication": {
+      "path": "data/interim/adaptation_pilot_v2.0/test_adjudication/binary_labels_0090.jsonl",
+      "sha256": "691c519ee286791a1e3e1214d2f579ab26682b09b13ad680197c5250c5a44d22"
+    }
+  },
+
+  "final_test_results": {
+    "capability": {
+      "base_overall_accuracy": 0.6147540983606558,
+      "adapted_overall_accuracy": 0.5819672131147541,
+      "overall_difference_pp": -3.2786885245901676,
+
+      "base_az_accuracy": 0.4426229508196721,
+      "adapted_az_accuracy": 0.45901639344262296,
+      "az_difference_pp": 1.6393442622950838,
+
+      "base_en_accuracy": 0.7868852459016393,
+      "adapted_en_accuracy": 0.7049180327868853,
+      "en_difference_pp": -8.196721311475407,
+
+      "base_language_gap_pp": 34.42622950819672,
+      "adapted_language_gap_pp": 24.59016393442623
+    },
+
+    "reliability": {
+      "base_correct_abstention": 3,
+      "adapted_correct_abstention": 3,
+      "unanswerable_total": 28,
+
+      "base_correct_abstention_rate": 0.10714285714285714,
+      "adapted_correct_abstention_rate": 0.10714285714285714,
+
+      "az_base_correct_abstention": 0,
+      "az_adapted_correct_abstention": 0,
+      "az_unanswerable_total": 14
+    }
+  },
+
+  "statistical_tests": {
+    "overall_capability_mcnemar_p": 0.557197093963623,
+    "az_capability_mcnemar_p": 1.0,
+    "en_capability_mcnemar_p": 0.2265625,
+    "reliability_mcnemar_p": 1.0
+  }
+}
