@@ -1,5 +1,9 @@
 # AzLLM-Reliability
 
+[![Tests](https://github.com/mstfyvshzde/AzLLM-Reliability/actions/workflows/tests.yml/badge.svg)](https://github.com/mstfyvshzde/AzLLM-Reliability/actions/workflows/tests.yml)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > A controlled study of capability and reliability degradation when large language models move from English to Azerbaijani, and whether targeted Azerbaijani adaptation can reduce that gap without introducing new reliability failures.
 
 ## Overview
@@ -297,6 +301,18 @@ English:     -8.20 pp
 ```
 
 A smaller multilingual performance gap can therefore be misleading if absolute performance in both languages is not examined.
+
+---
+
+## Documentation
+
+- [Methodology](docs/METHODOLOGY.md)
+- [Results](docs/RESULTS.md)
+- [Reproducibility](docs/REPRODUCIBILITY.md)
+- [Data Statement](docs/DATA_STATEMENT.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security](SECURITY.md)
+- [Changelog](CHANGELOG.md)
 
 ---
 

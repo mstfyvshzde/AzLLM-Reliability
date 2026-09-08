@@ -1,15 +1,36 @@
-# Projenin nasıl build edileceğini tanımlar.
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
-
-# Projenin temel paket bilgileri.
 [project]
 name = "azllm-reliability"
-version = "0.1.0"
+version = "0.2.0"
 description = "Controlled evaluation of Azerbaijani LLM capability and reliability."
+readme = "README.md"
 requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Shahzada Mustafayev" }
+]
+keywords = [
+    "azerbaijani",
+    "large-language-models",
+    "multilingual-evaluation",
+    "reliability",
+    "abstention",
+    "lora",
+    "nlp",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 
 dependencies = [
     "PyYAML>=6.0,<7.0",
@@ -20,14 +41,14 @@ dev = [
     "pytest>=8.0,<10.0",
 ]
 
+[project.urls]
+Repository = "https://github.com/mstfyvshzde/AzLLM-Reliability"
+Issues = "https://github.com/mstfyvshzde/AzLLM-Reliability/issues"
 
-# setuptools'e hangi Python paketlerini projeye dahil edeceğini söyler.
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["src*"]
 
-
-# pytest'in testleri nerede bulacağını ve import path ayarını tanımlar.
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
