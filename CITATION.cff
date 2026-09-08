@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+
+message: "If you use this software, benchmark, or research artifact, please cite it as below."
+
+title: "AzLLM-Reliability"
+
+type: software
+
+authors:
+  - family-names: "Mustafayev"
+    given-names: "Shahzada"
+
+abstract: >-
+  Research software and benchmark artifacts for controlled evaluation of
+  English-Azerbaijani large-language-model capability and reliability,
+  including paired multilingual evaluation, abstention analysis, targeted
+  Azerbaijani adaptation, and held-out statistical comparison.
+
+keywords:
+  - "Azerbaijani"
+  - "large language models"
+  - "multilingual evaluation"
+  - "reliability"
+  - "abstention"
+  - "LoRA"
+  - "paired evaluation"
+
+repository-code: "https://github.com/mstfyvshzde/AzLLM-Reliability"
+
+license: "MIT"
