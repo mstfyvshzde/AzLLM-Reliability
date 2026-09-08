@@ -1,0 +1,69 @@
+version: "1.0"
+
+experiment:
+  name: pilot_lora_v1.0
+  purpose: >
+    Pilot Azerbaijani LoRA adaptation on the frozen,
+    human-reviewed adaptation dataset.
+
+model:
+  name: mlx-community/Meta-Llama-3.1-8B-Instruct-4bit
+  backend: mlx
+  fine_tune_type: lora
+
+data:
+  source:
+    data/processed/adaptation/adaptation_approved_v1.0.jsonl
+
+  train:
+    data/processed/adaptation/pilot_frozen_v1.0/train.jsonl
+
+  valid:
+    data/processed/adaptation/pilot_frozen_v1.0/valid.jsonl
+
+  frozen_record_count: 189
+  train_record_count: 170
+  valid_record_count: 19
+
+  sha256:
+    8d3baa889c73dd9e6fe706f2e5640854a6e853219bef23d35c17b87f17b8c9aa
+
+training:
+  seed: 17
+
+  batch_size: 1
+
+  iterations: 340
+
+  approximate_epochs: 2
+
+  learning_rate: 1.0e-5
+
+  num_layers: 16
+
+  mask_prompt: true
+
+  max_seq_length: 512
+
+  validation_batches: -1
+
+  steps_per_report: 10
+
+  steps_per_eval: 34
+
+  save_every: 85
+
+output:
+  adapter_path: adapters/pilot_lora_v1.0
+
+evaluation:
+  model_selection_split: benchmark_dev
+
+  final_test_during_training: false
+
+notes:
+  - This is a pilot adaptation experiment, not the final adaptation model.
+  - Frozen benchmark test data must not be used for model selection.
+  - Validation loss is monitored using the internal adaptation validation split.
+  - Benchmark DEV is used later to measure capability and reliability recovery.
+  - Two approximate passes over the training data are used as the first pilot condition.

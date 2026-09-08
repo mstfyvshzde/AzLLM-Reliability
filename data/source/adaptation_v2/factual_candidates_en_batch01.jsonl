@@ -1,0 +1,29 @@
+{"factual_id":"en_fact_0001","category":"geography","question_en":"What is the capital of Japan?","answer_en":"The capital of Japan is Tokyo.","source_note":"Government of Japan"}
+{"factual_id":"en_fact_0002","category":"geography","question_en":"Which ocean lies between Africa and Australia?","answer_en":"The Indian Ocean lies between Africa and Australia.","source_note":"NOAA"}
+{"factual_id":"en_fact_0003","category":"geography","question_en":"What is the largest continent by land area?","answer_en":"Asia is the largest continent by land area.","source_note":"National Geographic"}
+{"factual_id":"en_fact_0004","category":"geography","question_en":"Which river flows through Egypt and empties into the Mediterranean Sea?","answer_en":"The Nile River flows through Egypt and empties into the Mediterranean Sea.","source_note":"Britannica"}
+{"factual_id":"en_fact_0005","category":"geography","question_en":"What is the largest ocean on Earth?","answer_en":"The Pacific Ocean is the largest ocean on Earth.","source_note":"NOAA"}
+
+{"factual_id":"en_fact_0006","category":"astronomy","question_en":"Which planet is known for its prominent ring system?","answer_en":"Saturn is known for its prominent ring system.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0007","category":"astronomy","question_en":"Which planet has the Great Red Spot?","answer_en":"Jupiter has the Great Red Spot.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0008","category":"astronomy","question_en":"What type of celestial object is the Sun?","answer_en":"The Sun is a star.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0009","category":"astronomy","question_en":"What is the name of Earth's natural satellite?","answer_en":"Earth's natural satellite is the Moon.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0010","category":"astronomy","question_en":"Which planet is often called the Red Planet?","answer_en":"Mars is often called the Red Planet.","source_note":"NASA Science"}
+
+{"factual_id":"en_fact_0011","category":"biology","question_en":"What molecule carries genetic information in most living organisms?","answer_en":"DNA carries genetic information in most living organisms.","source_note":"NIH"}
+{"factual_id":"en_fact_0012","category":"biology","question_en":"Which organ pumps blood through the human body?","answer_en":"The heart pumps blood through the human body.","source_note":"NIH"}
+{"factual_id":"en_fact_0013","category":"biology","question_en":"What pigment gives many plants their green color?","answer_en":"Chlorophyll gives many plants their green color.","source_note":"NIH"}
+{"factual_id":"en_fact_0014","category":"biology","question_en":"Which blood cells primarily transport oxygen?","answer_en":"Red blood cells primarily transport oxygen.","source_note":"NIH"}
+{"factual_id":"en_fact_0015","category":"biology","question_en":"Which organ is primarily responsible for filtering blood and producing urine?","answer_en":"The kidneys are primarily responsible for filtering blood and producing urine.","source_note":"NIH"}
+
+{"factual_id":"en_fact_0016","category":"chemistry","question_en":"What is the chemical symbol for helium?","answer_en":"The chemical symbol for helium is He.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0017","category":"chemistry","question_en":"What is the atomic number of helium?","answer_en":"The atomic number of helium is 2.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0018","category":"chemistry","question_en":"What is the chemical symbol for silver?","answer_en":"The chemical symbol for silver is Ag.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0019","category":"chemistry","question_en":"What is the chemical symbol for potassium?","answer_en":"The chemical symbol for potassium is K.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0020","category":"chemistry","question_en":"What is the atomic number of nitrogen?","answer_en":"The atomic number of nitrogen is 7.","source_note":"NIST Chemistry"}
+
+{"factual_id":"en_fact_0021","category":"technology","question_en":"What does URL stand for?","answer_en":"URL stands for Uniform Resource Locator.","source_note":"MDN Web Docs"}
+{"factual_id":"en_fact_0022","category":"technology","question_en":"What does DNS primarily do on the internet?","answer_en":"DNS translates domain names into IP addresses.","source_note":"MDN Web Docs"}
+{"factual_id":"en_fact_0023","category":"technology","question_en":"What does API stand for in software development?","answer_en":"API stands for Application Programming Interface.","source_note":"MDN Web Docs"}
+{"factual_id":"en_fact_0024","category":"mathematics","question_en":"What is the square root of 81?","answer_en":"The square root of 81 is 9.","source_note":"Standard mathematics"}
+{"factual_id":"en_fact_0025","category":"mathematics","question_en":"How many degrees are in a full circle?","answer_en":"A full circle contains 360 degrees.","source_note":"Standard Euclidean geometry"}

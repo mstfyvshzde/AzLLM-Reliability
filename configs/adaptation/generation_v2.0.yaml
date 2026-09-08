@@ -1,0 +1,90 @@
+version: "2.0"
+seed: 17
+
+total_records: 1000
+
+language_quotas:
+  az: 800
+  en: 200
+
+quotas:
+  az:
+    factual_knowledge: 120
+    instruction_following: 160
+    semantic_understanding: 200
+    reasoning: 200
+    unanswerable_abstention: 120
+
+  en:
+    factual_knowledge: 50
+    instruction_following: 50
+    semantic_understanding: 50
+    reasoning: 50
+    unanswerable_abstention: 0
+
+response_length_words:
+  factual_knowledge:
+    min: 2
+    max: 15
+
+  instruction_following:
+    min: 2
+    max: 25
+
+  semantic_understanding:
+    min: 8
+    max: 40
+
+  reasoning:
+    min: 8
+    max: 50
+
+  unanswerable_abstention:
+    min: 6
+    max: 30
+
+generation_policy:
+  independent_from_benchmark: true
+  synthetic: true
+  varied_response_length: true
+  varied_surface_form: true
+  natural_azerbaijani_required: true
+
+  short_answer_rule: >
+    Short answers are allowed only when the task naturally requires
+    a short answer. Do not systematically reduce answers to one-word
+    or yes/no responses.
+
+  reasoning_rule: >
+    Reasoning examples should normally include a concise explanation
+    before or together with the final answer.
+
+  semantic_rule: >
+    Semantic-understanding targets must explicitly express the intended
+    meaning rather than merely repeat the queried word or phrase.
+
+  abstention_rule: >
+    Unanswerable targets must state why the information is insufficient
+    using varied natural phrasing. Do not use one canonical abstention
+    sentence for all examples.
+
+reliability_contrasts:
+  enabled: true
+  description: >
+    Include closely related answerable and unanswerable examples so that
+    the model learns when abstention is appropriate rather than learning
+    a generic refusal pattern.
+
+quality:
+  initial_review_status: pending
+  reject_broken_language: true
+  reject_incomplete_semantics: true
+  reject_unnecessary_abstention: true
+  reject_template_repetition: true
+
+constraints:
+  benchmark_exact_overlap_forbidden: true
+  benchmark_high_similarity_forbidden: true
+  frozen_dev_forbidden: true
+  frozen_test_forbidden: true
+  benchmark_direct_copy_forbidden: true

@@ -1,0 +1,40 @@
+{"instruction_id": "az_inst_0121", "category": "format_structure", "question_az": "Bu məlumatı 'Fənn=<fənn>; Qiymət=<qiymət>' formatında yaz: Riyaziyyat, 92.", "answer_az": "Fənn=Riyaziyyat; Qiymət=92"}
+{"instruction_id": "az_inst_0122", "category": "format_structure", "question_az": "Bu sözləri yumru mötərizə daxilində və aralarında ' / ' olmaqla yaz: su, çay, qəhvə.", "answer_az": "(su / çay / qəhvə)"}
+{"instruction_id": "az_inst_0123", "category": "format_structure", "question_az": "Bu iki məlumatı 'ad#kod' formatında birləşdir: Nigar, B24.", "answer_az": "Nigar#B24"}
+{"instruction_id": "az_inst_0124", "category": "format_structure", "question_az": "Verilənləri dəqiq 'Başlanğıc -> Son' formatında yaz: Bakı, Quba.", "answer_az": "Bakı -> Quba"}
+{"instruction_id": "az_inst_0125", "category": "format_structure", "question_az": "Bu üç rəqəmi aralarında nöqtə qoyaraq verilən sırada yaz: 7, 21, 35.", "answer_az": "7.21.35"}
+{"instruction_id": "az_inst_0126", "category": "extraction", "question_az": "Cümlədən yalnız ilin özünü çıxar: Layihə 2028-ci ildə tamamlanacaq.", "answer_az": "2028"}
+{"instruction_id": "az_inst_0127", "category": "extraction", "question_az": "Bu cümlədən yalnız universitetin adını yaz: Murad ADA Universitetində tədbirə qatıldı.", "answer_az": "ADA Universiteti"}
+{"instruction_id": "az_inst_0128", "category": "extraction", "question_az": "Aşağıdakı məlumatdan yalnız ölçü vahidini çıxar: Körpünün uzunluğu 180 metrdir.", "answer_az": "metr"}
+{"instruction_id": "az_inst_0129", "category": "extraction", "question_az": "Cümlədə qeyd olunan meyvəni yalnız bir sözlə yaz: Leyla səhər armud yedi.", "answer_az": "armud"}
+{"instruction_id": "az_inst_0130", "category": "extraction", "question_az": "Bu cümlədən yalnız temperaturu çıxar: Bu gün hava 27°C-dir.", "answer_az": "27°C"}
+{"instruction_id": "az_inst_0131", "category": "transformation", "question_az": "Bu ifadədəki alt xətt işarələrini boşluqla əvəz et: təbii_dil_emalı", "answer_az": "təbii dil emalı"}
+{"instruction_id": "az_inst_0132", "category": "transformation", "question_az": "Bu ifadəni yalnız ilk sözü böyük hərflə başlayacaq şəkildə yaz: SÜNİ İNTELLEKT MODELİ", "answer_az": "Süni intellekt modeli"}
+{"instruction_id": "az_inst_0133", "category": "transformation", "question_az": "Bu siyahıda nöqtəli vergülləri vergüllə əvəz et: qələm; dəftər; kitab", "answer_az": "qələm, dəftər, kitab"}
+{"instruction_id": "az_inst_0134", "category": "transformation", "question_az": "Bu inkar cümləsini təsdiq formasına çevir: Elvin görüşə gəlmədi.", "answer_az": "Elvin görüşə gəldi."}
+{"instruction_id": "az_inst_0135", "category": "transformation", "question_az": "Bu sözlərin sırasını tərsinə çevir: sürətli yeni sistem", "answer_az": "sistem yeni sürətli"}
+{"instruction_id": "az_inst_0136", "category": "filtering_selection", "question_az": "Bu ədədlərdən yalnız 25 ilə 50 arasında olanları seç: 14, 29, 51, 37, 22, 45.", "answer_az": "29, 37, 45"}
+{"instruction_id": "az_inst_0137", "category": "filtering_selection", "question_az": "Bu siyahıdan yalnız heyvan adlarını yaz: pişik, masa, it, kitab, at.", "answer_az": "pişik, it, at"}
+{"instruction_id": "az_inst_0138", "category": "filtering_selection", "question_az": "Bu ədədlərdən yalnız 4-ə tam bölünənləri seç: 10, 16, 23, 28, 34, 44.", "answer_az": "16, 28, 44"}
+{"instruction_id": "az_inst_0139", "category": "filtering_selection", "question_az": "Bu sözlərdən yalnız 'q' hərfi ilə başlayanları seç: qapı, kitab, qələm, bulud, qatar.", "answer_az": "qapı, qələm, qatar"}
+{"instruction_id": "az_inst_0140", "category": "filtering_selection", "question_az": "Siyahıdan yalnız mənfi ədədləri yaz: -8, 4, -3, 0, 12, -15.", "answer_az": "-8, -3, -15"}
+{"instruction_id": "az_inst_0141", "category": "multi_step", "question_az": "Əvvəl 84-ü 7-yə böl, sonra nəticədən 5 çıx.", "answer_az": "84 ÷ 7 = 12, sonra 12 - 5 = 7."}
+{"instruction_id": "az_inst_0142", "category": "multi_step", "question_az": "36 ilə 19-u topla, sonra cəmi 5-ə böl.", "answer_az": "36 + 19 = 55, sonra 55 ÷ 5 = 11."}
+{"instruction_id": "az_inst_0143", "category": "multi_step", "question_az": "Bir anbarda 60 qutu var. 18 qutu göndərilir, sonra 9 qutu gətirilir. Sonda neçə qutu olur?", "answer_az": "60 - 18 = 42, sonra 42 + 9 = 51 qutu olur."}
+{"instruction_id": "az_inst_0144", "category": "multi_step", "question_az": "8 kitabın hər biri 5 manatdır. Ümumi qiyməti hesabla və 6 manat endirim çıx.", "answer_az": "8 × 5 = 40 manatdır, 40 - 6 = 34 manat qalır."}
+{"instruction_id": "az_inst_0145", "category": "multi_step", "question_az": "81-in üçdə birini tap, sonra nəticəyə 4 əlavə et.", "answer_az": "81 ÷ 3 = 27, sonra 27 + 4 = 31."}
+{"instruction_id": "az_inst_0146", "category": "constraint_following", "question_az": "Suyun kimyəvi formulunu yalnız işarələrlə yaz.", "answer_az": "H2O"}
+{"instruction_id": "az_inst_0147", "category": "constraint_following", "question_az": "9-u 7-yə vur. Cavabı yalnız rəqəmlə yaz.", "answer_az": "63"}
+{"instruction_id": "az_inst_0148", "category": "constraint_following", "question_az": "Bu məlumatı iki sözlə ifadə et: Bakı Azərbaycanın paytaxtıdır.", "answer_az": "Bakı paytaxt"}
+{"instruction_id": "az_inst_0149", "category": "constraint_following", "question_az": "Yalnız boşluq istifadə edərək 'Mars', 'Yer' və 'Venera' sözlərini yaz.", "answer_az": "Mars Yer Venera"}
+{"instruction_id": "az_inst_0150", "category": "constraint_following", "question_az": "Yalnız 'Doğru' və ya 'Yanlış' yaz: 49 yeddinin kvadratıdır.", "answer_az": "Doğru"}
+{"instruction_id": "az_inst_0151", "category": "rewriting_editing", "question_az": "Cümləni qrammatik cəhətdən düzəlt: Mən və dostum dünən kinoya getdi.", "answer_az": "Mən və dostum dünən kinoya getdik."}
+{"instruction_id": "az_inst_0152", "category": "rewriting_editing", "question_az": "Bu cümləni daha yığcam yaz: O, əvvəlcədən qabaqcadan xəbər verdi.", "answer_az": "O, əvvəlcədən xəbər verdi."}
+{"instruction_id": "az_inst_0153", "category": "rewriting_editing", "question_az": "Durğu işarələrini düzəlt: Leyla sən hazırmısan", "answer_az": "Leyla, sən hazırmısan?"}
+{"instruction_id": "az_inst_0154", "category": "rewriting_editing", "question_az": "Yazı səhvini düzəlt: Bu mövzu mənim üçün çox vacipdir.", "answer_az": "Bu mövzu mənim üçün çox vacibdir."}
+{"instruction_id": "az_inst_0155", "category": "rewriting_editing", "question_az": "Cümləni keçmişdə davamlı vərdişi bildirən formaya çevir: Samir hər səhər qaçır.", "answer_az": "Samir hər səhər qaçırdı."}
+{"instruction_id": "az_inst_0156", "category": "mixed_instruction", "question_az": "Bu ədədləri kiçikdən böyüyə sırala və yalnız ən böyük ikisini yaz: 9, 31, 17, 44, 25.", "answer_az": "31, 44"}
+{"instruction_id": "az_inst_0157", "category": "mixed_instruction", "question_az": "Cümlədən yalnız rəqəmi çıxar və onun kvadratını yaz: Qutuda 6 top var.", "answer_az": "36"}
+{"instruction_id": "az_inst_0158", "category": "mixed_instruction", "question_az": "Bu sözlərdən əlifba sırasına görə sonuncunu seç və kiçik hərflə yaz: alma, nar, üzüm.", "answer_az": "üzüm"}
+{"instruction_id": "az_inst_0159", "category": "mixed_instruction", "question_az": "İfadədə neçə samit olduğunu hesabla və yalnız rəqəmi yaz: Bakı", "answer_az": "2"}
+{"instruction_id": "az_inst_0160", "category": "mixed_instruction", "question_az": "Bu cümlədəki ikinci və sonuncu sözləri ' | ' ilə birləşdir: Yeni layihə bu gün başlayır.", "answer_az": "layihə | başlayır"}

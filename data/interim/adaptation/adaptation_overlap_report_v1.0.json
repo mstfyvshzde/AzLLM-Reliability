@@ -1,0 +1,9 @@
+{
+  "adaptation_records": 200,
+  "benchmark_records": 1000,
+  "threshold": 0.65,
+  "exact_overlap_count": 0,
+  "high_similarity_count": 0,
+  "exact_overlaps": [],
+  "high_similarity_overlaps": []
+}

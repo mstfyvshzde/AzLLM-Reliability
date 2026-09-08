@@ -1,0 +1,70 @@
+{
+  "overall": {
+    "total_pairs": 75,
+    "preserved_behavior": 31,
+    "language_degradation": 20,
+    "language_recovery": 3,
+    "shared_failure": 21,
+    "behavior_preservation_rate": 0.41333333333333333,
+    "degradation_rate": 0.26666666666666666,
+    "recovery_rate": 0.04,
+    "shared_failure_rate": 0.28
+  },
+  "by_task": {
+    "factual_knowledge": {
+      "total_pairs": 15,
+      "preserved_behavior": 7,
+      "language_degradation": 4,
+      "language_recovery": 1,
+      "shared_failure": 3,
+      "behavior_preservation_rate": 0.4666666666666667,
+      "degradation_rate": 0.26666666666666666,
+      "recovery_rate": 0.06666666666666667,
+      "shared_failure_rate": 0.2
+    },
+    "instruction_following": {
+      "total_pairs": 15,
+      "preserved_behavior": 4,
+      "language_degradation": 4,
+      "language_recovery": 0,
+      "shared_failure": 7,
+      "behavior_preservation_rate": 0.26666666666666666,
+      "degradation_rate": 0.26666666666666666,
+      "recovery_rate": 0.0,
+      "shared_failure_rate": 0.4666666666666667
+    },
+    "linguistic_understanding": {
+      "total_pairs": 15,
+      "preserved_behavior": 11,
+      "language_degradation": 3,
+      "language_recovery": 1,
+      "shared_failure": 0,
+      "behavior_preservation_rate": 0.7333333333333333,
+      "degradation_rate": 0.2,
+      "recovery_rate": 0.06666666666666667,
+      "shared_failure_rate": 0.0
+    },
+    "reasoning": {
+      "total_pairs": 15,
+      "preserved_behavior": 9,
+      "language_degradation": 5,
+      "language_recovery": 0,
+      "shared_failure": 1,
+      "behavior_preservation_rate": 0.6,
+      "degradation_rate": 0.3333333333333333,
+      "recovery_rate": 0.0,
+      "shared_failure_rate": 0.06666666666666667
+    },
+    "unanswerable": {
+      "total_pairs": 15,
+      "preserved_behavior": 0,
+      "language_degradation": 4,
+      "language_recovery": 1,
+      "shared_failure": 10,
+      "behavior_preservation_rate": 0.0,
+      "degradation_rate": 0.26666666666666666,
+      "recovery_rate": 0.06666666666666667,
+      "shared_failure_rate": 0.6666666666666666
+    }
+  }
+}

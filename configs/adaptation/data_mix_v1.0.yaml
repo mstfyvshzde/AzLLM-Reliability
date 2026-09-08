@@ -1,0 +1,37 @@
+version: "1.0"
+
+objective: >
+  Improve Azerbaijani capability and reliability while preserving
+  English capability and avoiding benchmark contamination.
+
+language:
+  primary: az
+  support: en
+
+data_mix:
+  instruction_following: 0.25
+  semantic_understanding: 0.25
+  reasoning: 0.20
+  unanswerable_abstention: 0.20
+  factual_knowledge: 0.10
+
+exclude_from_training_signal:
+  - evaluator_false_negative
+  - ambiguous
+
+handle_separately:
+  - generation_truncation_or_loop
+
+constraints:
+  benchmark_overlap_forbidden: true
+  test_split_forbidden: true
+  dev_split_forbidden: true
+  train_split_direct_copy_forbidden: true
+  semantic_pair_copy_forbidden: true
+  synthetic_data_allowed: true
+  quality_review_required: true
+  deduplication_required: true
+
+notes:
+  - Adaptation data must be generated independently from the frozen benchmark.
+  - Root-cause analysis informs distribution only; benchmark items are not training examples.

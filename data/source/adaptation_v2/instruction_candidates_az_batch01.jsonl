@@ -1,0 +1,40 @@
+{"instruction_id":"az_inst_0001","category":"format_structure","question_az":"Bu üç sözü eyni sırada saxla və aralarına yalnız ' | ' qoy: kitab, dəniz, qələm.","answer_az":"kitab | dəniz | qələm"}
+{"instruction_id":"az_inst_0002","category":"format_structure","question_az":"Məlumatı bu formatda yaz: 'Ad: ..., Şəhər: ...'. Məlumat: Leyla, Gəncə.","answer_az":"Ad: Leyla, Şəhər: Gəncə"}
+{"instruction_id":"az_inst_0003","category":"format_structure","question_az":"Bu ədədləri mötərizə daxilində vergüllə ayıraraq yaz: 4, 9, 15.","answer_az":"(4, 9, 15)"}
+{"instruction_id":"az_inst_0004","category":"format_structure","question_az":"Aşağıdakı məlumatı yalnız bir sətirdə 'məhsul -> qiymət' formatında yaz: kitab, 12 manat.","answer_az":"kitab -> 12 manat"}
+{"instruction_id":"az_inst_0005","category":"format_structure","question_az":"Bu sözləri kiçik hərflərlə və nöqtəli vergüllə ayıraraq yaz: ALMA, MASA, QAPI.","answer_az":"alma; masa; qapı"}
+{"instruction_id":"az_inst_0006","category":"extraction","question_az":"Cümlədən yalnız tarixi çıxar: Murad 14 mart 2027-ci ildə Bakıya gedəcək.","answer_az":"14 mart 2027"}
+{"instruction_id":"az_inst_0007","category":"extraction","question_az":"Bu cümlədən yalnız şəxsin soyadını yaz: Aysel Məmmədova layihəni təqdim etdi.","answer_az":"Məmmədova"}
+{"instruction_id":"az_inst_0008","category":"extraction","question_az":"Aşağıdakı məlumatdan yalnız saatı çıxar: Görüş çərşənbə günü saat 16:30-da başlayacaq.","answer_az":"16:30"}
+{"instruction_id":"az_inst_0009","category":"extraction","question_az":"Cümlədə qeyd olunan nəqliyyat vasitəsini yalnız bir sözlə yaz: Nigar universitetə metro ilə getdi.","answer_az":"metro"}
+{"instruction_id":"az_inst_0010","category":"extraction","question_az":"Bu cümlədən yalnız rəqəmi çıxar: Şirkət bu ay 47 yeni sifariş qəbul edib.","answer_az":"47"}
+{"instruction_id":"az_inst_0011","category":"transformation","question_az":"Bu cümləni tamamilə böyük hərflərlə yaz: yeni layihə sabah başlayır.","answer_az":"YENİ LAYİHƏ SABAH BAŞLAYIR."}
+{"instruction_id":"az_inst_0012","category":"transformation","question_az":"Bu ifadəni tamamilə kiçik hərflərlə yaz: SÜRƏTLİ ELEKTRİK QATARI.","answer_az":"sürətli elektrik qatarı."}
+{"instruction_id":"az_inst_0013","category":"transformation","question_az":"Bu cümlədəki bütün boşluqları alt xətt işarəsi ilə əvəz et: açıq mənbəli proqram təminatı","answer_az":"açıq_mənbəli_proqram_təminatı"}
+{"instruction_id":"az_inst_0014","category":"transformation","question_az":"Bu sözü tərsinə yaz: kitab","answer_az":"batik"}
+{"instruction_id":"az_inst_0015","category":"transformation","question_az":"Bu cümlədə 'Bakı' sözünü 'Şəki' ilə əvəz et və başqa heç nəyi dəyişmə: Samir sabah Bakıya gedəcək.","answer_az":"Samir sabah Şəkiyə gedəcək."}
+{"instruction_id":"az_inst_0016","category":"filtering_selection","question_az":"Bu siyahıdan yalnız cüt ədədləri seç və artan sıra ilə yaz: 13, 4, 22, 7, 18.","answer_az":"4, 18, 22"}
+{"instruction_id":"az_inst_0017","category":"filtering_selection","question_az":"Bu sözlərdən yalnız şəhər adlarını seç: Bakı, kitab, Gəncə, qələm, Şəki.","answer_az":"Bakı, Gəncə, Şəki"}
+{"instruction_id":"az_inst_0018","category":"filtering_selection","question_az":"Bu siyahıdan 10-dan böyük olan ədədləri seç: 3, 14, 8, 21, 10, 17.","answer_az":"14, 21, 17"}
+{"instruction_id":"az_inst_0019","category":"filtering_selection","question_az":"Bu variantlardan yalnız nəqliyyat vasitələrini yaz: avtobus, alma, qatar, masa, velosiped.","answer_az":"avtobus, qatar, velosiped"}
+{"instruction_id":"az_inst_0020","category":"filtering_selection","question_az":"Aşağıdakı sözlərdən yalnız 'a' hərfi ilə başlayanları seç: alma, kitab, ağac, qələm, avtobus.","answer_az":"alma, ağac, avtobus"}
+{"instruction_id":"az_inst_0021","category":"multi_step","question_az":"Əvvəl 8-i 6-ya vur, sonra nəticəyə 5 əlavə et. Son cavabı bir cümlə ilə yaz.","answer_az":"8 × 6 = 48 və 48 + 5 = 53, son cavab 53-dür."}
+{"instruction_id":"az_inst_0022","category":"multi_step","question_az":"40-dan 17-ni çıx, sonra nəticəni 2-yə vur.","answer_az":"40 - 17 = 23, sonra 23 × 2 = 46."}
+{"instruction_id":"az_inst_0023","category":"multi_step","question_az":"90-ı 3-ə böl və alınan nəticədən 8 çıx.","answer_az":"90 ÷ 3 = 30, sonra 30 - 8 = 22."}
+{"instruction_id":"az_inst_0024","category":"multi_step","question_az":"5 kitabın hər biri 7 manatdır. Ümumi qiyməti hesabla və sonra 10 manat endirimi çıx.","answer_az":"5 × 7 = 35 manatdır, 35 - 10 = 25 manat qalır."}
+{"instruction_id":"az_inst_0025","category":"multi_step","question_az":"Bir qutuda 24 qələm var. 9-u götürülür, sonra 6 qələm əlavə olunur. Sonda neçə qələm var?","answer_az":"24 - 9 = 15, sonra 15 + 6 = 21 qələm olur."}
+{"instruction_id":"az_inst_0026","category":"constraint_following","question_az":"Azərbaycanın paytaxtını yalnız bir sözlə yaz.","answer_az":"Bakı"}
+{"instruction_id":"az_inst_0027","category":"constraint_following","question_az":"5 ilə 9-un cəmini yalnız rəqəmlə yaz.","answer_az":"14"}
+{"instruction_id":"az_inst_0028","category":"constraint_following","question_az":"Bu məlumatı maksimum üç sözlə ifadə et: Saturn bir planetdir.","answer_az":"Saturn planetdir"}
+{"instruction_id":"az_inst_0029","category":"constraint_following","question_az":"Cavabında vergül istifadə etmədən bu iki sözü yaz: dəniz və bulud.","answer_az":"dəniz bulud"}
+{"instruction_id":"az_inst_0030","category":"constraint_following","question_az":"Bu suala yalnız 'Bəli' və ya 'Xeyr' ilə cavab ver: 8 cüt ədəddirmi?","answer_az":"Bəli"}
+{"instruction_id":"az_inst_0031","category":"rewriting_editing","question_az":"Cümləni qrammatik cəhətdən düzəlt: Mən dünən universitetə gedir.","answer_az":"Mən dünən universitetə getdim."}
+{"instruction_id":"az_inst_0032","category":"rewriting_editing","question_az":"Cümləni daha yığcam yaz: O, çox böyük ölçüyə malik olan bir bina gördü.","answer_az":"O, çox böyük bir bina gördü."}
+{"instruction_id":"az_inst_0033","category":"rewriting_editing","question_az":"Durğu işarələrini düzəlt: Aysel sən sabah gələcəksənmi","answer_az":"Aysel, sən sabah gələcəksənmi?"}
+{"instruction_id":"az_inst_0034","category":"rewriting_editing","question_az":"Bu cümlədə yazı səhvini düzəlt: Mən yeni kompiyuter aldım.","answer_az":"Mən yeni kompüter aldım."}
+{"instruction_id":"az_inst_0035","category":"rewriting_editing","question_az":"Bu cümləni keçmiş zamana çevir: Leyla kitab oxuyur.","answer_az":"Leyla kitab oxudu."}
+{"instruction_id":"az_inst_0036","category":"mixed_instruction","question_az":"Sözləri əlifba sırası ilə düz və cavabı böyük hərflərlə yaz: nar, alma, üzüm.","answer_az":"ALMA, NAR, ÜZÜM"}
+{"instruction_id":"az_inst_0037","category":"mixed_instruction","question_az":"Bu cümlədən yalnız şəhər adını çıxar və kiçik hərflərlə yaz: Murad sabah Gəncəyə gedəcək.","answer_az":"gəncə"}
+{"instruction_id":"az_inst_0038","category":"mixed_instruction","question_az":"15, 7, 22 və 4 ədədlərindən ən böyüyünü seç və yalnız rəqəmi yaz.","answer_az":"22"}
+{"instruction_id":"az_inst_0039","category":"mixed_instruction","question_az":"Bu ifadədə neçə söz olduğunu hesabla və yalnız rəqəmi yaz: süni intellekt sistemləri sürətlə inkişaf edir","answer_az":"6"}
+{"instruction_id":"az_inst_0040","category":"mixed_instruction","question_az":"Cümlədəki ilk və son sözü ' / ' işarəsi ilə ayıraraq yaz: Yaşıl ağac bağçada sakitcə dayanır.","answer_az":"Yaşıl / dayanır"}

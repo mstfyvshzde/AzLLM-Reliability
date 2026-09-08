@@ -1,0 +1,69 @@
+version: "2.0"
+
+objective: >
+  Improve Azerbaijani capability and reliability without inducing
+  short-answer collapse, excessive abstention, or English degradation.
+
+dataset:
+  target_records: 1000
+
+language_mix:
+  az: 0.80
+  en_replay: 0.20
+
+az_task_mix:
+  instruction_following: 0.20
+  semantic_understanding: 0.25
+  reasoning: 0.25
+  unanswerable_abstention: 0.15
+  factual_knowledge: 0.15
+
+response_policy:
+  avoid_uniform_short_targets: true
+  avoid_canonical_response_repetition: true
+  require_natural_azerbaijani: true
+  require_response_length_diversity: true
+
+  factual_knowledge:
+    preferred_words: [2, 15]
+
+  instruction_following:
+    preferred_words: [2, 25]
+
+  semantic_understanding:
+    preferred_words: [8, 40]
+
+  reasoning:
+    preferred_words: [8, 50]
+
+  unanswerable_abstention:
+    preferred_words: [6, 30]
+    varied_abstention_phrasing: true
+
+reliability_design:
+  include_answerable_unanswerable_contrasts: true
+  prevent_blanket_abstention_behavior: true
+  require_reason_for_abstention_when_natural: true
+
+quality:
+  human_review_required: true
+  reject_broken_azerbaijani: true
+  reject_semantically_incomplete_answers: true
+  reject_unnecessary_abstention: true
+  reject_excessive_template_repetition: true
+
+constraints:
+  benchmark_overlap_forbidden: true
+  dev_split_forbidden: true
+  test_split_forbidden: true
+  train_split_direct_copy_forbidden: true
+  semantic_pair_copy_forbidden: true
+  synthetic_data_allowed: true
+  deduplication_required: true
+
+notes:
+  - Short answers are allowed when the task naturally requires them.
+  - The goal is not to force verbose answers.
+  - English replay examples must be independently generated and must not
+    contain benchmark items.
+  - Abstention training must be balanced with answerable near-neighbor tasks.

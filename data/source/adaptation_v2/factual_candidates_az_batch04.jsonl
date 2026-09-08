@@ -1,0 +1,34 @@
+{"factual_id":"az_fact_0091","category":"astronomy","question_az":"Uran Günəşdən neçənci planetdir?","answer_az":"Uran Günəşdən yeddinci planetdir.","source_note":"NASA Science"}
+{"factual_id":"az_fact_0092","category":"astronomy","question_az":"Neptun Günəş sistemində Günəşdən ən uzaq planetdirmi?","answer_az":"Bəli. Neptun Günəş sistemində Günəşdən ən uzaq planetdir.","source_note":"NASA Science"}
+{"factual_id":"az_fact_0093","category":"astronomy","question_az":"Günəş sisteminin ilk dörd planeti hansı tip planetlərdir?","answer_az":"Merkuri, Venera, Yer və Mars qayalı, yəni yer tipli planetlərdir.","source_note":"NASA Science"}
+{"factual_id":"az_fact_0094","category":"astronomy","question_az":"Yupiter və Saturn hansı planet sinfinə daxildir?","answer_az":"Yupiter və Saturn qaz nəhəngləridir.","source_note":"NASA Science"}
+{"factual_id":"az_fact_0095","category":"astronomy","question_az":"Uran və Neptun hansı planet sinfinə daxildir?","answer_az":"Uran və Neptun buz nəhəngləridir.","source_note":"NASA Science"}
+{"factual_id":"az_fact_0096","category":"astronomy","question_az":"Pluton hazırda planet, yoxsa cırtdan planet kimi təsnif olunur?","answer_az":"Pluton cırtdan planet kimi təsnif olunur.","source_note":"NASA Science / IAU classification"}
+{"factual_id":"az_fact_0097","category":"astronomy","question_az":"Günəş sistemində rəsmi tanınmış neçə cırtdan planet var?","answer_az":"Günəş sistemində rəsmi tanınmış beş cırtdan planet var.","source_note":"NASA Science"}
+{"factual_id":"az_fact_0098","category":"astronomy","question_az":"Plutonun ən böyük peyki hansıdır?","answer_az":"Plutonun ən böyük peyki Charondur.","source_note":"NASA Science"}
+
+{"factual_id":"az_fact_0099","category":"earth_science","question_az":"Yer səthinin təxminən neçə faizi su ilə örtülüdür?","answer_az":"Yer səthinin təxminən 71 faizi su ilə örtülüdür.","source_note":"USGS Water Science School"}
+{"factual_id":"az_fact_0100","category":"earth_science","question_az":"Yer üzündəki bütün suyun təxminən neçə faizi okeanlarda yerləşir?","answer_az":"Yer üzündəki bütün suyun təxminən 96.5 faizi okeanlarda yerləşir.","source_note":"USGS Water Science School"}
+{"factual_id":"az_fact_0101","category":"earth_science","question_az":"Yer üzündəki bütün suyun təxminən neçə faizi şirin sudur?","answer_az":"Yer üzündəki bütün suyun təxminən 2.5 faizi şirin sudur.","source_note":"USGS Water Science School"}
+{"factual_id":"az_fact_0102","category":"earth_science","question_az":"Şirin su ehtiyatlarının böyük hissəsi əsasən harada saxlanılır?","answer_az":"Şirin su ehtiyatlarının böyük hissəsi buzlaqlarda, daimi qarda və yeraltı sularda saxlanılır.","source_note":"USGS Water Science School"}
+{"factual_id":"az_fact_0103","category":"earth_science","question_az":"Okean suyu şirin, yoxsa duzlu sudur?","answer_az":"Okean suyu duzlu sudur.","source_note":"USGS Water Science School"}
+{"factual_id":"az_fact_0104","category":"earth_science","question_az":"Okean suyunun orta duzluluğu təxminən neçə ppm-dir?","answer_az":"Okean suyunun duzluluğu təxminən 35000 ppm-dir.","source_note":"USGS Water Science School"}
+{"factual_id":"az_fact_0105","category":"earth_science","question_az":"Okeanlar su dövranında buxarlanan suyun təxminən neçə faizini təmin edir?","answer_az":"Okeanlar su dövranında buxarlanan suyun təxminən 90 faizini təmin edir.","source_note":"USGS Water Science School"}
+
+{"factual_id":"az_fact_0106","category":"biology","question_az":"İnsan hüceyrələrində genetik məlumatın əsas daşıyıcısı nədir?","answer_az":"İnsan hüceyrələrində genetik məlumatın əsas daşıyıcısı DNT-dir.","source_note":"NIH"}
+{"factual_id":"az_fact_0107","category":"biology","question_az":"İnsan DNT-sində xromosomlar normal olaraq neçə cüt təşkil edir?","answer_az":"İnsan DNT-si normal olaraq 23 cüt xromosom şəklində təşkil olunur.","source_note":"NIH"}
+{"factual_id":"az_fact_0108","category":"biology","question_az":"RNT-də timinin yerinə əsasən hansı azotlu əsas olur?","answer_az":"RNT-də timinin yerinə urasil olur.","source_note":"NIH"}
+{"factual_id":"az_fact_0109","category":"biology","question_az":"Zülalların əsas qurucu vahidləri necə adlanır?","answer_az":"Zülalların əsas qurucu vahidləri amin turşuları adlanır.","source_note":"NIH"}
+{"factual_id":"az_fact_0110","category":"biology","question_az":"Ribosomların əsas funksiyası nədir?","answer_az":"Ribosomların əsas funksiyası zülal sintezidir.","source_note":"NIH"}
+{"factual_id":"az_fact_0111","category":"biology","question_az":"Mitoxondrilərin hüceyrədə əsas rolu nədir?","answer_az":"Mitoxondrilər hüceyrənin istifadə etdiyi enerjinin böyük hissəsinin istehsalında iştirak edir.","source_note":"NIH"}
+{"factual_id":"az_fact_0112","category":"biology","question_az":"Bitki hüceyrələrində fotosintez əsasən hansı orqanoiddə baş verir?","answer_az":"Fotosintez əsasən xloroplastlarda baş verir.","source_note":"NIH"}
+
+{"factual_id":"az_fact_0113","category":"technology","question_az":"JSON əsasən nə üçün istifadə olunan mətn formatıdır?","answer_az":"JSON strukturlaşdırılmış məlumatın saxlanması və ötürülməsi üçün istifadə olunan mətn formatıdır.","source_note":"MDN Web Docs"}
+{"factual_id":"az_fact_0114","category":"technology","question_az":"JSON-da obyekt açar-dəyər cütlərindən ibarət ola bilərmi?","answer_az":"Bəli. JSON obyektləri açar-dəyər cütlərindən ibarət ola bilər.","source_note":"MDN Web Docs"}
+{"factual_id":"az_fact_0115","category":"technology","question_az":"JavaScript-də JSON mətnini obyektə çevirmək üçün hansı metod istifadə olunur?","answer_az":"JSON mətnini obyektə çevirmək üçün JSON.parse() metodu istifadə olunur.","source_note":"MDN Web Docs"}
+{"factual_id":"az_fact_0116","category":"technology","question_az":"JavaScript obyektini JSON mətninə çevirmək üçün hansı metod istifadə olunur?","answer_az":"JavaScript obyektini JSON mətninə çevirmək üçün JSON.stringify() metodu istifadə olunur.","source_note":"MDN Web Docs"}
+
+{"factual_id":"az_fact_0117","category":"mathematics","question_az":"Sıfır müsbət ədəddirmi?","answer_az":"Xeyr. Sıfır nə müsbət, nə də mənfi ədəddir.","source_note":"Standard mathematics definition"}
+{"factual_id":"az_fact_0118","category":"mathematics","question_az":"1 sadə ədəddirmi?","answer_az":"Xeyr. 1 sadə ədəd deyil.","source_note":"Standard number theory definition"}
+{"factual_id":"az_fact_0119","category":"mathematics","question_az":"Sadə ədədin neçə müsbət böləni olur?","answer_az":"Sadə ədədin dəqiq iki müsbət böləni olur: 1 və özü.","source_note":"Standard number theory definition"}
+{"factual_id":"az_fact_0120","category":"mathematics","question_az":"Kvadratın bütün daxili bucaqları neçə dərəcədir?","answer_az":"Kvadratın bütün daxili bucaqları 90 dərəcədir.","source_note":"Standard Euclidean geometry"}

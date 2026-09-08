@@ -89,6 +89,7 @@ class ModelConfig:
     model_name: str
     tokenizer_name: str | None = None
     revision: str | None = None
+    adapter_path: str | None = None
     backend: str = "transformers"
     device: str = 'auto'
     dtype: str = 'bfloat16'
@@ -180,6 +181,18 @@ class ModelConfig:
                 "temperature must be 0.0 when do_sample is False."
             )
 
+        if self.adapter_path is not None:
+            if not self.adapter_path.strip():
+                raise ValueError(
+                    "adapter_path cannot be empty when provided."
+                )
+
+            if self.backend != "mlx":
+                raise ValueError(
+                    "adapter_path is currently supported only "
+                    "for the MLX backend."
+                )
+
     @property
     def resolved_tokenizer_name(self) -> str:
         """Kullanılacak tokenizer identifier değerini döndürür.
@@ -208,6 +221,7 @@ class ModelConfig:
             "max_new_tokens": self.max_new_tokens,
             "temperature": self.temperature,
             "do_sample": self.do_sample,
+            "adapter_path": self.adapter_path,
         }
 
     @classmethod
@@ -257,7 +271,8 @@ class ModelConfig:
             do_sample=data.get(
                 "do_sample",
                 False
-            )
+            ),
+            adapter_path=data.get("adapter_path"),
         )
 
 

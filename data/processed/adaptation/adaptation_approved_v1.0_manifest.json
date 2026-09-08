@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "status": "frozen",
+  "language": "az",
+  "source": "synthetic_human_reviewed",
+  "record_count": 189,
+  "sha256": "8d3baa889c73dd9e6fe706f2e5640854a6e853219bef23d35c17b87f17b8c9aa",
+  "category_counts": {
+    "factual_knowledge": 20,
+    "instruction_following": 50,
+    "reasoning": 40,
+    "semantic_understanding": 47,
+    "unanswerable_abstention": 32
+  },
+  "human_review": {
+    "total": 200,
+    "approved": 189,
+    "rejected": 11,
+    "pending": 0,
+    "rejected_item_ids": [
+      "adapt_00053",
+      "adapt_00074",
+      "adapt_00093",
+      "adapt_00144",
+      "adapt_00149",
+      "adapt_00154",
+      "adapt_00159",
+      "adapt_00164",
+      "adapt_00169",
+      "adapt_00174",
+      "adapt_00179"
+    ]
+  },
+  "benchmark_overlap_audit": {
+    "benchmark_version": "1.0",
+    "threshold": 0.65,
+    "exact_overlaps": 0,
+    "high_similarity": 0
+  },
+  "constraints": {
+    "benchmark_training_copy_forbidden": true,
+    "dev_split_forbidden": true,
+    "test_split_forbidden": true
+  }
+}

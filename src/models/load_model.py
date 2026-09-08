@@ -265,6 +265,7 @@ def load_model_and_tokenizer(
         model, tokenizer = mlx_load(
             config.model_name,
             revision=config.revision,
+            adapter_path=config.adapter_path,
         )
 
         return model, tokenizer

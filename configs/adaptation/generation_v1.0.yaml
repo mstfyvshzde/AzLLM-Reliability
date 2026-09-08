@@ -1,0 +1,89 @@
+version: "1.0"
+
+language: az
+
+source: synthetic
+
+generation:
+  seed: 17
+
+  require_non_empty_instruction: true
+  require_non_empty_response: true
+
+  avoid_benchmark_copy: true
+  avoid_semantic_pair_copy: true
+
+  max_instruction_words: 120
+  max_response_words: 180
+
+categories:
+
+  instruction_following:
+    objective: >
+      Azerbaijani dilində format, constraint, extraction,
+      transformation və multi-step instruction following bacarığını artırmaq.
+
+    subcategories:
+      - format_following
+      - constraint_following
+      - extraction
+      - transformation
+      - multi_step_instruction
+
+  semantic_understanding:
+    objective: >
+      Azerbaijani contextual meaning, lexical disambiguation,
+      paraphrase, reference resolution və discourse understanding
+      bacarığını artırmaq.
+
+    subcategories:
+      - contextual_meaning
+      - lexical_disambiguation
+      - paraphrase_understanding
+      - reference_resolution
+      - discourse_understanding
+
+  reasoning:
+    objective: >
+      Azerbaijani arithmetic, logical, comparative,
+      ordering və constraint reasoning bacarığını artırmaq.
+
+    subcategories:
+      - arithmetic_reasoning
+      - logical_reasoning
+      - comparative_reasoning
+      - ordering_reasoning
+      - constraint_reasoning
+
+  unanswerable_abstention:
+    objective: >
+      Məlumat kifayət etmədikdə modelin düzgün abstain etməsini
+      və əsassız cavab yaratmamasını öyrətmək.
+
+    subcategories:
+      - missing_information
+      - underspecified_constraint
+      - false_premise
+      - impossible_inference
+      - insufficient_context
+
+    canonical_response: >
+      Verilən məlumatlardan müəyyən etmək mümkün deyil.
+
+  factual_knowledge:
+    objective: >
+      Azerbaijani dilində ümumi, texnoloji və sadə kəmiyyət
+      biliklərini düzgün cavablandırmaq.
+
+    subcategories:
+      - general_knowledge
+      - technology_knowledge
+      - quantitative_knowledge
+
+quality:
+  require_unique_instruction: true
+  require_unique_response_pair: true
+  reject_empty: true
+  reject_duplicate: true
+  reject_benchmark_overlap: true
+  require_review_status_pending: true

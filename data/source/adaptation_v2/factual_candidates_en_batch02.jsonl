@@ -1,0 +1,29 @@
+{"factual_id":"en_fact_0026","category":"geography","question_en":"What is the capital of Canada?","answer_en":"The capital of Canada is Ottawa.","source_note":"Government of Canada"}
+{"factual_id":"en_fact_0027","category":"geography","question_en":"Which continent contains the Sahara Desert?","answer_en":"The Sahara Desert is in Africa.","source_note":"National Geographic"}
+{"factual_id":"en_fact_0028","category":"geography","question_en":"Which ocean is east of the United States?","answer_en":"The Atlantic Ocean is east of the United States.","source_note":"NOAA"}
+{"factual_id":"en_fact_0029","category":"geography","question_en":"What is the capital of Australia?","answer_en":"The capital of Australia is Canberra.","source_note":"Australian Government"}
+{"factual_id":"en_fact_0030","category":"geography","question_en":"Which continent is Brazil located in?","answer_en":"Brazil is located in South America.","source_note":"Government of Brazil"}
+
+{"factual_id":"en_fact_0031","category":"astronomy","question_en":"Which planet rotates on its side compared with most other planets?","answer_en":"Uranus rotates on its side compared with most other planets.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0032","category":"astronomy","question_en":"What is the largest moon of Saturn?","answer_en":"Titan is the largest moon of Saturn.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0033","category":"astronomy","question_en":"Which dwarf planet lies in the asteroid belt?","answer_en":"Ceres is the dwarf planet located in the asteroid belt.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0034","category":"astronomy","question_en":"What is the closest star to Earth?","answer_en":"The Sun is the closest star to Earth.","source_note":"NASA Science"}
+{"factual_id":"en_fact_0035","category":"astronomy","question_en":"Which planet has a day longer than its year?","answer_en":"Venus has a day longer than its year.","source_note":"NASA Science"}
+
+{"factual_id":"en_fact_0036","category":"biology","question_en":"Which organ is mainly responsible for gas exchange in the human body?","answer_en":"The lungs are mainly responsible for gas exchange in the human body.","source_note":"NIH"}
+{"factual_id":"en_fact_0037","category":"biology","question_en":"What type of blood vessel carries blood away from the heart?","answer_en":"Arteries carry blood away from the heart.","source_note":"NIH"}
+{"factual_id":"en_fact_0038","category":"biology","question_en":"Which organ produces insulin in the human body?","answer_en":"The pancreas produces insulin.","source_note":"NIH"}
+{"factual_id":"en_fact_0039","category":"biology","question_en":"What is the basic structural and functional unit of life?","answer_en":"The cell is the basic structural and functional unit of life.","source_note":"NIH"}
+{"factual_id":"en_fact_0040","category":"biology","question_en":"Which cell organelle contains most of a human cell's DNA?","answer_en":"The nucleus contains most of a human cell's DNA.","source_note":"NIH"}
+
+{"factual_id":"en_fact_0041","category":"chemistry","question_en":"What is the chemical symbol for calcium?","answer_en":"The chemical symbol for calcium is Ca.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0042","category":"chemistry","question_en":"What is the atomic number of oxygen?","answer_en":"The atomic number of oxygen is 8.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0043","category":"chemistry","question_en":"What is the chemical symbol for chlorine?","answer_en":"The chemical symbol for chlorine is Cl.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0044","category":"chemistry","question_en":"What is the atomic number of carbon?","answer_en":"The atomic number of carbon is 6.","source_note":"NIST Chemistry"}
+{"factual_id":"en_fact_0045","category":"chemistry","question_en":"What is the chemical symbol for copper?","answer_en":"The chemical symbol for copper is Cu.","source_note":"NIST Chemistry"}
+
+{"factual_id":"en_fact_0046","category":"technology","question_en":"What does CPU stand for?","answer_en":"CPU stands for Central Processing Unit.","source_note":"Standard computing terminology"}
+{"factual_id":"en_fact_0047","category":"technology","question_en":"What does RAM stand for?","answer_en":"RAM stands for Random Access Memory.","source_note":"Standard computing terminology"}
+{"factual_id":"en_fact_0048","category":"technology","question_en":"What does IP stand for in computer networking?","answer_en":"IP stands for Internet Protocol.","source_note":"IETF networking terminology"}
+{"factual_id":"en_fact_0049","category":"mathematics","question_en":"What is 12 squared?","answer_en":"12 squared is 144.","source_note":"Standard mathematics"}
+{"factual_id":"en_fact_0050","category":"mathematics","question_en":"How many sides does a hexagon have?","answer_en":"A hexagon has six sides.","source_note":"Standard Euclidean geometry"}
