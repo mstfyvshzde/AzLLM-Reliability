@@ -28,3 +28,6 @@ keywords:
 repository-code: "https://github.com/mstfyvshzde/AzLLM-Reliability"
 
 license: "MIT"
+
+version: "0.2.0"
+date-released: "2026-09-08"
