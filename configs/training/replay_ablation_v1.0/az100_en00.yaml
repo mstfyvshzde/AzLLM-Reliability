@@ -1,0 +1,72 @@
+version: "1.0"
+
+experiment:
+  name: replay_ablation_az100_en00
+  purpose: >
+    Controlled English-replay ablation for Azerbaijani LoRA adaptation.
+    The replay ratio is the primary manipulated variable.
+
+model:
+  name: mlx-community/Meta-Llama-3.1-8B-Instruct-4bit
+  revision: 241a666dad6cb93c8ff213d39a7f34a36bf26db4
+  backend: mlx
+  fine_tune_type: lora
+
+data:
+  full: data/processed/adaptation/replay_ablation_v1.0/az100_en00/full.jsonl
+  train: data/processed/adaptation/replay_ablation_v1.0/az100_en00/train.jsonl
+  valid: data/processed/adaptation/replay_ablation_v1.0/az100_en00/valid.jsonl
+  target_mix:
+    az: 800
+    en: 0
+  total_record_count: 800
+  expected_train_record_count: 720
+  expected_valid_record_count: 80
+
+training:
+  seed: 17
+  batch_size: 1
+  iterations: 450
+  learning_rate: 5.0e-6
+  num_layers: 16
+  mask_prompt: true
+  max_seq_length: 512
+  validation_batches: -1
+  steps_per_report: 10
+  steps_per_eval: 45
+  save_every: 90
+
+lora:
+  rank: 8
+  scale: 20
+  dropout: 0.0
+
+output:
+  adapter_path: adapters/replay_ablation_v1.0/az100_en00
+
+evaluation:
+  model_selection_split: benchmark_dev
+  final_test_during_ablation: false
+
+controls:
+  manipulated: english_replay_ratio
+  fixed:
+    - base_model
+    - model_revision
+    - seed
+    - batch_size
+    - iterations
+    - learning_rate
+    - num_layers
+    - max_seq_length
+    - lora_rank
+    - lora_scale
+    - lora_dropout
+    - training_set_size
+    - validation_set_size
+
+notes:
+  - TEST data must not be used during this ablation.
+  - All conditions use the same total number of adaptation records.
+  - Sampling is without replacement and stratified by task.
+  - Compare conditions on the frozen benchmark DEV split first.

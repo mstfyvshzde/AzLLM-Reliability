@@ -1,0 +1,12 @@
+model:
+  model_name: "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit"
+  tokenizer_name: null
+  revision: "241a666dad6cb93c8ff213d39a7f34a36bf26db4"
+  backend: mlx
+  device: auto
+  dtype: bfloat16
+  trust_remote_code: false
+  max_new_tokens: 256
+  temperature: 0.0
+  do_sample: false
+  adapter_path: "adapters/replay_ablation_v1.0/az100_en00/checkpoint_0360"

@@ -1,0 +1,27 @@
+model: mlx-community/Meta-Llama-3.1-8B-Instruct-4bit
+train: true
+
+data: data/processed/adaptation/replay_ablation_v1.0/az75_en25
+
+fine_tune_type: lora
+
+seed: 17
+batch_size: 1
+iters: 450
+learning_rate: 5.0e-6
+num_layers: 16
+
+mask_prompt: true
+max_seq_length: 512
+
+val_batches: -1
+steps_per_report: 10
+steps_per_eval: 45
+save_every: 90
+
+adapter_path: adapters/replay_ablation_v1.0/az75_en25
+
+lora_parameters:
+  rank: 8
+  scale: 20
+  dropout: 0.0

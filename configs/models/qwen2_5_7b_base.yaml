@@ -1,0 +1,11 @@
+model:
+  model_name: "mlx-community/Qwen2.5-7B-Instruct-4bit"
+  tokenizer_name: null
+  revision: "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+  backend: mlx
+  device: auto
+  dtype: bfloat16
+  trust_remote_code: false
+  max_new_tokens: 256
+  temperature: 0.0
+  do_sample: false

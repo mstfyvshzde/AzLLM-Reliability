@@ -1,0 +1,18 @@
+{"item_id": "linguistic_understanding_0003_az", "decision": 0, "reason": "Incorrect meaning: focuses on high speed rather than a surface that is easy to slide on."}
+{"item_id": "linguistic_understanding_0003_en", "decision": 1, "reason": "Correctly explains that slippery means difficult to grip and easy to slip on."}
+{"item_id": "linguistic_understanding_0006_az", "decision": 0, "reason": "Omits the essential meaning that the conclusion is provisional and not yet certain."}
+{"item_id": "linguistic_understanding_0006_en", "decision": 1, "reason": "Correctly preserves the meaning of being uncertain and subject to change."}
+{"item_id": "linguistic_understanding_0013_az", "decision": 1, "reason": "Correctly conveys explaining something in greater detail."}
+{"item_id": "linguistic_understanding_0013_en", "decision": 1, "reason": "Correctly explains that elaborate means to provide more detail or clarification."}
+{"item_id": "linguistic_understanding_0041_az", "decision": 0, "reason": "Repetitive and does not clearly state the required meaning of land beside the river."}
+{"item_id": "linguistic_understanding_0041_en", "decision": 1, "reason": "Correctly identifies bank as the land or edge beside a river or other body of water."}
+{"item_id": "linguistic_understanding_0045_az", "decision": 0, "reason": "Interprets the expression literally and misses the journalistic meaning of reporting on the election."}
+{"item_id": "linguistic_understanding_0045_en", "decision": 1, "reason": "Correctly explains that covered means reported on or provided news about the election."}
+{"item_id": "linguistic_understanding_0056_az", "decision": 1, "reason": "Correctly preserves the meaning that the plane came down to the ground."}
+{"item_id": "linguistic_understanding_0056_en", "decision": 1, "reason": "Correctly explains that landed means the plane came to rest on the ground after flight."}
+{"item_id": "linguistic_understanding_0081_az", "decision": 0, "reason": "Does not identify the very small sample as the reason the result was not conclusive."}
+{"item_id": "linguistic_understanding_0081_en", "decision": 1, "reason": "Correctly identifies the small sample size as the reason the result was not conclusive."}
+{"item_id": "linguistic_understanding_0084_az", "decision": 1, "reason": "Correctly states that charging the battery enabled the phone to turn on."}
+{"item_id": "linguistic_understanding_0084_en", "decision": 1, "reason": "Prediction preserves the causal meaning that power from charging enabled the phone to turn on."}
+{"item_id": "linguistic_understanding_0098_az", "decision": 0, "reason": "Misses the confounding explanation involving building density and open space."}
+{"item_id": "linguistic_understanding_0098_en", "decision": 1, "reason": "Correctly explains that part of the original association was due to building density and open space."}

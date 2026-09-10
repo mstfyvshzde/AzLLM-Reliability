@@ -1,0 +1,372 @@
+{
+  "version": "replay_ablation_v1.0",
+  "source": "data/processed/adaptation/adaptation_v2.0.jsonl",
+  "source_sha256": "218265e79dc5da746b7a95adf84135f21e2d58d0be42090e36bfdce54f00de96",
+  "seed": 17,
+  "design": {
+    "total_records_per_condition": 800,
+    "sampling": "without_replacement_stratified_by_task",
+    "train_valid_split": "90/10_stratified_by_language_and_task",
+    "test_usage": "none",
+    "controlled_variable": "english_replay_ratio"
+  },
+  "conditions": {
+    "az100_en00": {
+      "target_mix": {
+        "az": 800,
+        "en": 0
+      },
+      "full": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az100_en00/full.jsonl",
+        "sha256": "3897fe38d887929467dcb7c65d910cb4c77016527da9bcfb4d758d3fd9bf2a71",
+        "counts": {
+          "total": 800,
+          "by_language": {
+            "az": 800
+          },
+          "by_task": {
+            "factual_knowledge": 120,
+            "instruction_following": 160,
+            "reasoning": 200,
+            "semantic_understanding": 200,
+            "unanswerable": 120
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 120,
+            "az:instruction_following": 160,
+            "az:reasoning": 200,
+            "az:semantic_understanding": 200,
+            "az:unanswerable": 120
+          }
+        }
+      },
+      "train": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az100_en00/train.jsonl",
+        "sha256": "9c881759158dafc520ef6f5e70c1e9a57afc22007579d6b40fdcd6bfc0970a29",
+        "counts": {
+          "total": 720,
+          "by_language": {
+            "az": 720
+          },
+          "by_task": {
+            "factual_knowledge": 108,
+            "instruction_following": 144,
+            "reasoning": 180,
+            "semantic_understanding": 180,
+            "unanswerable": 108
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 108,
+            "az:instruction_following": 144,
+            "az:reasoning": 180,
+            "az:semantic_understanding": 180,
+            "az:unanswerable": 108
+          }
+        }
+      },
+      "valid": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az100_en00/valid.jsonl",
+        "sha256": "c43d135f52f32494ea519d77f02420b91ed13b7fc326b0d765a731553b53f03a",
+        "counts": {
+          "total": 80,
+          "by_language": {
+            "az": 80
+          },
+          "by_task": {
+            "factual_knowledge": 12,
+            "instruction_following": 16,
+            "reasoning": 20,
+            "semantic_understanding": 20,
+            "unanswerable": 12
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 12,
+            "az:instruction_following": 16,
+            "az:reasoning": 20,
+            "az:semantic_understanding": 20,
+            "az:unanswerable": 12
+          }
+        }
+      }
+    },
+    "az90_en10": {
+      "target_mix": {
+        "az": 720,
+        "en": 80
+      },
+      "full": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az90_en10/full.jsonl",
+        "sha256": "4bd0da2fc3a4a0495ef8d04c5ef3934dce4e292a3f4268cededee98c36b5f363",
+        "counts": {
+          "total": 800,
+          "by_language": {
+            "az": 720,
+            "en": 80
+          },
+          "by_task": {
+            "factual_knowledge": 128,
+            "instruction_following": 164,
+            "reasoning": 200,
+            "semantic_understanding": 200,
+            "unanswerable": 108
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 108,
+            "az:instruction_following": 144,
+            "az:reasoning": 180,
+            "az:semantic_understanding": 180,
+            "az:unanswerable": 108,
+            "en:factual_knowledge": 20,
+            "en:instruction_following": 20,
+            "en:reasoning": 20,
+            "en:semantic_understanding": 20
+          }
+        }
+      },
+      "train": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az90_en10/train.jsonl",
+        "sha256": "e4ada32a7f1e19a5f11eb7edae13a64d6b27663c8983bf2106db34c2f21aa257",
+        "counts": {
+          "total": 720,
+          "by_language": {
+            "az": 648,
+            "en": 72
+          },
+          "by_task": {
+            "factual_knowledge": 115,
+            "instruction_following": 148,
+            "reasoning": 180,
+            "semantic_understanding": 180,
+            "unanswerable": 97
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 97,
+            "az:instruction_following": 130,
+            "az:reasoning": 162,
+            "az:semantic_understanding": 162,
+            "az:unanswerable": 97,
+            "en:factual_knowledge": 18,
+            "en:instruction_following": 18,
+            "en:reasoning": 18,
+            "en:semantic_understanding": 18
+          }
+        }
+      },
+      "valid": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az90_en10/valid.jsonl",
+        "sha256": "973be4a6b9538d0dcd464f9d60f50019756950e5c3ed762e0d425f7a0585c279",
+        "counts": {
+          "total": 80,
+          "by_language": {
+            "az": 72,
+            "en": 8
+          },
+          "by_task": {
+            "factual_knowledge": 13,
+            "instruction_following": 16,
+            "reasoning": 20,
+            "semantic_understanding": 20,
+            "unanswerable": 11
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 11,
+            "az:instruction_following": 14,
+            "az:reasoning": 18,
+            "az:semantic_understanding": 18,
+            "az:unanswerable": 11,
+            "en:factual_knowledge": 2,
+            "en:instruction_following": 2,
+            "en:reasoning": 2,
+            "en:semantic_understanding": 2
+          }
+        }
+      }
+    },
+    "az80_en20": {
+      "target_mix": {
+        "az": 640,
+        "en": 160
+      },
+      "full": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az80_en20/full.jsonl",
+        "sha256": "8407f127d5090690ffef8993242e21d926983b60f2a0e2a57666e3727ffe039e",
+        "counts": {
+          "total": 800,
+          "by_language": {
+            "az": 640,
+            "en": 160
+          },
+          "by_task": {
+            "factual_knowledge": 136,
+            "instruction_following": 168,
+            "reasoning": 200,
+            "semantic_understanding": 200,
+            "unanswerable": 96
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 96,
+            "az:instruction_following": 128,
+            "az:reasoning": 160,
+            "az:semantic_understanding": 160,
+            "az:unanswerable": 96,
+            "en:factual_knowledge": 40,
+            "en:instruction_following": 40,
+            "en:reasoning": 40,
+            "en:semantic_understanding": 40
+          }
+        }
+      },
+      "train": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az80_en20/train.jsonl",
+        "sha256": "517a50e72967e6036483fe0303a2f98b1ba9fd7ac54249d40951b36e9177296f",
+        "counts": {
+          "total": 720,
+          "by_language": {
+            "az": 576,
+            "en": 144
+          },
+          "by_task": {
+            "factual_knowledge": 123,
+            "instruction_following": 151,
+            "reasoning": 180,
+            "semantic_understanding": 180,
+            "unanswerable": 86
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 87,
+            "az:instruction_following": 115,
+            "az:reasoning": 144,
+            "az:semantic_understanding": 144,
+            "az:unanswerable": 86,
+            "en:factual_knowledge": 36,
+            "en:instruction_following": 36,
+            "en:reasoning": 36,
+            "en:semantic_understanding": 36
+          }
+        }
+      },
+      "valid": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az80_en20/valid.jsonl",
+        "sha256": "e19fe05b2d49345b0086e6a66d277e2befb1da43c05aee288b2574f21a6a4e61",
+        "counts": {
+          "total": 80,
+          "by_language": {
+            "az": 64,
+            "en": 16
+          },
+          "by_task": {
+            "factual_knowledge": 13,
+            "instruction_following": 17,
+            "reasoning": 20,
+            "semantic_understanding": 20,
+            "unanswerable": 10
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 9,
+            "az:instruction_following": 13,
+            "az:reasoning": 16,
+            "az:semantic_understanding": 16,
+            "az:unanswerable": 10,
+            "en:factual_knowledge": 4,
+            "en:instruction_following": 4,
+            "en:reasoning": 4,
+            "en:semantic_understanding": 4
+          }
+        }
+      }
+    },
+    "az75_en25": {
+      "target_mix": {
+        "az": 600,
+        "en": 200
+      },
+      "full": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az75_en25/full.jsonl",
+        "sha256": "168294ac823b14db9a68b4634ea99a075cd87673546ad65c7f3592e39e323fc5",
+        "counts": {
+          "total": 800,
+          "by_language": {
+            "az": 600,
+            "en": 200
+          },
+          "by_task": {
+            "factual_knowledge": 140,
+            "instruction_following": 170,
+            "reasoning": 200,
+            "semantic_understanding": 200,
+            "unanswerable": 90
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 90,
+            "az:instruction_following": 120,
+            "az:reasoning": 150,
+            "az:semantic_understanding": 150,
+            "az:unanswerable": 90,
+            "en:factual_knowledge": 50,
+            "en:instruction_following": 50,
+            "en:reasoning": 50,
+            "en:semantic_understanding": 50
+          }
+        }
+      },
+      "train": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az75_en25/train.jsonl",
+        "sha256": "d896b62b0e2317a9ec1490de4297acf78f3b68af5e932a342a73c544128b284b",
+        "counts": {
+          "total": 720,
+          "by_language": {
+            "az": 540,
+            "en": 180
+          },
+          "by_task": {
+            "factual_knowledge": 126,
+            "instruction_following": 153,
+            "reasoning": 180,
+            "semantic_understanding": 180,
+            "unanswerable": 81
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 81,
+            "az:instruction_following": 108,
+            "az:reasoning": 135,
+            "az:semantic_understanding": 135,
+            "az:unanswerable": 81,
+            "en:factual_knowledge": 45,
+            "en:instruction_following": 45,
+            "en:reasoning": 45,
+            "en:semantic_understanding": 45
+          }
+        }
+      },
+      "valid": {
+        "path": "data/processed/adaptation/replay_ablation_v1.0/az75_en25/valid.jsonl",
+        "sha256": "3d14450cfee5d0bdbc4f8c39d539c1188aabdd643f6c62c0ba50543e3e7dccc8",
+        "counts": {
+          "total": 80,
+          "by_language": {
+            "az": 60,
+            "en": 20
+          },
+          "by_task": {
+            "factual_knowledge": 14,
+            "instruction_following": 17,
+            "reasoning": 20,
+            "semantic_understanding": 20,
+            "unanswerable": 9
+          },
+          "by_language_task": {
+            "az:factual_knowledge": 9,
+            "az:instruction_following": 12,
+            "az:reasoning": 15,
+            "az:semantic_understanding": 15,
+            "az:unanswerable": 9,
+            "en:factual_knowledge": 5,
+            "en:instruction_following": 5,
+            "en:reasoning": 5,
+            "en:semantic_understanding": 5
+          }
+        }
+      }
+    }
+  }
+}

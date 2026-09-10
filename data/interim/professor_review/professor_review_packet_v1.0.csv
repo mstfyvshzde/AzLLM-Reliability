@@ -1,0 +1,933 @@
+item_id,pair_id,language,task,category,difficulty,is_answerable,question,reference_answer,llama_prediction,qwen_prediction,semantic_equivalent_en_az,natural_azerbaijani,reference_answer_valid,answerability_valid,llama_correct,qwen_correct,reviewer_notes
+factual_knowledge_0008_en,factual_knowledge_0008,en,factual_knowledge,general_knowledge,medium,True,Which continent contains the Sahara Desert and the Nile River?,Africa,The continent that contains the Sahara Desert and the Nile River is Africa.,"The Sahara Desert and the Nile River are both located in Africa. Africa is the world's second-largest and second-most-populous continent, and it contains a vast array of geographical features, including deserts, rivers, and mountains.",,,,,,,
+factual_knowledge_0013_az,factual_knowledge_0013,az,factual_knowledge,general_knowledge,easy,True,Fransanın paytaxtı hansıdır?,Paris,Fransa'nın paytaxtı Paris'tir.,"Fransanın paytaxtı Paris'tir. Paris, Fransa'nın en büyük şehri ve ülkenin başkentidir.",,,,,,,
+factual_knowledge_0017_az,factual_knowledge_0017,az,factual_knowledge,general_knowledge,hard,True,"Mahalangur Himal dağ silsiləsində, Nepal ilə Çin sərhədində yerləşən və orta dəniz səviyyəsindən Yer kürəsinin ən yüksək nöqtəsi olan dağ hansıdır?",Everest dağı,"Mahalangur Himal dağ silsiləsində, Nepal ilə Çin sərhədində yerləşən və orta dəniz səviyyəsindən Yer kürəsinin ən yüksək nöqtəsi olan dağ - Everest (əslində Qomolungma) dağıdır.","Mahalangur Himal dağ silsiləsində, Nepal ilə Çin sərhədində yerləşən və orta dəniz səviyyəsindən Yer kürəsinin ən yüksək nöqtəsi olan dağ Qomolangma adlanır, daha çox bilinen adıyla Everest dağıdır. Bu dağın yüksəkliyi 8.848 metr (29.029.000 ayak) orta dəniz səviyyəsindən hesablana bilir.",,,,,,,
+factual_knowledge_0032_az,factual_knowledge_0032,az,factual_knowledge,science_knowledge,hard,True,"İnsanda yetkin halda nüvəsi olmayan, hemoqlobin daşıyan və qandakı oksigenin böyük hissəsini nəql edən formalı qan elementləri hansılardır?",Qırmızı qan hüceyrələri,"İnsanda yetkin halda nüvəsi olmayan, hemoqlobin daşıyan və qandakı oksigenin böyük hissəsini nəql edən formalı qan elementləri qan hüceyrələrinin əsas komponenti olan qırmızı qan hüceyrələrinin (eritrotsit) əsas formalı elementidir - hemoglobin.","İndən istifadə etmək istənilən qan elementlərinin nüvəsi olmayan, hemoglobin-daşıyan və qandak oksigenin böyük hissəsini nəql edəcəyi üçün, bu elementlər ən səhvdən əlçatılmış olan hemoqlobin moleküllərindən ibarətdir. Bu elementlər, qanın əlavə oksijen nəqliyini artırmaq üçün əlavə bir işlev yerine verir. 
+
+Bu əlavə qan elementləri, qan əlavə oksijen nəqliyini artırmaq üçün əlavə bir işlev yerine verir:
+
+1. **Ferritin**: Qan dərəcələrindən əlavə, karnil organlarda da var olan bir protein. Ferritin əlavə oksijen nəqliyini artırmaq üçün əlavə bir yoldan iş",,,,,,,
+factual_knowledge_0045_az,factual_knowledge_0045,az,factual_knowledge,science_knowledge,medium,True,Zərərli ultrabənövşəyi şüalanmanın böyük hissəsini udan ozon qatının əsasən yerləşdiyi atmosfer təbəqəsi hansıdır?,Stratosfer,Zərərli ultrabənövşəyi şüalanmanın böyük hissəsini udan ozon qatının əsasən yerləşdiyi atmosfer təbəqəsi stratosferdir.,"Əsas olaraq, zərərli ultrabənövşəyi şüalanmanın böyük hissəsini udan öz ozon qatının yerləşdiyi atmosfer təbəqəsindən əldə edir. Bu təbəqə, atmosferin ən üst təbəqələrindən biridir və onu ozon diqüanidir.
+
+Ozon qatı atmosferin 10-50 km əmsalında yerləşir, amma ən çox 20-30 km əmsalında ədədli olur. Bu təbəqədən əldə edilən zərərli ultravioletlər, Dünya yüzeyindən gələn əvəz olunur və bu əvəz, Dünya yüzeyindəki canlılara əhəmiyyətli bir risk təşkil edir.
+
+Bu risk, hər",,,,,,,
+factual_knowledge_0058_az,factual_knowledge_0058,az,factual_knowledge,technology_knowledge,hard,True,"Əməliyyat sisteminin proseslərin planlaşdırılmasını, yaddaşın idarə olunmasını, aparatla qarşılıqlı əlaqəni və proqramların sistem çağırışlarını idarə edən imtiyazlı əsas komponenti hansıdır?",Nüvə,"Əməliyyat sisteminin proseslərin planlaşdırılmasını, yaddaşın idarə olunmasını, aparatla qarşılıqlı əlaqəni və proqramların sistem çağırışlarını idarə edən imtiyazlı əsas komponenti Operativ Yaddaş (OY) və ya Operativ Xatirədir.","Əməliyyat sisteminin proseslərin planlaşdırılmasını, yaddaşın idarə olunmasını, aparatla qarşılıqlı əlaqəni və proqramların sistem çağırışlarını idarə edən imtiyazlı əsas komponenti ""Kernel"" (Nöqtə) idi.
+
+Kernel, operativ sistemun en imtiyazlı və səhvdən qorunmuş bir dəyişəndir. Onun əsas funksiyaları aşağıdakılardır:
+
+1. Prosesslerin idarə edilməsi: Prosesslərin yaratılması, planlaşdırılması və bitirməsi.
+
+2. Yaddaşın idarə edilməsi: Yaddaşın sərhədini təmin etmək, prosesslər üçün yaddaş bölgələrinin ayırılması və onların idarə edilməsi.
+
+3. Aparatla əlaqə: Aparatların (masan",,,,,,,
+factual_knowledge_0058_en,factual_knowledge_0058,en,factual_knowledge,technology_knowledge,hard,True,"Which privileged core component of an operating system handles process scheduling, memory management, hardware interaction, and system calls made by applications?",Kernel,"The privileged core component of an operating system that handles process scheduling, memory management, hardware interaction, and system calls made by applications is the **Kernel**.","The privileged core component of an operating system that handles process scheduling, memory management, hardware interaction, and system calls made by applications is the kernel. The kernel is the central hub of an operating system and is responsible for managing system resources and providing services to application software. It acts as an intermediary between the hardware and software, ensuring efficient and secure operation of the system.",,,,,,,
+factual_knowledge_0068_en,factual_knowledge_0068,en,factual_knowledge,technology_knowledge,easy,True,What does USB stand for?,Universal Serial Bus,USB stands for Universal Serial Bus.,"USB stands for Universal Serial Bus. It is a standard interface for connecting external devices to personal computers, allowing for data transfer and power delivery.",,,,,,,
+factual_knowledge_0082_en,factual_knowledge_0082,en,factual_knowledge,quantitative_knowledge,easy,True,What is 25% of 200?,50,"To find 25% of 200, first, find 1% of 200. 
+
+1% of 200 = 0.01 * 200 = 2
+
+Now, multiply 2 by 25 to find 25% of 200.
+
+25% of 200 = 2 * 25 = 50","To find 25% of 200, you can multiply 200 by 0.25 (since 25% is the same as 0.25 in decimal form).
+
+So, \( 200 \times 0.25 = 50 \).
+
+Therefore, 25% of 200 is 50.",,,,,,,
+factual_knowledge_0085_az,factual_knowledge_0085,az,factual_knowledge,quantitative_knowledge,medium,True,"Qırmızı topların mavi toplara nisbəti 3:5-dirsə və 15 qırmızı top varsa, neçə mavi top var?",25,"Qırmızı topların mavi toplara nisbəti 3:5-dirsə, bu deməkdir ki, 3 qırmızı top 5 mavi topa bərabərdir.
+
+15 qırmızı top var, bu 3 qırmızı topun 5 qatını təşkil edir. 3 qırmızı top 5 mavi topa bərabərdir, beləlikə 15 qırmızı top 5*3 = 15 qırmızı topun 5 qatını təşkil edir. Bu da 15 qırmızı topun 5 qatını təşkil edir. 5 qatını təşkil edən məqsəd 15 qırmızı topun 5 qatını təşkil edir. 15 qırmızı topun 5 qatını təşkil edən məqsəd 15 qırmızı topun 5 qatını təşkil edir. 15 qırmızı topun 5 qatını təşkil","Verilən məlumatlara görə, qırmızı topların mavi toplara nisbəti 3:5-dir. Yani, 3 qırmızı top varsa, 5 mavi top var.
+
+Verilən:
+- 15 qırmızı top var.
+
+Bu 15 qırmızı top, 3 qırmızı top üçün bir nisbətə uyğun olaraq 5 (15 ÷ 3 = 5) tərəfindən artırılmışdır.
+
+Bu 5 tərəfindən artırılan nisbətin 5 qrupu olacaq, hər bir qrupda 5 mavi top olacaq.
+
+Yani, 15 qırmızı topa əsasən, mavi topların sayını 5 tərəfindən artırırsak:
+
+5 (mavi top) × 5 (nisbətə uyğun artırma sayı) = 25 mavi top
+
+Yani, 15 qırm",,,,,,,
+factual_knowledge_0099_en,factual_knowledge_0099,en,factual_knowledge,quantitative_knowledge,medium,True,What is the probability of rolling an even number on a fair six-sided die?,1/2,"To find the probability of rolling an even number on a fair six-sided die, we need to consider the total number of possible outcomes and the number of favorable outcomes.
+
+The total number of possible outcomes is 6, since there are 6 sides on the die.
+
+The favorable outcomes are the even numbers: 2, 4, and 6.
+
+So, the probability of rolling an even number is the number of favorable outcomes (3) divided by the total number of possible outcomes (6).
+
+Probability = Number of favorable outcomes / Total number of possible outcomes
+= 3 / 6
+= 1/2
+= 0.5
+
+Therefore, the probability of rolling an even number on a fair six-sided die is 0.5 or 50%.","The probability of rolling an even number on a fair six-sided die can be calculated as follows:
+
+A fair six-sided die has six faces, numbered 1 through 6. The even numbers among these are 2, 4, and 6. So, there are 3 favorable outcomes.
+
+The total number of possible outcomes when rolling a die is 6 (since there are six faces).
+
+The probability \(P\) of rolling an even number is the number of favorable outcomes divided by the total number of possible outcomes:
+
+\[ P(\text{even number}) = \frac{\text{Number of even numbers}}{\text{Total number of faces}} = \frac{3}{6} = \frac{1}{2} \]
+
+So, the probability of rolling an even number on a fair six-sided die is \(\frac{1}{2}\) or 0.5, which can also be expressed as 50%.",,,,,,,
+factual_knowledge_0100_en,factual_knowledge_0100,en,factual_knowledge,quantitative_knowledge,hard,True,A rectangular field is 30 meters long and 20 meters wide. A path 2 meters wide is built uniformly inside the field along all four edges. What is the area of the remaining inner rectangle?,416 square meters,"To find the area of the remaining inner rectangle, we need to subtract the area of the path from the original area of the field.
+
+The original area of the field is:
+Length (L) = 30 meters
+Width (W) = 20 meters
+Area = L * W = 30 * 20 = 600 square meters
+
+The path is 2 meters wide and is built uniformly inside the field along all four edges. This means that the length and width of the inner rectangle will be 2 meters less than the original length and width.
+
+Inner Length (L') = 30 - 2 * 2 = 30 - 4 = 26 meters
+Inner Width (W') = 20 - 2 * 2 = 20 - 4 = 16 meters
+
+The area of the inner rectangle is:
+Area' = L' * W' = 26 * 16 = 416 square meters
+
+So, the area of the remaining inner rectangle is 416 square meters.","To find the area of the remaining inner rectangle after the path is built, we need to follow these steps:
+
+1. Determine the dimensions of the inner rectangle.
+2. Calculate the area of the inner rectangle.
+
+First, let's determine the dimensions of the inner rectangle. The path is 2 meters wide and runs uniformly along all four edges of the field. This means that the length of the inner rectangle is reduced by 2 meters on each end, so the total reduction in length is \(2 \times 2 = 4\) meters. Similarly, the width of the inner rectangle is reduced by 2 meters on each end, so the total reduction in width is also \(2 \times 2 = 4\) meters.
+
+The original length of the field is 30 meters, so the length of the inner rectangle is:
+\[30 - 4 = 26 \text{ meters}\]
+
+The original width of the field is 20 meters, so the width of the inner rectangle is:
+\[20 - 4 = 16 \text{ meters}\]
+
+Now, we can calculate the area of the inner rectangle:
+\[ \text{Area} = \text{length} \times \text{width} = 2",,,,,,,
+instruction_following_0011_en,instruction_following_0011,en,instruction_following,format_following,hard,True,"A=9, B=4, C=7. Compute A+B, A-C, and B*C. Return exactly in this order and format: {""sum"":<value>,""diff"":<value>,""product"":<value>}","{""sum"":13,""diff"":2,""product"":28}","To compute A+B, A-C, and B*C, we need to follow the given mapping: A=9, B=4, C=7.
+
+1. A+B: 9 + 4 = 13
+2. A-C: 9 - 7 = 2
+3. B*C: 4 * 7 = 28
+
+So, the result is: 
+{""sum"":13,""diff"":2,""product"":28}","{""sum"":13,""diff"":2,""product"":28}",,,,,,,
+instruction_following_0012_en,instruction_following_0012,en,instruction_following,format_following,medium,True,"Given first=Leyla and last=Aliyeva, return exactly: LAST, FIRST","Aliyeva, Leyla","To return ""LAST, FIRST"" given first=Leyla and last=Aliyeva, you can use the following Python code:
+
+```python
+def format_name(first, last):
+    return f""{last}, {first}""
+
+print(format_name(""Leyla"", ""Aliyeva""))
+```
+
+This will output: `Aliyeva, Leyla`","LAST, FIRST",,,,,,,
+instruction_following_0014_az,instruction_following_0014,az,instruction_following,format_following,easy,True,5 ədədini mötərizə daxilində yazın və başqa heç nə çıxarmayın.,(5),5,"5 ədədi mötərizə daxilində yazmaq istəyirsiniz. Əslində, mötərizənin ədədlərinin toplamını 5-ə bərabər və ya 5-dən az qoymaq əhəmiyyətlidir. 5 ədədi mötərizə daxilində yazmaq üçün 5-ə bərabər ədədləri əlavə edə bilərsiniz. Məsələn:
+
+1 + 4 = 5
+2 + 3 = 5
+0 + 5 = 5
+
+Bu ədədləri mötərizə daxilində yazmaq ən səmaysız variantdır. Başqa ədədləri əlavə edərək 5 ədədi çıxaramayırıq, çünki mötərizənin ədədləri 0-dan 100-ə q",,,,,,,
+instruction_following_0014_en,instruction_following_0014,en,instruction_following,format_following,easy,True,Put the number 5 between parentheses and output nothing else.,(5),(5),(5),,,,,,,
+instruction_following_0028_az,instruction_following_0028,az,instruction_following,constraint_following,easy,True,"Yalnız BƏLİ və ya XEYR ilə cavab verin: 5, 10-dan kiçikdirmi?",BƏLİ,XEYR,XEYR,,,,,,,
+instruction_following_0052_en,instruction_following_0052,en,instruction_following,transformation,hard,True,"Transform 'A1 B2 C3' by reversing the token order, converting letters to lowercase, and joining tokens with underscores. Output only the result.",c3_b2_a1,c3_b2_a1,b2_c3_a1,,,,,,,
+instruction_following_0063_az,instruction_following_0063,az,instruction_following,extraction,medium,True,Mətn: 'A serveri 8080 portundan istifadə edir. B serveri 443 portundan istifadə edir. C serveri 3000 portundan istifadə edir.' Yalnız B serverinin istifadə etdiyi portu çıxarın.,443,B serverinin istifadə etdiyi port 443-dir.,B serverinin istifadə etdiyi port 443.,,,,,,,
+instruction_following_0077_en,instruction_following_0077,en,instruction_following,extraction,easy,True,Text: 'Sara's score is 87. Murad's score is 92.' Extract Murad's score only.,92,Murad's score is 92.,Murad's score is 92.,,,,,,,
+instruction_following_0082_az,instruction_following_0082,az,instruction_following,multi_step_instruction,hard,True,"4, 11, 7, 14 və 9 qiymətləri ilə başlayın. Əvvəlcə bütün cüt qiymətləri silin. Sonra qalanları azalan sıra ilə düzün. Daha sonra hər qalan qiymətə 1 əlavə edin. Sonda onları boşluqsuz, vergüllə ayrılmış şəkildə yazın.","12,10,8","Əvvəlcə cüt qiymətləri silin: 4, 14
+Qalan qiymətlər: 11, 7, 9
+
+Qalan qiymətləri azalan sıra ilə düzün: 9, 11, 7
+
+Hər qalan qiymətə 1 əlavə edin: 10, 12, 8
+
+Son nəticə: 10, 12, 8","Bunun üçün əməliyyatları bir birinə əlavə edərək izah edəcəyim:
+
+1. Başlangıç verilənlər: 4, 11, 7, 14, 9
+
+2. Cüt qiymətləri silin:
+   4, 14 (bu iki cüt qiymət silinib)
+
+3. Qalanları azalan sırada düzün:
+   11, 9, 7
+
+4. Hər qalan qiymətə 1 əlavə edin:
+   11+1=12
+   9+1=10
+   7+1=8
+
+5. Sonuncu adımda boşluqsuz, vergüllə ayrılmış şəkildə yazmaq:
+   12,10,8
+
+Bu proses sonucu 12,10,8 dəyişikliyi verir.",,,,,,,
+instruction_following_0092_az,instruction_following_0092,az,instruction_following,multi_step_instruction,easy,True,'AI' sözünü götürün. Onu kiçik hərflərə çevirin və mötərizə daxilində yazın.,(ai),"""AI"" sözünü götürün və onu kiçik hərflərə çevirərək mötərizə daxilində yazmaq istəyirsəniz, mötərizədəki ""a"" və ""i"" hərflərinin kiçik formasını yazmaq lazımdır. Nəticədə ""a"" və ""i"" hərflərinin kiçik forması ""a"" və ""i""dir. Mötərizədəki ""a"" və ""i"" hərflərinin kiçik formasını yazmaq lazımdır. Nəticədə ""a"" və ""i"" hərflərinin kiçik forması ""a"" və ""i""dir.",ai,,,,,,,
+instruction_following_0093_az,instruction_following_0093,az,instruction_following,multi_step_instruction,medium,True,"pear, apple, banana sözləri ilə başlayın. Onları əlifba sırası ilə düzün, birinci və sonuncu sözləri götürün və iki nöqtə ilə birləşdirin.",apple:pear,"Sözlər əlifba sırasına görə: apple, banana, pear.
+
+Birinci və sonuncu sözləri götürək: apple, pear.
+
+Onları iki nöqtə ilə birləşdirək: apple..pear.","Aşağıda verilən sözləri əlifba sırasına görə düzəldib, onların birinci və sonuncu sözlərini alırıq və bu iki sözləri nöqtə ilə birləşdirib, sonucu veririk:
+
+1. Apple
+2. Banana
+3. Pear
+
+Düzəlmiş hal:
+
+Apple
+Pear.
+
+Bu, verilən sözləri əlifba sırasına görə düzəldib, onların birinci (apple) və sonuncu (pear) sözlərini alırsak və onları nöqtə ilə birləşdirib, ""Apple.Pear"" sonucunu alırıq.",,,,,,,
+instruction_following_0095_az,instruction_following_0095,az,instruction_following,multi_step_instruction,medium,True,"'One Two Three' ilə başlayın. Sözlərin sırasını tərsinə çevirin, bütün sözləri böyük hərflərə salın və şaquli xətlə birləşdirin.",THREE|TWO|ONE,"Sizin istəyinizi yerinə yetirmək üçün, ""One Two Three"" sözlərinin sırasını tərsinə çevirərək böyük hərflərlə və şaquli xətlə birləşdirən nəticəni aşağıdakı kimi əldə edə bilərsiniz:
+
+Three - şaquli xətlə birləşdirilən və böyük hərflərlə: T-H-R-E-E
+Three - şaquli xətlə birləşdirilən və böyük hərflərlə: T-H-R-E-E
+
+Three - şaquli xətlə birləşdirilən və böyük hərflərlə: T-H-R-E-E
+
+Three - şaquli xətlə birləşdirilən və böyük hərflərlə: T-H-R-E-E
+
+Three - şaquli xətlə birləşdirilən və böyük hərflərlə: T-H",E THREE TWO ONE,,,,,,,
+linguistic_understanding_0008_az,linguistic_understanding_0008,az,linguistic_understanding,contextual_meaning,hard,True,"Onun tənqidi qəti deyil, şərtli idi: metodun üstünlüklərini qəbul edir, lakin müəyyən şəraitdə uğursuz olduğunu deyirdi. Burada 'şərtli' nə deməkdir?",Müəyyən şərt və qeydlərlə məhdudlaşdırılmış,"""Şərtli"" ərəbcədən tərcümə olunub. ""Şərtli"" ərəbcə ""şarti"" (şərt) və ""i"" (sifət) əsaslanıb. ""Şərtli"" ərəbcədə ""şərtə bağlı"" mənasını verir.","Bu cümlədə ""şərtli"" keliməsi, onun tənqidinin ya-da metodunun belə bir şərət və ya koşul altında mənfi sonuc verəcəyini ifadə edir. Daha səraf bir ifadələ ilə bu kavramı anlaya bilərsiniz:
+
+""Şərtli"" - bu bir koşul və ya şərət deməkdir. Onun tənqidinin ya-da metodunun bir neçə səbəbə və ya şərətdə mənfi sonuc verəcəyini ifadə edir.
+
+Məsələn, onun tənqidinin ya-da metodunun genellikdə iyi olduğunu qeyd etdikdən sonra, burada ""şərtli"" kimi ifadələndiyinə görə, onun tənqidinin ya-da metodunun belə bir şərət və ya koşul altında mənfi sonuc verəc",,,,,,,
+linguistic_understanding_0008_en,linguistic_understanding_0008,en,linguistic_understanding,contextual_meaning,hard,True,Her criticism was qualified rather than absolute: she accepted the method's strengths but argued that it failed under specific conditions. What does 'qualified' mean here?,Limited by conditions or reservations,"In this context, ""qualified"" means that the criticism is not a blanket rejection or absolute condemnation of the method. Instead, it acknowledges the method's strengths and effectiveness in certain situations, but also highlights its limitations and potential failures under specific conditions.
+
+In other words, the criticism is not a complete dismissal, but rather a nuanced evaluation that takes into account both the method's advantages and its potential drawbacks. This suggests that the critic is not opposed to the method in principle, but rather is trying to provide a more balanced and informed assessment of its effectiveness.","In this context, ""qualified"" means that the criticism is not a blanket rejection or an absolute condemnation of the method. Instead, it acknowledges some positive aspects of the method while also pointing out its limitations or shortcomings. The term ""qualified"" here implies that the criticism is nuanced and balanced, recognizing both the method's advantages and its specific failings.
+
+So, ""qualified"" criticism means that the critique is conditional or subject to certain limitations, rather than being an unqualified or absolute rejection.",,,,,,,
+linguistic_understanding_0011_az,linguistic_understanding_0011,az,linguistic_understanding,contextual_meaning,medium,True,"Şirkət köhnə proqramı dərhal ləğv etmədi, onu mərhələli şəkildə istifadədən çıxardı; hər ay daha az komanda istifadə etdi və sonda tam dayandırıldı. 'Mərhələli şəkildə istifadədən çıxardı' nə deməkdir?",Tədricən dayandırdı,"""Mərhələli şəkildə istifadədən çıxardı"" deməkdir ki, şirkət köhnə proqramı dərhal ləğv etməmək əvəzinə, onu mərhələlərə bölüb, hər bir mərhələdə daha az komanda istifadə etdirərək, nəticədə proqramı tam dayandırıb. Bu, bir neçə mərhələdən ibarət olan bir prosesdir.","""Mərhələli şəkildə istifadədən çıxardı"" ifadesi, köhnə proqramın istifadəsinin azalması ve sonunda tam dəyişdirilməsinin planlaşdırılmış bir dəyişikliyi ifadə edir. Bu proses, tam dəyişdirilmənin bir neçə adıqda, yoxsa bir neçə ayda tamamlanması üçün planlanır. 
+
+Bu prosesin mərhələlərindən biri olaraq:
+
+1. Köhnə proqramın istifadəsinin azalması: Hər ay daha az komanda istifadə edilərək, proqramın istifadəsi azalır.
+2. Tam dəyişdirilmə: Köhnə proqramın tam dəyişdirilməsi, yeni proqramın tamamına qədər istifadə edilməsi.
+
+Bu prosessiz, şirkət daha az maliyyə m",,,,,,,
+linguistic_understanding_0011_en,linguistic_understanding_0011,en,linguistic_understanding,contextual_meaning,medium,True,The company phased out the old software rather than removing it immediately; fewer teams used it each month until it disappeared completely. What does 'phased out' mean?,Gradually discontinued,"""Phased out"" is a business term that means to gradually discontinue or eliminate a product, service, or feature over a period of time, rather than stopping it abruptly. This approach is often used to minimize disruption to customers or users and to allow for a smooth transition to a new product or alternative.
+
+In the context of the old software, the company likely decided to phase it out by:
+
+1. Reducing its availability or visibility to users.
+2. Limiting its functionality or support.
+3. Encouraging users to switch to a newer or alternative software.
+4. Gradually removing access to the old software over time.
+
+By phasing out the old software, the company aimed to minimize the impact on users and teams that still relied on it, while also allowing for a more controlled transition to a new system.","""Phased out"" in this context means that the company gradually reduced the use of the old software over time, rather than discontinuing it immediately. This process likely involved several steps, such as:
+
+1. **Reducing Usage**: Teams that used the old software were gradually given alternatives or were encouraged to transition to new systems.
+2. **Support Cuts**: The company might have reduced support and maintenance for the old software, making it harder for teams to continue using it.
+3. **Deprecation Announcements**: The company may have announced that the software would be phased out, giving teams time to prepare for the transition.
+4. **Deprecation Dates**: Specific dates or timelines for when the software would no longer be supported or available might have been set.
+5. **Training and Support**: Resources and training might have been provided to help teams transition to new software.
+
+By phasing out the old software, the company likely aimed to minimize disruption and ensure a smoother transition to new systems.",,,,,,,
+linguistic_understanding_0014_az,linguistic_understanding_0014,az,linguistic_understanding,contextual_meaning,easy,True,Otaq boş idi; heç kim ondan istifadə etmirdi. Burada 'boş' nə deməkdir?,İstifadə olunmayan və içində heç kim olmayan,"""Boş"" sözü, otağın içində kimsənin olmadığının və otaqdan istifadə edilmədiyinin əksini verir.","Buradakı ""boş"" kelimesi, otaqda bir neçə növbəli anlamla istifadə edilən və ya doldurulmuş olan məhsul və ya növü var deyil diyan işarə edir. Otaqda heç kim ondan istifadə etmirdi demək, otaqda bir neçə zaman insan onu istifadə etmiş və ya ona məhsul və ya növbəli növü doldurulmuş olub, ama şu an onda bir şey var deyil diyan anlaşıla bilər. 
+
+Bu ifade, otaqın şu an boş olduğunu və ondan bir neçə zaman önce de istifadə edildiyini ifadə edir.",,,,,,,
+linguistic_understanding_0014_en,linguistic_understanding_0014,en,linguistic_understanding,contextual_meaning,easy,True,The room was vacant; nobody was using it. What does 'vacant' mean?,Empty or unoccupied,"""Vacant"" is an adjective that means empty or unoccupied. In the context of the sentence, it means that the room is not being used or inhabited by anyone. It's a space that is available for use, but currently, no one is occupying it.",'Vacant' in this context means that the room was empty and unoccupied. It suggests that no one was present in the room and it was not being used by anyone at that time.,,,,,,,
+linguistic_understanding_0030_az,linguistic_understanding_0030,az,linguistic_understanding,reference_resolution,easy,True,Ayla dəftər aldı və adını onun üzərinə yazdı. 'Onun' nəyə aiddir?,Dəftərə,"Bu cümlədə ""onun"" Ayla-a aid edilir. ""Onun"" əsasən qadın adları ilə bağlı cümlələrdə istifadə olunur.","Bu cümlədə ""onun"" sözləsi əgər əvvəlki cümlədə ya da ifadədə qeyd olunan bir nəticəyə aiddir. Cümlənin əlavə mənşəyini bilməyəcəyimiz halda, ""onun"" ən yaxşı nəticəsi əvvəlki cümlədə belə bir ifadəyə aiddir:
+
+""O"" - bu əvvəlki cümlədə belə bir nəticəyə aiddir.
+
+Məsələn, əvvəlki cümlə aşağıdakı olarsa:
+
+""O dəftər aldı.""
+
+Bu zaman ""onun"" ifadəsi ""o"" nəticəsinə aiddir:
+
+""Ayla dəftər aldı və adını o dəftərin ələndə yazdı. O dəftər aldı.""
+
+Bu mənasız bir ifadə olmas",,,,,,,
+linguistic_understanding_0030_en,linguistic_understanding_0030,en,linguistic_understanding,reference_resolution,easy,True,Ayla bought a notebook and wrote her name on it. What does 'it' refer to?,The notebook,"In the sentence ""Ayla bought a notebook and wrote her name on it,"" 'it' refers to the notebook.","In the sentence ""Ayla bought a notebook and wrote her name on it,"" the pronoun ""it"" refers to the notebook that Ayla bought.",,,,,,,
+linguistic_understanding_0033_az,linguistic_understanding_0033,az,linguistic_understanding,reference_resolution,hard,True,"Amir Kamala xəbərdarlıq etdi ki, Kamalın cihazındakı batareya həddindən artıq qızır. Kamal öz cihazını yoxladıqdan sonra onu söndürdü. 'Öz cihazını' kimə aid edir?",Kamala,"Bu cümlədə ""öz cihazını"" Kamal-a aid edir.","Bu cavablaşdırma zamanı, ""öz cihazı"" kavramının ne demək olduğunu anlamamıza kömək edəcək biraz daha konteksti veririk.
+
+Amırdan bahsetdiyi ""öz cihazı"" Kamalın kendi istifadəsi üçün məhsuludur. Bu cihazın məhsul adı və təminatı də qoşulacaq olar, lakin genelənən cavab, kameralar, telefonlar, tabletlər və s. təminatları kimi kampana cihazlar olacaq.
+
+Amırdan bahsetdiyi məhsulun təminatı əlavə edildiyi zaman, cihazın batareyanın təminatı də əlavə olacaq. Bu təminat, cihazın səhvməsini əldə etmək üçün əvəzinə qoyulub. 
+
+Bu nəzərə alı",,,,,,,
+linguistic_understanding_0033_en,linguistic_understanding_0033,en,linguistic_understanding,reference_resolution,hard,True,"Amir warned Kamal that the battery in Kamal's device was overheating. After examining his device, Kamal shut it down. What does 'his device' refer to?",Kamal's device,"Based on the context provided, 'his device' likely refers to a portable electronic device, such as a smartphone, laptop, or a handheld game console, that Kamal owns and Amir is warning him about. The fact that the battery is overheating suggests that it's a device that uses a rechargeable battery, which is common in portable electronics.","In the given scenario, ""his device"" refers to Kamal's device. Amir warned Kamal about the overheating battery in Kamal's device, and after the warning, Kamal shut down the device to prevent further overheating.",,,,,,,
+linguistic_understanding_0040_az,linguistic_understanding_0040,az,linguistic_understanding,reference_resolution,medium,True,"Samir stulu qızdırıcıdan uzaqlaşdırdı, çünki onun yaxınlığında oturmaq üçün həddindən artıq isti olurdu. Burada istiliyin mənbəyi nədir?",Qızdırıcı,"Sizə verdiyim məlumata əsasən, Samir qızdırıcıdan uzaqlaşdırdı, çünki onun yaxınlığında oturmaq üçün həddindən artıq isti olurdu. Bu məlumata əsasən, qızdırıcının istiliyin mənbəyi olduğu güman olunur.","Bu cümlədə ""isti"" keliməsi, Samirin qızdırıcıdan uzaklaşmasının nəzəriyyəsi və fiziki hissi ifadə edir. Məsələn, Samir qızdırıcıdan uzaklaşdırdığı zaman, onun hiss etdiyi bir isti var. Bu isti, Samirin qızdırıcıdan uzaklaşması zamanı hiss etdiyi bir təsir və ya hissdir.
+
+Bu istinin mənbəsi, Samirin qızdırıcıdan uzaklaşması zamanı hiss etdiyi bir təsir və ya hissdir. Qızdırıcıya yaxınlığında olunması Samirin əhəmiyyətli bir həddini aşırısaqsa, onun hiss etdiyi bu isti, onun qızdırıcıya yaxınlığında olmaqla bağlı olar. Bu isti, Samirin fiziki və nəzəriyyəsindəki bir təsirdir",,,,,,,
+linguistic_understanding_0040_en,linguistic_understanding_0040,en,linguistic_understanding,reference_resolution,medium,True,Samir moved the chair away from the heater because it was getting too hot to sit near. What does 'it' refer to?,The heater,"In the given sentence, 'it' refers to the chair. The sentence structure is a bit indirect, but the meaning is that the chair was getting too hot to sit near, so Samir moved it away from the heater.","In the sentence ""Samir moved the chair away from the heater because it was getting too hot to sit near,"" the pronoun 'it' refers to the chair. The sentence implies that the chair became too hot to sit near, so Samir moved it away from the heater to make it cooler and comfortable again.",,,,,,,
+linguistic_understanding_0050_az,linguistic_understanding_0050,az,linguistic_understanding,lexical_disambiguation,hard,True,"Tədqiqatçılar 2000 qeydi nəzərdən keçirərək dublikat və aidiyyətsiz olanları çıxardılar, sonra qalan məqalələri tam oxudular. Burada 'nəzərdən keçirdilər' nə deməkdir?",Daxil ediləcək qeydləri seçmək üçün sistemli şəkildə yoxladılar,"""Qeydi nəzərdən keçirmək"" məqamların siyahıya alınması və ya qeydiyyatdan keçirilməsi deməkdir. Bu, məqamların bir yerdə toplanması və sonra da qeydə alınaraq, dublikat və aidiyyətsiz olanları çıxarılması deməkdir.","""Əldəki məqalələri nəzərdən keçirərək"" ifadesi, tədqiqçıların ədədli və ya dəfəli olan məqalələri ən azı bir dəfə dəyişikliklərini izləyərək, ya da sadeç bir göz ataraq izləyərək, onların əsas məzmununu və ya əsas nəticələrini təyin etmək deməkdir. Bu proses, tədqiqatçıların zamanını və məşğuluqlarını azaltmaq üçün ən çox istifadə olunur. 
+
+Bu prosesin nəticələri aşağıdakılardır:
+
+1. Dublikat məqalələri təyin etmək.
+2. Aidiyyətsiz və ya əsas nəticələrə əlavə",,,,,,,
+linguistic_understanding_0050_en,linguistic_understanding_0050,en,linguistic_understanding,lexical_disambiguation,hard,True,"The researchers screened 2,000 records, excluding duplicates and irrelevant entries before reading the remaining papers in full. What does 'screened' mean here?",Systematically examined to decide which records to include,"In this context, ""screened"" means to examine or review something briefly, often to identify and eliminate irrelevant or unimportant information. It's a process of initial filtering or selection, where the researchers looked at the titles, abstracts, or keywords of the 2,000 records to determine which ones were worth reading in full.
+
+In other words, ""screened"" implies a quick and cursory review, rather than a detailed or in-depth analysis. This is a common technique used in research and academic work to manage large amounts of information and focus on the most relevant or promising sources.","In this context, ""screened"" means that the researchers reviewed the records to identify and exclude duplicates and irrelevant entries. This process is often part of the initial stage of a systematic review or a literature search, where the goal is to narrow down the number of papers to those that are relevant to the research question. The screening typically involves a quick assessment of the titles and abstracts (and sometimes the full texts) to determine their relevance before proceeding to a more detailed review of the full papers.",,,,,,,
+linguistic_understanding_0052_az,linguistic_understanding_0052,az,linguistic_understanding,lexical_disambiguation,medium,True,Tədqiqatçı çərçivəni hazırlayarkən üç əvvəlki tədqiqata söykəndi. Burada 'söykəndi' nə deməkdir?,Mənbə və ya baza kimi istifadə etdi,"""Söykəndi"" sözü, əsasən, tədqiqat və elmi işlərdə istifadə olunur. ""Söykəndi"" demək isə, əvvəlki tədqiqatlardan, araşdırmalardan, elmi işlərdən istifadə etməkdir. Digər sözlərlə desək, əvvəlki tədqiqatlardan, araşdırmalardan, elmi işlərdən qaynaqlanmaq, əsaslanmaq deməkdir.
+
+Məsələn, ""Bu tədqiqat çərçivəsini hazırlayarkən üç əvvəlki tədqiqata söykəndim"" deməkdir ki, bu tədqiqat çərçivəsi üç əvvəlki tədqiqatın nəticələrindən, qənaqlarından istifadə edərək","""Söykəndi"" buradakı bağlамada tədqiqatçınin əvvəlki tədqiqatları təsirini müəyyən etmək üçün istifadəyi ifadə edir. Tədqiqatçı çərçivəni hazırlayarkən, əvvəlki tədqiqatların mənbələrini, metodlарını və nəticələrini inkişaf etdirmək və ya onları əlavə etmək istəyə bilər. Bu proses, yeni tədqiqatın əvvəlki tədqiqatlara əsaslanan qısa və ya daha geniş prospektlərə əlavə olunmasını təmin edir. Yuxarıdakı tərəfindən verilən məlumatlara görə, ""söykəndi"" buradakı bağlамada əvvəlki tədqiqatları tə",,,,,,,
+linguistic_understanding_0052_en,linguistic_understanding_0052,en,linguistic_understanding,lexical_disambiguation,medium,True,The researcher drew on three previous studies when developing the framework. What does 'drew on' mean?,Used as a source or basis,"""Drew on"" is a idiomatic expression that means to use or rely on something, often previous knowledge, experience, or information, to inform or guide a current action or decision. In this context, the researcher used or built upon the findings and insights from the three previous studies when developing the framework.
+
+It's similar to other expressions like ""draw from"" or ""draw upon,"" which also convey the idea of using or relying on something to inform or guide a current action or decision.","In this context, ""drew on"" means that the researcher used or referred to the findings, methods, or theories from the three previous studies to develop or support the framework being created. Essentially, the researcher incorporated insights and information from these earlier studies to inform and enhance the current work.",,,,,,,
+linguistic_understanding_0053_az,linguistic_understanding_0053,az,linguistic_understanding,lexical_disambiguation,medium,True,"Ayrı-ayrı ölçmələrdə xeyli səs-küy olmasına baxmayaraq, təcrübə aydın qanunauyğunluq göstərdi. Burada 'səs-küy' nə deməkdir?",Məlumatdakı əlaqəsiz təsadüfi variasiya,"""Səs-küy"" termini, əsasən, qarışıqlıq, qəzəb və ya qorxu kimi hissləri ifadə edir. Bu, əsasən, qeyri-rationallıq və ya qəzəblənmiş vəziyyətdən irəli gəlir.","Bu cümlədə ""səs-küy"" ifadesi, ayrı-ayrı ölçmələrdə səsli və səsən dərəcələrini ölçməkda xəta qazanmaq deməyən, ölçmələr arasında səsli və səsən dərəcələrini dəyişikliklərə aid bir sətir və ya səviyyəni ifadə edir. 
+
+Bu ifadə, aynan qeyd etdiyiniz kimi, aylananın səs-küy olmasına baxmayaraq, təcrübə aydın qanunauyğunluğuna uyğunluğunu göstərdiyini ifadə edir. Yuxarıdakı ifadə, aylananın səs-küy sətirlərindən xəta qazanmağından əlavə, təcrübə aydının qanunau",,,,,,,
+linguistic_understanding_0053_en,linguistic_understanding_0053,en,linguistic_understanding,lexical_disambiguation,medium,True,The experiment yielded a clear pattern despite considerable noise in individual measurements. What does 'noise' mean here?,Irrelevant random variation in the data,"In the context of scientific experiments, ""noise"" refers to random, unpredictable variations in individual measurements that are not related to the phenomenon being studied. These variations can be due to various factors such as measurement errors, instrument limitations, or external influences.
+
+In other words, ""noise"" in this context means that the individual measurements are not consistent or reliable, and they can vary significantly from one measurement to another, even when the experimental conditions remain the same.
+
+For example, if you're measuring the temperature of a substance, ""noise"" might mean that some measurements are 10°C, while others are 12°C or 8°C, even though the experimental conditions are the same. This variability is considered ""noise"" because it's not related to the phenomenon being studied (the temperature of the substance) and can mask the true pattern or trend in the data.
+
+In contrast, a ""clear pattern"" in the experiment suggests that the measurements are consistent and reliable, and they reveal a meaningful relationship or trend that's related to the phenomenon being studied.","In the context of the experiment, ""noise"" refers to random variations or errors in the individual measurements that do not reflect the true underlying pattern or signal. These variations can be due to various factors such as measurement errors, environmental fluctuations, or other unpredictable influences. Despite the presence of this noise, the experiment still revealed a clear pattern, indicating that the overall trend or signal was strong enough to be discernible even with these random fluctuations.",,,,,,,
+linguistic_understanding_0064_az,linguistic_understanding_0064,az,linguistic_understanding,paraphrase_understanding,hard,True,'Siyasət avtomatlaşdırma ilə birləşdirilmədikcə xərcləri azaltmadı' cümləsi ilə hansı cümlə eyni mənadadır? Cavab verin: 'Xərclər yalnız siyasət və avtomatlaşdırma birlikdə tətbiq ediləndə azaldı' və ya 'Siyasət avtomatlaşdırmadan asılı olmayaraq həmişə xərcləri azaltdı.',Xərclər yalnız siyasət və avtomatlaşdırma birlikdə tətbiq ediləndə azaldı,"Cümlələrin eyni mənası ""Siyasət avtomatlaşdırma ilə birləşdirilmədikcə xərcləri azaltmadı"" cümləsi ilə ""Siyasət avtomatlaşdırma ilə birləşdirilmədikcə xərclər yalnız azaltdı"" cümləsidir.","'Ciyasət avtomatlaşdırma ilə birləşdirilmədikcə xərcləri azaltmadı' cümləsi ilə eyni mənadadı olan cavab:
+
+'Siyasət avtomatlaşdırmadan asılı olmayaraq həmişə xərcləri azaltdı.'
+
+Bu iki cümle, xərclərin azaldılmasının siyasət avtomatlaşdırmanın bir hissəsindən gəlmediyini ifadə edir. Onlar xərclərin azaldılmasının siyasət avtomatlaşdırmanın bir parçası olmasa da, həmişə təmin edilən bir faktir.",,,,,,,
+linguistic_understanding_0064_en,linguistic_understanding_0064,en,linguistic_understanding,paraphrase_understanding,hard,True,Which sentence is equivalent to 'The policy did not reduce costs unless it was combined with automation'? Answer: 'Cost reductions occurred only when the policy and automation were used together' or 'The policy always reduced costs regardless of automation.',Cost reductions occurred only when the policy and automation were used together,"The correct answer is: 'Cost reductions occurred only when the policy and automation were used together'.
+
+This sentence is equivalent to the original statement because it implies that the policy alone did not reduce costs, but when combined with automation, it did. This is the opposite of the second option, which suggests that the policy always reduces costs regardless of automation, which is not equivalent to the original statement.","The sentence that is equivalent to ""The policy did not reduce costs unless it was combined with automation"" is:
+
+""Cost reductions occurred only when the policy and automation were used together.""
+
+The second sentence, ""The policy always reduced costs regardless of automation,"" is not equivalent to the original statement. It suggests that the policy would reduce costs in all circumstances, regardless of whether automation was used or not, which contradicts the original statement.",,,,,,,
+linguistic_understanding_0066_az,linguistic_understanding_0066,az,linguistic_understanding,paraphrase_understanding,medium,True,'Hesabat məlumatlar yoxlandıqdan sonra təqdim edildi' cümləsinin mənasına hansı ifadə uyğundur? Cavab verin: 'Məlumatların yoxlanması hesabatın təqdimatından əvvəl baş verdi' və ya 'Hesabat yoxlamadan əvvəl təqdim edildi.',Məlumatların yoxlanması hesabatın təqdimatından əvvəl baş verdi,"Cümlənin mənasına ""Hesabat yoxlamadan əvvəl təqdim edildi."" ifadə uyğundur.","'Cümlənin mənasına uyğun ifadə' olaraq ""Hesabat yoxlamadan əvvəl təqdim edildi"" ifadesi daha uygun olur. 
+
+Cümlə: ""Hesabat məlumatlar yoxlandıqdan sonra təqdim edildi""
+
+Bu ifadənin mənası, hesabatın məlumatlarını yoxlamaqdan sonra onu təqdim etmək deməkdir. Yani, məlumatların yoxlanmasıdan sonra hesabat təqdim edildi.
+
+Bu ifadenin mənasını daha səmərcələşdirək ifadə etmək olar:
+- ""Hesabatın məlumatlarını yoxlamaqdan sonra onu təqdim etdik""
+- ""Məlumatların yoxlanması təqdimatından əvvəl baş verdi""
+
+Bu nəzərə alınaraq, ""Hesabat yoxlamadan əvvəl təqdim ed",,,,,,,
+linguistic_understanding_0066_en,linguistic_understanding_0066,en,linguistic_understanding,paraphrase_understanding,medium,True,Which sentence matches the meaning of 'The report was submitted after the data had been verified'? Answer: 'Data verification happened before report submission' or 'The report was submitted before verification.',Data verification happened before report submission,"The sentence that matches the meaning of 'The report was submitted after the data had been verified' is: 'Data verification happened before report submission.'
+
+This is because the report was submitted after the data had been verified, implying that the verification process occurred before the report was submitted.",The sentence that matches the meaning of 'The report was submitted after the data had been verified' is: 'Data verification happened before report submission.',,,,,,,
+linguistic_understanding_0071_az,linguistic_understanding_0071,az,linguistic_understanding,paraphrase_understanding,easy,True,'Mina Ayseldən uzundur' cümləsinin parafrazi hansıdır? Cavab verin: 'Aysel Minadan qısadır' və ya 'Aysel Minadan uzundur.',Aysel Minadan qısadır,"Cümlənin parafrazi ""Aysel Minadan uzundur."" olmalıdır.","'Cina Ayseldən uzundur' cümləsinin parafrazi olaraq ""Aysel Minadan qısadır"" ifəsi daha uygun olur. Bu ifə, orijinal cümlənin anlayışını korur的同时，句子“Cina Ayseldən uzundur”可以改写为“Aysel Minadan qısadır”，这样更符合原句的意思。原句的意思是“Cina比Aysel长”，改写后的句子意思是“Aysel比Cina短”。",,,,,,,
+linguistic_understanding_0071_en,linguistic_understanding_0071,en,linguistic_understanding,paraphrase_understanding,easy,True,Which sentence paraphrases 'Mina is taller than Aysel'? Answer: 'Aysel is shorter than Mina' or 'Aysel is taller than Mina.',Aysel is shorter than Mina,The correct paraphrase for 'Mina is taller than Aysel' is 'Aysel is shorter than Mina.',"The correct paraphrase of 'Mina is taller than Aysel' is: 'Aysel is shorter than Mina.' The second option, 'Aysel is taller than Mina,' would actually contradict the original statement.",,,,,,,
+linguistic_understanding_0085_az,linguistic_understanding_0085,az,linguistic_understanding,discourse_understanding,hard,True,"Bir tədqiqat könüllü əlavə məşğələlərə qatılan tələbələrin imtahanda daha yüksək nəticə göstərdiyini bildirdi. Müəlliflər qeyd etdilər ki, bu tələbələr məşğələlər başlamazdan əvvəl də daha motivasiyalı idilər və buna görə məşğələlərin yüksək nəticələrə səbəb olduğunu iddia etmədilər. Onların ehtiyatlılığını hansı problem izah edir?",Əvvəlcədən mövcud olan motivasiya məşğələlərə iştirakla imtahan nəticəsi arasındakı əlaqəni qarışdıra bilər,"Bu tədqiqatın müəllifləri ehtiyatlılıqlarını hansı problem izah edir:
+
+Məşğələlərin yüksək nəticələrə səbəb olduğu iddiasını ehtiyatla qeyd edən müəlliflər, tədqiqatın nəticələrinin müəyyən edilməsində mövcəm olan mümkünən müəlliflərin müəyyən nəticələrə çatmaq istəyinin təsirini qəbul edirlər. Bu, demək olar ki, müəlliflərin tədqiqatın nəticələrinə müəyyən nəticələrə çatmaq istəyinin təsirini qəbul edirlər.
+
+Bu, demək olar ki, müəlliflərin tədqiqatın nəticələrinə müəyyən nətic","Bu tələbələrin imtahanda daha yüksək nəticələr göstərdiyini izah etmək üçün bir neçə faktor barədə düşünmək olar:
+
+1. **Motivasiya:** Qeyd etdiyiniz kimi, tələbələrin daha motivasiyalı olması onların imtahanda daha iyi performans göstərməsindən səbəb olur. Motivasiya, dəstək və pozitiv dinamik bir ortam yaradır, bu da dəstəklənən tələbələrin daha iyi nəticələr verə bilər.
+
+2. **Müəllimlərin əhəmiyyəti:** Məşğələlərə qatılan tələbələr, müəllimlərin dəstəkləndiyini hiss edirlər. Müəllimlər, onların",,,,,,,
+linguistic_understanding_0085_en,linguistic_understanding_0085,en,linguistic_understanding,discourse_understanding,hard,True,A study reported that students who voluntarily attended extra tutorials had higher exam scores. The authors noted that these students were already more motivated before the tutorials began and therefore refused to claim that the tutorials caused the higher scores. What concern explains their caution?,Pre-existing motivation could confound the relationship between tutorial attendance and exam scores,"The concern that explains the authors' caution is the potential for a **third variable** or **confounding variable** to be the actual cause of the higher exam scores, rather than the tutorials themselves.
+
+In this case, the students' motivation is the third variable. The authors are suggesting that the students' higher motivation, which existed before the tutorials began, is the underlying factor that led to their higher exam scores, not the tutorials themselves.
+
+This concern is related to the concept of **correlation does not imply causation**. Just because there is a correlation between attending extra tutorials and higher exam scores, it doesn't necessarily mean that the tutorials caused the higher scores. The authors are being cautious to avoid making a causal claim that might not be supported by the data.","The concern that the authors are cautious about claiming that the extra tutorials caused the higher exam scores is related to the potential presence of a **selection bias** or **confounding variable**. Specifically, the higher motivation of the students before the tutorials began could be the reason for both their attendance at the tutorials and their higher exam scores.
+
+In other words, the higher exam scores might be due to the students' initial motivation rather than the tutorials themselves. If the tutorials were the cause of the higher scores, we would expect to see a similar improvement in exam scores among students who were not initially as motivated but still attended the tutorials. However, since the students who attended the tutorials were already more motivated, it is not clear whether the tutorials were the direct cause of the higher scores.
+
+To establish a causal relationship, the authors would need to control for or account for the initial motivation level of the students. If they had a group of students who were equally motivated but did not attend the tutorials, and found that these students still performed well on the exams, then they could more confidently attribute the higher scores to the tutorials. However, since the students who attended the tutorials were already more motivated, the higher scores could be due to their initial motivation rather than the tutorials.
+
+Therefore, the authors are",,,,,,,
+linguistic_understanding_0086_az,linguistic_understanding_0086,az,linguistic_understanding,discourse_understanding,easy,True,Leyla gələndə mağaza bağlı idi. Lövhədə mağazanın növbəti səhər saat doqquzda yenidən açılacağı yazılmışdı. Leyla nə vaxt geri qayıda bilərdi?,Növbəti səhər saat doqquzda,"Leyla ən çox saat 9-da yenidən mağazaya qayıda bilərdi, çünki mağazanın yenidən açılacağı vaxtı saat 9-da yazılmışdır.","Bu məlumatlarla, Leyla gələndən mağazanın vaxtını əldə etmək əməliyyatını izah edə bilərəm:
+
+1. Leyla gələndə mağaza bağlı idi - Bu ifadə, Leyla gələndən mağazanın bir parçası idi və ya burada.
+
+2. Lövhədə mağazanın növbəti səhər saat doqquzda yenidən açılacağı yazılmışdı - Bu, Leyla gələndən sonra mağazanın açıldığı vaxtidir.
+
+3. Leyla nə vaxt geri qayıda bilərdi? - Bu soru, Leyla gələndən nə vaxt sonra mağazanın açıldığı vaxtına geri qayıda biləcəyi vaxtı sorar.
+
+Nəticə:
+Leyla gələndən 9:00-də mağazanın yenid",,,,,,,
+linguistic_understanding_0086_en,linguistic_understanding_0086,en,linguistic_understanding,discourse_understanding,easy,True,The store was closed when Leyla arrived. A sign said it would reopen at nine the next morning. When could Leyla return?,At nine the next morning,Leyla could return the next morning at 9:00 AM.,"Based on the information provided, Leyla could return to the store at 9:00 the next morning when the store is scheduled to reopen.",,,,,,,
+linguistic_understanding_0096_az,linguistic_understanding_0096,az,linguistic_understanding,discourse_understanding,medium,True,Komitənin tədbiri təsdiqləmək üçün kifayət qədər səsi var idi. Lakin səsvermə keçirilməzdən əvvəl iclas başa çatdı. Tədbir niyə həmin gün təsdiqlənmədi?,Səsvermə keçirilməzdən əvvəl iclas başa çatdığı üçün,"Məlum olan məlumat əsasında, komitənin tədbiri təsdiqləmək üçün kifayət qədər səsi var idi, lakin səsvermə keçirilməzdən əvvəl iclas başa çatdı. Bu səbəbə görə, tədbir həmin gün təsdiqlənmədi.","Bu cümlədə verilən məlumatlara görə, komitənin tədbiri həmin gün təsdiqlənmədi, çünki səsvermə keçirilməzdən əvvəl iclas başa çatmış idi. İclas, komitənin tədbirin təsdiqləndirilməsinə qədər gələcək bir mürəkkəb məlumat təqdim etmək üçün növbələr və səsvermələr təmin edir. İclasın başa çatması, səsvermələrin təmin olunması və səs tədbirinin təsdiqləndirilməsinə qədər zamanın bitmişini ifadə edir. Bu nəzərə alınaraq, komitənin tədbiri həmin gün təsdiqlənmədi, çünki səs",,,,,,,
+linguistic_understanding_0096_en,linguistic_understanding_0096,en,linguistic_understanding,discourse_understanding,medium,True,"The committee had enough votes to approve the measure. However, the meeting ended before the vote could be held. Why was the measure not approved that day?",Because the meeting ended before the vote took place,"The information given does not specify why the measure was not approved that day. However, based on the information provided, it seems that the committee had enough votes to approve the measure, which suggests that the measure was likely to be approved. 
+
+The reason the measure was not approved that day is likely due to the meeting ending before the vote could be held. This could be due to a variety of reasons such as:
+
+- The meeting time limit was reached.
+- The meeting was adjourned early.
+- The meeting was cut short due to some other reason.
+- The vote was not reached in the agenda.
+
+However, without more information, it's difficult to pinpoint the exact reason why the measure was not approved that day.","The measure was not approved that day because the vote to approve it was not held. Even though the committee had enough votes to potentially approve the measure, the vote itself was not conducted because the meeting ended before it could be held. Therefore, no formal decision was made, and the measure remained unapproved until the next meeting or another opportunity to vote.",,,,,,,
+reasoning_0018_az,reasoning_0018,az,reasoning,comparative_reasoning,easy,True,"Minanın 14, Arifin isə 10 qələmi var. Kimin daha çox qələmi var?",Mina,"Minanın 14 qələmi var, Arifin isə 10 qələmi var. 14 10-dən daha çoxdur, beləliklə, Minanın daha çox qələmi var.","Minan 14 qələmi var, Arifin 10 qələmi var. Minan daha çox qələmi var.",,,,,,,
+reasoning_0019_en,reasoning_0019,en,reasoning,comparative_reasoning,hard,True,"Project A requires 40 hours for 8 outputs, Project B requires 30 hours for 5 outputs, and Project C requires 45 hours for 10 outputs. Which project requires the fewest minutes of work per output?",Project C,"To find the fewest minutes of work per output, we need to calculate the work per output for each project.
+
+Project A: 40 hours / 8 outputs = 5 hours per output
+Since 1 hour = 60 minutes, 
+5 hours per output = 5 * 60 = 300 minutes per output
+
+Project B: 30 hours / 5 outputs = 6 hours per output
+6 hours per output = 6 * 60 = 360 minutes per output
+
+Project C: 45 hours / 10 outputs = 4.5 hours per output
+4.5 hours per output = 4.5 * 60 = 270 minutes per output
+
+Comparing the results, Project C requires the fewest minutes of work per output, which is 270 minutes.","To determine which project requires the fewest minutes of work per output, we need to calculate the time required per output for each project and then compare the results.
+
+Let's start with the calculations:
+
+1. **Project A:**
+   - Total hours required: 40 hours
+   - Total outputs: 8
+   - Hours per output: \( \frac{40 \text{ hours}}{8 \text{ outputs}} = 5 \text{ hours/output} \)
+   - Convert hours to minutes: \( 5 \text{ hours} \times 60 \text{ minutes/hour} = 300 \text{ minutes/output} \)
+
+2. **Project B:**
+   - Total hours required: 30 hours
+   - Total outputs: 5
+   - Hours per output: \( \frac{30 \text{ hours}}{5 \text{ outputs}} = 6 \text{ hours/output} \)
+   - Convert hours to minutes: \( 6 \text{ hours} \times 60 \text{ minutes/hour} = 360 \text{ minutes/output} \)
+
+3. **Project C:**
+   - Total hours required: 4",,,,,,,
+reasoning_0043_az,reasoning_0043,az,reasoning,logical_reasoning,medium,True,Hər L obyekti M obyektidir. Bəzi M obyektləri N obyektidir. Bütün L obyektlərinin N obyekti olduğu nəticəsinə gələ bilərikmi?,Xeyr,"Bu cədvəllərə baxaq:
+
+- Hər L obyekti M obyektidir.
+- Bəzi M obyektləri N obyektidir.
+
+Bu iki cədvəldən, bizə belə bir nəticə gəlir:
+
+- Hər L obyekti M obyektidir.
+- Bəzi M obyektləri N obyektidir.
+- Hər L obyekti M obyektidir və bəzi M obyektləri N obyektidir, belə ki, hər L obyekti M obyektidir və bəzi M obyektləri N obyektidir.
+
+Bu nəticədən, bizə belə bir nəticə gəlir:
+
+- Hər L obyekti M obyektidir və bəzi M obyektləri N obyektidir.
+
+Bu nəticədən, bizə belə bir nəticə gəlir:
+
+- Hər L obyekti M obyektidir və bəzi M oby","Bu sorunun cavabı ""bəzi L obyektlərinin N obyekti olmağı"" qeyd edir. Hər L obyekti M obyektidir, bəzi M obyektləri N obyektidir, ancak bu iki məlumat sifatı bəzi L obyektlərinin N obyekti olmağıni təmin etmir.
+
+Bu məlumatların əməlindən:
+
+1. Hər L obyekti M obyektidir. (L ⊆ M)
+2. Bəzi M obyektləri N obyektidir. (M ∩ N ≠ ∅, yəni M-nin bir alt kimi N-dən ibarət obyektləri var)
+
+Ancak, bu iki məlumat sifatı bəzi L obyektlərinin N obyekti olmağıni təmin etmir. Məsələn, M obyektinin bir alt kimi N ob",,,,,,,
+reasoning_0054_az,reasoning_0054,az,reasoning,logical_reasoning,easy,True,Bütün pişiklər məməlidir. Luna pişikdir. Luna məməlidirmi?,Bəli,"Bütün pişiklər məməlidir, lakin bu cümlənin doğru olduğu məqamlar yalnız pişiklərin məməli olduğu və Luna'nın da pişik olduğu halda qəbul edilir. 
+Luna pişikdir və bütün pişiklər məməlidir, beləlikə Luna da məməlidir.","Evet, Luna məməlidir. Cümlədə verilən məlumatlara görə, ""Bütün pişiklər məməlidir"" deməli, Luna pişikdirsəniz, o da məməlidir.",,,,,,,
+reasoning_0057_en,reasoning_0057,en,reasoning,logical_reasoning,medium,True,"If the project is delayed, the review is postponed. The review was not postponed. Was the project delayed?",No,"This is a classic example of a logical argument. 
+
+If the project is delayed, the review is postponed. 
+The review was not postponed.
+
+From the second statement, we can infer that the review was not postponed, which means the project was not delayed. 
+
+So, the answer is: No, the project was not delayed.","Based on the given statement ""If the project is delayed, the review is postponed,"" we can represent this as a conditional statement: 
+
+""If P, then R"" where P is ""the project is delayed"" and R is ""the review is postponed.""
+
+The contrapositive of this statement is: ""If not R, then not P."" This means that if the review was not postponed, then the project was not delayed.
+
+Given that ""the review was not postponed,"" we can conclude that ""the project was not delayed,"" based on the contrapositive of the original statement.
+
+So, the answer is: No, the project was not delayed.",,,,,,,
+reasoning_0066_az,reasoning_0066,az,reasoning,ordering_reasoning,medium,True,"K, L və M adlı üç çıxış planlaşdırılıb. K, L-dən sonra, M isə L-dən əvvəl keçirilməlidir. Ardıcıllıq necədir?","M, L, K","K, L, M adlı çıxış planlaşdırılmış üç planın ardıcıllığı nədir?
+
+Əslində, bu sorunun cavabı əsasən ədəbi və mədəni məqsədlərlə əlaqədar olub. Lakin, əgər ardıcıllıq nəzəriyyəsi ilə əlaqədar olubsa, cavab əsasən ədədlərin ardıcıllığı ilə əlaqədar olub.
+
+Lakin, əgər ardıcıllıq ədədlərin ardıcıllığı ilə əlaqədar olmasa, cavab əsasən ədədlərin ardıcıllığı ilə əlaqədar olmayub.
+
+Lakin, əgər ardıcıllıq ədədlərin ardıcıllığı ilə əlaqədar olmasa, cavab əsasən ədədlərin ardıcıll","Bu çıxışların ardıcıllığı aşağıdakı sekildə verilir:
+
+1. M
+2. L
+3. K
+
+Nəzərə alıb ki, M isə L-dən əvvəl, L isə K-dən əvvəl keçirilməlidir. Bu səbəbdən, M-L-K ardıcıllığı doğru olur.",,,,,,,
+reasoning_0079_az,reasoning_0079,az,reasoning,ordering_reasoning,easy,True,"Hadisə bazar ertəsindən sonra, çərşənbədən əvvəl baş verir. Hadisə hansı gün baş verir?",Çərşənbə axşamı,"Hadisə bazar ertəsindən sonra, çərşənbədən əvvəl baş verir. Bu, əsasən, həftənin əvvəllərində baş verən hadisələrə aid ola bilər. Lakin, mənbəyə əsasən, hadisəni müəyyən etmək olar.
+
+Hadisəni müəyyən etmək üçün, həftənin əvvəllərində baş verən hadisələrə aid olan günləri nəzərə almalıyıq:
+
+- Bazar ertəsi: əvvəllərində baş verən hadisələrə aid ola bilər.
+- Çərşənbədən əvvəl: əvvəllərində baş verən hadisələrə aid ola bilər.
+
+Bu iki gün əsasən, həftənin əvvə","Bu sorunun tam cevabını vermek üçün daha detallı məlumat lazımdır, çünki ""hadisə bazar ertəsindən sonra, çərşənbədən əvvəl baş verir"" ifadesi belə bir hadisənin təminatına baxıb müvafiq gününü təmin etmək üçün daha çox məlumat lazımdır.
+
+Müvafiq məlumatlara görə, hadisənin baş verdiyi təminatı belə təmin edə bilərəm:
+
+- Hadisə bazar ertəsindən sonra baş verir.
+- Çərşənbədən əvvəl baş verir.
+
+Bu məlumatlara görə, hadisənin baş verdiyi təminat ərzaq günü olacaq. Yuxarıdakı ifadə ərzaq gününü bazar ertəsinin və çərşənbənin arasındakı",,,,,,,
+reasoning_0091_az,reasoning_0091,az,reasoning,constraint_reasoning,hard,True,"Sistemin qiyməti ən çox 70, gecikməsi 50-dən az, yaddaş istifadəsi ən çox 8 və dəqiqliyi ən azı 90 olmalıdır. A sisteminin göstəriciləri 60, 45, 8, 89; B-nin 70, 48, 9, 92; C-nin 65, 42, 7, 91; D-nin isə 55, 55, 6, 93-dür. Bütün şərtləri hansı sistem ödəyir?",C sistemi,"Sistemin qiyməti ən çox 70, gecikməsi 50-dən az, yaddaş istifadəsi ən çox 8 və dəqiqliyi ən azı 90 olmalıdır.
+
+A sisteminin göstəriciləri 60, 45, 8, 89; B-nin 70, 48, 9, 92; C-nin 65, 42, 7, 91; D-nin isə 55, 55, 6, 93-dür.
+
+A sistemində qiymət 60-dır, gecikməsi 45-dən azdır, yaddaş istifadəsi 8-dən azdır və dəqiqliyi 89-dan azdır. Bu şərtləri ödəyən sistem A deyil.
+
+B sistemində qiymət 70-dır, gecikməsi 48-dən azdır, yaddaş istifadəsi 9-dən azdır və dəqiqliyi 92-də","Bu sorunun çox dəqiqliklərə malik bir optimizasiya problemə dair bir öyrənilməzdir. Hər bir sistemnin 4 parametrini (qiymət, gecikmə, yaddaş istifadəsi, dəqiqliy) dəyişdirə bilərəm, ancak hər bir parametrin ən çox 100-dən az olması əsas şərtlərindən biridir. Hər bir parametrin ən azı 0-dan başlaması da əsas şərtlərindən biridir.
+
+Verilən sistemlərin göstəriciləri:
+
+- A: 60, 45, 8, 89
+- B: 70, 48, 9, 92
+- C: 65, 42, 7, 91
+- D: 55, 55, 6, 93
+
+Şərtlər:",,,,,,,
+reasoning_0096_az,reasoning_0096,az,reasoning,constraint_reasoning,medium,True,"Çatdırılma marşrutunun uzunluğu 15 km-dən çox olmamalı, ödənişsiz olmalı və 30 dəqiqədən çox çəkməməlidir. A marşrutu 12 km və 25 dəqiqədir, lakin ödənişlidir. B 14 km və ödənişsizdir, lakin 35 dəqiqə çəkir. C 15 km, ödənişsizdir və 28 dəqiqə çəkir. Hansı marşrut uyğundur?",C marşrutu,"A marşrutu 12 km və 25 dəqiqədir, lakin ödənişlidir. B 14 km və ödənişsizdir, lakin 35 dəqiqə çəkir. C 15 km, ödənişsizdir və 28 dəqiqə çəkir.
+
+A marşrutu 15 km-dən çox deyil, lakin ödənişlidir. B marşrutu 15 km-dən çox deyil, lakin 35 dəqiqə çəkir. C marşrutu 15 km-dən çox deyil, lakin 28 dəqiqə çəkir.
+
+A marşrutu 15 km-dən çox deyil, lakin ödənişlidir. B marşrutu 15 km-dən çox deyil, lakin 35 dəqiqə çəkir. C marşrutu 15 km-dən çox deyil, lakin 28 dəqiqə çəkir.
+
+A","Bu sorunun cevabı C marşrutudur. Çünki C marşrutu aşağıdaki sartlara uğundur:
+
+1. Çatdırılma marşrutunun uzunluğu 15 km-dən çox olmamalıdır: C marşrutu 15 km uzunluğunda olduğu üçün bu sartı yerinə yetirir.
+
+2. Ödənişsiz olmalı: C marşrutu ödənişsizdir.
+
+3. 30 dəqiqədən çox çəkməməlidir: C marşrutu 28 dəqiqə çəkir, bu da 30 dəqiqənin altındadır.
+
+Diqqət qruplamak gələcək:
+
+- A marşrutu 12 km və 25 dəqiqə çəkir, lakin ödənişlidir. Bu sartlara uğundur, lakin ödənişli olması sartı saxlamaz.
+- B marşrutu 14 km v",,,,,,,
+reasoning_0096_en,reasoning_0096,en,reasoning,constraint_reasoning,medium,True,"A delivery route must be no longer than 15 km, be toll-free, and take no more than 30 minutes. Route A is 12 km and 25 minutes but has a toll. B is 14 km and toll-free but takes 35 minutes. C is 15 km, toll-free, and takes 28 minutes. Which route is valid?",Route C,"To determine the valid route, we need to consider all three conditions:
+
+1. The route must be no longer than 15 km.
+2. The route must be toll-free.
+3. The route must take no more than 30 minutes.
+
+Let's analyze the options:
+
+- Route A: 12 km (valid), 25 minutes (valid), but has a toll (invalid).
+- Route B: 14 km (valid), toll-free (valid), but takes 35 minutes (invalid).
+- Route C: 15 km (valid), toll-free (valid), and takes 28 minutes (valid).
+
+Based on the conditions, Route C is the only valid option.","Based on the given criteria, a valid delivery route must meet the following conditions:
+1. No longer than 15 km.
+2. Toll-free.
+3. Takes no more than 30 minutes.
+
+Let's evaluate each route:
+
+- **Route A**: 
+  - Distance: 12 km (meets the distance requirement)
+  - Toll: Yes (does not meet the toll-free requirement)
+  - Time: 25 minutes (meets the time requirement)
+  - **Conclusion**: Route A is not valid because it is not toll-free.
+
+- **Route B**: 
+  - Distance: 14 km (meets the distance requirement)
+  - Toll: No (meets the toll-free requirement)
+  - Time: 35 minutes (does not meet the time requirement)
+  - **Conclusion**: Route B is not valid because it takes more than 30 minutes.
+
+- **Route C**: 
+  - Distance: 15 km (meets the distance requirement)
+  - Toll: No (meets the toll-free requirement)
+  - Time: 28 minutes (meets the time requirement)
+  - **Conclusion**: Route C is valid because it meets all the criteria.
+
+Therefore, the valid route is",,,,,,,
+reasoning_0100_az,reasoning_0100,az,reasoning,constraint_reasoning,easy,True,"Etibarlı kod dörd rəqəmdən ibarət olmalı və 7 ilə başlamalıdır. 7123, 8123 və 72345 variantlarından hansı hər iki şərti ödəyir?",7123,"7123 variantı 4 rəqəmdən ibarət və 7 ilə başlayır, 8123 variantı da 4 rəqəmdən ibarət və 7 ilə başlayır. 72345 variantı 5 rəqəmdən ibarətdir və 7 ilə başlamır.","Verilən əməliyyatda etibarlı bir rəqəm dörd rəqəmdən ibarət olmalıdır və 7 ilə başlamalıdır. Verilən variantlarda sadeç 7123 əməliyyatın əlavə şərtini ödəyir:
+
+1. 7123 - 4 rəqəmdən ibarət və 7 ilə başlar.
+2. 8123 - 4 rəqəmdən ibarət və 7 ilə başlamayır.
+3. 72345 - 5 rəqəmdən ibarət və 7 ilə başlamayır.
+
+Dolayısıyla, sadeç 7123 variantı verilən əməliyyatın əlavə şərtini ödəyir.",,,,,,,
+reasoning_0100_en,reasoning_0100,en,reasoning,constraint_reasoning,easy,True,"A valid four-digit code must begin with 7. Among 7123, 8123, and 72345, which code satisfies both constraints?",7123,"To satisfy the constraints, the code must begin with 7 and be a four-digit number. 
+
+Among the given options, 7123 and 72345 do not satisfy the four-digit constraint. However, 7123 satisfies the first constraint of starting with 7.
+
+The other option, 8123, also starts with 7 and is a four-digit number. 
+
+So, both 7123 and 8123 satisfy the constraints.","To determine which code satisfies the constraint of beginning with 7, we need to check the first digit of each given code.
+
+The codes provided are:
+1. 7123
+2. 8123
+3. 72345
+
+Let's check the first digit of each code:
+- For 7123, the first digit is 7.
+- For 8123, the first digit is 8.
+- For 72345, the first digit is 7.
+
+The codes that start with 7 are 7123 and 72345. However, the problem specifies that the code must be a four-digit code. Therefore, 72345 is not a valid four-digit code because it has five digits.
+
+Thus, the only valid four-digit code that begins with 7 is 7123.
+
+The answer is: 7123.",,,,,,,
+unanswerable_0008_az,unanswerable_0008,az,unanswerable,missing_information,easy,False,Samir Ayseldən böyükdür. Samirin neçə yaşı var?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Sorunuzun cevabı ""Samir Ayseldən böyükdür"" cümləsində Samirin kim olduğu haqqında məlumat yoxdur. Lakin, Samir Aysel kimdir? Samir Aysel 1976-cı ildə anadan olmuşdur.","Aşağıdakı məlumatlarla Samirin tam yaşı təmin etmək əməliyyatına gələrək, Samir Ayseldən böyükdür. Lakin Samir Ayseldənin yaşı məlumatlarımla verilməyib və ya ən son məlumatlar 2023-cü ilə əlaqədə olmam. Bu nəzərə alınaraq, Samir Ayseldənin yaşı 2023-cü ilə əlaqədə olmayan məlumatlarla təmin edə bilmərim. Samir Ayseldənin yaşı haqda daha əməlkarana məlumatlar alırsam, sizə daha yoxlamalı cavab verə bilərəm.",,,,,,,
+unanswerable_0008_en,unanswerable_0008,en,unanswerable,missing_information,easy,False,Samir is older than Aysel. How old is Samir?,Cannot be determined from the information provided.,I can't answer that question. I don't have enough information to determine Samir's age.,"To determine Samir's age, we would need more specific information. The statement ""Samir is older than Aysel"" only tells us the relative ages of Samir and Aysel, but it does not provide Samir's exact age. 
+
+If you have additional information about Aysel's age or any other details that could help determine Samir's age, please provide that so I can assist you further.",,,,,,,
+unanswerable_0011_az,unanswerable_0011,az,unanswerable,missing_information,medium,False,Sinifdə 18 qadın və müəyyən sayda kişi var. Bu gün beş tələbə dərsdə yoxdur və onlardan ikisi qadındır. Bu gün iştirak edənlərin neçə faizi qadındır?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Bu gün iştirak edən qadınların faizini hesablayarkən, 18 qadın və müəyyən sayda kişi var. Bu gün beş tələbə dərsdə yoxdur və onlardan ikisi qadındır.
+
+Bu gün iştirak edən qadınların faizini hesablayarkən, 18 qadın var. Bu gün beş tələbə dərsdə yoxdur və onlardan ikisi qadındır. Bu gün iştirak edən qadınların faizini hesablayarkən, 18 qadın var. Bu gün beş tələbə dərsdə yoxdur və onlardan ikisi qadındır.
+
+Bu gün iştirak edən qadınların faizini hesablayarkən, 18 qadın var. Bu gün beş tələbə dərsdə yoxdur və onlardan ikisi qadındır.
+
+Bu gün iştirak edən qadınların faizini hesablayarkən, 18","Bu sorunun cavabını tapmaq üçün, iştirak edənlərin sayını və onların güviyəli sayını tapmalıyıq.
+
+Verilən məlumatlar:
+- Sinifdakı toplam kişi sayı: 18 qadın + müəyyən sayda erkek = 18 + x
+- Işteki beş tələbə dərsdə yoxdur.
+- Yoxdə olan beş tələbədən iki qadın və üç erkek var.
+
+İşteki beş tələbənin iki qadın olduğu məlumatına görə, iştirak edənlərin sayını hesablayalım:
+
+Toplam kişi sayı: 18 + x
+İşteki beş tələbənin iki qadın olduğu məlumatına görə, iştirak edənlərin sayını hesablayalım:
+
+İştirak edənlərin sayı: (18 + x) - 5 = 1",,,,,,,
+unanswerable_0011_en,unanswerable_0011,en,unanswerable,missing_information,medium,False,"A class contains 18 women and some men. Five students are absent today, including two women. What percentage of today's attendees are women?",Cannot be determined from the information provided.,"To find the percentage of women in today's attendees, we first need to find out how many women are present and the total number of attendees.
+
+The class contains 18 women. Since 2 women are absent, the number of women present is 18 - 2 = 16.
+
+The total number of students absent is 5, and 2 of them are women. So, the number of men absent is 5 - 2 = 3.
+
+Since the total number of students in the class is not given, we can assume that the number of men in the class is 'm'. The total number of students is 18 + m.
+
+The total number of students absent is 5, and 3 of them are men. So, the number of men absent is 3.
+
+Since 3 men are absent, the number of men present is m - 3.
+
+The total number of attendees today is the sum of the number of women and men present: 16 (women) + (m - 3) (men).
+
+To find the percentage of women in today's attendees, we need to divide the number of women by the total number of attendees and multiply by 100.
+
+Percentage of women = (Number of women / Total number of attendees","To determine the percentage of today's attendees who are women, we need to follow these steps:
+
+1. **Determine the total number of students in the class:**
+   Let \( M \) be the number of men in the class. The total number of students is:
+   \[
+   18 + M
+   \]
+
+2. **Calculate the number of women and men present today:**
+   - Total number of women in the class: 18
+   - Number of women absent: 2
+   - Number of women present: \( 18 - 2 = 16 \)
+
+   - Total number of men in the class: \( M \)
+   - Number of men absent: \( 5 - 2 = 3 \) (since 5 students are absent and 2 are women)
+   - Number of men present: \( M - 3 \)
+
+3. **Calculate the total number of students present today:**
+   \[
+   \text{Total students present} = \text{Number of women present} + \text{Number of men present} = 16 + (M - 3) = 13 + M
+   \]
+
+4. **Calculate the percentage of",,,,,,,
+unanswerable_0015_az,unanswerable_0015,az,unanswerable,missing_information,easy,False,Düzbucaqlının eni 6 sm-dir. Sahəsi neçədir?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Düzbucaqlının sahəsi eninə (6 sm) və uzunluğuna (6 sm) bərabərdir. Yəni, sahəsi 6 sm * 6 sm = 36 sm²-dir.","Bu sorunun tamamı düzbucaqlı haqqında verilən məlumatlara görə çözelidir, lakin düzbucaqlının yüksekliyi verilməyib. Düzbucaqlının sahəsi, inid (a) və yüksekliyi (b) ədədlərinin əməlindən əldə olunur:
+
+Sahə = a × b
+
+Verilən məlumatlara görə:
+
+- Inid a = 6 sm
+
+Düzbucaqlının sahəsi hesablamaq üçün, inid və yüksekliyi bərabər olmalıdır, çünki sorudakı məlumatlar sadece inidni verir. Yəni, b = 6 sm.
+
+Düzbucaqlının sahəsi:
+
+Sahə = a × b
+Sahə = 6 × 6
+Sahə = 36 sm²
+
+Düzbucaqlının sahəsi 36 kvadrat santimetrdir.",,,,,,,
+unanswerable_0015_en,unanswerable_0015,en,unanswerable,missing_information,easy,False,A rectangle has width 6 cm. What is its area?,Cannot be determined from the information provided.,"To find the area of a rectangle, we need to know its length. Unfortunately, the length is not provided in the problem. However, I can guide you through the steps to find the area once we have the length.
+
+The formula for the area of a rectangle is:
+
+Area = Length × Width
+
+Given the width is 6 cm, we can plug this value into the formula:
+
+Area = Length × 6
+
+To find the area, we need the length. If you provide the length, I can help you calculate the area.","To calculate the area of a rectangle, you need both the width and the length. The formula for the area of a rectangle is:
+
+\[ \text{Area} = \text{width} \times \text{length} \]
+
+You've provided the width as 6 cm, but the length is not specified. Without the length, we cannot calculate the area. If you provide the length, I can help you calculate the area.",,,,,,,
+unanswerable_0034_az,unanswerable_0034,az,unanswerable,underspecified_constraint,hard,False,"Xəstəxana xəstələri gəlmə vaxtına, ağırlıq dərəcəsinə və ya gözlənilən müalicə müddətinə görə prioritetləşdirə bilər. P birinci gəlib, Q ən ağır vəziyyətdədir, R-in müalicəsi isə ən qısadır. Kim birinci müalicə edilməlidir? Prioritet qaydası göstərilməyib.",Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Bu vəziyyətdə, prioritet qaydası göstərilməyərək, müalicə edilməli olan xəstələrin ən ağır vəziyyətdə olanı, yəni Q xəstəsi, birinci müalicə edilməlidir.","Verilən məlumatlara görə, xəstələrin prioritetləşdirilməsi üçün bir neçə faktor var:
+
+1. Xəstələrin gəlmə vaxtı
+2. Ağırlıq dərəcəsi
+3. Gözlənilən müalicə müddəti
+
+Ama verilən məlumatlarda prioritet qaydası belirtilməyib. Bu nəzərə alınaraq, təminatlı bir cavab verək, ən əgər birincil bir neçə faktor dəyərləndirilərsə, aşağıdakı sərhədən istifadə edə bilər:
+
+1. Q - ən ağır vəziyyətdə olan xəstə
+2. P - birinci gəlib
+3. R - müalicə müddəti ən qısadır
+
+Bu sərhədən istifadə etmək kərə",,,,,,,
+unanswerable_0034_en,unanswerable_0034,en,unanswerable,underspecified_constraint,hard,False,"A hospital can prioritize patients by arrival time, severity, or expected treatment duration. Patient P arrived first, Q is most severe, and R requires the shortest treatment. Who should be treated first? The prioritization rule is unspecified.",Cannot be determined from the information provided.,"Since the prioritization rule is unspecified, we can consider the most common rules used in hospitals: 
+
+1. **Emergency Severity Index (ESI)**: This rule prioritizes patients based on the severity of their condition. Patients with life-threatening conditions are treated first. In this case, Q is most severe, so Q should be treated first.
+
+2. **Triage**: This rule prioritizes patients based on the expected treatment duration. Patients who require the shortest treatment are treated first. In this case, R requires the shortest treatment, so R should be treated first.
+
+3. **First-Come-First-Served (FCFS)**: This rule prioritizes patients based on their arrival time. Patients who arrived first are treated first. In this case, P arrived first, so P should be treated first.
+
+Since the prioritization rule is unspecified, we can't determine the correct order without more information. However, if we had to choose one, we would likely choose the **Emergency Severity Index (ESI)** rule, as it prioritizes patients based on the severity of their condition, which is a common and reasonable approach in a hospital setting.","Given the information provided, we have three criteria for prioritizing patients: arrival time, severity, and expected treatment duration. However, the specific prioritization rule is not specified. Therefore, we need to consider each criterion individually and see if any clear priority can be determined.
+
+1. **Arrival Time:**
+   - Patient P arrived first.
+   - This would suggest that P should be treated first based on arrival time.
+
+2. **Severity:**
+   - Patient Q is the most severe.
+   - This would suggest that Q should be treated first based on severity.
+
+3. **Expected Treatment Duration:**
+   - Patient R requires the shortest treatment.
+   - This would suggest that R should be treated first based on the expected treatment duration.
+
+Since the prioritization rule is unspecified, we cannot definitively determine who should be treated first based on a single criterion. However, if we must choose one criterion to prioritize, we can consider the severity as a critical factor in many medical scenarios, where treating the most severe case first can be crucial for patient survival and recovery.
+
+Therefore, based on the severity criterion, **Patient Q should be treated first**.",,,,,,,
+unanswerable_0037_az,unanswerable_0037,az,unanswerable,underspecified_constraint,medium,False,"A serveri B serverindən daha sürətli, lakin daha az etibarlıdır. Xidmət hansı serverdə yerləşdirilməlidir? Tələb olunan etibarlılıq səviyyəsi və ya sürət prioriteti göstərilməyib.",Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Bu cədvəldə serverlərin xarakteristikaları verilib:
+
+|  | A Server | B Server |
+| --- | --- | --- |
+| Sürət | Yüksək | Yüksək |
+| Etibarlılıq | Dərin | Dərin |
+
+A serveri B serverindən daha sürətli, lakin daha az etibarlıdır. Bu səbəblə, tələb olunan etibarlılıq səviyyəsi və ya sürət prioriteti göstərilməyən xidmətə B serveri uyğun gəlir.","Bu məlumatlar verilənə görə, tələb olunan xidmət təminatının etibarlılıq səviyyəsi və ya sürət prioritəsi belədir:
+
+1. Sürət: A server daha sürətli.
+2. Etibarlılıq: B server daha etibarlı.
+
+Bu məlumatlara görə, tələb olunan xidmət təminatının sərhədində:
+
+- Sürət prioritəsi daha çox önəmlidir.
+- Etibarlılıq səviyyəsi az olsa da, onu təmin etmək daha əhəmiyyətli appear.
+
+Bu nəticələnən nəticə, tələb olunan xidmət təminatının sərhədində A serverdə yerləşdirilməlidir. A serverin sürəti daha çox önəmlidir və təminatın etibar",,,,,,,
+unanswerable_0037_en,unanswerable_0037,en,unanswerable,underspecified_constraint,medium,False,Server A is faster but less reliable than Server B. Which server should host the service? No required reliability level or speed priority is stated.,Cannot be determined from the information provided.,"In the absence of specific requirements, a general principle is to prioritize reliability over speed. This is because a service that is not available (due to Server A's unreliability) is essentially useless, whereas a service that is slower (due to Server A's speed) can still be used, albeit less efficiently.
+
+Therefore, I would recommend hosting the service on Server B, which is more reliable, even if it's slower than Server A. This decision prioritizes the availability and usability of the service over its speed.","When deciding which server to host a service, several factors should be considered, even if no specific reliability or speed requirements are stated. Here are some key points to consider:
+
+1. **Service Nature**: 
+   - **High-Traffic Services**: If the service is expected to handle a high volume of requests, reliability might be more critical. In this case, Server B would be a better choice.
+   - **Low-Traffic Services**: If the service is expected to have low traffic, speed might be more important. Here, Server A could be a better choice.
+
+2. **Cost Considerations**:
+   - **Cost of Reliability**: Server B might be more expensive due to its higher reliability. Consider the cost implications of choosing one server over the other.
+   - **Cost of Speed**: Server A might be more cost-effective, but ensure that the speed difference is significant enough to justify the cost.
+
+3. **Scalability**:
+   - **Future Growth**: If the service is expected to grow, having a more reliable server (Server B) might be more cost-effective in the long run, as it can handle increased load without needing immediate upgrades.
+   - **Current Needs**: If the service is currently stable and not expected to grow significantly,",,,,,,,
+unanswerable_0039_az,unanswerable_0039,az,unanswerable,underspecified_constraint,medium,False,"İki marşrut da təyinat yerinə çatır. A marşrutu daha qısadır, lakin sıxdır; B daha uzundur, lakin tıxac yoxdur. Hansı marşrut seçilməlidir? Optimallaşdırma meyarı göstərilməyib.",Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Bu vəziyyətdə, iki marşrutun da təyinat yerinə çatacağından, optimallaşdırma meyarı göstərilməyən halda, daha uzun marşrutu seçmək daha yaxşı olardır.
+
+Bu səbəb budur: daha uzun marşrutun tıxac yoxdur, bu da marşrutun daha stabil və təhlükəsiz olduğunu göstərir. Qısadır, lakin sıxdır olan A marşrutu, daha qısa olduğu üçün daha çox təhlükəli ola bilər.
+
+B elə bir halda daha yaxşı marşrut olardır ki, daha uzun və tıxac yoxdur.","Bu durumda, marşrut seçiminize hangi faktorlara görə karar vermenizə bağlı olacaq. İki marşrutun pros ve kontrasını inceleyelim:
+
+A Marşrut:
+- Daha qısadır
+- Sıxdır
+
+B Marşrut:
+- Daha uzundur
+- Tıxac yoxdur
+
+Seçiminizə bağlı olaraq, aşağıdakı faktorlara baxa bilərsiniz:
+
+1. Zaman: A marşrut daha qısadır, lakin sıxdır. Bu, zaman kaybına nəticə edə bilər. Sıxışma zamanı də qısa olmasa da, bu zaman da bir faktor olar.
+
+2. Təhlükə: B marşrut tıxac yoxdur, lakin uzunluğuna görə daha dəyişkən olub. Tıxac olma riskini də gözələndirə bilər.
+
+3. Fiziki təhlükə: Sıxışma riskini də gözələ",,,,,,,
+unanswerable_0039_en,unanswerable_0039,en,unanswerable,underspecified_constraint,medium,False,Two routes both reach the destination. Route A is shorter but congested; Route B is longer but uncongested. Which route should be taken? No optimization criterion is stated.,Cannot be determined from the information provided.,"In the absence of any optimization criterion, such as time, cost, or environmental impact, the choice between Route A and Route B depends on the traveler's personal preference.
+
+If the traveler values convenience and speed, they might prefer Route A, despite its congestion, as it is shorter and would likely save time.
+
+On the other hand, if the traveler values a more relaxed and stress-free journey, they might prefer Route B, despite its longer length, as it is uncongested and would likely provide a smoother ride.
+
+Without further information, it's impossible to make a definitive recommendation, and the choice ultimately comes down to individual preference.","When deciding between Route A and Route B, the choice depends on the specific context and the criteria you are optimizing. Since no optimization criterion is stated, let's consider a few common scenarios:
+
+1. **Time Optimization**: If the primary concern is minimizing travel time, Route B would be preferable because it is uncongested. Even though it is longer, the lack of congestion means you are likely to travel faster.
+
+2. **Fuel Efficiency**: If fuel efficiency is a concern, Route A might be better because it is shorter. However, this would depend on the specific traffic conditions and the fuel consumption of your vehicle.
+
+3. **Environmental Impact**: If reducing environmental impact is a priority, Route A might be better because it is shorter and thus likely to have a lower carbon footprint.
+
+4. **Safety**: If safety is a primary concern, Route B might be better because it is uncongested, which can reduce the risk of accidents.
+
+5. **Comfort**: If comfort is a factor, Route B might be preferred because it is uncongested, which can lead to a more comfortable and stress-free journey.
+
+Without a specific criterion, the best choice would be Route B, as it is longer but uncongested, which typically results in a more predictable and potentially faster",,,,,,,
+unanswerable_0043_az,unanswerable_0043,az,unanswerable,false_premise,medium,False,Cədvəldə laboratoriyanın bazar ertəsi bütün gün bağlı olduğu və heç bir sınaq keçirilmədiyi açıq şəkildə yazılıb. Bazar ertəsinin son sınağı saat neçədə bitdi?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,Bazar ertəsi gününün son sınağı saat 18-də bitdi.,"Bu sorunun tamamı qeyd etdikdən sonra tamahqandır. Cədvəldə laboratoriyanın bazar ertəsi bütün gün bağlı olduğu və heç bir sınaq keçirilmədiyi aytıldığından, bazar ertəsinin son sınağınin bitiş saati belə bir məlumatla təmin edilə bilər. Ancak, verilən məlumatlar sınaqların bitiş saati haqqında bir şey təmin etmir.
+
+Əgər laboratoriyanın bazar ertəsinin bitiş saati məlumatı cədvəldə verilirsə, onu izləyə bilərik. Aksi halda, laboratoriyanın bazar ertəsinin bitiş saati laboratoriyanın əsas sınaqlarının bitiş saati ilə əlaqədar olur və ya laboratoriyanın əsas qaydaları ilə əlaqədar olur.
+
+Əgər məl",,,,,,,
+unanswerable_0043_en,unanswerable_0043,en,unanswerable,false_premise,medium,False,The schedule explicitly says the laboratory was closed all Monday and no tests were run. At what time did Monday's final test finish?,Cannot be determined from the information provided.,"Since the laboratory was closed all Monday and no tests were run, it's not possible to determine the time at which Monday's final test finished. The information provided indicates that no tests were conducted on Monday, so there is no final test to reference.","Since the schedule explicitly states that the laboratory was closed all Monday and no tests were run, it means that no tests were conducted on that day at any time. Therefore, there is no specific time for the final test to have finished on Monday, as no tests were run at all.",,,,,,,
+unanswerable_0058_az,unanswerable_0058,az,unanswerable,false_premise,hard,False,Protokola görə yalnız qəbul edilən müraciətlər rəyçi balı alır. M müraciəti baxışdan əvvəl avtomatik rədd edilib. Sual M-in rəyçi balı aldığını fərz edir. Həmin bal neçə idi?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Protokola görə yalnız qəbul edilən müraciətlər rəyçi balı alır. M müraciəti baxışdan əvvəl avtomatik rədd edilib. Bu mənalıdır ki, M müraciəti qəbul edilməmişdir.
+
+Sual M-in rəyçi balı aldığını fərz edir, lakin bu qəbul edilməmiş müraciətin rəyçi balı alması qəbul edilməmişdir.
+
+Beləliklə, M-in rəyçi balı 0 olmalıdır.","Bu sorunun doğru cevabını vermek için, sorudan verilən məlumatları inceleyelim:
+
+1. Protokola görə yalnız qəbul edilən müraciətlər rəyçi balı alır.
+2. M müraciəti baxışdan əvvəl avtomatik rədd edilib.
+3. Soru, M-in rəyçi balı neçə idi diyə sual sorulub.
+
+Verilənlər daxilində M müraciətinin avtomatik rədd edildiyini belə bir məlumat var. Bu da M müraciətinin rəyçi balı alacağına səbəb olmamalıdır.
+
+Bu nəzərə alınaraq, M müraciətinin rəyçi balı almasa da, sorudan verilən məlumatlara görə M müraciətinin rəyçi balı 0 idi.
+
+Cavab: M müraciətinin rəy",,,,,,,
+unanswerable_0058_en,unanswerable_0058,en,unanswerable,false_premise,hard,False,The protocol states that only accepted applications receive a reviewer score. Application M was rejected automatically before review. The question assumes M received a reviewer score. What was the score?,Cannot be determined from the information provided.,"Since Application M was rejected automatically before review, it would not have received a reviewer score. The protocol states that only accepted applications receive a reviewer score.","Based on the protocol stated, Application M was rejected automatically before review and therefore did not receive a reviewer score. The question's assumption that M received a reviewer score contradicts the given protocol. Therefore, the score for Application M does not exist according to the protocol.
+
+To summarize: Application M did not receive a reviewer score because it was rejected automatically before review.",,,,,,,
+unanswerable_0062_az,unanswerable_0062,az,unanswerable,impossible_inference,hard,False,A şirkətinin gəliri uzaqdan işi tətbiq etdikdən sonra artdı. Eyni dövrdə şirkət iki yeni məhsul buraxdı və yeni bazara daxil oldu. Gəlir artımına uzaqdan işin səbəb olduğu nəticəsinə gələ bilərikmi?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Uzaqdan işin gəlir artımına səbəb olduğu nəticəsinə gəlmək olar, amma bu nəticəni tamamilə uzaqdan işə bağlamaq qeyri-mümkündir. Əsasən, bu nəticəni iki yeni məhsulun buraxılması və yeni bazara daxil olunduğu üçün də izah etmək olar.
+
+Uzaqdan işin gəlir artımına səbəb olduğu nəticəsi, uzaqdan işin nəticəsindən daha çox əsasən iki yeni məhsulun buraxılması və yeni bazara daxil olunduğu nəticəsi ilə əlaqədar ola bilər. Bu nəticəni izah edən bir digər səbəb də, yeni bazara daxil olunduğu nəticəsi ilə əlaqədar ola bilər.
+
+Bu nəticəni iz","Bu məlumatlarla, uzaqdan işin səbəb olduğu gəlir artımına gələ bilərmiyinizdən əmin olun. Ancak, bu məlumatların bir dəyişikliklərinin birlikdə işləyə biləcəyi bir səbəb olduğu olmasından əmin olun. Daha təsdiqli nəticələr əldə etmək üçün aşağıdakı məlumatları əldə etmək və dəyişikliklərin etkini analiz etmək lazımdır:
+
+1. **Uzaqdan işin əməliyyatları:**
+   - Uzaqdan işin əməliyyatları hangi kategorilərə aiddir?
+   - Hangi məhsulların satışına əməliyyatlar əlavə olunub?
+   - Uzaqdan işin əməliyyatları hangi bölg",,,,,,,
+unanswerable_0062_en,unanswerable_0062,en,unanswerable,impossible_inference,hard,False,"Company A's revenue increased after it introduced remote work. During the same period, it launched two new products and entered a new market. Can we conclude that remote work caused the revenue increase?",Cannot be determined from the information provided.,"No, we cannot conclude that remote work caused the revenue increase. There are several other factors that could have contributed to the revenue increase, such as:
+
+1. **New products**: The launch of two new products could have attracted new customers, increased sales, and contributed to the revenue growth.
+2. **New market**: Entering a new market could have provided access to a larger customer base, leading to increased revenue.
+3. **Correlation does not imply causation**: Just because remote work was introduced around the same time as the revenue increase, it doesn't mean that remote work caused the increase. Other factors could be at play.
+4. **Lack of control group**: We don't have a control group (a group that didn't adopt remote work) to compare the results to. This makes it difficult to isolate the effect of remote work on revenue.
+5. **Other factors**: There could be other factors, such as changes in the economy, industry trends, or company-specific factors, that contributed to the revenue increase.
+
+To determine the impact of remote work on revenue, Company A would need to conduct a more rigorous analysis, such as:
+
+1. **Regression analysis**: Analyze the relationship between remote work and revenue, controlling for other factors that could influence revenue","To determine whether remote work caused the revenue increase, we need to consider the principle of causality and the concept of confounding variables. Here are some steps and considerations to help analyze the situation:
+
+1. **Identify the Variables:**
+   - **Independent Variable:** Introduction of remote work.
+   - **Dependent Variable:** Revenue increase.
+   - **Other Variables:** Introduction of new products, entry into a new market, and other potential factors that could affect revenue.
+
+2. **Analyze the Timing:**
+   - Ensure that the introduction of remote work occurred around the same time as the revenue increase. This temporal relationship is a necessary but not sufficient condition for causality.
+
+3. **Control for Confounding Variables:**
+   - **New Products:** The introduction of two new products could have contributed to the revenue increase. You need to determine if the revenue increase was more significant after the introduction of these products.
+   - **New Market Entry:** Entering a new market could also have driven revenue growth. You should assess the impact of market entry separately.
+   - **Other Factors:** Consider other factors such as changes in marketing strategies, customer base, economic conditions, etc.
+
+4. **Use Statistical Analysis:**
+   - Conduct a statistical analysis to quantify the contribution",,,,,,,
+unanswerable_0063_az,unanswerable_0063,az,unanswerable,impossible_inference,hard,False,Könüllü əlavə məşğələlərə qatılan tələbələrin imtahan balları daha yüksək idi. İştirak könüllü idi və əvvəlki qabiliyyət və ya motivasiya barədə məlumat verilmir. Yüksək ballara məşğələlərin səbəb olduğu nəticəsinə gələ bilərikmi?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Bu mövzuda bir neçə səbəb var ki, könüllü əlavə məşğələlərə qatılan tələbələrin imtahan balları daha yüksək ola bilər:
+
+1. **Motivasiya**: Könüllü məşğələlərə qatılmaq tələbələrin motivasiyasını artırdı, çünki onlar öz istəklərindən məşğələlərə qatıldılar. Bu motivasiya, tələbələrin imtahan nəticələrinə müsbət təsir edə bilər.
+
+2. **Daha yaxşı tədris**: Könüllü məşğələlərə qatılan tələbələr daha yaxşı tədris alırdılar, çünki məşğələlərə qatılmaq tə","Bu nəticənin məşğələlərin səbəb olduğu olmaqla, onlar da yalnız bir nəticə verməyəcək. Məşğələlərin etkisi, ancak tələbələrin əvvəlki qabiliyyətlərini, motivasiyasını və ya motivasiya səviyyəsini də etmək olar. Bu nəticənin ən yaxşı təsviri, məşğələlərin tələbələrin əlavə məşğul etməsinə, daha çox mənbələrdən məlumat almaqına və ya daha çox çərçivələrə baxmağa motivasiya verdiyini göstərə bilər.
+
+Bu səbəblərə görə, tələbələrin imtahan balları yüksək olmaqda, əlavə m",,,,,,,
+unanswerable_0063_en,unanswerable_0063,en,unanswerable,impossible_inference,hard,False,"Students who attended optional tutorials had higher exam scores. Attendance was voluntary, and no information is provided about prior ability or motivation. Can we infer that the tutorials caused the higher scores?",Cannot be determined from the information provided.,"No, we cannot infer that the tutorials caused the higher scores based on the given information. This is because there are other potential explanations for the higher scores, such as:
+
+1. **Selection bias**: Students who attended the tutorials might have been more motivated or had a higher prior ability, which could have led to their higher scores. In this case, the tutorials might not be the cause of the higher scores, but rather a consequence of the students' existing characteristics.
+
+2. **Confounding variables**: There might be other factors that are related to both tutorial attendance and higher scores, such as students' socioeconomic status, family background, or prior academic performance. If these confounding variables are not controlled for, it's possible that the observed relationship between tutorial attendance and higher scores is due to these variables rather than the tutorials themselves.
+
+3. **Reverse causality**: It's also possible that the higher scores led to tutorial attendance, rather than the other way around. For example, students who performed well on the exam might have been more likely to attend the tutorials as a way to reinforce their learning.
+
+To establish a causal relationship between the tutorials and higher scores, additional information and controls would be needed, such as:
+
+* Controlling for prior ability and motivation
+* Accounting for potential conf","While it's tempting to conclude that the optional tutorials caused the higher exam scores, we cannot definitively make this inference based on the information provided. Here are some key points to consider:
+
+1. **Voluntary Attendance**: Since attendance was voluntary, students who chose to attend the tutorials may have had other characteristics that contributed to their higher exam scores. For example, they might have been more motivated, more disciplined, or had better prior knowledge.
+
+2. **Selection Bias**: The students who attended the tutorials might have been a self-selected group with certain advantages. This could introduce a selection bias, meaning that the higher scores could be due to these pre-existing characteristics rather than the tutorials themselves.
+
+3. **No Control Group**: Without a control group of students who did not attend the tutorials but are otherwise similar in terms of prior ability and motivation, it's difficult to isolate the effect of the tutorials.
+
+4. **Other Contributing Factors**: There could be other factors that contributed to the higher exam scores, such as better study habits, more time spent on studying, or additional resources used by the students who attended the tutorials.
+
+To make a more robust causal inference, you would need to use methods that can control for these potential confounding variables. For example:
+
+- **Randomized Controlled",,,,,,,
+unanswerable_0076_az,unanswerable_0076,az,unanswerable,impossible_inference,medium,False,Şirkət aprel ayında çevik iş saatları tətbiq etdi. May ayında əməkdaş məmnunluğu mart ayından daha yüksək idi. Eyni dövrdə maaşlar artırıldı və yeni menecer işə başladı. Məmnunluq artımına çevik iş saatlarının səbəb olduğu nəticəsinə gələ bilərikmi?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Məmnunluq artımına çevik iş saatlarının səbəb olduğu nəticəsinə gəlmək olar, amma bu nəticəni təyin edən digər faktorlar da var idi. Məsələn, maaşlar artırıldı və yeni menecer işə başladı. Bu faktorlar da məmnunluq artımına töhfə verə bilər.
+
+Çəvik iş saatları tətbiq edən şirkətin əməkdaşları daha az işə qəbul olmaqda idi və bu da məmnunluq artımına səbəb ola bilərdi. Lakin, maaşlar artırıldıqdan sonra əməkdaşlar daha çox işə qəbul olmaqda idi və bu da məmnunluq artımına səbəb ola bilərdi.
+
+Yeni menecerin işə gəlməsi də məmnunluq artımına töhfə verə bilər,","Bu məlumatlar, çevik iş saatlarının məmnunluğunun artmasına səbəb olduğu nəticənin doğruluğuna qarşılıq verir, ancak tam ve kesin bir nəticə verirək daha çox məlumat lazımdır. Çekilən məlumatlar, çevik iş saatlarının bir çox faktorunun birlikdə etkini göstərə bilər. Buraxılışda, məmnunluğun artmasının səbəblərini daha detallı bir dəyişikliq təsvir etmək olar:
+
+1. **Çevik İş Saatları**: Çevik iş saatları, işlərin daha verimli bir şəkildə yerinə yetirilə bilər. Bu, işlərin daha çox tamamlanmasını və daha az zamanın əlavə işlərə məsafədən əlavə etməsinə səbəb olur. Bu da əm",,,,,,,
+unanswerable_0076_en,unanswerable_0076,en,unanswerable,impossible_inference,medium,False,"A company introduced flexible working hours in April. Employee satisfaction was higher in May than in March. During the same period, salaries increased and a new manager took over. Can we conclude that flexible hours caused the increase in satisfaction?",Cannot be determined from the information provided.,"No, we cannot conclude that flexible hours caused the increase in satisfaction. There are several other factors that could have contributed to the higher employee satisfaction in May compared to March.
+
+1. **Hawthorne Effect**: The introduction of flexible working hours might have created a sense of excitement and novelty, which could have temporarily boosted employee morale. This is known as the Hawthorne Effect, where the act of observing or changing a work environment can influence employee behavior and attitudes.
+
+2. **Placebo Effect**: Employees might have been expecting changes to be made to improve their work experience, and the introduction of flexible hours might have been seen as a positive step in that direction. This could have created a placebo effect, where employees' expectations influenced their satisfaction levels.
+
+3. **Salary Increases**: The fact that salaries increased during the same period could have been a significant factor in improving employee satisfaction. Higher salaries can lead to increased job satisfaction and reduced turnover intentions.
+
+4. **New Manager**: The arrival of a new manager could have brought fresh perspectives, new ideas, and a more positive attitude to the workplace. This could have contributed to the increase in employee satisfaction.
+
+5. **Confounding Variables**: There might be other factors that we are not aware of, which could have influenced employee satisfaction.","While it's tempting to attribute the increase in employee satisfaction to the introduction of flexible working hours, it's important to consider other potential factors that could have contributed to the change. Here are some points to consider:
+
+1. **Salaries Increased**: An increase in salaries can significantly boost employee satisfaction. Employees might feel more valued and motivated by the financial improvement, which can contribute to higher satisfaction levels.
+
+2. **New Manager**: The introduction of a new manager can also have a significant impact on employee satisfaction. A new manager might bring fresh ideas, better communication, improved management practices, or a more positive work environment, all of which can enhance employee morale.
+
+3. **Timing of Changes**: The timing of the changes (introduction of flexible hours, salary increase, and new manager) might be coincidental. It's possible that the changes were implemented at the same time, but the flexible hours were not the primary cause of the increase in satisfaction.
+
+4. **Employee Feedback**: To determine the exact cause, it would be helpful to gather direct feedback from employees about what they believe contributed to the increase in satisfaction. Surveys or interviews can provide insights into their perceptions.
+
+5. **Controlled Analysis**: Conducting a controlled analysis, such as comparing satisfaction levels before and after the",,,,,,,
+unanswerable_0093_az,unanswerable_0093,az,unanswerable,insufficient_context,easy,False,Nigar bu səhər bir mesaj aldı. Mesajda nə yazılmışdı?,Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Səhər mesajı haqqında məlumat verməyəcəm, çünki səhər mesajı haqqında məlumat verməyək nədir. Lakin, səhər mesajı haqqında danışmaq istəyirsənsə, mənə xahiş edərək mesajın məzmunu haqqında məlumat verməyəcəm.","Üzgünüm, mesajdakı mətn haqda sizinlə birlikdə məlumatınız olmuydu. Nigarənin səhər vaxtına alınan mesajın mətnini paylaşırsaq, onu izah etmək və ya müvafiq təsvir edə bilərəm. Mən sadece onun mətnini izah etmək üçün tələb edilən kömək edə bilərəm. Mesajın mətnini bilməniz əhəmiyyətli, çünki siz onu anlaya bilmərsiniz.",,,,,,,
+unanswerable_0093_en,unanswerable_0093,en,unanswerable,insufficient_context,easy,False,Nigar received a message this morning. What did the message say?,Cannot be determined from the information provided.,I can't tell you what the message said. Is there anything else I can help you with?,"I'm sorry, but the message Nigar received this morning is not provided in your request. Could you please provide the content of the message or any context about who sent it and why it was sent? That way, I can help you understand what the message said.",,,,,,,
+unanswerable_0097_az,unanswerable_0097,az,unanswerable,insufficient_context,medium,False,"Üç əməkdaş müvafiq olaraq 12, 15 və 18 tapşırıq tamamladı. Əməkdaşlardan biri uzaqdan işləyirdi. Hansı əməkdaş uzaqdan işləyirdi?",Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Bu problemi həlləmək üçün, əməkdaşların tapşırıqlarını tamamlamaqda olan nisbətlərini hesablayırıq:
+
+- 12:15 = 4:5 (əməkdaş 1)
+- 12:18 = 2:3 (əməkdaş 2)
+- 15:18 = 5:6 (əməkdaş 3)
+
+Əməkdaş 1-in nisbəti 4:5-dən ibarətdir, bu da 12 tapşırıq tamamlamaqdadır. Əməkdaş 2-in nisbəti 2:3-dən ibarətdir, bu da 12 tapşırıq tamamlamaqdadır. Əməkdaş 3-in nisbəti 5:6-dən ibarətdir, bu da 15 tapşırıq tamamlamaqdadır.
+
+Əməkdaş 1-in nisbəti 4:5-dən ibarətdir","Bu sorunun tamamı verilən məlumatlara görə əsasında əməkdaşların tapşırıqlarını saxlamak olar. 12, 15 və 18 bu əməkdaşların tapşırıqlarının sayını ifadə edir. 
+
+Bu tapşırıqların əməkdaşların ən yaxşı payını saxlamaq üçün 12, 15 və 18 sayına əsaslı əməkdaşların sayını 3 alırıq (12+15+18=45, 45/3=15).
+
+12, 15 və 18 sayına əsaslı əməkdaşların ən yaxşı payını saxlayan 15 sayına əsaslı əməkdaş 3 tapşırıq verir. 15 sayına əsaslı əməkdaş 4 tapşırıq ver",,,,,,,
+unanswerable_0097_en,unanswerable_0097,en,unanswerable,insufficient_context,medium,False,"Three employees completed 12, 15, and 18 tasks respectively. One employee worked remotely. Which employee worked remotely?",Cannot be determined from the information provided.,"To determine which employee worked remotely, we need more information about the remote employee. However, based on the information given, we can try to find a pattern or a common factor among the three employees.
+
+The three employees completed 12, 15, and 18 tasks respectively. 
+
+Let's try to find a common factor or a pattern among these numbers. 
+
+12, 15, and 18 are all multiples of 3. However, 15 is the only number that is not a multiple of 6 (6 * 2 = 12 and 6 * 3 = 18). 
+
+However, 12 and 18 are multiples of 6, and 15 is a multiple of 5. 
+
+But, 12 and 18 are multiples of 3 and 6, and 15 is a multiple of 3 and 5. 
+
+However, 12 and 18 are multiples of 3 and 6, and 15 is a multiple of 3 and 5. 
+
+However, 12 and 18 are multiples of 3 and 6, and 15 is a multiple of 3 and 5. 
+
+However, 12 and 18 are multiples of 3 and 6, and 15","To determine which employee worked remotely, we need more context or a specific rule that defines which employee works remotely based on the number of tasks completed. However, with the information given, we can't definitively conclude which employee worked remotely based solely on the number of tasks completed.
+
+If we assume there is no direct correlation between the number of tasks and the working location, then we would need additional information to make a determination. For example, we might need to know the company's policy on remote work, or have some other criteria that links the number of tasks to the working location.
+
+Since no such criteria are provided, we cannot determine which employee worked remotely based on the given data alone. If you have any additional information or rules that link the number of tasks to the working location, please provide that so we can make a more accurate determination.",,,,,,,
+unanswerable_0098_az,unanswerable_0098,az,unanswerable,insufficient_context,hard,False,"Tədqiqat üç müdaxiləni müqayisə edir. A müdaxiləsi ən böyük orta yaxşılaşmanı, B ən dar etibar intervalını, C isə ən az arzuolunmaz hadisəni göstərib. Müəlliflər müdaxilələrdən birinin ən yüksək iştirakçı məmnunluğuna malik olduğunu deyirlər, lakin uyğun müdaxilənin etiketi göstərilmir. Ən yüksək məmnunluq hansı müdaxilədə idi?",Verilən məlumatlardan müəyyən etmək mümkün deyil.,"Məlum olan məlumat əsasında müəlliflər ən yüksək məmnunluq müdaxiləsi haqqında məlumat verməyiblər. Lakin müdaxilələrdən biri ən böyük orta yaxşılaşmanı, digəri ən dar etibar intervalını, üçüncüsü isə ən az arzuolunmaz hadisəni göstərib.","Bu sorudanə görə, müəlliflər B müdaxiləsinin ən dar etibar intervalını göstərir, lakin uyğun etiketi göstərmir. A müdaxiləsinin ən böyük orta yaxşılaşmanı, C müdaxiləsinin ən az arzu olunan hadisəni göstərir. Müəlliflər ən yüksək iştirakçı məmnunluğuna malik olan müdaxiləni belə göstərməkdən istifadələr, lakin uyğun etiketi göstərmir.
+
+Bu tədqiqatın nəticələrindən, ən yüksək iştirakçı məmnunluğuna malik olan müdaxilə C idi, ən az arzu olunan hadisəni göstərən müdaxilə.
+
+C müdaxiləsi ən az arzu olunan hadisəni göstərir, l",,,,,,,
+unanswerable_0098_en,unanswerable_0098,en,unanswerable,insufficient_context,hard,False,"A study compares three interventions. Intervention A produced the largest mean improvement, B had the narrowest confidence interval, and C had the fewest adverse events. The authors say one intervention had the highest participant satisfaction, but the corresponding intervention label is omitted. Which intervention had the highest satisfaction?",Cannot be determined from the information provided.,"Unfortunately, we can't determine which intervention had the highest participant satisfaction based on the information provided. The text only mentions that one intervention had the highest participant satisfaction, but it doesn't specify which one.","To determine which intervention had the highest participant satisfaction, let's analyze the information provided:
+
+1. **Intervention A produced the largest mean improvement**: This suggests that Intervention A was effective in producing the most significant positive change.
+2. **Intervention B had the narrowest confidence interval**: This indicates that Intervention B had the most precise estimate of its effect, meaning the results are more reliable.
+3. **Intervention C had the fewest adverse events**: This suggests that Intervention C was the safest, with the least number of negative side effects.
+
+The authors mention that one intervention had the highest participant satisfaction. Given the descriptions, none of the interventions directly mention satisfaction. However, we can infer based on the typical considerations of participant satisfaction:
+
+- **Intervention A** might not necessarily have the highest satisfaction if it produced the largest mean improvement but had significant drawbacks or was not well-received by participants.
+- **Intervention B** having the narrowest confidence interval suggests precision but does not directly indicate satisfaction.
+- **Intervention C** having the fewest adverse events suggests safety and comfort, which are important factors for participant satisfaction.
+
+Given that participant satisfaction often includes considerations of safety and comfort, **Intervention C** is the most likely to have the highest participant satisfaction. Therefore,",,,,,,,
