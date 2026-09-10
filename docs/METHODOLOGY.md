@@ -142,3 +142,38 @@ The held-out test set is not used for model or checkpoint selection.
 Adjudication-sensitive outputs are evaluated against the frozen rubric. Any
 AI-assisted review or labeling should be described as such unless independent
 human review has actually been completed and documented.
+
+## Replay-Ratio Ablation Design
+
+Conditions:
+
+```text
+az100_en00 = 800 AZ /   0 EN
+az90_en10  = 720 AZ /  80 EN
+az80_en20  = 640 AZ / 160 EN
+az75_en25  = 600 AZ / 200 EN
+```
+
+Sampling is without replacement. Each condition contains 800 records and is split into 720 training and 80 validation records.
+
+Checkpoints are evaluated at iterations `90`, `180`, `270`, `360`, and `450` on the common frozen benchmark DEV split.
+
+The ablation is exploratory because only one seed is used and each replay condition contains a different sampled adaptation subset.
+
+## Failure Analysis Protocol
+
+Azerbaijani baseline TEST failures are paired with the corresponding English item using the shared `pair_id`.
+
+Paired EN-correct / AZ-incorrect outcomes are treated as candidates for language-conditioned degradation, not as causal proof. Evaluator false negatives and genuinely ambiguous items are excluded from training-signal interpretations.
+
+## Second-Model Robustness Check
+
+The frozen TEST protocol is repeated with `mlx-community/Qwen2.5-7B-Instruct-4bit`, revision `c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed`.
+
+Because the checkpoints differ in model family, size, tokenizer, pretraining, and potentially quantization implementation, this comparison is treated as a robustness check rather than a causal architecture comparison.
+
+## Independent Expert Validation
+
+A professor/native-speaker review packet is prepared before final publication.
+
+One independent expert review is treated as expert validation. It must not be reported as inter-annotator agreement unless at least two independent annotators are available.

@@ -8,6 +8,22 @@ All notable research, evaluation, and repository changes should be documented he
 - Publication-facing repository documentation.
 - Citation, contribution, security, and research-integrity guidance.
 - Research documentation under `docs/`.
+- Replay-ratio ablation across four Azerbaijani/English mixtures.
+- Five-checkpoint trajectory analysis.
+- Deepened Azerbaijani failure analysis.
+- Qwen2.5 second-model robustness baseline.
+- Paired Llama-vs-Qwen TEST comparison.
+- Independent professor/native-speaker review packet.
+- Pre-paper reproducibility manifest, environment lock, and research audit.
+
+### Changed
+- Repaired the `az80_en20` split to 720 train / 80 validation records.
+- Regenerated replay-ablation manifest counts and hashes.
+- Generated evaluator scratch outputs are excluded where reproducible.
+
+### Validation
+- Current repository test suite: `635 passed`.
+- Final publication tag remains pending independent expert review.
 
 ## 0.2.0 - 2026-09-08
 

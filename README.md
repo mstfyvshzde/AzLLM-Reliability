@@ -17,7 +17,7 @@ The central research questions are:
 3. Does adaptation improve or harm reliability, especially when the model should abstain?
 4. Does a smaller EN-AZ performance gap represent genuine Azerbaijani improvement, or can it partly arise from English degradation?
 
-The project uses paired English-Azerbaijani benchmark items, frozen evaluation splits, task-aware capability scoring, abstention analysis, development-only checkpoint selection, and paired statistical testing on the final held-out test set.
+The project uses paired English-Azerbaijani benchmark items, frozen evaluation splits, task-aware capability scoring, abstention analysis, development-only checkpoint selection, replay-ratio ablations, checkpoint-trajectory analysis, failure analysis, a second-model robustness check, and paired statistical testing on the final held-out test set.
 
 ---
 
@@ -53,6 +53,33 @@ Adapted: 0 / 14 correct abstentions
 
 > Targeted Azerbaijani adaptation produced only a small, statistically unsupported capability gain in Azerbaijani, reduced English capability, and did not improve held-out abstention reliability.
 
+### Cross-Model Robustness Check
+
+A second frozen baseline was evaluated with:
+
+```text
+mlx-community/Qwen2.5-7B-Instruct-4bit
+```
+
+Pinned revision:
+
+```text
+c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed
+```
+
+| Metric | Llama | Qwen | Qwen - Llama | Exact McNemar p |
+|---|---:|---:|---:|---:|
+| Overall capability | 61.48% | 64.75% | +3.28 pp | 0.608 |
+| Azerbaijani capability | 44.26% | 50.82% | +6.56 pp | 0.481 |
+| English capability | 78.69% | 78.69% | 0.00 pp | 1.000 |
+
+Qwen is numerically stronger on Azerbaijani capability, but the paired difference is not statistically significant on this TEST set.
+
+For Azerbaijani unanswerable items, both models achieved `0 / 14` correct abstentions.
+
+The cross-model result is treated as a robustness check rather than a causal model-family comparison.
+
+
 ---
 
 ## Benchmark
@@ -85,7 +112,9 @@ The split is pair-aware and stratified. The held-out test split is not used for 
 
 ---
 
-## Base Model
+## Models
+
+### Primary Llama Baseline
 
 ```text
 mlx-community/Meta-Llama-3.1-8B-Instruct-4bit
@@ -105,6 +134,20 @@ Temperature:    0.0
 Sampling:       disabled
 Max new tokens: 256
 ```
+
+### Qwen Robustness Baseline
+
+```text
+mlx-community/Qwen2.5-7B-Instruct-4bit
+```
+
+Pinned revision:
+
+```text
+c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed
+```
+
+The Qwen run uses the same frozen benchmark and deterministic evaluation protocol. It is used as a second-model robustness check, not as a perfectly controlled architecture comparison.
 
 ---
 
@@ -197,6 +240,30 @@ Checkpoints:
 ```
 
 Checkpoint `0090` was selected using development results only.
+
+### Replay-Ratio Ablation
+
+| Condition | Azerbaijani | English |
+|---|---:|---:|
+| az100_en00 | 800 | 0 |
+| az90_en10 | 720 | 80 |
+| az80_en20 | 640 | 160 |
+| az75_en25 | 600 | 200 |
+
+Each condition uses 800 unique adaptation records without replacement and a 720/80 train/validation split.
+
+The strongest capability checkpoint in the single-seed trajectory was `az100_en00 / 0270`:
+
+```text
+Overall: 63.33%
+AZ:      48.33%
+EN:      78.33%
+Gap:     30.00 pp
+```
+
+The strongest observed abstention result was `az75_en25 / 0450` with `6/30` correct abstentions, but with lower capability.
+
+These ablation results are exploratory because the study uses one seed and condition-specific sampled training subsets.
 
 ---
 
@@ -380,10 +447,13 @@ This repository studies one controlled English-Azerbaijani evaluation setting.
 
 Important limitations include:
 
-- one primary base-model family,
 - a relatively small held-out test sample,
+- only two evaluated base-model families,
+- single-seed replay-ablation experiments,
+- condition-specific sampled adaptation subsets,
 - synthetic components in adaptation-data construction,
 - limited abstention examples,
+- AI-assisted adjudication pending independent expert validation,
 - and the difficulty of fully proving semantic non-overlap through lexical auditing alone.
 
 The findings should be interpreted as controlled empirical evidence rather than universal claims.
