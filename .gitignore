@@ -40,3 +40,18 @@ outputs/
 *.log
 # LoRA checkpoint weights
 adapters/**/*.safetensors
+
+# Local replay-ablation adapter metadata
+adapters/replay_ablation_v1.0/
+
+# Generated full evaluator outputs
+data/results/qwen2_5_7b_baseline/*_eval_readjudicated/*
+!data/results/qwen2_5_7b_baseline/*_eval_readjudicated/primary_capability_summary.json
+!data/results/qwen2_5_7b_baseline/*_eval_readjudicated/reliability_summary.json
+
+data/results/replay_ablation_v1.0/*/eval_*/
+data/results/replay_ablation_v1.0/*/eval_*_readjudicated/*
+!data/results/replay_ablation_v1.0/*/eval_*_readjudicated/primary_capability_summary.json
+!data/results/replay_ablation_v1.0/*/eval_*_readjudicated/reliability_summary.json
+
+data/results/replay_ablation_v1.0/*/adjudication_packet_*.jsonl
