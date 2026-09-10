@@ -1,0 +1,78 @@
+{
+  "project": "AzLLM-Reliability",
+  "git": {
+    "commit": "08bd61cd3534ff20823a723fa1a21a696965442b",
+    "branch": "main",
+    "status_clean": true
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "macOS-26.4-arm64-arm-64bit",
+    "mlx_lm": "0.31.3"
+  },
+  "models": {
+    "llama": {
+      "name": "mlx-community/Meta-Llama-3.1-8B-Instruct-4bit",
+      "revision": "241a666dad6cb93c8ff213d39a7f34a36bf26db4"
+    },
+    "qwen": {
+      "name": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+      "revision": "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
+    }
+  },
+  "files": {
+    "data/processed/final/benchmark_v1.0.jsonl": {
+      "sha256": "c4e3571ce422b5f823c4d49e8418732eed6aeb7644e9ff2945d3b83ba519b38e",
+      "bytes": 456371
+    },
+    "data/processed/final/benchmark_v1.0_train.jsonl": {
+      "sha256": "20f7f02855fba22e0ce56cab351e640ba1693db1a4cbd7c9d6f48b6064605c69",
+      "bytes": 319999
+    },
+    "data/processed/final/benchmark_v1.0_dev.jsonl": {
+      "sha256": "f50d819f487b23c6ef8031e21d9fd10abeed6d4c06e17af7e0f4d2ae53d3ae0e",
+      "bytes": 68210
+    },
+    "data/processed/final/benchmark_v1.0_test.jsonl": {
+      "sha256": "7530027fe082a4012e1f00e94d4b30bdd8fcfe0373f267c9e88b9f33e5f871b3",
+      "bytes": 68162
+    },
+    "configs/evaluation/semantic_adjudication_rubric.yaml": {
+      "sha256": "8746e0ce20f21e8a8b56edfd7476de4494f1ba0a93a5f7661d77dc7d796833fd",
+      "bytes": 1396
+    },
+    "configs/evaluation/binary_adjudication_rubric.yaml": {
+      "sha256": "8cdd46a8402e2965dc74f4f0b0360c63b04bb6affb8c46d49e428e20e8a0e819",
+      "bytes": 852
+    },
+    "configs/models/base.yaml": {
+      "sha256": "9b1ba20f351dcf716e87844bb577cfaa746ed13fdbf381dc25739d4059188d19",
+      "bytes": 1445
+    },
+    "configs/models/qwen2_5_7b_base.yaml": {
+      "sha256": "48549c4b5f110f291793524ab30f098c2a9b4601b46414323f9c195a39dac1fa",
+      "bytes": 275
+    },
+    "data/processed/adaptation/adaptation_v2.0.jsonl": {
+      "sha256": "218265e79dc5da746b7a95adf84135f21e2d58d0be42090e36bfdce54f00de96",
+      "bytes": 432168
+    },
+    "data/processed/adaptation/replay_ablation_v1.0/manifest.json": {
+      "sha256": "33b4c51ed0a5eae413ab3e30953efbaba4fc6e880fbbfbc6871e699d6bc0da6b",
+      "bytes": 11793
+    },
+    "data/results/cross_model_comparison/llama_vs_qwen_test.json": {
+      "sha256": "a8c55c1260d522bfc8c78b77177d03abdde9538bcdfdff33c2039bd0919c5c03",
+      "bytes": 2410
+    },
+    "data/results/replay_ablation_v1.0/trajectory_summary_ai_assisted.json": {
+      "sha256": "c39b9888d6f8b4e99547479becae26b08507b0b14b48d48a6a626633caec3573",
+      "bytes": 7384
+    }
+  },
+  "review_status": {
+    "ai_assisted_adjudication": true,
+    "independent_professor_review_completed": false,
+    "final_human_validated_results_frozen": false
+  }
+}
