@@ -613,3 +613,65 @@ def test_evaluate_predictions_includes_short_answer_summary() -> None:
 
     assert summary["total"] > 0
     assert 0.0 <= summary["accuracy"] <= 1.0
+
+def test_evaluate_predictions_handles_unanswerable_only_input() -> None:
+    """Unanswerable-only evaluation boş capability dallarında crash etmez."""
+
+    predictions = [
+        make_prediction(
+            item_id="unanswerable_1_en",
+            pair_id="unanswerable_1",
+            language="en",
+            prediction="I don't know.",
+            reference_answer=(
+                "The question cannot be answered from the provided information."
+            ),
+            is_answerable=False,
+            task="unanswerable",
+        ),
+        make_prediction(
+            item_id="unanswerable_1_az",
+            pair_id="unanswerable_1",
+            language="az",
+            prediction="Bilmirəm.",
+            reference_answer=(
+                "Verilən məlumata əsasən suala cavab vermək mümkün deyil."
+            ),
+            is_answerable=False,
+            task="unanswerable",
+        ),
+    ]
+
+    evaluation = evaluate_predictions(predictions)
+
+    assert evaluation["short_answer_results"] == []
+    assert evaluation["short_answer_summary"] == {
+        "total": 0,
+        "correct": 0,
+        "incorrect": 0,
+        "accuracy": None,
+    }
+
+    assert evaluation["task_aware_results"] == []
+    assert evaluation["task_aware_summary"] == {
+        "overall": {
+            "total": 0,
+            "correct": 0,
+            "incorrect": 0,
+            "accuracy": None,
+        },
+        "by_language": {},
+        "by_task": {},
+    }
+
+    assert evaluation["paired_task_aware_results"] == []
+    assert evaluation["paired_task_aware_summary"] == {
+        "total_pairs": 0,
+        "both_correct": 0,
+        "source_only_correct": 0,
+        "target_only_correct": 0,
+        "both_incorrect": 0,
+    }
+
+    assert len(evaluation["abstention_results"]) == 2
+    assert evaluation["reliability_summary"]["overall"]["total"] == 2
