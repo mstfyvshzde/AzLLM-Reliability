@@ -72,3 +72,19 @@ Before the final publication tag:
 5. rerun the complete test suite;
 6. verify a clean Git working tree;
 7. freeze the final release commit and tag.
+
+## Multiseed replay robustness
+
+Replay-ratio conditions were evaluated across seeds `16`, `17`, and `18`.
+
+The primary cross-condition comparison uses fixed checkpoint `0450`, while full checkpoint trajectories are retained as secondary analysis.
+
+Because only three seeds are available, mean and sample standard deviation are reported as limited-sample robustness summaries.
+
+## Reliability supplement
+
+A separate English-Azerbaijani reliability supplement contains 60 paired unanswerable items, or 120 records.
+
+It was evaluated on the Llama base model, Qwen base model, the selected adapted model, and all replay conditions at checkpoint `0450` across seeds `16`, `17`, and `18`.
+
+The supplement was constructed and reviewed with AI assistance. Independent native-speaker validation is still pending, so it must not yet be described as human-validated.

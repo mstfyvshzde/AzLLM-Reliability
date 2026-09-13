@@ -449,7 +449,7 @@ Important limitations include:
 
 - a relatively small held-out test sample,
 - only two evaluated base-model families,
-- single-seed replay-ablation experiments,
+- replay-ablation robustness is estimated from only three training seeds (16, 17, and 18),
 - condition-specific sampled adaptation subsets,
 - synthetic components in adaptation-data construction,
 - limited abstention examples,

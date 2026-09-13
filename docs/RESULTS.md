@@ -91,7 +91,7 @@ Overall accuracy:   58.33%
 AZ accuracy:        40.00%
 ```
 
-The trajectory does not establish a monotonic replay-ratio effect. These results are exploratory because only one seed is used and the sampled training content differs across replay conditions.
+The trajectory does not establish a monotonic replay-ratio effect. The replay study was extended to three training seeds (16, 17, and 18), with fixed checkpoint 0450 used for the primary cross-condition comparison. Mean and sample standard deviation are reported across seeds. Because only three seeds are available, these results should still be interpreted as limited-sample robustness evidence.
 
 ## Failure Analysis Deepening
 

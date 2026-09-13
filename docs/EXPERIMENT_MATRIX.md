@@ -15,7 +15,7 @@
 
 ## Interpretation Boundaries
 
-- Replay-ratio results are exploratory and single-seed.
+- Replay-ratio experiments use three training seeds (16, 17, and 18); uncertainty estimates remain limited by n=3.
 - Cross-model results are a robustness check, not a causal architecture comparison.
 - Current sensitive adjudications are AI-assisted until independent review is complete.
 - One professor/native-speaker review is expert validation, not inter-annotator agreement.

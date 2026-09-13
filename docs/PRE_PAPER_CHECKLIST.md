@@ -43,3 +43,16 @@
 - [ ] Create final version tag
 - [ ] Then begin paper in Overleaf
 - [ ] Presentation only after paper results/narrative are stable
+
+## Multiseed and reliability strengthening
+
+- [x] Run replay ablation across seeds 16, 17, and 18
+- [x] Aggregate fixed-checkpoint multiseed capability results
+- [x] Build paired English-Azerbaijani reliability supplement
+- [x] Evaluate base, adapted, and multiseed replay reliability conditions
+- [x] Build capability-reliability trade-off artifacts
+- [x] Prepare blinded reliability human-review packets
+- [ ] Receive two independent reliability reviewers
+- [ ] Compute raw agreement and Cohen's kappa
+- [ ] Resolve reviewer disagreements
+- [ ] Mark the reliability supplement human-validated only if justified

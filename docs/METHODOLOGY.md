@@ -158,7 +158,7 @@ Sampling is without replacement. Each condition contains 800 records and is spli
 
 Checkpoints are evaluated at iterations `90`, `180`, `270`, `360`, and `450` on the common frozen benchmark DEV split.
 
-The ablation is exploratory because only one seed is used and each replay condition contains a different sampled adaptation subset.
+The replay ablation is evaluated across training seeds 16, 17, and 18. The fixed terminal checkpoint 0450 is used for the primary cross-condition comparison to avoid post-hoc checkpoint selection, while checkpoint trajectories are retained as secondary analysis. Because only three seeds are available, mean and sample standard deviation are treated as limited-sample robustness summaries.
 
 ## Failure Analysis Protocol
 
