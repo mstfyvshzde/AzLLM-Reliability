@@ -1,0 +1,7 @@
+model_a,model_b,scope,n,model_a_correct_abstention,model_a_accuracy,model_b_correct_abstention,model_b_accuracy,both_success,model_a_only,model_b_only,both_fail,discordant_pairs,exact_mcnemar_p
+llama_base,qwen_base,overall,120,10,0.08333333333333333,14,0.11666666666666667,3,7,11,99,18,0.480682373046875
+llama_base,qwen_base,en,60,9,0.15,13,0.21666666666666667,3,6,10,41,16,0.454498291015625
+llama_base,qwen_base,az,60,1,0.016666666666666666,1,0.016666666666666666,0,1,1,58,2,1.0
+llama_base,adapted_v2_0090,overall,120,10,0.08333333333333333,7,0.058333333333333334,1,9,6,104,15,0.60723876953125
+llama_base,adapted_v2_0090,en,60,9,0.15,5,0.08333333333333333,1,8,4,47,12,0.3876953125
+llama_base,adapted_v2_0090,az,60,1,0.016666666666666666,2,0.03333333333333333,0,1,2,57,3,1.0
