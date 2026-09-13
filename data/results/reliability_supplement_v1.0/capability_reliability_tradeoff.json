@@ -10,14 +10,14 @@
     "capability_en_sd": 0.01924500897298752,
     "capability_gap_mean": 0.35,
     "capability_gap_sd": 0.02886751345948128,
-    "reliability_overall_mean": 0.15,
-    "reliability_overall_sd": 0.022047927592204915,
-    "reliability_az_mean": 0.10555555555555556,
+    "reliability_overall_mean": 0.15555555555555556,
+    "reliability_overall_sd": 0.01734721666221777,
+    "reliability_az_mean": 0.11111111111111112,
     "reliability_az_sd": 0.00962250448649376,
-    "reliability_en_mean": 0.19444444444444445,
-    "reliability_en_sd": 0.03469443332443555,
-    "reliability_gap_mean": 0.08888888888888888,
-    "reliability_gap_sd": 0.02545875386086579
+    "reliability_en_mean": 0.2,
+    "reliability_en_sd": 0.03333333333333334,
+    "reliability_gap_mean": 0.08888888888888889,
+    "reliability_gap_sd": 0.03469443332443555
   },
   {
     "condition": "az90_en10",
@@ -50,14 +50,14 @@
     "capability_en_sd": 0.0,
     "capability_gap_mean": 0.3722222222222223,
     "capability_gap_sd": 0.025458753860865803,
-    "reliability_overall_mean": 0.11388888888888889,
-    "reliability_overall_sd": 0.00481125224324688,
-    "reliability_az_mean": 0.10555555555555556,
-    "reliability_az_sd": 0.03849001794597505,
+    "reliability_overall_mean": 0.11666666666666667,
+    "reliability_overall_sd": 0.008333333333333331,
+    "reliability_az_mean": 0.1111111111111111,
+    "reliability_az_sd": 0.034694433324435545,
     "reliability_en_mean": 0.12222222222222222,
     "reliability_en_sd": 0.034694433324435545,
-    "reliability_gap_mean": 0.016666666666666666,
-    "reliability_gap_sd": 0.0726483157256779
+    "reliability_gap_mean": 0.011111111111111108,
+    "reliability_gap_sd": 0.06735753140545633
   },
   {
     "condition": "az75_en25",

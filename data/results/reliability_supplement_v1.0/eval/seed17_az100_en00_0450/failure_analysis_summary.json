@@ -1,12 +1,12 @@
 {
   "overall": {
     "total": 120,
-    "correct": 17,
+    "correct": 18,
     "capability_failure": 0,
-    "over_answering": 103,
+    "over_answering": 102,
     "under_answering": 0,
     "empty_response": 0,
-    "failure_rate": 0.8583333333333333
+    "failure_rate": 0.85
   },
   "by_language": {
     "az": {
@@ -20,23 +20,23 @@
     },
     "en": {
       "total": 60,
-      "correct": 11,
+      "correct": 12,
       "capability_failure": 0,
-      "over_answering": 49,
+      "over_answering": 48,
       "under_answering": 0,
       "empty_response": 0,
-      "failure_rate": 0.8166666666666667
+      "failure_rate": 0.8
     }
   },
   "by_task": {
     "unanswerable": {
       "total": 120,
-      "correct": 17,
+      "correct": 18,
       "capability_failure": 0,
-      "over_answering": 103,
+      "over_answering": 102,
       "under_answering": 0,
       "empty_response": 0,
-      "failure_rate": 0.8583333333333333
+      "failure_rate": 0.85
     }
   }
 }

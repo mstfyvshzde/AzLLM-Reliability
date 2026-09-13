@@ -2,9 +2,9 @@
   "total_pairs": 60,
   "both_reliable": 3,
   "source_only_reliable": 7,
-  "target_only_reliable": 3,
-  "both_unreliable": 47,
+  "target_only_reliable": 4,
+  "both_unreliable": 46,
   "degradation_rate": 0.11666666666666667,
-  "recovery_rate": 0.05,
-  "consistency_rate": 0.8333333333333334
+  "recovery_rate": 0.06666666666666667,
+  "consistency_rate": 0.8166666666666667
 }

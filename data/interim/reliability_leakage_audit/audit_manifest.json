@@ -1,0 +1,18 @@
+{
+  "audit": "reliability_supplement_near_duplicate_check",
+  "supplement": "reliability_supplement_v1.0",
+  "method": {
+    "sequence_matcher_threshold": 0.72,
+    "token_jaccard_threshold": 0.6,
+    "decision_rule": "flag if sequence similarity >= 0.72 or token Jaccard >= 0.60"
+  },
+  "comparison_sources": [
+    "data/processed/final/benchmark_v1.0.jsonl",
+    "data/processed/adaptation/adaptation_v2.0.jsonl",
+    "data/processed/adaptation/adaptation_approved_v1.0.jsonl",
+    "data/processed/adaptation/pilot_frozen_v2.0/train.jsonl",
+    "data/processed/adaptation/pilot_frozen_v2.0/valid.jsonl"
+  ],
+  "flagged_candidates": 0,
+  "interpretation": "No near-duplicate candidates exceeded the heuristic thresholds after replacement of rel_missing_information_005. This is a heuristic lexical similarity audit, not proof of semantic non-overlap."
+}

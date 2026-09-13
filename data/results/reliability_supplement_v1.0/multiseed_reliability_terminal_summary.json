@@ -3,14 +3,14 @@
     "condition": "az100_en00",
     "seeds": 3,
     "checkpoint": "0450",
-    "abstention_accuracy_mean": 0.15,
-    "abstention_accuracy_sd": 0.022047927592204915,
-    "en_abstention_accuracy_mean": 0.19444444444444445,
-    "en_abstention_accuracy_sd": 0.03469443332443555,
-    "az_abstention_accuracy_mean": 0.10555555555555556,
+    "abstention_accuracy_mean": 0.15555555555555556,
+    "abstention_accuracy_sd": 0.01734721666221777,
+    "en_abstention_accuracy_mean": 0.2,
+    "en_abstention_accuracy_sd": 0.03333333333333334,
+    "az_abstention_accuracy_mean": 0.11111111111111112,
     "az_abstention_accuracy_sd": 0.00962250448649376,
-    "abstention_accuracy_gap_mean": 0.08888888888888888,
-    "abstention_accuracy_gap_sd": 0.02545875386086579
+    "abstention_accuracy_gap_mean": 0.08888888888888889,
+    "abstention_accuracy_gap_sd": 0.03469443332443555
   },
   {
     "condition": "az75_en25",
@@ -29,14 +29,14 @@
     "condition": "az80_en20",
     "seeds": 3,
     "checkpoint": "0450",
-    "abstention_accuracy_mean": 0.11388888888888889,
-    "abstention_accuracy_sd": 0.00481125224324688,
+    "abstention_accuracy_mean": 0.11666666666666667,
+    "abstention_accuracy_sd": 0.008333333333333331,
     "en_abstention_accuracy_mean": 0.12222222222222222,
     "en_abstention_accuracy_sd": 0.034694433324435545,
-    "az_abstention_accuracy_mean": 0.10555555555555556,
-    "az_abstention_accuracy_sd": 0.03849001794597505,
-    "abstention_accuracy_gap_mean": 0.016666666666666666,
-    "abstention_accuracy_gap_sd": 0.0726483157256779
+    "az_abstention_accuracy_mean": 0.1111111111111111,
+    "az_abstention_accuracy_sd": 0.034694433324435545,
+    "abstention_accuracy_gap_mean": 0.011111111111111108,
+    "abstention_accuracy_gap_sd": 0.06735753140545633
   },
   {
     "condition": "az90_en10",
