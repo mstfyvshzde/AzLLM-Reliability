@@ -1,0 +1,11 @@
+{
+  "scope": "multiseed replay ablation seeds 16 and 18",
+  "status": "AI-assisted adjudication; not human review",
+  "total_records": 763,
+  "semantic_records": 720,
+  "semantic_correct": 539,
+  "binary_records": 43,
+  "binary_correct": 38,
+  "semantic_rubric_sha256": "8746e0ce20f21e8a8b56edfd7476de4494f1ba0a93a5f7661d77dc7d796833fd",
+  "binary_rubric_sha256": "8cdd46a8402e2965dc74f4f0b0360c63b04bb6affb8c46d49e428e20e8a0e819"
+}

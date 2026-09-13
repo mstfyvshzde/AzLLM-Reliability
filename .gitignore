@@ -55,3 +55,6 @@ data/results/replay_ablation_v1.0/*/eval_*_readjudicated/*
 !data/results/replay_ablation_v1.0/*/eval_*_readjudicated/reliability_summary.json
 
 data/results/replay_ablation_v1.0/*/adjudication_packet_*.jsonl
+
+# Local LoRA / MLX adapter weights
+adapters/**/*.safetensors

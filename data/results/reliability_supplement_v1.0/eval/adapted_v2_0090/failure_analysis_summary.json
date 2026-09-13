@@ -1,0 +1,42 @@
+{
+  "overall": {
+    "total": 120,
+    "correct": 7,
+    "capability_failure": 0,
+    "over_answering": 113,
+    "under_answering": 0,
+    "empty_response": 0,
+    "failure_rate": 0.9416666666666667
+  },
+  "by_language": {
+    "az": {
+      "total": 60,
+      "correct": 2,
+      "capability_failure": 0,
+      "over_answering": 58,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.9666666666666667
+    },
+    "en": {
+      "total": 60,
+      "correct": 5,
+      "capability_failure": 0,
+      "over_answering": 55,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.9166666666666666
+    }
+  },
+  "by_task": {
+    "unanswerable": {
+      "total": 120,
+      "correct": 7,
+      "capability_failure": 0,
+      "over_answering": 113,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.9416666666666667
+    }
+  }
+}

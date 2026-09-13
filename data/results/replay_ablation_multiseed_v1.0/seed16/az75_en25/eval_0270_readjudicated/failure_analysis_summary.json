@@ -1,0 +1,78 @@
+{
+  "overall": {
+    "total": 150,
+    "correct": 77,
+    "capability_failure": 46,
+    "over_answering": 27,
+    "under_answering": 0,
+    "empty_response": 0,
+    "failure_rate": 0.4866666666666667
+  },
+  "by_language": {
+    "az": {
+      "total": 75,
+      "correct": 31,
+      "capability_failure": 32,
+      "over_answering": 12,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.5866666666666667
+    },
+    "en": {
+      "total": 75,
+      "correct": 46,
+      "capability_failure": 14,
+      "over_answering": 15,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.38666666666666666
+    }
+  },
+  "by_task": {
+    "factual_knowledge": {
+      "total": 30,
+      "correct": 19,
+      "capability_failure": 11,
+      "over_answering": 0,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.36666666666666664
+    },
+    "instruction_following": {
+      "total": 30,
+      "correct": 13,
+      "capability_failure": 17,
+      "over_answering": 0,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.5666666666666667
+    },
+    "linguistic_understanding": {
+      "total": 30,
+      "correct": 19,
+      "capability_failure": 11,
+      "over_answering": 0,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.36666666666666664
+    },
+    "reasoning": {
+      "total": 30,
+      "correct": 23,
+      "capability_failure": 7,
+      "over_answering": 0,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.23333333333333334
+    },
+    "unanswerable": {
+      "total": 30,
+      "correct": 3,
+      "capability_failure": 0,
+      "over_answering": 27,
+      "under_answering": 0,
+      "empty_response": 0,
+      "failure_rate": 0.9
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "overall": {
+    "total_pairs": 60,
+    "preserved_behavior": 0,
+    "language_degradation": 11,
+    "language_recovery": 6,
+    "shared_failure": 43,
+    "behavior_preservation_rate": 0.0,
+    "degradation_rate": 0.18333333333333332,
+    "recovery_rate": 0.1,
+    "shared_failure_rate": 0.7166666666666667
+  },
+  "by_task": {
+    "unanswerable": {
+      "total_pairs": 60,
+      "preserved_behavior": 0,
+      "language_degradation": 11,
+      "language_recovery": 6,
+      "shared_failure": 43,
+      "behavior_preservation_rate": 0.0,
+      "degradation_rate": 0.18333333333333332,
+      "recovery_rate": 0.1,
+      "shared_failure_rate": 0.7166666666666667
+    }
+  }
+}

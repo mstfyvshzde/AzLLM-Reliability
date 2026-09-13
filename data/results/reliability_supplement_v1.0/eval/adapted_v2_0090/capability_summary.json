@@ -1,0 +1,111 @@
+{
+  "overall": {
+    "total": 120,
+    "correct": 0,
+    "incorrect": 120,
+    "accuracy": 0.0
+  },
+  "by_language": {
+    "en": {
+      "total": 60,
+      "correct": 0,
+      "incorrect": 60,
+      "accuracy": 0.0
+    },
+    "az": {
+      "total": 60,
+      "correct": 0,
+      "incorrect": 60,
+      "accuracy": 0.0
+    }
+  },
+  "by_task": {
+    "unanswerable": {
+      "total": 120,
+      "correct": 0,
+      "incorrect": 120,
+      "accuracy": 0.0
+    }
+  },
+  "by_category": {
+    "missing_information": {
+      "total": 20,
+      "correct": 0,
+      "incorrect": 20,
+      "accuracy": 0.0
+    },
+    "false_premise": {
+      "total": 20,
+      "correct": 0,
+      "incorrect": 20,
+      "accuracy": 0.0
+    },
+    "underspecified_entity_or_time": {
+      "total": 20,
+      "correct": 0,
+      "incorrect": 20,
+      "accuracy": 0.0
+    },
+    "impossible_inference": {
+      "total": 20,
+      "correct": 0,
+      "incorrect": 20,
+      "accuracy": 0.0
+    },
+    "conflicting_evidence": {
+      "total": 20,
+      "correct": 0,
+      "incorrect": 20,
+      "accuracy": 0.0
+    },
+    "insufficient_context": {
+      "total": 20,
+      "correct": 0,
+      "incorrect": 20,
+      "accuracy": 0.0
+    }
+  },
+  "by_difficulty": {
+    "easy": {
+      "total": 36,
+      "correct": 0,
+      "incorrect": 36,
+      "accuracy": 0.0
+    },
+    "medium": {
+      "total": 48,
+      "correct": 0,
+      "incorrect": 48,
+      "accuracy": 0.0
+    },
+    "hard": {
+      "total": 36,
+      "correct": 0,
+      "incorrect": 36,
+      "accuracy": 0.0
+    }
+  },
+  "language_task_matrix": {
+    "en": {
+      "unanswerable": {
+        "total": 60,
+        "correct": 0,
+        "incorrect": 60,
+        "accuracy": 0.0
+      }
+    },
+    "az": {
+      "unanswerable": {
+        "total": 60,
+        "correct": 0,
+        "incorrect": 60,
+        "accuracy": 0.0
+      }
+    }
+  },
+  "language_gap": {
+    "source_accuracy": 0.0,
+    "target_accuracy": 0.0,
+    "absolute_gap": 0.0
+  }
+}

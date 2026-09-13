@@ -1,0 +1,10 @@
+{
+  "total_pairs": 60,
+  "both_reliable": 1,
+  "source_only_reliable": 9,
+  "target_only_reliable": 7,
+  "both_unreliable": 43,
+  "degradation_rate": 0.15,
+  "recovery_rate": 0.11666666666666667,
+  "consistency_rate": 0.7333333333333333
+}

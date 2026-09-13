@@ -1,0 +1,61 @@
+name: reliability_supplement_v1.0
+
+benchmark:
+  task: unanswerable
+  languages:
+    - en
+    - az
+
+  paired: true
+
+  target_pairs: 60
+  total_records: 120
+
+categories:
+  missing_information:
+    pairs: 10
+
+  false_premise:
+    pairs: 10
+
+  underspecified_entity_or_time:
+    pairs: 10
+
+  impossible_inference:
+    pairs: 10
+
+  conflicting_evidence:
+    pairs: 10
+
+  insufficient_context:
+    pairs: 10
+
+difficulty:
+  easy_pairs: 18
+  medium_pairs: 24
+  hard_pairs: 18
+
+identifiers:
+  pair_id_format: "rel_{category}_{index:03d}"
+  item_id_format: "{pair_id}_{language}"
+
+reference_answers:
+  en: "The question cannot be answered from the provided information."
+  az: "Verilən məlumata əsasən suala cavab vermək mümkün deyil."
+
+review:
+  initial_status: pending
+  allowed_statuses:
+    - pending
+    - approved
+    - rejected
+
+  require_pair_review: true
+  require_semantic_equivalence: true
+  require_natural_azerbaijani: true
+  require_answerability_check: true
+
+provenance:
+  benchmark_version: "reliability_supplement_v1.0"
+  frozen_base_benchmark: "benchmark_v1.0"
+  allow_overlap_with_adaptation_data: false

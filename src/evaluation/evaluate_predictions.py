@@ -635,9 +635,17 @@ def evaluate_predictions(
         short_answer_records
     )
 
-    short_answer_summary = summarize_short_answer_matches(
-        short_answer_results
-    )
+    if short_answer_results:
+        short_answer_summary = summarize_short_answer_matches(
+            short_answer_results
+        )
+    else:
+        short_answer_summary = {
+            "total": 0,
+            "correct": 0,
+            "incorrect": 0,
+            "accuracy": None,
+        }
 
     paired_capability_results = evaluate_paired_exact_match(
         exact_match_results,
@@ -699,12 +707,35 @@ def evaluate_predictions(
         target_language=target_language,
     )
 
-    paired_task_aware_summary = summarize_paired_task_aware_capability(
-        paired_task_aware_results
+    paired_task_aware_summary = (
+        summarize_paired_task_aware_capability(
+            paired_task_aware_results
+        )
+        if paired_task_aware_results
+        else {
+            "total_pairs": 0,
+            "both_correct": 0,
+            "source_only_correct": 0,
+            "target_only_correct": 0,
+            "both_incorrect": 0,
+        }
     )
 
-    task_aware_summary = summarize_task_aware_capability(
-        task_aware_results
+    task_aware_summary = (
+        summarize_task_aware_capability(
+            task_aware_results
+        )
+        if task_aware_results
+        else {
+            "overall": {
+                "total": 0,
+                "correct": 0,
+                "incorrect": 0,
+                "accuracy": None,
+            },
+            "by_language": {},
+            "by_task": {},
+        }
     )
 
     instruction_following_records = [

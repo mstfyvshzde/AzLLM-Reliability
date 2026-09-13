@@ -1,0 +1,27 @@
+{
+  "name": "reliability_supplement_v1.0",
+  "records": 120,
+  "pairs": 60,
+  "languages": [
+    "en",
+    "az"
+  ],
+  "task": "unanswerable",
+  "categories": {
+    "missing_information": 10,
+    "false_premise": 10,
+    "underspecified_entity_or_time": 10,
+    "impossible_inference": 10,
+    "conflicting_evidence": 10,
+    "insufficient_context": 10
+  },
+  "difficulty_pairs": {
+    "easy": 18,
+    "medium": 24,
+    "hard": 18
+  },
+  "provenance": "AI-assisted candidates + AI-assisted content review",
+  "human_review_complete": false,
+  "frozen_base_benchmark": "benchmark_v1.0",
+  "sha256": "5e47256ecb47cf6d53b28800fe5f68cd6b3709fa18a6bc2531fbbaea3029f8d5"
+}

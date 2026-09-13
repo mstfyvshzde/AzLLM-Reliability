@@ -1,0 +1,53 @@
+{
+  "overall": {
+    "total": 120,
+    "correct": 64,
+    "incorrect": 56,
+    "accuracy": 0.5333333333333333
+  },
+  "by_language": {
+    "az": {
+      "total": 60,
+      "correct": 18,
+      "incorrect": 42,
+      "accuracy": 0.3
+    },
+    "en": {
+      "total": 60,
+      "correct": 46,
+      "incorrect": 14,
+      "accuracy": 0.7666666666666667
+    }
+  },
+  "by_task": {
+    "factual_knowledge": {
+      "total": 30,
+      "correct": 16,
+      "incorrect": 14,
+      "accuracy": 0.5333333333333333
+    },
+    "instruction_following": {
+      "total": 30,
+      "correct": 10,
+      "incorrect": 20,
+      "accuracy": 0.3333333333333333
+    },
+    "linguistic_understanding": {
+      "total": 30,
+      "correct": 17,
+      "incorrect": 13,
+      "accuracy": 0.5666666666666667
+    },
+    "reasoning": {
+      "total": 30,
+      "correct": 21,
+      "incorrect": 9,
+      "accuracy": 0.7
+    }
+  },
+  "language_gap": {
+    "source_accuracy": 0.7666666666666667,
+    "target_accuracy": 0.3,
+    "absolute_gap": 0.46666666666666673
+  }
+}
