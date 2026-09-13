@@ -58,3 +58,7 @@ data/results/replay_ablation_v1.0/*/adjudication_packet_*.jsonl
 
 # Local LoRA / MLX adapter weights
 adapters/**/*.safetensors
+
+# Multiseed smoke-run adapter directories
+adapters/replay_ablation_multiseed_v1.0/seed16_smoke/
+adapters/replay_ablation_multiseed_v1.0/seed18_smoke/
