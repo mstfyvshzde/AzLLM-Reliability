@@ -5,25 +5,34 @@ All notable research, evaluation, and repository changes should be documented he
 ## Unreleased
 
 ### Added
-- Publication-facing repository documentation.
-- Citation, contribution, security, and research-integrity guidance.
-- Research documentation under `docs/`.
-- Replay-ratio ablation across four Azerbaijani/English mixtures.
-- Five-checkpoint trajectory analysis.
-- Deepened Azerbaijani failure analysis.
-- Qwen2.5 second-model robustness baseline.
-- Paired Llama-vs-Qwen TEST comparison.
-- Independent professor/native-speaker review packet.
-- Pre-paper reproducibility manifest, environment lock, and research audit.
+- Three-seed replay robustness study using seeds 16, 17, and 18.
+- Fixed-checkpoint multiseed capability comparison.
+- Separate 60-pair / 120-record reliability supplement.
+- Reliability leakage audit and contaminated-pair replacement workflow.
+- Exact paired McNemar reliability comparisons.
+- Per-seed replay-vs-base reliability analysis with Holm correction.
+- Capability-reliability tradeoff summaries.
+- Two blinded reliability reviewer packets.
+- Reviewer agreement analysis tooling with raw agreement, Cohen's kappa, missing-label reporting, and disagreement extraction.
+- Dedicated unanswerable-only evaluator regression coverage.
+- Refreshed pre-paper reproducibility manifest, environment lock, and final research audit.
+- Publication-facing README and repository metadata polish.
 
 ### Changed
 - Repaired the `az80_en20` split to 720 train / 80 validation records.
 - Regenerated replay-ablation manifest counts and hashes.
+- Replaced one reliability-supplement pair after a lexical near-duplicate audit.
+- Regenerated all affected reliability predictions and downstream evaluation artifacts.
+- Updated documentation to distinguish descriptive replay patterns from statistically established effects.
+- Clarified that AI-assisted judgments are not independent human validation.
 - Generated evaluator scratch outputs are excluded where reproducible.
 
 ### Validation
-- Current repository test suite: `635 passed`.
-- Final publication tag remains pending independent expert review.
+- Current repository test suite: `645 passed`.
+- Core experiments and software pipeline are complete.
+- Independent professor/native-speaker review remains pending.
+- Two-reviewer reliability validation and IAA remain pending.
+- Final human-validated publication tag remains pending.
 
 ## 0.2.0 - 2026-09-08
 
