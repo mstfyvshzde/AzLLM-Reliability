@@ -1,9 +1,9 @@
 {
   "project": "AzLLM-Reliability",
   "git": {
-    "commit": "08bd61cd3534ff20823a723fa1a21a696965442b",
+    "code_commit": "6e2c219945d485211ea473bbb7c951b0b33fbe86",
     "branch": "main",
-    "status_clean": true
+    "note": "code_commit identifies the frozen code and experimental state before final-release metadata updates. The release commit is identified externally by Git history/tag to avoid self-referential commit hashing."
   },
   "environment": {
     "python": "3.12.13",
@@ -19,6 +19,43 @@
       "name": "mlx-community/Qwen2.5-7B-Instruct-4bit",
       "revision": "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed"
     }
+  },
+  "benchmark": {
+    "version": "benchmark_v1.0",
+    "pairs": 500,
+    "records": 1000,
+    "immutable": true
+  },
+  "reliability_supplement": {
+    "version": "reliability_supplement_v1.0",
+    "pairs": 60,
+    "records": 120,
+    "sha256": "9407bc8b22f8c287bd4f63e3981a78ca105d78ab88a832afde17f2b756485f53",
+    "near_duplicate_flags_after_revision": 0,
+    "human_review_complete": false
+  },
+  "multiseed_replay": {
+    "seeds": [
+      16,
+      17,
+      18
+    ],
+    "primary_checkpoint": "0450",
+    "conditions": [
+      "az100_en00",
+      "az90_en10",
+      "az80_en20",
+      "az75_en25"
+    ]
+  },
+  "statistical_analysis": {
+    "base_comparisons": "exact paired McNemar",
+    "replay_comparisons": "per-seed exact paired McNemar",
+    "multiple_testing_correction": "Holm within scope",
+    "corrected_significant_replay_tests_0_05": 0
+  },
+  "tests": {
+    "pytest_passed": 645
   },
   "files": {
     "data/processed/final/benchmark_v1.0.jsonl": {
@@ -61,6 +98,14 @@
       "sha256": "33b4c51ed0a5eae413ab3e30953efbaba4fc6e880fbbfbc6871e699d6bc0da6b",
       "bytes": 11793
     },
+    "data/processed/reliability_supplement_v1.0/final.jsonl": {
+      "sha256": "9407bc8b22f8c287bd4f63e3981a78ca105d78ab88a832afde17f2b756485f53",
+      "bytes": 75366
+    },
+    "data/processed/reliability_supplement_v1.0/manifest.json": {
+      "sha256": "96ebc572c282b40fd267f09494ee910feb1badbee4309900cafa98d590230182",
+      "bytes": 667
+    },
     "data/results/cross_model_comparison/llama_vs_qwen_test.json": {
       "sha256": "a8c55c1260d522bfc8c78b77177d03abdde9538bcdfdff33c2039bd0919c5c03",
       "bytes": 2410
@@ -68,11 +113,45 @@
     "data/results/replay_ablation_v1.0/trajectory_summary_ai_assisted.json": {
       "sha256": "c39b9888d6f8b4e99547479becae26b08507b0b14b48d48a6a626633caec3573",
       "bytes": 7384
+    },
+    "data/results/replay_ablation_multiseed_v1.0/multiseed_terminal_checkpoint_comparison.json": {
+      "sha256": "89a36b119fc499d659a8e7f3ae536371453e401b610f9ed6999216c87a1c2bff",
+      "bytes": 2190
+    },
+    "data/results/reliability_supplement_v1.0/reliability_supplement_summary.json": {
+      "sha256": "3e3b8cf4a8e86bdc600ed0228072395e720cd852a0bb6357241a088059f932ed",
+      "bytes": 5805
+    },
+    "data/results/reliability_supplement_v1.0/multiseed_reliability_terminal_summary.json": {
+      "sha256": "59af77c8f8189beec66809a5f46bdf430d98fbd08fb46dda71996fbc1a07c956",
+      "bytes": 2059
+    },
+    "data/results/reliability_supplement_v1.0/capability_reliability_tradeoff.json": {
+      "sha256": "76ac6e085cfb749a03b3d1f32cc17cdafc3c1b827089a7ce42aeee65deb7494e",
+      "bytes": 3279
+    },
+    "data/results/reliability_supplement_v1.0/statistical_tests/mcnemar_reliability_comparisons.json": {
+      "sha256": "da620ed7e963d5aabb8289ea828ec968e3913b18f35d8347768117054c1fdb7d",
+      "bytes": 2504
+    },
+    "data/results/reliability_supplement_v1.0/statistical_tests/replay_vs_base_mcnemar_by_seed.json": {
+      "sha256": "f8fe974b4faee00e58fa0e96317623d87801432d4459bdec9c637a34736ef494",
+      "bytes": 18921
+    },
+    "data/results/reliability_supplement_v1.0/statistical_tests/replay_vs_base_summary.json": {
+      "sha256": "ba08d01e64414a1c3548e35757a95c71614ab1173a4d523f81ccaaf1259068a5",
+      "bytes": 4237
+    },
+    "data/interim/reliability_leakage_audit/audit_manifest.json": {
+      "sha256": "3b2ecd16825c9f1c48676911e4e4f9ab25635530dd94aa81653a10ed16eea360",
+      "bytes": 855
     }
   },
   "review_status": {
     "ai_assisted_adjudication": true,
     "independent_professor_review_completed": false,
+    "reliability_two_reviewer_validation_completed": false,
+    "reliability_iaa_completed": false,
     "final_human_validated_results_frozen": false
   }
 }
