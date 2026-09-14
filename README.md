@@ -4,81 +4,99 @@
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> A controlled study of capability and reliability degradation when large language models move from English to Azerbaijani, and whether targeted Azerbaijani adaptation can reduce that gap without introducing new reliability failures.
+> A controlled study of English–Azerbaijani capability gaps, targeted Azerbaijani adaptation, and abstention reliability in instruction-tuned large language models.
 
-## Overview
+## Research Questions
 
-AzLLM-Reliability studies multilingual model behavior under a controlled English-Azerbaijani evaluation design.
+1. How large is the capability gap between English and Azerbaijani on semantically matched tasks?
+2. Does Azerbaijani-focused adaptation reduce that gap through genuine Azerbaijani improvement, or partly through English degradation?
+3. How do adaptation and replay affect abstention reliability on unanswerable inputs?
 
-The central research questions are:
-
-1. How much capability degrades when the same semantic task is expressed in Azerbaijani rather than English?
-2. Can targeted Azerbaijani adaptation recover capability?
-3. Does adaptation improve or harm reliability, especially when the model should abstain?
-4. Does a smaller EN-AZ performance gap represent genuine Azerbaijani improvement, or can it partly arise from English degradation?
-
-The project uses paired English-Azerbaijani benchmark items, frozen evaluation splits, task-aware capability scoring, abstention analysis, development-only checkpoint selection, replay-ratio ablations, checkpoint-trajectory analysis, failure analysis, a second-model robustness check, and paired statistical testing on the final held-out test set.
+The study uses paired English–Azerbaijani evaluation, frozen splits, deterministic inference, task-aware scoring, paired statistical testing, multiseed replay experiments, and a separate reliability supplement.
 
 ---
 
-## Main Finding
+## Research Status
 
-The frozen baseline showed a substantial capability gap between English and Azerbaijani.
+**Core experiments and the internal technical pipeline are complete.**
 
-After targeted LoRA adaptation, Azerbaijani capability increased slightly, while overall capability decreased and English performance dropped.
+| Component | Status |
+|---|---|
+| Frozen EN–AZ benchmark | Complete |
+| Llama baseline | Complete |
+| Azerbaijani LoRA adaptation | Complete |
+| Qwen robustness baseline | Complete |
+| Three-seed replay study | Complete |
+| Reliability supplement | Complete |
+| Statistical analysis | Complete |
+| Leakage audit | Complete |
+| Automated tests | **645 passed** |
+| Independent human validation | Pending |
+| Final human-validated release | Pending |
+
+Current sensitive adjudication decisions include AI-assisted judgments and are **not** presented as independent human annotation.
+
+---
+
+## Main Findings
+
+### 1. Substantial EN–AZ capability gap
+
+Primary Llama baseline:
+
+| Metric | Result |
+|---|---:|
+| Overall capability | 61.48% |
+| Azerbaijani | 44.26% |
+| English | 78.69% |
+| EN–AZ gap | 34.43 pp |
+
+Qwen robustness baseline:
+
+| Metric | Result |
+|---|---:|
+| Overall capability | 64.75% |
+| Azerbaijani | 50.82% |
+| English | 78.69% |
+| EN–AZ gap | 27.87 pp |
+
+Both tested baselines show substantially lower Azerbaijani capability on this paired benchmark.
+
+### 2. A smaller gap does not necessarily mean Azerbaijani recovery
 
 | Metric | Base | Adapted | Change |
 |---|---:|---:|---:|
-| Overall accuracy | 61.48% | 58.20% | -3.28 pp |
-| Azerbaijani accuracy | 44.26% | 45.90% | +1.64 pp |
-| English accuracy | 78.69% | 70.49% | -8.20 pp |
-| EN-AZ gap | 34.43 pp | 24.59 pp | -9.84 pp |
+| Overall | 61.48% | 58.20% | -3.28 pp |
+| Azerbaijani | 44.26% | 45.90% | +1.64 pp |
+| English | 78.69% | 70.49% | -8.20 pp |
+| EN–AZ gap | 34.43 pp | 24.59 pp | -9.84 pp |
 
-The smaller language gap should therefore not be interpreted as strong Azerbaijani recovery alone. A substantial part of the reduction comes from lower English performance after adaptation.
+Exact paired McNemar tests:
 
-Reliability also did not improve on the final held-out test set:
+| Scope | p |
+|---|---:|
+| Overall | 0.557 |
+| Azerbaijani | 1.000 |
+| English | 0.227 |
 
-```text
-Correct abstention:
-Base:    3 / 28
-Adapted: 3 / 28
-```
+The observed language gap becomes smaller, but Azerbaijani capability improves only slightly while English capability declines.
 
-For Azerbaijani unanswerable items:
+Therefore, the reduced gap should not be interpreted as strong Azerbaijani recovery.
 
-```text
-Base:    0 / 14 correct abstentions
-Adapted: 0 / 14 correct abstentions
-```
+### 3. Reliability remains weak
 
-> Targeted Azerbaijani adaptation produced only a small, statistically unsupported capability gain in Azerbaijani, reduced English capability, and did not improve held-out abstention reliability.
-
-### Cross-Model Robustness Check
-
-A second frozen baseline was evaluated with:
+Frozen TEST unanswerable subset:
 
 ```text
-mlx-community/Qwen2.5-7B-Instruct-4bit
+N = 28
+
+Llama base:  3 / 28 correct abstentions
+Adapted V2:  3 / 28 correct abstentions
+
+Azerbaijani subset:
+Base:        0 / 14
+Adapted V2:  0 / 14
 ```
-
-Pinned revision:
-
-```text
-c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed
-```
-
-| Metric | Llama | Qwen | Qwen - Llama | Exact McNemar p |
-|---|---:|---:|---:|---:|
-| Overall capability | 61.48% | 64.75% | +3.28 pp | 0.608 |
-| Azerbaijani capability | 44.26% | 50.82% | +6.56 pp | 0.481 |
-| English capability | 78.69% | 78.69% | 0.00 pp | 1.000 |
-
-Qwen is numerically stronger on Azerbaijani capability, but the paired difference is not statistically significant on this TEST set.
-
-For Azerbaijani unanswerable items, both models achieved `0 / 14` correct abstentions.
-
-The cross-model result is treated as a robustness check rather than a causal model-family comparison.
-
 
 ---
 
@@ -87,11 +105,11 @@ The cross-model result is treated as a robustness check rather than a causal mod
 The frozen benchmark contains:
 
 ```text
-500 semantic EN-AZ pairs
+500 matched EN–AZ semantic pairs
 1000 total records
 ```
 
-It covers five task families:
+Task families:
 
 - factual knowledge
 - reasoning
@@ -99,7 +117,7 @@ It covers five task families:
 - instruction following
 - unanswerable questions
 
-### Frozen Split
+Pair-aware split:
 
 ```text
 Train: 350 pairs / 700 records
@@ -108,25 +126,27 @@ Test:   75 pairs / 150 records
 Seed:   17
 ```
 
-The split is pair-aware and stratified. The held-out test split is not used for checkpoint selection.
+Benchmark v1.0 remains immutable.
 
 ---
 
 ## Models
 
-### Primary Llama Baseline
+Primary baseline:
 
 ```text
 mlx-community/Meta-Llama-3.1-8B-Instruct-4bit
+revision: 241a666dad6cb93c8ff213d39a7f34a36bf26db4
 ```
 
-Pinned revision:
+Robustness baseline:
 
 ```text
-241a666dad6cb93c8ff213d39a7f34a36bf26db4
+mlx-community/Qwen2.5-7B-Instruct-4bit
+revision: c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed
 ```
 
-Inference configuration:
+Inference:
 
 ```text
 Backend:        MLX
@@ -135,87 +155,21 @@ Sampling:       disabled
 Max new tokens: 256
 ```
 
-### Qwen Robustness Baseline
-
-```text
-mlx-community/Qwen2.5-7B-Instruct-4bit
-```
-
-Pinned revision:
-
-```text
-c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed
-```
-
-The Qwen run uses the same frozen benchmark and deterministic evaluation protocol. It is used as a second-model robustness check, not as a perfectly controlled architecture comparison.
-
----
-
-## Evaluation Design
-
-### Capability
-
-Capability is evaluated only on answerable items.
-
-```text
-factual_knowledge        -> short answer match
-reasoning                -> short answer match
-linguistic_understanding -> semantic answer match
-instruction_following    -> exact / constraint-aware matching
-```
-
-Unanswerable items are excluded from the primary capability score.
-
-### Reliability
-
-Reliability is evaluated separately through response behavior:
-
-```text
-correct_answer
-correct_abstention
-over_answering
-under_answering
-empty_response
-```
-
-The `correct_answer` reliability status does not represent semantic capability accuracy. It indicates that an answerable item received an answer.
-
-### Paired Language Analysis
-
-Because the benchmark is semantically paired, every English result can be directly compared with its Azerbaijani counterpart.
-
-```text
-both_correct
-source_only_correct
-target_only_correct
-both_incorrect
-```
+Qwen is used as a robustness check rather than a causal model-family comparison.
 
 ---
 
 ## Azerbaijani Adaptation
 
-The final V2 adaptation dataset contains:
+Selected V2 adaptation dataset:
 
 ```text
-1000 total records
+1000 records
 800 Azerbaijani
 200 English replay
 ```
 
-| Task | Records |
-|---|---:|
-| Factual knowledge | 170 |
-| Instruction following | 210 |
-| Reasoning | 250 |
-| Semantic understanding | 250 |
-| Unanswerable | 120 |
-
-The adaptation dataset is separate from the frozen benchmark. The benchmark is not used for model training.
-
----
-
-## LoRA Training
+Training configuration:
 
 ```text
 Iterations:       450
@@ -223,25 +177,24 @@ Learning rate:    5e-6
 Batch size:       1
 LoRA rank:        8
 LoRA scale:       20
-LoRA dropout:     0.0
 Trainable layers: 16
 Sequence length:  512
 Seed:             17
 ```
 
-Checkpoints:
+Checkpoint `0090` was selected using development data only.
+
+---
+
+## Three-Seed Replay Study
+
+Replay conditions were evaluated with seeds:
 
 ```text
-0090
-0180
-0270
-0360
-0450
+16, 17, 18
 ```
 
-Checkpoint `0090` was selected using development results only.
-
-### Replay-Ratio Ablation
+Conditions:
 
 | Condition | Azerbaijani | English |
 |---|---:|---:|
@@ -250,187 +203,125 @@ Checkpoint `0090` was selected using development results only.
 | az80_en20 | 640 | 160 |
 | az75_en25 | 600 | 200 |
 
-Each condition uses 800 unique adaptation records without replacement and a 720/80 train/validation split.
+Fixed terminal checkpoint: `0450`.
 
-The strongest capability checkpoint in the single-seed trajectory was `az100_en00 / 0270`:
+Mean capability:
 
-```text
-Overall: 63.33%
-AZ:      48.33%
-EN:      78.33%
-Gap:     30.00 pp
-```
+| Condition | Overall | AZ | EN | EN–AZ gap |
+|---|---:|---:|---:|---:|
+| az100_en00 | 63.06% | 45.56% | 80.56% | 35.00 pp |
+| az90_en10 | 57.50% | 37.78% | 77.22% | 39.44 pp |
+| az80_en20 | 58.06% | 39.44% | 76.67% | 37.22 pp |
+| az75_en25 | 58.89% | 40.56% | 77.22% | 36.67 pp |
 
-The strongest observed abstention result was `az75_en25 / 0450` with `6/30` correct abstentions, but with lower capability.
+Replay does not show a simple monotonic capability benefit under the tested fixed-budget setup.
 
-These ablation results are exploratory because the study uses one seed and condition-specific sampled training subsets.
+Because only three seeds are used, these results are treated as limited-sample robustness evidence.
 
 ---
 
-## Final Held-Out Results
+## Reliability Supplement
 
-### Capability
-
-Final answerable test sample:
+A separate supplement evaluates over-answering on:
 
 ```text
-N = 122
+60 matched EN–AZ pairs
+120 unanswerable records
+6 categories
 ```
 
-| Language | Base | Adapted | Change |
+Current correct-abstention results:
+
+| Model | Overall | EN | AZ |
 |---|---:|---:|---:|
-| Azerbaijani | 44.26% | 45.90% | +1.64 pp |
-| English | 78.69% | 70.49% | -8.20 pp |
-| Overall | 61.48% | 58.20% | -3.28 pp |
+| Llama base | 8.33% | 15.00% | 1.67% |
+| Qwen base | 11.67% | 21.67% | 1.67% |
+| Adapted V2 | 5.83% | 8.33% | 3.33% |
 
-### Adapted Performance by Task
+Exact paired McNemar tests:
 
-| Task | Accuracy |
-|---|---:|
-| Factual knowledge | 83.33% |
-| Instruction following | 34.38% |
-| Linguistic understanding | 60.00% |
-| Reasoning | 56.67% |
+```text
+Llama vs Qwen:       p = 0.481
+Llama vs Adapted V2: p = 0.607
+```
+
+Replay changes language-specific abstention behavior, but no replay comparison remains significant after Holm correction.
+
+The supplement is currently pending independent human validation.
+
+---
+
+## Leakage Audit
+
+A heuristic lexical near-duplicate audit compared the reliability supplement against the frozen benchmark and selected adaptation data.
+
+One contamination risk was identified and replaced.
+
+Final heuristic result:
+
+```text
+Flagged candidates: 0
+```
+
+This is not proof of complete semantic non-overlap.
 
 ---
 
 ## Statistical Analysis
 
-### Overall Capability
+The project uses:
 
-```text
-Base correct:          75
-Adapted correct:       71
-Base only correct:     15
-Adapted only correct:  11
+- exact paired McNemar tests;
+- paired held-out comparisons;
+- per-seed replay comparisons;
+- Holm multiple-testing correction;
+- mean and sample standard deviation across three seeds.
 
-McNemar exact p = 0.557
-Difference = -3.28 pp
-95% paired bootstrap CI = [-11.48 pp, +4.92 pp]
-```
-
-### Azerbaijani Capability
-
-```text
-Difference = +1.64 pp
-McNemar exact p = 1.0
-95% paired bootstrap CI = [-11.48 pp, +14.75 pp]
-```
-
-### English Capability
-
-```text
-Difference = -8.20 pp
-McNemar exact p = 0.227
-95% paired bootstrap CI = [-18.03 pp, +1.64 pp]
-```
-
-The confidence intervals include zero, so these differences should not be interpreted as statistically established improvements or degradations.
+Seeds are not pooled as independent observations.
 
 ---
 
-## Reliability Results
+## Validation
 
-Final unanswerable test sample:
+Prepared external validation includes:
 
-```text
-N = 28
-```
+- professor/native-speaker review;
+- blinded reliability reviewer 1;
+- blinded reliability reviewer 2;
+- inter-annotator agreement analysis.
 
-```text
-Base correct abstention:    3 / 28 = 10.71%
-Adapted correct abstention: 3 / 28 = 10.71%
-```
-
-Paired comparison:
+The IAA pipeline computes:
 
 ```text
-McNemar exact p = 1.0
-95% paired bootstrap CI = [-14.29 pp, +14.29 pp]
+raw agreement
+Cohen's kappa
+missing-label counts
+disagreement records
 ```
 
-Azerbaijani:
-
-```text
-Base:    0 / 14 correct abstentions
-Adapted: 0 / 14 correct abstentions
-```
-
----
-
-## Interpretation
-
-The EN-AZ capability gap decreases after adaptation, but the reduction is not explained by strong Azerbaijani capability recovery.
-
-```text
-Azerbaijani: +1.64 pp
-English:     -8.20 pp
-```
-
-A smaller multilingual performance gap can therefore be misleading if absolute performance in both languages is not examined.
-
----
-
-## Documentation
-
-- [Methodology](docs/METHODOLOGY.md)
-- [Results](docs/RESULTS.md)
-- [Reproducibility](docs/REPRODUCIBILITY.md)
-- [Data Statement](docs/DATA_STATEMENT.md)
-- [Contributing](CONTRIBUTING.md)
-- [Security](SECURITY.md)
-- [Changelog](CHANGELOG.md)
+Human validation is still pending.
 
 ---
 
 ## Reproducibility
 
-Important frozen artifacts include:
+Key release files:
 
 ```text
-data/processed/final/benchmark_v1.0_manifest.json
-data/processed/adaptation/adaptation_v2.0_manifest.json
-data/results/adaptation_pilot_v2.0/checkpoint_selection_v2.0.json
-data/results/adaptation_pilot_v2.0/final_results_manifest.json
+data/results/final_release/
+├── FINAL_RESEARCH_AUDIT.md
+├── environment_lock.txt
+└── reproducibility_manifest.json
 ```
 
-These artifacts preserve benchmark versions, hashes, model provenance, checkpoint selection, and final statistical results.
-
----
-
-## Repository Structure
-
-```text
-AzLLM-Reliability/
-├── .github/
-│   └── workflows/
-├── adapters/
-├── configs/
-├── data/
-│   ├── interim/
-│   ├── processed/
-│   ├── results/
-│   └── source/
-├── docs/
-├── src/
-├── tests/
-├── CITATION.cff
-├── CONTRIBUTING.md
-├── LICENSE
-├── Makefile
-├── SECURITY.md
-├── pyproject.toml
-└── README.md
-```
+Important datasets and result artifacts are tracked with SHA-256 hashes.
 
 ---
 
 ## Testing
 
-The repository currently passes:
-
 ```text
-635 tests
+645 passed
 ```
 
 Run:
@@ -441,20 +332,29 @@ pytest -q
 
 ---
 
+## Documentation
+
+- [Methodology](docs/METHODOLOGY.md)
+- [Results](docs/RESULTS.md)
+- [Reproducibility](docs/REPRODUCIBILITY.md)
+- [Data Statement](docs/DATA_STATEMENT.md)
+- [Final Research Audit](data/results/final_release/FINAL_RESEARCH_AUDIT.md)
+
+---
+
 ## Scope and Limitations
 
-This repository studies one controlled English-Azerbaijani evaluation setting.
+This project studies one controlled English–Azerbaijani setting.
 
-Important limitations include:
+Key limitations include:
 
-- a relatively small held-out test sample,
-- only two evaluated base-model families,
-- replay-ablation robustness is estimated from only three training seeds (16, 17, and 18),
-- condition-specific sampled adaptation subsets,
-- synthetic components in adaptation-data construction,
-- limited abstention examples,
-- AI-assisted adjudication pending independent expert validation,
-- and the difficulty of fully proving semantic non-overlap through lexical auditing alone.
+- relatively small held-out test size;
+- two tested model families;
+- three replay seeds;
+- AI-assisted adjudication pending independent human validation;
+- synthetic components in adaptation-data construction;
+- limited abstention examples;
+- lexical leakage auditing cannot guarantee complete semantic independence.
 
 The findings should be interpreted as controlled empirical evidence rather than universal claims.
 
@@ -462,8 +362,8 @@ The findings should be interpreted as controlled empirical evidence rather than 
 
 ## License
 
-See `LICENSE`.
+MIT License. See [LICENSE](LICENSE).
 
 ## Citation
 
-Citation metadata is provided in `CITATION.cff`.
+Citation metadata is available in [CITATION.cff](CITATION.cff).
