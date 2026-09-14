@@ -160,6 +160,36 @@ Checkpoints are evaluated at iterations `90`, `180`, `270`, `360`, and `450` on 
 
 The replay ablation is evaluated across training seeds 16, 17, and 18. The fixed terminal checkpoint 0450 is used for the primary cross-condition comparison to avoid post-hoc checkpoint selection, while checkpoint trajectories are retained as secondary analysis. Because only three seeds are available, mean and sample standard deviation are treated as limited-sample robustness summaries.
 
+
+## Reliability Supplement Protocol
+
+A separate reliability supplement contains `60` matched English-Azerbaijani pairs (`120` records), all designed to be unanswerable from the provided information.
+
+The supplement spans six categories:
+
+- missing information,
+- false premise,
+- underspecified entity or time,
+- impossible inference,
+- conflicting evidence,
+- insufficient context.
+
+The supplement is kept separate from the frozen benchmark and does not modify benchmark version `v1.0`.
+
+Candidate construction and initial content review were AI-assisted. Two blinded native-speaker review packets have been prepared for independent validation. Until those reviews are completed, the supplement is treated as preliminary and not human-validated.
+
+A heuristic near-duplicate audit compares supplement questions against the frozen benchmark and selected adaptation datasets. A candidate is flagged when either normalized SequenceMatcher similarity is at least `0.72` or token-set Jaccard similarity is at least `0.60`.
+
+One near-duplicate adaptation overlap was identified and replaced. All affected model predictions and downstream evaluation artifacts were regenerated. The final heuristic audit reports zero candidates above the thresholds. This lexical audit reduces obvious overlap risk but is not treated as proof of semantic non-overlap.
+
+For base-model comparisons on the supplement, exact paired McNemar tests use item-level correct-abstention outcomes.
+
+Replay conditions are compared with the Llama base model separately for each training seed. Results from seeds `16`, `17`, and `18` are not pooled as if they were independent benchmark observations. Condition-level effects are summarized using the mean and sample standard deviation across the three seeds.
+
+For replay significance analysis, Holm correction is applied separately within the `overall`, English, and Azerbaijani scopes. Each correction family contains 12 tests: four replay conditions multiplied by three seeds.
+
+Raw and corrected p-values are both preserved, but statistical claims are based on multiplicity-corrected results.
+
 ## Failure Analysis Protocol
 
 Azerbaijani baseline TEST failures are paired with the corresponding English item using the shared `pair_id`.

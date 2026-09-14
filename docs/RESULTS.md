@@ -93,6 +93,40 @@ AZ accuracy:        40.00%
 
 The trajectory does not establish a monotonic replay-ratio effect. The replay study was extended to three training seeds (16, 17, and 18), with fixed checkpoint 0450 used for the primary cross-condition comparison. Mean and sample standard deviation are reported across seeds. Because only three seeds are available, these results should still be interpreted as limited-sample robustness evidence.
 
+
+## Reliability Supplement
+
+A separate reliability supplement contains `60` matched English-Azerbaijani pairs, or `120` unanswerable records. It is evaluated separately from the frozen benchmark.
+
+Baseline correct-abstention results are:
+
+| Model | Overall | English | Azerbaijani | EN-AZ gap |
+|---|---:|---:|---:|---:|
+| Llama base | 10/120 = 8.33% | 9/60 = 15.00% | 1/60 = 1.67% | 13.33 pp |
+| Qwen base | 14/120 = 11.67% | 13/60 = 21.67% | 1/60 = 1.67% | 20.00 pp |
+| Adapted V2 0090 | 7/120 = 5.83% | 5/60 = 8.33% | 2/60 = 3.33% | 5.00 pp |
+
+On the same 120 items, exact paired McNemar tests do not provide evidence of a reliable difference between Llama and Qwen (`p = 0.481`) or between Llama and Adapted V2 (`p = 0.607`). Language-specific comparisons are also non-significant.
+
+At fixed checkpoint `0450`, the three-seed replay results are:
+
+| Condition | Overall reliability | English | Azerbaijani | EN-AZ gap |
+|---|---:|---:|---:|---:|
+| az100_en00 | 15.56% ± 1.73 pp | 20.00% ± 3.33 pp | 11.11% ± 0.96 pp | 8.89 pp ± 3.47 pp |
+| az90_en10 | 12.78% ± 3.15 pp | 13.33% ± 4.41 pp | 12.22% ± 1.92 pp | 1.11 pp ± 2.55 pp |
+| az80_en20 | 11.67% ± 0.83 pp | 12.22% ± 3.47 pp | 11.11% ± 3.47 pp | 1.11 pp ± 6.74 pp |
+| az75_en25 | 11.39% ± 3.76 pp | 7.22% ± 5.09 pp | 15.56% ± 2.55 pp | -8.33 pp ± 2.89 pp |
+
+Relative to the Llama base reliability result, `az100_en00`, `az90_en10`, and `az80_en20` improve overall abstention accuracy in all three seeds. `az75_en25` improves overall reliability in two of three seeds.
+
+The language-specific pattern is stronger: every replay condition improves Azerbaijani abstention accuracy over the base model in all three seeds, while `az75_en25` decreases English abstention accuracy in all three seeds. This suggests that replay ratio can redistribute refusal behavior across languages rather than producing a uniform reliability improvement.
+
+Exact McNemar tests are computed separately for each replay seed against the Llama base model. Holm correction is then applied within each scope (`overall`, `en`, and `az`) across the 12 replay comparisons in that scope. No replay comparison remains significant at the `0.05` level after correction.
+
+These supplement results should therefore be interpreted descriptively rather than as evidence of statistically established reliability improvement.
+
+The supplement was constructed and reviewed with AI assistance. Independent native-speaker validation is still pending, so these results are preliminary and must not be described as human-validated.
+
 ## Failure Analysis Deepening
 
 The Azerbaijani baseline TEST failure set contains `48` cases.
