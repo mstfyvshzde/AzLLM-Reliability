@@ -63,3 +63,4 @@ adapters/**/*.safetensors
 adapters/replay_ablation_multiseed_v1.0/seed16_smoke/
 adapters/replay_ablation_multiseed_v1.0/seed18_smoke/
 data/interim/reliability_pair_rerun/
+data/interim/reliability_human_review/iaa_preview/
