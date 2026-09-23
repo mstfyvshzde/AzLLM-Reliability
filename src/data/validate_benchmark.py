@@ -34,7 +34,7 @@ def validate_record(
     """
 
     if not record.item_id.strip():
-        return ValueError("item_id cannot be empty.")
+        raise ValueError("item_id cannot be empty.")
 
     if not record.pair_id.strip():
         raise ValueError("pair_id cannot be empty.")

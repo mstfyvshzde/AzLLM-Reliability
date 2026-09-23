@@ -40,6 +40,18 @@ def test_valid_record() -> None:
     validate_record(record, {"en", "az"})
 
 
+def test_empty_item_id_is_rejected() -> None:
+    """Boş item_id alanının reddedildiğini test eder."""
+    record = make_record(
+        item_id="",
+        pair_id="reasoning_001",
+        language="en"
+    )
+
+    with pytest.raises(ValueError, match="item_id cannot be empty"):
+        validate_record(record, {"en", "az"})
+
+
 def test_empty_question_is_rejected() -> None:
     """Boş question alanının reddedildiğini test eder."""
 

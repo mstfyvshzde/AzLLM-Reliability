@@ -30,7 +30,7 @@ The study uses paired English–Azerbaijani evaluation, frozen splits, determini
 | Reliability supplement | Complete |
 | Statistical analysis | Complete |
 | Leakage audit | Complete |
-| Automated tests | **645 passed** |
+| Automated tests | **646 passed** |
 | Independent human validation | Pending |
 | Final human-validated release | Pending |
 
@@ -321,7 +321,7 @@ Important datasets and result artifacts are tracked with SHA-256 hashes.
 ## Testing
 
 ```text
-645 passed
+646 passed
 ```
 
 Run:
