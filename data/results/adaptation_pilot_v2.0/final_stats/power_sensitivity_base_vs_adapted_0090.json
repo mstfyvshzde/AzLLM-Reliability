@@ -1,0 +1,33 @@
+{
+  "analysis_type": "observed-discordance McNemar power sensitivity analysis",
+  "interpretation": "Sensitivity analysis based on observed discordance rates; not a prospective design power analysis.",
+  "results": {
+    "overall": {
+      "n": 122,
+      "discordant_pairs": 26,
+      "discordance_rate": 0.21311475409836064,
+      "mde_absolute_difference": 0.12077567591438387,
+      "mde_percentage_points": 12.077567591438388,
+      "alpha": 0.05,
+      "target_power": 0.8
+    },
+    "az": {
+      "n": 61,
+      "discordant_pairs": 15,
+      "discordance_rate": 0.2459016393442623,
+      "mde_absolute_difference": 0.17969359235131135,
+      "mde_percentage_points": 17.969359235131137,
+      "alpha": 0.05,
+      "target_power": 0.8
+    },
+    "en": {
+      "n": 61,
+      "discordant_pairs": 11,
+      "discordance_rate": 0.18032786885245902,
+      "mde_absolute_difference": 0.15202432651399736,
+      "mde_percentage_points": 15.202432651399736,
+      "alpha": 0.05,
+      "target_power": 0.8
+    }
+  }
+}

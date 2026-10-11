@@ -32,6 +32,38 @@ Seed: `17`.
 
 The held-out test set is not used for checkpoint selection.
 
+### Benchmark Construction and Language Validation
+
+Benchmark construction begins from a deterministic generation plan. Each
+semantic `pair_id` is assigned a task family, category, difficulty,
+answerability status, English source language, and Azerbaijani target language
+before candidate content is created.
+
+Candidate content is represented jointly at the semantic-pair level using:
+
+- an English source question and reference answer,
+- an Azerbaijani target question and reference answer.
+
+The candidate-generation pipeline is provider-agnostic: generated content may
+originate from a model or controlled human generation without changing the
+benchmark data model. The repository code therefore does not, by itself,
+establish which generation provider produced every final item.
+
+Before final benchmark construction, structural validation enforces unique
+item identifiers, unique pair-language combinations, task consistency within
+each pair, and the presence of both English and Azerbaijani records for every
+semantic pair.
+
+These checks establish paired structural integrity but do not by themselves
+prove semantic equivalence, Azerbaijani naturalness, or translation quality.
+Some construction and review stages were AI-assisted. Independent
+native-speaker validation of semantic equivalence and Azerbaijani naturalness
+remains pending and must not be described as completed human validation.
+
+The Azerbaijani benchmark uses the Latin-script representation present
+in the frozen benchmark records. Evaluation normalization preserves
+Azerbaijani-specific letters rather than folding them into ASCII equivalents.
+
 ## Base Model
 
 The main model is the MLX 4-bit quantized Llama 3.1 8B Instruct checkpoint:
@@ -114,6 +146,12 @@ Development checkpoints are evaluated at 90-iteration intervals:
 `0090`, `0180`, `0270`, `0360`, `0450`.
 
 Checkpoint `0090` is selected using development results only.
+
+This selected `0090` checkpoint is the main Adapted V2 model used for the
+held-out base-versus-adapted comparison. The replay ablation uses checkpoint
+`0450` for a different purpose: it is a fixed terminal checkpoint applied
+across replay conditions and seeds to support comparable cross-condition
+robustness analysis. Thus, `0090` and `0450` are not competing selections.
 
 ## Final Statistical Comparison
 

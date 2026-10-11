@@ -1,0 +1,52 @@
+{
+  "n_az_answerable_items": 61,
+  "audit_type": "author-reviewed, AI-assisted post-evaluation scoring audit",
+  "models": {
+    "llama_base": {
+      "automated_correct": 27,
+      "automated_accuracy": 0.4426229508196721,
+      "audit_corrected_correct": 22,
+      "audit_corrected_accuracy": 0.36065573770491804,
+      "change_pp": -8.19672131147541,
+      "false_positives": 6,
+      "false_negatives": 1,
+      "agreement": 54,
+      "agreement_rate": 0.8852459016393442
+    },
+    "adapted_v2_0090": {
+      "automated_correct": 28,
+      "automated_accuracy": 0.45901639344262296,
+      "audit_corrected_correct": 27,
+      "audit_corrected_accuracy": 0.4426229508196721,
+      "change_pp": -1.639344262295082,
+      "false_positives": 4,
+      "false_negatives": 3,
+      "agreement": 54,
+      "agreement_rate": 0.8852459016393442
+    },
+    "qwen_base": {
+      "automated_correct": 31,
+      "automated_accuracy": 0.5081967213114754,
+      "audit_corrected_correct": 34,
+      "audit_corrected_accuracy": 0.5573770491803278,
+      "change_pp": 4.918032786885246,
+      "false_positives": 3,
+      "false_negatives": 6,
+      "agreement": 52,
+      "agreement_rate": 0.8524590163934426
+    }
+  },
+  "llama_base_vs_adapted_audit_corrected": {
+    "base_correct": 22,
+    "adapted_correct": 27,
+    "base_accuracy": 0.36065573770491804,
+    "adapted_accuracy": 0.4426229508196721,
+    "difference_pp": 8.19672131147541,
+    "transitions": {
+      "both_correct": 18,
+      "base_only": 4,
+      "adapted_only": 9,
+      "both_incorrect": 30
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "selection_split": "dev",
+  "selected_checkpoint": "0090",
+  "selection_note": "Checkpoint 0090 had the highest observed overall and Azerbaijani primary capability and the smallest observed EN-AZ gap on dev. Because the dev split is small, these values should be interpreted as checkpoint-selection signals rather than precise performance estimates.",
+  "checkpoints": [
+    {
+      "checkpoint": "0090",
+      "overall_accuracy": 0.625,
+      "az_accuracy": 0.48333333333333334,
+      "en_accuracy": 0.7666666666666667,
+      "language_gap": 0.2833333333333334,
+      "overall_correct": 75,
+      "overall_total": 120
+    },
+    {
+      "checkpoint": "0180",
+      "overall_accuracy": 0.5666666666666667,
+      "az_accuracy": 0.4,
+      "en_accuracy": 0.7333333333333333,
+      "language_gap": 0.33333333333333326,
+      "overall_correct": 68,
+      "overall_total": 120
+    },
+    {
+      "checkpoint": "0270",
+      "overall_accuracy": 0.575,
+      "az_accuracy": 0.4,
+      "en_accuracy": 0.75,
+      "language_gap": 0.35,
+      "overall_correct": 69,
+      "overall_total": 120
+    },
+    {
+      "checkpoint": "0360",
+      "overall_accuracy": 0.575,
+      "az_accuracy": 0.4166666666666667,
+      "en_accuracy": 0.7333333333333333,
+      "language_gap": 0.3166666666666666,
+      "overall_correct": 69,
+      "overall_total": 120
+    },
+    {
+      "checkpoint": "0450",
+      "overall_accuracy": 0.575,
+      "az_accuracy": 0.4,
+      "en_accuracy": 0.75,
+      "language_gap": 0.35,
+      "overall_correct": 69,
+      "overall_total": 120
+    }
+  ]
+}

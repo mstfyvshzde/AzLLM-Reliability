@@ -1,3 +1,4 @@
+import pytest
 """Azerbaijani-aware short-answer matching regression tests."""
 
 from src.evaluation.short_answer_match import (
@@ -58,4 +59,27 @@ def test_does_not_accept_unrelated_answer() -> None:
     assert short_answer_match_score(
         "Arifin daha çox qələmi var.",
         "Mina",
+    ) == 0
+
+
+@pytest.mark.xfail(strict=True, reason="Known post-evaluation Azerbaijani scorer limitation; primary evaluator is frozen to avoid post-hoc score tuning.")
+def test_matches_azerbaijani_named_entity_with_omitted_generic_head() -> None:
+    assert short_answer_match_score(
+        "Dünyanın ən yüksək dağı Everestdir.",
+        "Everest dağı",
+    ) == 1
+
+
+@pytest.mark.xfail(strict=True, reason="Known post-evaluation Azerbaijani scorer limitation; primary evaluator is frozen to avoid post-hoc score tuning.")
+def test_matches_azerbaijani_named_entity_with_intervening_parenthetical() -> None:
+    assert short_answer_match_score(
+        "Everest (əslində Qomolungma) dağıdır.",
+        "Everest dağı",
+    ) == 1
+
+
+def test_does_not_accept_wrong_named_entity_with_same_generic_head() -> None:
+    assert short_answer_match_score(
+        "Dünyanın ən yüksək dağı K2-dir.",
+        "Everest dağı",
     ) == 0
