@@ -303,6 +303,18 @@ disagreement records
 
 Independent native-speaker validation of Azerbaijani model-output scoring is complete for the 61 answerable held-out test items. The separate reliability supplement remains pending independent human validation.
 
+### Independent Native-Speaker Model-Output Audit
+
+Two native Azerbaijani-speaking reviewers independently evaluated correctness for the 61 answerable Azerbaijani held-out test items across Llama base, Adapted V2, and Qwen base. They were blinded to automated and AI-assisted scoring labels.
+
+Agreement:
+- Llama base: 86.89% raw agreement, Cohen's kappa 0.742
+- Adapted V2: 85.25%, kappa 0.710
+- Qwen base: 80.33%, kappa 0.609
+- pooled model-scoring decisions: 84.15%, kappa 0.692
+
+Reference-answer validity agreement was 100%. Reviewer disagreements are retained transparently and are not silently used to overwrite the frozen primary evaluation labels.
+
 ---
 
 ## Reproducibility
@@ -369,15 +381,3 @@ MIT License. See [LICENSE](LICENSE).
 ## Citation
 
 Citation metadata is available in [CITATION.cff](CITATION.cff).
-
-### Independent Native-Speaker Model-Output Audit
-
-Two native Azerbaijani-speaking reviewers independently evaluated correctness for the 61 answerable Azerbaijani held-out test items across Llama base, Adapted V2, and Qwen base. They were blinded to automated and AI-assisted scoring labels.
-
-Agreement:
-- Llama base: 86.89% raw agreement, Cohen's kappa 0.742
-- Adapted V2: 85.25%, kappa 0.710
-- Qwen base: 80.33%, kappa 0.609
-- pooled model-scoring decisions: 84.15%, kappa 0.692
-
-Reference-answer validity agreement was 100%. Reviewer disagreements are retained transparently and are not silently used to overwrite the frozen primary evaluation labels.
