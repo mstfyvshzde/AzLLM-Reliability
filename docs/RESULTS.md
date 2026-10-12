@@ -299,3 +299,25 @@ These full-benchmark results are used only as a base-model robustness analysis.
 Adaptation comparisons remain restricted to the held-out test split to avoid
 evaluating adapted models on benchmark items used during training or
 development.
+
+## Independent Native-Speaker Validation
+
+A 75-pair English-Azerbaijani test subset was independently reviewed by two native Azerbaijani-speaking university peers who were not involved in benchmark construction. Reviewers assessed four criteria using yes/no/uncertain labels:
+
+- semantic equivalence between English and Azerbaijani questions;
+- naturalness of the Azerbaijani wording;
+- equivalence of the English and Azerbaijani reference answers;
+- equivalence of answerability across languages.
+
+Inter-reviewer raw agreement was high across all criteria:
+
+| Criterion | Raw agreement |
+|---|---:|
+| Semantic equivalence | 97.33% |
+| Azerbaijani naturalness | 98.67% |
+| Reference-answer equivalence | 98.67% |
+| Answerability equivalence | 98.67% |
+
+Cohen's kappa was 0.000 for all four criteria because one reviewer used only the majority label ("yes"), creating an extreme prevalence imbalance. In this setting, kappa is not informative despite near-perfect observed agreement; therefore, raw agreement is reported as the primary inter-annotator agreement statistic.
+
+The review was conducted independently and without access to the other reviewer's labels.

@@ -255,3 +255,25 @@ Because the checkpoints differ in model family, size, tokenizer, pretraining, an
 A professor/native-speaker review packet is prepared before final publication.
 
 One independent expert review is treated as expert validation. It must not be reported as inter-annotator agreement unless at least two independent annotators are available.
+
+## Independent Native-Speaker Validation
+
+To validate the English-Azerbaijani benchmark pairs, two native Azerbaijani-speaking university peers independently reviewed the 75-pair test subset.
+
+Each reviewer assessed four criteria using yes/no/uncertain labels:
+
+- semantic equivalence between the English and Azerbaijani questions;
+- naturalness of the Azerbaijani wording;
+- equivalence of the English and Azerbaijani reference answers;
+- equivalence of answerability across languages.
+
+The reviewers completed the task independently and did not have access to each other's labels.
+
+Inter-reviewer raw agreement was:
+
+- 97.33% for semantic equivalence;
+- 98.67% for Azerbaijani naturalness;
+- 98.67% for reference-answer equivalence;
+- 98.67% for answerability equivalence.
+
+Cohen's kappa was 0.000 for all four criteria because one reviewer used only the majority label ("yes"), resulting in extreme label-prevalence imbalance. For this reason, raw agreement is treated as the primary inter-annotator agreement statistic for this validation step.
