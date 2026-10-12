@@ -56,9 +56,11 @@ semantic pair.
 
 These checks establish paired structural integrity but do not by themselves
 prove semantic equivalence, Azerbaijani naturalness, or translation quality.
-Some construction and review stages were AI-assisted. Independent
-native-speaker validation of semantic equivalence and Azerbaijani naturalness
-remains pending and must not be described as completed human validation.
+Some construction and review stages were AI-assisted. The 75-pair test subset
+was subsequently reviewed independently by two native Azerbaijani-speaking
+university peers for semantic equivalence, Azerbaijani naturalness,
+reference-answer equivalence, and answerability equivalence. Details and
+inter-reviewer agreement are reported below.
 
 The Azerbaijani benchmark uses the Latin-script representation present
 in the frozen benchmark records. Evaluation normalization preserves
@@ -277,3 +279,15 @@ Inter-reviewer raw agreement was:
 - 98.67% for answerability equivalence.
 
 Cohen's kappa was 0.000 for all four criteria because one reviewer used only the majority label ("yes"), resulting in extreme label-prevalence imbalance. For this reason, raw agreement is treated as the primary inter-annotator agreement statistic for this validation step.
+
+## Independent Native-Speaker Model-Output Audit
+
+Two native Azerbaijani-speaking reviewers independently reviewed correctness for the 61 answerable Azerbaijani held-out test items across Llama base, Adapted V2, and Qwen base. Reviewers were blinded to automated and AI-assisted scoring labels.
+
+Raw agreement / Cohen's kappa:
+- Llama base: 86.89% / 0.742
+- Adapted V2: 85.25% / 0.710
+- Qwen base: 80.33% / 0.609
+- pooled model-scoring decisions: 84.15% / 0.692
+
+Reference-answer validity agreement was 100%. This audit is treated as an independent validation layer rather than a silent replacement of the frozen primary scoring pipeline.

@@ -1,0 +1,62 @@
+﻿item_id,Question,Reference valid?,Llama correct?,Adapted correct?,Qwen correct?,Note (optional)
+factual_knowledge_0008_az,Sahara səhrası və Nil çayı hansı qitədə yerləşir?,yes,yes,yes,no,Qwen cavabın sonunda mətni yarımçıq kəsib və qeyri-səlis məlumatlar verib.
+factual_knowledge_0013_az,Fransanın paytaxtı hansıdır?,yes,yes,yes,yes,
+factual_knowledge_0014_az,Braziliya hansı qitədə yerləşir?,yes,yes,no,yes,Adapted cavabında Şimali Amerika yazıb (səhvdir).
+factual_knowledge_0017_az,Mahalangur Himal dağ silsiləsində... en yüksək nöqtə olan dağ hansıdır?,yes,yes,yes,yes,
+factual_knowledge_0024_az,Misirdən keçərək Aralıq dənizinə tökülən çay hansıdır?,yes,yes,yes,no,"Qwen uydurma ""Çaçan Çayı"" haqqında hallusinasiya verib."
+factual_knowledge_0032_az,İnsanda yetkin halda nüvəsi olmayan... qan elementləri hansılardır?,yes,yes,no,no,Adapted və Qwen hüceyrə yerinə molekul (hemoqlobin) cavabını verib.
+factual_knowledge_0044_az,Suyun kimyəvi formulu nədir?,yes,yes,yes,yes,
+factual_knowledge_0045_az,Ozon qatının əsasən yerləşdiyi atmosfer təbəqəsi hansıdır?,yes,yes,yes,no,Qwen dəqiq cavab (stratosfer) yerinə yarımçıq izah verib.
+factual_knowledge_0051_az,Veb səhifələrin brauzer ilə veb server arasında təhlükəsiz ötürülməsi üçün hansı protokol istifadə olunur?,yes,yes,yes,yes,
+factual_knowledge_0058_az,Əməliyyat sisteminin imtiyazlı əsas komponenti hansıdır?,yes,no,no,yes,"Llama və Adapted ""Nüvə"" yerinə ""Operativ Yaddaş/Memoriya"" yazıblar. Qwen ""Kernel"" (Nöqtə) deyərək doğru cavabı bilib."
+factual_knowledge_0068_az,USB abreviaturası nəyi ifadə edir?,yes,yes,yes,yes,
+factual_knowledge_0082_az,200-ün 25 faizi neçədir?,yes,yes,yes,yes,
+factual_knowledge_0085_az,"Qırmızı topların mavi toplara nisbəti 3:5-dirsə və 15 qırmızı top varsa, neçə mavi top var?",yes,no,yes,yes,Llama cavabda təkrar dövrə düşüb və çaşıb.
+factual_knowledge_0099_az,Ədalətli altıüzlü zərdə cüt ədəd düşmə ehtimalı nədir?,yes,yes,yes,no,Qwen hesablamanın sonunda yanlışlıqla 0 yazıb.
+factual_knowledge_0100_az,Düzbucaqlı sahənin daxilində yol salınır... Qalan daxili düzbucaqlının sahəsi neçə kvadratmetrdir?,yes,yes,no,uncertain,Adapted daxili sahə yerinə yolun sahəsini çıxıb 184 alıb (səhvdir). Qwen yarımçıq kəsilib.
+instruction_following_0009_az,"pear, apple, banana sözlərini əlifba sırası ilə düzün...",yes,yes,yes,no,"Qwen ""aaple"" yazıb (yazılış xətası)."
+instruction_following_0011_az,"A=9, B=4, C=7. A+B, A-C və B*C hesablayın və JSON qaytarın.",yes,yes,yes,yes,
+instruction_following_0012_az,"first=Leyla və last=Aliyeva verilib. Dəqiq belə qaytarın: SOYAD, AD",yes,no,no,no,"Llama və Qwen struktur qaydasına əməl etməyib, Adapted isə vergülü buraxıb."
+instruction_following_0014_az,5 ədədini mötərizə daxilində yazın və başqa heç nə çıxarmayın.,yes,no,no,no,Modeller yalnız (5) çıxarmaq əvəzinə əlavə mətnsəl izahlar veriblər.
+instruction_following_0028_az,"Yalnız BƏLİ və ya XEYR ilə cavab verin: 5, 10-dan kiçikdirmi?",yes,no,no,no,"Hər üç model səhvən ""XEYR"" cavabını verib."
+instruction_following_0038_az,"5, 12, 7, 20 və 9 verilib... boşluqsuz dəqiq [a,b] formasında qaytarın.",yes,no,no,yes,"Qwen dəqiq formatda [9, 12] təqdim edib."
+instruction_following_0039_az,31 və 28-dən hansı daha kiçikdir? Kiçik qiyməti mötərizə daxilində qaytarın.,yes,no,no,no,Yalnız (28) qaytarmaq qaydasına heç bir model riayət etməyib.
+instruction_following_0051_az,'cat dog bird' mətnində sözlərin sırasını tərsinə çevirin və defislə birləşdirin.,yes,no,no,no,"Modeller defis - istifadə etməyiblər, boşluqla saxlayıblar."
+instruction_following_0052_az,'A1 B2 C3'... alt xətlə birləşdirin.,yes,no,no,no,Birləşdirmə xarakteri (alt xətt _) istifadə edilməyib.
+instruction_following_0063_az,Yalnız B serverinin istifadə etdiyi portu çıxarın.,yes,yes,yes,yes,Mənaları doğrudur.
+instruction_following_0065_az,Yalnız model etiketini yazın.,yes,no,no,yes,"Qwen yalnız ""C"" yazaraq təlimata uyğun cavab verib."
+instruction_following_0077_az,Yalnız Muradın balını çıxarın.,yes,yes,yes,yes,Əsas ədəd (92) göstərilib.
+instruction_following_0082_az,"Əvvəlcə cütləri silin, azalan sıra ilə düzün, 1 əlavə edin...",yes,yes,no,yes,"Llama və Qwen adımları doğru izləyib 12,10,8 alıblar."
+instruction_following_0092_az,'AI' sözünü kiçik hərflərə çevirin və mötərizə daxilində yazın.,yes,no,no,no,(ai) şəklində dəqiq formatlanmayıb.
+instruction_following_0093_az,...birinci və sonuncu sözləri götürün və iki nöqtə ilə birləşdirin.,yes,no,no,no,apple:pear formatına uyulmayıb (nöqtələr işlədilib).
+instruction_following_0095_az,'One Two Three'... şaquli xətlə birləşdirin.,yes,no,no,no,Təlimat formatı pozulub.
+linguistic_understanding_0008_az,Burada 'şərtli' nə deməkdir?,yes,yes,yes,yes,Təfərrüatlı və ya qısa şəkildə mənanı düzgün izah ediblər.
+linguistic_understanding_0011_az,'Mərhələli şəkildə istifadədən çıxardı' nə deməkdir?,yes,yes,yes,yes,
+linguistic_understanding_0014_az,Burada 'boş' nə deməkdir?,yes,yes,yes,yes,
+linguistic_understanding_0030_az,'Onun' nəyə aiddir?,yes,no,no,no,Bütün modeller 'onun' sözünü Aylaya aid edib (dəftərə aid olmalı idi).
+linguistic_understanding_0033_az,'Öz cihazını' kimə aid edir?,yes,yes,yes,no,Llama və Adapted Kamala aid olduğunu düzgün müəyyən edib.
+linguistic_understanding_0040_az,Burada istiliyin mənbəyi nədir?,yes,yes,no,no,"Adapted məlumat yoxdur deyib, Qwen qarışıq mülahizə yürüdübdür."
+linguistic_understanding_0050_az,Burada 'nəzərdən keçirdilər' nə deməkdir?,yes,yes,yes,yes,
+linguistic_understanding_0052_az,Burada 'söykəndi' nə deməkdir?,yes,yes,yes,yes,
+linguistic_understanding_0053_az,Burada 'səs-küy' nə deməkdir?,yes,no,no,no,Modeller fiziki səs-küy ilə məlumatdakı variasiyanı qarışdırıblar.
+linguistic_understanding_0064_az,'Siyasət avtomatlaşdırma ilə birləşdirilmədikcə xərcləri azaltmadı' parafrazi?,yes,no,yes,no,Adapted düzgün variantı seçib.
+linguistic_understanding_0066_az,'Hesabat məlumatlar yoxlandıqdan sonra təqdim edildi' parafrazi?,yes,no,no,yes,Qwen doğru variantı müəyyənləşdirib.
+linguistic_understanding_0071_az,'Mina Ayseldən uzundur' parafrazi?,yes,no,no,yes,Qwen 'Aysel Minadan qısadır' variantını seçib.
+linguistic_understanding_0085_az,Onların ehtiyatlılığını hansı problem izah edir?,yes,yes,yes,yes,Konteksti qismən və ya tam əks etdiriblər.
+linguistic_understanding_0086_az,Leyla nə vaxt geri qayıda bilərdi?,yes,yes,yes,yes,
+linguistic_understanding_0096_az,Tədbir niyə həmin gün təsdiqlənmədi?,yes,yes,yes,yes,
+reasoning_0018_az,Kimin daha çox qələmi var?,yes,yes,yes,yes,
+reasoning_0019_az,Bir nəticəyə ən az iş dəqiqəsi tələb edən layihə hansıdır?,yes,no,yes,yes,Llama mətni tamamlaya bilməyib.
+reasoning_0027_az,Sonda anbarda neçə məhsul olur?,yes,yes,yes,yes,Bütün modeller 267 cavabını alıblar.
+reasoning_0030_az,Neçə bədii kitab var?,yes,no,yes,yes,Adapted və Qwen doğru cavabı (45) tapıblar.
+reasoning_0035_az,Ümumilikdə neçə stəkan var?,yes,yes,no,yes,Adapted vurma yerinə toplama yazaraq səhv edib.
+reasoning_0043_az,Bütün L obyektlərinin N obyekti olduğu nəticəsinə gələ bilərikmi?,yes,no,yes,yes,"Adapted və Qwen doğru olaraq ""Xeyr"" cavabını əsaslandırıblar."
+reasoning_0054_az,Luna məməlidirmi?,yes,yes,yes,yes,
+reasoning_0057_az,Layihə gecikibmi?,yes,no,yes,yes,"Llama ""gecikib"" deyərək məntiqi xəta edib (doğru cavab Xeyr)."
+reasoning_0060_az,P və S-dən hansı mütləq doğrudur?,yes,no,no,yes,Qwen addım-addım logika ilə S-in doğru olduğunu çıxarıb.
+reasoning_0066_az,Ardıcıllıq necədir?,yes,no,no,yes,"Qwen M, L, K ardıcıllığını doğru tapıb."
+reasoning_0071_az,Tam ardıcıllıq necədir?,yes,no,no,yes,"Qwen E, A, C, B, F, D ardıcıllığını tam ödəyib."
+reasoning_0079_az,Hadisə hansı gün baş verir?,yes,no,no,yes,Qwen dilli izahla Çərşənbə axşamını göstərib.
+reasoning_0091_az,Bütün şərtləri hansı sistem ödəyir?,yes,no,no,uncertain,C sistemi olduğunu modeller tam aydın sonluqla verməyiblər.
+reasoning_0096_az,Hansı marşrut uyğundur?,yes,no,no,yes,Qwen C marşrutunu seçib və səbəblərini əsaslandırıb.
+reasoning_0100_az,Variantlardan hansı hər iki şərti ödəyir?,yes,yes,yes,yes,Hər üç model 7123 variantını düzgün tapıb.

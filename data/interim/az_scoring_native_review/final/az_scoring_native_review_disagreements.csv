@@ -1,0 +1,30 @@
+﻿item_id,Question,field,reviewer1,reviewer2,reviewer1_note,reviewer2_note
+factual_knowledge_0014_az,Braziliya hansı qitədə yerləşir?,Llama correct?,yes,no,Adapted cavabında Şimali Amerika yazıb (səhvdir).,Llama/Adapted qitə adını səhv deyir
+factual_knowledge_0032_az,İnsanda yetkin halda nüvəsi olmayan... qan elementləri hansılardır?,Llama correct?,yes,no,Adapted və Qwen hüceyrə yerinə molekul (hemoqlobin) cavabını verib.,"Hamısı hemoglobin deyir, formalı element eritrositdir"
+instruction_following_0063_az,Yalnız B serverinin istifadə etdiyi portu çıxarın.,Llama correct?,yes,no,Mənaları doğrudur.,Qwen yalnız 443
+instruction_following_0077_az,Yalnız Muradın balını çıxarın.,Llama correct?,yes,no,Əsas ədəd (92) göstərilib.,"Hamısı əlavə mətn, yalnız 92 lazımdır"
+instruction_following_0082_az,"Əvvəlcə cütləri silin, azalan sıra ilə düzün, 1 əlavə edin...",Llama correct?,yes,no,"Llama və Qwen adımları doğru izləyib 12,10,8 alıblar.","Qwen 12,10,8 düzgün"
+linguistic_understanding_0050_az,Burada 'nəzərdən keçirdilər' nə deməkdir?,Llama correct?,yes,no,,
+linguistic_understanding_0085_az,Onların ehtiyatlılığını hansı problem izah edir?,Llama correct?,yes,no,Konteksti qismən və ya tam əks etdiriblər.,Confounding izahı zəif
+reasoning_0100_az,Variantlardan hansı hər iki şərti ödəyir?,Llama correct?,yes,no,Hər üç model 7123 variantını düzgün tapıb.,Llama 8123-ü də 7 ilə başlayır deyir
+factual_knowledge_0008_az,Sahara səhrası və Nil çayı hansı qitədə yerləşir?,Adapted correct?,yes,no,Qwen cavabın sonunda mətni yarımçıq kəsib və qeyri-səlis məlumatlar verib.,"Adapted: ""təşkil edir"" səhvdir"
+instruction_following_0063_az,Yalnız B serverinin istifadə etdiyi portu çıxarın.,Adapted correct?,yes,no,Mənaları doğrudur.,Qwen yalnız 443
+instruction_following_0077_az,Yalnız Muradın balını çıxarın.,Adapted correct?,yes,no,Əsas ədəd (92) göstərilib.,"Hamısı əlavə mətn, yalnız 92 lazımdır"
+linguistic_understanding_0014_az,Burada 'boş' nə deməkdir?,Adapted correct?,yes,no,,
+linguistic_understanding_0033_az,'Öz cihazını' kimə aid edir?,Adapted correct?,yes,no,Llama və Adapted Kamala aid olduğunu düzgün müəyyən edib.,Llama Kamala düzgün
+linguistic_understanding_0050_az,Burada 'nəzərdən keçirdilər' nə deməkdir?,Adapted correct?,yes,no,,
+linguistic_understanding_0085_az,Onların ehtiyatlılığını hansı problem izah edir?,Adapted correct?,yes,no,Konteksti qismən və ya tam əks etdiriblər.,Confounding izahı zəif
+linguistic_understanding_0096_az,Tədbir niyə həmin gün təsdiqlənmədi?,Adapted correct?,yes,no,,Adapted sualı təkrarlayır
+reasoning_0018_az,Kimin daha çox qələmi var?,Adapted correct?,yes,no,,Adapted yalnız fərq verir
+factual_knowledge_0008_az,Sahara səhrası və Nil çayı hansı qitədə yerləşir?,Qwen correct?,no,yes,Qwen cavabın sonunda mətni yarımçıq kəsib və qeyri-səlis məlumatlar verib.,"Adapted: ""təşkil edir"" səhvdir"
+factual_knowledge_0099_az,Ədalətli altıüzlü zərdə cüt ədəd düşmə ehtimalı nədir?,Qwen correct?,no,yes,Qwen hesablamanın sonunda yanlışlıqla 0 yazıb.,
+factual_knowledge_0100_az,Düzbucaqlı sahənin daxilində yol salınır... Qalan daxili düzbucaqlının sahəsi neçə kvadratmetrdir?,Qwen correct?,uncertain,no,Adapted daxili sahə yerinə yolun sahəsini çıxıb 184 alıb (səhvdir). Qwen yarımçıq kəsilib.,"Llama 416 düzgün, digərləri səhv"
+instruction_following_0077_az,Yalnız Muradın balını çıxarın.,Qwen correct?,yes,no,Əsas ədəd (92) göstərilib.,"Hamısı əlavə mətn, yalnız 92 lazımdır"
+linguistic_understanding_0014_az,Burada 'boş' nə deməkdir?,Qwen correct?,yes,no,,
+linguistic_understanding_0066_az,'Hesabat məlumatlar yoxlandıqdan sonra təqdim edildi' parafrazi?,Qwen correct?,yes,no,Qwen doğru variantı müəyyənləşdirib.,Hamısı səhv seçir
+linguistic_understanding_0085_az,Onların ehtiyatlılığını hansı problem izah edir?,Qwen correct?,yes,no,Konteksti qismən və ya tam əks etdiriblər.,Confounding izahı zəif
+reasoning_0057_az,Layihə gecikibmi?,Qwen correct?,yes,no,"Llama ""gecikib"" deyərək məntiqi xəta edib (doğru cavab Xeyr).",Adapted Xeyr düzgün
+reasoning_0060_az,P və S-dən hansı mütləq doğrudur?,Qwen correct?,yes,no,Qwen addım-addım logika ilə S-in doğru olduğunu çıxarıb.,S-i qəti demir
+reasoning_0071_az,Tam ardıcıllıq necədir?,Qwen correct?,yes,no,"Qwen E, A, C, B, F, D ardıcıllığını tam ödəyib.","Heç biri E, A, C, B, F, D vermir"
+reasoning_0079_az,Hadisə hansı gün baş verir?,Qwen correct?,yes,no,Qwen dilli izahla Çərşənbə axşamını göstərib.,
+reasoning_0091_az,Bütün şərtləri hansı sistem ödəyir?,Qwen correct?,uncertain,no,C sistemi olduğunu modeller tam aydın sonluqla verməyiblər.,C sistemi aydın deyil

@@ -258,7 +258,7 @@ improvement.
 
 The audit also identified both false-positive and false-negative automated
 scoring cases, supporting the need for independent native-speaker validation
-in future work.
+of adjudication-sensitive model outputs in future work.
 
 ### Semantic Overlap and Leakage Sensitivity
 
@@ -321,3 +321,16 @@ Inter-reviewer raw agreement was high across all criteria:
 Cohen's kappa was 0.000 for all four criteria because one reviewer used only the majority label ("yes"), creating an extreme prevalence imbalance. In this setting, kappa is not informative despite near-perfect observed agreement; therefore, raw agreement is reported as the primary inter-annotator agreement statistic.
 
 The review was conducted independently and without access to the other reviewer's labels.
+
+## Independent Native-Speaker Audit of Azerbaijani Model Scoring
+
+Two native Azerbaijani-speaking reviewers independently assessed correctness for the 61 answerable Azerbaijani held-out test items.
+
+| Model | Raw agreement | Cohen's kappa |
+|---|---:|---:|
+| Llama base | 86.89% | 0.742 |
+| Adapted V2 | 85.25% | 0.710 |
+| Qwen base | 80.33% | 0.609 |
+| Pooled | 84.15% | 0.692 |
+
+Reference-answer validity agreement was 100%. There were 29 disagreements across the 183 model-output correctness judgments. These disagreements are preserved as audit artifacts rather than silently converted into revised primary labels.

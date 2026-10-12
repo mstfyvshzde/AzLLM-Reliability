@@ -30,9 +30,10 @@ The study uses paired English–Azerbaijani evaluation, frozen splits, determini
 | Reliability supplement | Complete |
 | Statistical analysis | Complete |
 | Leakage audit | Complete |
-| Automated tests | **646 passed** |
-| Independent human validation | Pending |
-| Final human-validated release | Pending |
+| Automated tests | **659 passed, 2 xfailed** |
+| Independent native-speaker benchmark validation | **Complete** |
+| Independent native-speaker model-output audit | **Complete** |
+| Reliability supplement human validation | Pending |
 
 Current sensitive adjudication decisions include AI-assisted judgments and are **not** presented as independent human annotation.
 
@@ -283,12 +284,13 @@ Seeds are not pooled as independent observations.
 
 ## Validation
 
-Prepared external validation includes:
+Independent validation currently includes:
 
-- professor/native-speaker review;
-- blinded reliability reviewer 1;
-- blinded reliability reviewer 2;
+- external expert feedback from a university professor;
+- independent review of the 75-pair benchmark test subset by two native Azerbaijani-speaking university peers;
 - inter-annotator agreement analysis.
+
+For the benchmark-pair review, raw agreement was 97.33% for semantic equivalence and 98.67% for Azerbaijani naturalness, reference-answer equivalence, and answerability equivalence.
 
 The IAA pipeline computes:
 
@@ -299,7 +301,7 @@ missing-label counts
 disagreement records
 ```
 
-Human validation is still pending.
+Independent native-speaker validation of Azerbaijani model-output scoring is complete for the 61 answerable held-out test items. The separate reliability supplement remains pending independent human validation.
 
 ---
 
@@ -321,7 +323,7 @@ Important datasets and result artifacts are tracked with SHA-256 hashes.
 ## Testing
 
 ```text
-646 passed
+659 passed, 2 xfailed
 ```
 
 Run:
@@ -351,7 +353,7 @@ Key limitations include:
 - relatively small held-out test size;
 - two tested model families;
 - three replay seeds;
-- AI-assisted adjudication pending independent human validation;
+- primary model-output adjudication remains AI-assisted, with a separate independent native-speaker audit completed for Azerbaijani scoring decisions;
 - synthetic components in adaptation-data construction;
 - limited abstention examples;
 - lexical leakage auditing cannot guarantee complete semantic independence.
@@ -367,3 +369,15 @@ MIT License. See [LICENSE](LICENSE).
 ## Citation
 
 Citation metadata is available in [CITATION.cff](CITATION.cff).
+
+### Independent Native-Speaker Model-Output Audit
+
+Two native Azerbaijani-speaking reviewers independently evaluated correctness for the 61 answerable Azerbaijani held-out test items across Llama base, Adapted V2, and Qwen base. They were blinded to automated and AI-assisted scoring labels.
+
+Agreement:
+- Llama base: 86.89% raw agreement, Cohen's kappa 0.742
+- Adapted V2: 85.25%, kappa 0.710
+- Qwen base: 80.33%, kappa 0.609
+- pooled model-scoring decisions: 84.15%, kappa 0.692
+
+Reference-answer validity agreement was 100%. Reviewer disagreements are retained transparently and are not silently used to overwrite the frozen primary evaluation labels.

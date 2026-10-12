@@ -1,0 +1,37 @@
+{
+  "Reference valid?": {
+    "n": 61,
+    "raw_agreement": 1.0,
+    "cohens_kappa": null,
+    "agreements": 61,
+    "disagreements": 0
+  },
+  "Llama correct?": {
+    "n": 61,
+    "raw_agreement": 0.8688524590163934,
+    "cohens_kappa": 0.7415254237288136,
+    "agreements": 53,
+    "disagreements": 8
+  },
+  "Adapted correct?": {
+    "n": 61,
+    "raw_agreement": 0.8524590163934426,
+    "cohens_kappa": 0.7099841521394611,
+    "agreements": 52,
+    "disagreements": 9
+  },
+  "Qwen correct?": {
+    "n": 61,
+    "raw_agreement": 0.8032786885245902,
+    "cohens_kappa": 0.6093916755602987,
+    "agreements": 49,
+    "disagreements": 12
+  },
+  "pooled_model_scoring": {
+    "n": 183,
+    "raw_agreement": 0.8415300546448088,
+    "cohens_kappa": 0.6915072952392025,
+    "agreements": 154,
+    "disagreements": 29
+  }
+}

@@ -65,9 +65,9 @@ The final-release reproducibility manifest records the current Git commit, envir
 
 Before the final publication tag:
 
-1. complete independent professor/native-speaker review;
-2. reconcile changed adjudication-sensitive decisions;
-3. regenerate affected metrics/statistics;
+1. complete independent validation of the reliability supplement;
+2. reconcile any changed adjudication-sensitive decisions;
+3. regenerate affected metrics/statistics if needed;
 4. update the final research audit;
 5. rerun the complete test suite;
 6. verify a clean Git working tree;
@@ -88,3 +88,9 @@ A separate English-Azerbaijani reliability supplement contains 60 paired unanswe
 It was evaluated on the Llama base model, Qwen base model, the selected adapted model, and all replay conditions at checkpoint `0450` across seeds `16`, `17`, and `18`.
 
 The supplement was constructed and reviewed with AI assistance. Independent native-speaker validation is still pending, so it must not yet be described as human-validated.
+
+### Native-Speaker Model-Output Audit Status
+
+Independent native-speaker validation of Azerbaijani model-output scoring is complete for the 61 answerable held-out test items. Canonical reviewer CSVs, the agreement summary, and the disagreement list are stored under `data/interim/az_scoring_native_review/`.
+
+The separate reliability supplement remains pending independent human validation.
