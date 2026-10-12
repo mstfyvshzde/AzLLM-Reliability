@@ -259,3 +259,43 @@ improvement.
 The audit also identified both false-positive and false-negative automated
 scoring cases, supporting the need for independent native-speaker validation
 in future work.
+
+### Semantic Overlap and Leakage Sensitivity
+
+A multilingual embedding audit was used to flag high-similarity adaptation–benchmark candidates for manual inspection. Candidate similarity alone was not treated as evidence of leakage. A frozen manual review scheme classified 164 candidates as `near_duplicate`, `template_overlap`, or `not_overlap`.
+
+The review identified 34 near-duplicate candidate rows. Of these, 31 involved adaptation records from the actual LoRA training split and 3 involved validation-only records. After mapping the benchmark side to frozen benchmark splits, only two train-side near-duplicate rows matched the held-out test set, and both referred to the same benchmark pair: `unanswerable_0015`.
+
+This overlap therefore affected one unique held-out test pair. The pair belongs to the `unanswerable` family and is excluded from the primary answerable capability analysis. Both the base and adapted models over-answered both language instances of this pair, so the adapted model did not obtain an observed reliability advantage on the overlapped pair itself.
+
+As a conservative sensitivity analysis, the full `unanswerable_0015` pair was removed from the reliability evaluation. Adapted decision accuracy changed from 83.33% (125/150) to 84.46% (125/148), while the base model changed from 82.67% (124/150) to 83.78% (124/148). The adapted-minus-base difference remained small at +0.68 percentage points. For unanswerable examples, both models had 3 correct abstentions and 23 over-answers after removal, corresponding to an abstention accuracy of 11.54% and an over-answering rate of 88.46%.
+
+Thus, the identified held-out semantic overlap does not explain the observed base-versus-adapted reliability difference. However, the overlap is reported transparently as a limitation, and the reliability results remain weak because abstention performance is low overall.
+
+## Full-Benchmark Base-Model Robustness Check
+
+To assess whether the English–Azerbaijani capability gap observed on the
+held-out test split was specific to that relatively small subset, both base
+models were additionally evaluated on the full 500-pair benchmark.
+
+| Model | Overall | Azerbaijani | English | EN–AZ Gap |
+|---|---:|---:|---:|---:|
+| Llama-3.1-8B-Instruct-4bit | 65.00% | 51.50% | 78.50% | 27.00 pp |
+| Qwen2.5-7B-Instruct-4bit | 64.25% | 49.75% | 78.75% | 29.00 pp |
+
+Across both model families, English capability remained substantially higher
+than Azerbaijani capability. The full-benchmark gaps (27–29 pp) were smaller
+than the Llama held-out test estimate (34.43 pp), suggesting that the exact
+magnitude of the gap is sensitive to the evaluated subset, while the direction
+of the language disparity is consistent across the two base models.
+
+For Qwen, 144 of 400 answerable pairs were correct only in English, compared
+with 28 correct only in Azerbaijani. On the 200 unanswerable items, Qwen
+correctly abstained on 26 (13.0%) and over-answered 174 (87.0%). Azerbaijani
+unanswerable items showed especially weak abstention behavior, with 98 of 100
+items over-answered.
+
+These full-benchmark results are used only as a base-model robustness analysis.
+Adaptation comparisons remain restricted to the held-out test split to avoid
+evaluating adapted models on benchmark items used during training or
+development.

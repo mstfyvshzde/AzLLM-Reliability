@@ -1,0 +1,54 @@
+{
+  "excluded_pair_id": "unanswerable_0015",
+  "reason": "Conservative leakage sensitivity analysis after semantic near-duplicate audit.",
+  "models": {
+    "adapted_v2_0090": {
+      "full": {
+        "total": 150,
+        "correct_decisions": 125,
+        "decision_accuracy": 0.8333333333333334,
+        "unanswerable_total": 28,
+        "correct_abstention": 3,
+        "over_answering": 25,
+        "unanswerable_abstention_accuracy": 0.10714285714285714,
+        "over_answering_rate": 0.8928571428571429
+      },
+      "excluding_overlap_pair": {
+        "total": 148,
+        "correct_decisions": 125,
+        "decision_accuracy": 0.8445945945945946,
+        "unanswerable_total": 26,
+        "correct_abstention": 3,
+        "over_answering": 23,
+        "unanswerable_abstention_accuracy": 0.11538461538461539,
+        "over_answering_rate": 0.8846153846153846
+      }
+    },
+    "llama_base": {
+      "full": {
+        "total": 150,
+        "correct_decisions": 124,
+        "decision_accuracy": 0.8266666666666667,
+        "unanswerable_total": 28,
+        "correct_abstention": 3,
+        "over_answering": 25,
+        "unanswerable_abstention_accuracy": 0.10714285714285714,
+        "over_answering_rate": 0.8928571428571429
+      },
+      "excluding_overlap_pair": {
+        "total": 148,
+        "correct_decisions": 124,
+        "decision_accuracy": 0.8378378378378378,
+        "unanswerable_total": 26,
+        "correct_abstention": 3,
+        "over_answering": 23,
+        "unanswerable_abstention_accuracy": 0.11538461538461539,
+        "over_answering_rate": 0.8846153846153846
+      }
+    }
+  },
+  "comparison_excluding_overlap_pair": {
+    "adapted_minus_base_decision_accuracy": 0.006756756756756799,
+    "adapted_minus_base_over_answering_rate": 0.0
+  }
+}

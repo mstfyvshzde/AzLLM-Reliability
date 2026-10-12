@@ -330,6 +330,22 @@ def run_baseline_experiment(
             "Benchmark input contains no records."
         )
 
+    start_index = inference.get("start_index", 0)
+    limit = inference.get("limit")
+
+    if limit is not None:
+        benchmark_records = benchmark_records[
+            start_index:start_index + limit
+        ]
+    elif start_index:
+        benchmark_records = benchmark_records[start_index:]
+
+    print(
+        f"Benchmark slice: start={start_index}, "
+        f"records={len(benchmark_records)}",
+        flush=True,
+    )
+
     model_config = load_model_config(model_config_path)
 
     raw_model_config = load_model_config_dict(model_config_path)

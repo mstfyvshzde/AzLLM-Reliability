@@ -129,6 +129,8 @@ The final V2 adaptation set contains 1,000 records:
 
 The adaptation data are separate from the frozen benchmark.
 
+Because the adaptation is performed on a 4-bit quantized base model with a relatively lightweight LoRA configuration, adaptation effects should not be interpreted as properties of full-precision or full-parameter fine-tuning. Quantization and limited adapter capacity may constrain both achievable Azerbaijani gains and English retention, so these factors remain potential confounds when interpreting the adaptation trade-off.
+
 The final LoRA run uses:
 
 - 450 iterations,
@@ -180,6 +182,13 @@ The held-out test set is not used for model or checkpoint selection.
 Adjudication-sensitive outputs are evaluated against the frozen rubric. Any
 AI-assisted review or labeling should be described as such unless independent
 human review has actually been completed and documented.
+
+Current semantic and binary adjudication used for model evaluation is
+AI-assisted and author-reviewed rather than independent human adjudication.
+These decisions follow frozen task-specific rubrics and are stored as explicit
+artifacts. Because model-assisted judging can introduce evaluator bias or
+circularity, adjudication-sensitive findings are treated as provisional until
+they are independently validated by native-speaker reviewers.
 
 ## Replay-Ratio Ablation Design
 

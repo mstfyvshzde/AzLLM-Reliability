@@ -149,7 +149,15 @@ def run_inference(
 
     predictions: list[PredictionRecord] = []
 
-    for record in records:
+    total_records = len(records)
+
+    for i, record in enumerate(records, start=1):
+        if i == 1 or i % 25 == 0 or i == total_records:
+            print(
+                f"Inference progress: {i}/{total_records}",
+                flush=True,
+            )
+
         response = generate_response(
             prompt=record.question,
             model=model,
