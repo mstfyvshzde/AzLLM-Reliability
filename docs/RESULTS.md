@@ -280,8 +280,8 @@ models were additionally evaluated on the full 500-pair benchmark.
 
 | Model | Overall | Azerbaijani | English | EN–AZ Gap |
 |---|---:|---:|---:|---:|
-| Llama-3.1-8B-Instruct-4bit | 65.00% | 51.50% | 78.50% | 27.00 pp |
-| Qwen2.5-7B-Instruct-4bit | 64.25% | 49.75% | 78.75% | 29.00 pp |
+| Llama-3.1-8B-Instruct-4bit | 65.00% | 51.50% (95% CI 46.50–56.25) | 78.50% (74.50–82.50) | 27.00 pp (21.75–32.25) |
+| Qwen2.5-7B-Instruct-4bit | 64.25% | 49.75% (95% CI 44.75–54.75) | 78.75% (74.75–82.75) | 29.00 pp (23.25–34.75) |
 
 Across both model families, English capability remained substantially higher
 than Azerbaijani capability. The full-benchmark gaps (27–29 pp) were smaller

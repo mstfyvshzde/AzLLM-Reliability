@@ -1,0 +1,24 @@
+{
+  "n_pairs": 400,
+  "samples": 10000,
+  "seed": 17,
+  "observed": {
+    "en_accuracy": 0.7875,
+    "az_accuracy": 0.4975,
+    "en_az_gap": 0.29
+  },
+  "ci_95": {
+    "en_accuracy": {
+      "lower": 0.7475,
+      "upper": 0.8275
+    },
+    "az_accuracy": {
+      "lower": 0.4475,
+      "upper": 0.5475
+    },
+    "en_az_gap": {
+      "lower": 0.23250000000000004,
+      "upper": 0.34750000000000003
+    }
+  }
+}
