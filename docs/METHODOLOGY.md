@@ -170,7 +170,8 @@ The final analysis reports:
 
 This separates absolute performance from gap reduction. A smaller EN-AZ gap is
 not automatically interpreted as Azerbaijani improvement because the gap can
-also shrink when English performance decreases.
+also shrink when English performance decreases. Such gap reduction may reflect
+a leveling-down effect rather than a genuine fairness or capability improvement.
 
 ## Evaluation Integrity
 
