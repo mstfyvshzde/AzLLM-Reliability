@@ -10,4 +10,4 @@ Reviewer 2: is_unanswerable and semantic_equivalent_en_az = yes on all 60; natur
 
 The recovered transcript yields 66 **unresolved** criterion-level disagreements (one naturalness, five category, sixty difficulty). No independent source audit or adjudication was performed. Consequently this is descriptive agreement among *reported* labels, NOT independently verified native-speaker human validation. It measures question quality, not model output correctness.
 
-Original blank reviewer templates are backed up locally under `_local_backup_before_reconstruction/`. The public repository must not be represented as proving original reviewer independence/authenticity.
+Original blank reviewer templates are preserved in Git history (commits fbb4600 and 356cfb2). The local `_local_backup_before_reconstruction/` copies contain filled labels and must not be described as original blank templates. The public repository must not be represented as proving original reviewer independence/authenticity.
