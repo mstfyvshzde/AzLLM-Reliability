@@ -1,0 +1,4 @@
+model,complete_pairs,uncertain_pairs,min_p,max_p
+Adapted,45,15,5.8e-11,2.0980835e-05
+Llama,54,6,4.075e-09,2.16067e-07
+Qwen,57,3,0.000221252441,0.001312255859

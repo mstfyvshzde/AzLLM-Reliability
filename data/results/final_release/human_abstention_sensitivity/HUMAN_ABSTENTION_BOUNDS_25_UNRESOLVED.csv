@@ -1,0 +1,7 @@
+model,language,n,resolved_yes,resolved_no,unresolved,min_human_abstention_rate,max_human_abstention_rate,original_rule_abstentions,original_rule_abstention_rate
+adapted_v2_0090,az,60,18,31,11,0.30000000,0.48333333,2,0.03333333
+adapted_v2_0090,en,60,48,7,5,0.80000000,0.88333333,5,0.08333333
+llama_base,az,60,18,36,6,0.30000000,0.40000000,1,0.01666667
+llama_base,en,60,50,10,0,0.83333333,0.83333333,9,0.15000000
+qwen_base,az,60,36,21,3,0.60000000,0.65000000,1,0.01666667
+qwen_base,en,60,53,7,0,0.88333333,0.88333333,13,0.21666667
